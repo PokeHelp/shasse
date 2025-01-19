@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 interface User {
     id: number;
     name: string;
+    email: string;
 }
 
 export default function UsersPage() {
@@ -41,6 +42,7 @@ export default function UsersPage() {
                     {users.map((user) => (
                         <li key={user.id}>
                             <p><strong>Nom :</strong> {user.name}</p>
+                            <p><strong>Email :</strong> {user.email}</p>
                         </li>
                     ))}
                 </ul>
