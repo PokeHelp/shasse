@@ -2,11 +2,14 @@
   "name": "pokehelp",
   "version": "0.1.1-snapshot",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "DEBUG=* next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seed": "node --loader ts-node/esm prisma/seed.ts",
+    "db:init": "prisma migrate dev --name init && npm run seed all"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -27,6 +30,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.1.4",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

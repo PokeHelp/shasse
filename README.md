@@ -40,5 +40,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
   # Modification du schema prisma
   npx prisma format # reformat bien le fichier
   npx prisma generate # génère les types ts
-  npx prisma migrate dev --name <nom de la modif en snake_case> # créé et déploie la migration
+  `npx prisma migrate dev --name` <nom de la modif en snake_case> # créé et déploie la migration
 ```
