@@ -34,3 +34,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Modification BDD
+```bash
+  # Modification du schema prisma
+  npx prisma format # reformat bien le fichier
+  npx prisma generate # génère les types ts
+  `npx prisma migrate dev --name` <nom de la modif en snake_case> # créé et déploie la migration
+```

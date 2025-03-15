@@ -1,0 +1,4012 @@
+{
+  "Rattata d'Alola": [
+    {
+      "nomPokemon": "Rattatac d'Alola",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": "De nuit"
+    }
+  ],
+  "Sabelette d'Alola": [
+    {
+      "nomPokemon": "Sablaireau d'Alola",
+      "niveau": -1,
+      "nomMethode": "Pierre Glace",
+      "informationComplementaire": ""
+    }
+  ],
+  "Goupix d'Alola": [
+    {
+      "nomPokemon": "Feunard d'Alola",
+      "niveau": -1,
+      "nomMethode": "Pierre Glace",
+      "informationComplementaire": ""
+    }
+  ],
+  "Taupiqueur d'Alola": [
+    {
+      "nomPokemon": "Triopikeur d'Alola",
+      "niveau": 26,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Miaouss d'Alola": [
+    {
+      "nomPokemon": "Persian d'Alola",
+      "niveau": -1,
+      "nomMethode": "Bonheur",
+      "informationComplementaire": "Lui faire gagner un niveau avec son bonheur au max."
+    }
+  ],
+  "Racaillou d'Alola": [
+    {
+      "nomPokemon": "Gravalanch d'Alola",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Gravalanch d'Alola": [
+    {
+      "nomPokemon": "Grolem d'Alola",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": ""
+    }
+  ],
+  "Tadmorv d'Alola": [
+    {
+      "nomPokemon": "Grotadmorv d'Alola",
+      "niveau": 38,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Miaouss de Galar": [
+    {
+      "nomPokemon": "Berserkatt",
+      "niveau": 28,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Ponyta de Galar": [
+    {
+      "nomPokemon": "Galopa de Galar",
+      "niveau": 40,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Ramoloss de Galar": [
+    {
+      "nomPokemon": "Flagadoss de Galar",
+      "niveau": -1,
+      "nomMethode": "Contact avec Bracelet Galanoa",
+      "informationComplementaire": ""
+    },
+    {
+      "nomPokemon": "Roigada de Galar",
+      "niveau": -1,
+      "nomMethode": "Contact avec Couronne Galanoa",
+      "informationComplementaire": ""
+    }
+  ],
+  "Canarticho de Galar": [
+    {
+      "nomPokemon": "Palarticho",
+      "niveau": -1,
+      "nomMethode": "Infliger 3 coups critiques dans le même combat",
+      "informationComplementaire": ""
+    }
+  ],
+  "M. Mime de Galar": [
+    {
+      "nomPokemon": "M. Glaquette",
+      "niveau": 42,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Corayon de Galar": [
+    {
+      "nomPokemon": "Corayôme",
+      "niveau": 38,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Zigzaton de Galar": [
+    {
+      "nomPokemon": "Linéon de Galar",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": "De nuit"
+    }
+  ],
+  "Linéon de Galar": [
+    {
+      "nomPokemon": "Ixon",
+      "niveau": 35,
+      "nomMethode": "Level",
+      "informationComplementaire": "De nuit"
+    }
+  ],
+  "Darumarond de Galar": [
+    {
+      "nomPokemon": "Darumacho de Galar",
+      "niveau": -1,
+      "nomMethode": "Pierre Glace",
+      "informationComplementaire": "Au contact de la Pierre demandée."
+    }
+  ],
+  "Tutafeh de Galar": [
+    {
+      "nomPokemon": "Tutétékri",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Perdre 49 PV ou plus + marcher sous la grande arche de pierres de la Fosse des Sables"
+    }
+  ],
+  "Caninos de Hisui": [
+    {
+      "nomPokemon": "Arcanin de Hisui",
+      "niveau": -1,
+      "nomMethode": "Pierre Feu",
+      "informationComplementaire": "Au contact de la Pierre demandée."
+    }
+  ],
+  "Voltorbe de Hisui": [
+    {
+      "nomPokemon": "Électrode de Hisui",
+      "niveau": -1,
+      "nomMethode": "Pierre Plante",
+      "informationComplementaire": "Au contact de la Pierre demandée."
+    }
+  ],
+  "Qwilfish de Hisui": [
+    {
+      "nomPokemon": "Qwilpik",
+      "niveau": -1,
+      "nomMethode": "Utiliser 20 fois ou plus la capacité Multitoxik sous Style Puissant",
+      "informationComplementaire": ""
+    }
+  ],
+  "Farfuret de Hisui": [
+    {
+      "nomPokemon": "Farfurex",
+      "niveau": -1,
+      "nomMethode": "Au contact d'une Griffe Rasoir de jour - LPA",
+      "informationComplementaire": ""
+    }
+  ],
+  "Zorua de Hisui": [
+    {
+      "nomPokemon": "Zoroark de Hisui",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Colimucus de Hisui": [
+    {
+      "nomPokemon": "Muplodocus de Hisui",
+      "niveau": 50,
+      "nomMethode": "Level",
+      "informationComplementaire": "Sous la pluie ou le brouillard"
+    }
+  ],
+  "Axoloto de Paldea": [
+    {
+      "nomPokemon": "Terraiste",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Bulbizarre": [
+    {
+      "nomPokemon": "Herbizarre",
+      "niveau": 16,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Herbizarre": [
+    {
+      "nomPokemon": "Florizarre",
+      "niveau": 32,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Salamèche": [
+    {
+      "nomPokemon": "Reptincel",
+      "niveau": 16,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Reptincel": [
+    {
+      "nomPokemon": "Dracaufeu",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Carapuce": [
+    {
+      "nomPokemon": "Carabaffe",
+      "niveau": 16,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Carabaffe": [
+    {
+      "nomPokemon": "Tortank",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Chenipan": [
+    {
+      "nomPokemon": "Chrysacier",
+      "niveau": 7,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Chrysacier": [
+    {
+      "nomPokemon": "Papilusion",
+      "niveau": 10,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Aspicot": [
+    {
+      "nomPokemon": "Coconfort",
+      "niveau": 7,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Coconfort": [
+    {
+      "nomPokemon": "Dardargnan",
+      "niveau": 10,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Roucool": [
+    {
+      "nomPokemon": "Roucoups",
+      "niveau": 18,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Roucoups": [
+    {
+      "nomPokemon": "Roucarnage",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Rattata": [
+    {
+      "nomPokemon": "Rattatac",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Piafabec": [
+    {
+      "nomPokemon": "Rapasdepic",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Abo": [
+    {
+      "nomPokemon": "Arbok",
+      "niveau": 22,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Pikachu": [
+    {
+      "nomPokemon": "Raichu",
+      "niveau": -1,
+      "nomMethode": "Pierre Foudre",
+      "informationComplementaire": ""
+    }
+  ],
+  "Sabelette": [
+    {
+      "nomPokemon": "Sablaireau",
+      "niveau": 22,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Nidoran♀": [
+    {
+      "nomPokemon": "Nidorina",
+      "niveau": 16,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Nidorina": [
+    {
+      "nomPokemon": "Nidoqueen",
+      "niveau": -1,
+      "nomMethode": "Pierre Lune",
+      "informationComplementaire": ""
+    }
+  ],
+  "Nidoran♂": [
+    {
+      "nomPokemon": "Nidorino",
+      "niveau": 16,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Nidorino": [
+    {
+      "nomPokemon": "Nidoking",
+      "niveau": -1,
+      "nomMethode": "Pierre Lune",
+      "informationComplementaire": ""
+    }
+  ],
+  "Mélofée": [
+    {
+      "nomPokemon": "Mélodelfe",
+      "niveau": -1,
+      "nomMethode": "Pierre Lune",
+      "informationComplementaire": ""
+    }
+  ],
+  "Goupix": [
+    {
+      "nomPokemon": "Feunard",
+      "niveau": -1,
+      "nomMethode": "Pierre Feu",
+      "informationComplementaire": ""
+    }
+  ],
+  "Rondoudou": [
+    {
+      "nomPokemon": "Grodoudou",
+      "niveau": -1,
+      "nomMethode": "Pierre Lune",
+      "informationComplementaire": ""
+    }
+  ],
+  "Nosferapti": [
+    {
+      "nomPokemon": "Nosferalto",
+      "niveau": 22,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Nosferalto": [
+    {
+      "nomPokemon": "Nostenfer",
+      "niveau": -1,
+      "nomMethode": "Bonheur",
+      "informationComplementaire": ""
+    }
+  ],
+  "Mystherbe": [
+    {
+      "nomPokemon": "Ortide",
+      "niveau": 21,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Ortide": [
+    {
+      "nomPokemon": "Rafflesia",
+      "niveau": -1,
+      "nomMethode": "Pierre Plante",
+      "informationComplementaire": ""
+    },
+    {
+      "nomPokemon": "Joliflor",
+      "niveau": -1,
+      "nomMethode": "Pierre Soleil",
+      "informationComplementaire": ""
+    }
+  ],
+  "Paras": [
+    {
+      "nomPokemon": "Parasect",
+      "niveau": 24,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Mimitoss": [
+    {
+      "nomPokemon": "Aéromite",
+      "niveau": 31,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Taupiqueur": [
+    {
+      "nomPokemon": "Triopikeur",
+      "niveau": 26,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Miaouss": [
+    {
+      "nomPokemon": "Persian",
+      "niveau": 28,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Psykokwak": [
+    {
+      "nomPokemon": "Akwakwak",
+      "niveau": 33,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Férosinge": [
+    {
+      "nomPokemon": "Colossinge",
+      "niveau": 28,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Colossinge": [
+    {
+      "nomPokemon": "Courrousinge",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Utiliser 20 fois la capacité Poing de Colère, puis gagner un niveau."
+    }
+  ],
+  "Caninos": [
+    {
+      "nomPokemon": "Arcanin",
+      "niveau": -1,
+      "nomMethode": "Pierre Feu",
+      "informationComplementaire": ""
+    }
+  ],
+  "Ptitard": [
+    {
+      "nomPokemon": "Têtarte",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Têtarte": [
+    {
+      "nomPokemon": "Tartard",
+      "niveau": -1,
+      "nomMethode": "Pierre Eau",
+      "informationComplementaire": ""
+    },
+    {
+      "nomPokemon": "Tarpaud",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": "En tenant Roche Royale."
+    }
+  ],
+  "Abra": [
+    {
+      "nomPokemon": "Kadabra",
+      "niveau": 16,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Kadabra": [
+    {
+      "nomPokemon": "Alakazam",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": ""
+    }
+  ],
+  "Machoc": [
+    {
+      "nomPokemon": "Machopeur",
+      "niveau": 28,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Machopeur": [
+    {
+      "nomPokemon": "Mackogneur",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": ""
+    }
+  ],
+  "Chétiflor": [
+    {
+      "nomPokemon": "Boustiflor",
+      "niveau": 21,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Boustiflor": [
+    {
+      "nomPokemon": "Empiflor",
+      "niveau": -1,
+      "nomMethode": "Pierre Plante",
+      "informationComplementaire": ""
+    }
+  ],
+  "Tentacool": [
+    {
+      "nomPokemon": "Tentacruel",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Racaillou": [
+    {
+      "nomPokemon": "Gravalanch",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Gravalanch": [
+    {
+      "nomPokemon": "Grolem",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": ""
+    }
+  ],
+  "Ponyta": [
+    {
+      "nomPokemon": "Galopa",
+      "niveau": 40,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Ramoloss": [
+    {
+      "nomPokemon": "Flagadoss",
+      "niveau": 37,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    },
+    {
+      "nomPokemon": "Roigada",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": "En tenant Roche Royale."
+    }
+  ],
+  "Magnéti": [
+    {
+      "nomPokemon": "Magnéton",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Magnéton": [
+    {
+      "nomPokemon": "Magnézone",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Le joueur doit-être dans une zone avec un champ magnétique spécial, depuis LPA avec Pierre Foudre."
+    }
+  ],
+  "Doduo": [
+    {
+      "nomPokemon": "Dodrio",
+      "niveau": 31,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Otaria": [
+    {
+      "nomPokemon": "Lamantine",
+      "niveau": 34,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Tadmorv": [
+    {
+      "nomPokemon": "Grotadmorv",
+      "niveau": 38,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Kokiyas": [
+    {
+      "nomPokemon": "Crustabri",
+      "niveau": -1,
+      "nomMethode": "Pierre Eau",
+      "informationComplementaire": ""
+    }
+  ],
+  "Fantominus": [
+    {
+      "nomPokemon": "Spectrum",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Spectrum": [
+    {
+      "nomPokemon": "Ectoplasma",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": ""
+    }
+  ],
+  "Onix": [
+    {
+      "nomPokemon": "Steelix",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": "Échange en tenant la Peau Métal"
+    }
+  ],
+  "Soporifik": [
+    {
+      "nomPokemon": "Hypnomade",
+      "niveau": 26,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Krabby": [
+    {
+      "nomPokemon": "Krabboss",
+      "niveau": 28,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Voltorbe": [
+    {
+      "nomPokemon": "Électrode",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Noeunoeuf": [
+    {
+      "nomPokemon": "Noadkoko",
+      "niveau": -1,
+      "nomMethode": "Pierre Plante",
+      "informationComplementaire": ""
+    },
+    {
+      "nomPokemon": "Noadkoko d'Alola",
+      "niveau": -1,
+      "nomMethode": "Pierre Plante",
+      "informationComplementaire": "À Alola"
+    }
+  ],
+  "Osselait": [
+    {
+      "nomPokemon": "Ossatueur",
+      "niveau": 28,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Excelangue": [
+    {
+      "nomPokemon": "Coudlangue",
+      "niveau": -1,
+      "nomMethode": "Connaitre une attaque",
+      "informationComplementaire": "En connaissant l'attaque Roulade"
+    }
+  ],
+  "Smogo": [
+    {
+      "nomPokemon": "Smogogo",
+      "niveau": 35,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Rhinocorne": [
+    {
+      "nomPokemon": "Rhinoféros",
+      "niveau": 42,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Rhinoféros": [
+    {
+      "nomPokemon": "Rhinastoc",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": "En tenant le Protecteur"
+    }
+  ],
+  "Leveinard": [
+    {
+      "nomPokemon": "Leuphorie",
+      "niveau": -1,
+      "nomMethode": "Bonheur",
+      "informationComplementaire": ""
+    }
+  ],
+  "Saquedeneu": [
+    {
+      "nomPokemon": "Bouldeneu",
+      "niveau": -1,
+      "nomMethode": "Connaitre une attaque",
+      "informationComplementaire": "En connaissant l'attaque Pouvoir Antique"
+    }
+  ],
+  "Hypotrempe": [
+    {
+      "nomPokemon": "Hypocéan",
+      "niveau": 32,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Hypocéan": [
+    {
+      "nomPokemon": "Hyporoi",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": "En tenant l'objet Écaille Draco"
+    }
+  ],
+  "Poissirène": [
+    {
+      "nomPokemon": "Poissoroy",
+      "niveau": 33,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Stari": [
+    {
+      "nomPokemon": "Staross",
+      "niveau": -1,
+      "nomMethode": "Pierre Eau",
+      "informationComplementaire": ""
+    }
+  ],
+  "Insécateur": [
+    {
+      "nomPokemon": "Cizayox",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": "En tenant la Peau Métal"
+    },
+    {
+      "nomPokemon": "Hachécateur",
+      "niveau": -1,
+      "nomMethode": "Contact avec une Obsidienne",
+      "informationComplementaire": ""
+    }
+  ],
+  "Élektek": [
+    {
+      "nomPokemon": "Élekable",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": "En tenant Électriseur"
+    }
+  ],
+  "Magmar": [
+    {
+      "nomPokemon": "Maganon",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": "En tenant Magmariseur"
+    }
+  ],
+  "Magicarpe": [
+    {
+      "nomPokemon": "Léviator",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Évoli": [
+    {
+      "nomPokemon": "Aquali",
+      "niveau": -1,
+      "nomMethode": "Pierre Eau",
+      "informationComplementaire": ""
+    },
+    {
+      "nomPokemon": "Pyroli",
+      "niveau": -1,
+      "nomMethode": "Pierre Feu",
+      "informationComplementaire": ""
+    },
+    {
+      "nomPokemon": "Voltali",
+      "niveau": -1,
+      "nomMethode": "Pierre Feu",
+      "informationComplementaire": ""
+    },
+    {
+      "nomPokemon": "Mentali",
+      "niveau": -1,
+      "nomMethode": "Bonheur",
+      "informationComplementaire": "Uniquement de jour en ne connaissant aucune attaque de type Fée."
+    },
+    {
+      "nomPokemon": "Noctali",
+      "niveau": -1,
+      "nomMethode": "Bonheur",
+      "informationComplementaire": "Uniquement de nuit en ne connaissant aucune attaque de type Fée."
+    },
+    {
+      "nomPokemon": "Phyllali",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Gagner un niveau près d'une Pierre Mousse avant EB et dans DEPS, Pierre Plante Pierre Plante depuis EB, être près du Rocher Moussu dans LPA"
+    },
+    {
+      "nomPokemon": "Givrali",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Gagner un niveau près d'une Pierre Glacée avant EB et dans DEPS, Pierre Glace Pierre Glace depuis EB, être près de la Pierre Gelée dans LPA"
+    },
+    {
+      "nomPokemon": "Nymphali",
+      "niveau": -1,
+      "nomMethode": "Bonheur",
+      "informationComplementaire": "Connaitre une attaque de type Fée."
+    }
+  ],
+  "Porygon": [
+    {
+      "nomPokemon": "Porygon2",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": "En tenant un Améliorator"
+    }
+  ],
+  "Amonita": [
+    {
+      "nomPokemon": "Amonistar",
+      "niveau": 40,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Kabuto": [
+    {
+      "nomPokemon": "Kabutops",
+      "niveau": 40,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Minidraco": [
+    {
+      "nomPokemon": "Draco",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Draco": [
+    {
+      "nomPokemon": "Dracolosse",
+      "niveau": 55,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Germignon": [
+    {
+      "nomPokemon": "Macronium",
+      "niveau": 16,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Macronium": [
+    {
+      "nomPokemon": "Méganium",
+      "niveau": 32,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Héricendre": [
+    {
+      "nomPokemon": "Feurisson",
+      "niveau": 14,
+      "nomMethode": "Level",
+      "informationComplementaire": "Au niveau 17 à Hisui."
+    }
+  ],
+  "Feurisson": [
+    {
+      "nomPokemon": "Typhlosion",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    },
+    {
+      "nomPokemon": "Typhlosion de Hisui",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": "À Hisui"
+    }
+  ],
+  "Kaiminus": [
+    {
+      "nomPokemon": "Crocrodil",
+      "niveau": 18,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Crocrodil": [
+    {
+      "nomPokemon": "Aligatueur",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Fouinette": [
+    {
+      "nomPokemon": "Fouinar",
+      "niveau": 15,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Hoothoot": [
+    {
+      "nomPokemon": "Noarfang",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Coxy": [
+    {
+      "nomPokemon": "Coxyclaque",
+      "niveau": 18,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Mimigal": [
+    {
+      "nomPokemon": "Migalos",
+      "niveau": 22,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Loupio": [
+    {
+      "nomPokemon": "Lanturn",
+      "niveau": 27,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Pichu": [
+    {
+      "nomPokemon": "Pikachu",
+      "niveau": -1,
+      "nomMethode": "Bonheur",
+      "informationComplementaire": ""
+    }
+  ],
+  "Mélo": [
+    {
+      "nomPokemon": "Mélofée",
+      "niveau": -1,
+      "nomMethode": "Bonheur",
+      "informationComplementaire": ""
+    }
+  ],
+  "Toudoudou": [
+    {
+      "nomPokemon": "Rondoudou",
+      "niveau": -1,
+      "nomMethode": "Bonheur",
+      "informationComplementaire": ""
+    }
+  ],
+  "Togepi": [
+    {
+      "nomPokemon": "Togetic",
+      "niveau": -1,
+      "nomMethode": "Bonheur",
+      "informationComplementaire": ""
+    }
+  ],
+  "Togetic": [
+    {
+      "nomPokemon": "Togekiss",
+      "niveau": -1,
+      "nomMethode": "Pierre Éclat",
+      "informationComplementaire": ""
+    }
+  ],
+  "Natu": [
+    {
+      "nomPokemon": "Xatu",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Wattouat": [
+    {
+      "nomPokemon": "Lainergie",
+      "niveau": 15,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Lainergie": [
+    {
+      "nomPokemon": "Pharamp",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Marill": [
+    {
+      "nomPokemon": "Azumarill",
+      "niveau": 18,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Granivol": [
+    {
+      "nomPokemon": "Floravol",
+      "niveau": 18,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Floravol": [
+    {
+      "nomPokemon": "Cotovol",
+      "niveau": 27,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Capumain": [
+    {
+      "nomPokemon": "Capidextre",
+      "niveau": -1,
+      "nomMethode": "Connaitre une attaque",
+      "informationComplementaire": "Connaitre Coup Double"
+    }
+  ],
+  "Tournegrin": [
+    {
+      "nomPokemon": "Héliatronc",
+      "niveau": -1,
+      "nomMethode": "Pierre Soleil",
+      "informationComplementaire": ""
+    }
+  ],
+  "Yanma": [
+    {
+      "nomPokemon": "Yanmega",
+      "niveau": -1,
+      "nomMethode": "Connaitre une attaque",
+      "informationComplementaire": "Connaitre Pouvoir Antique"
+    }
+  ],
+  "Axoloto": [
+    {
+      "nomPokemon": "Maraiste",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Cornèbre": [
+    {
+      "nomPokemon": "Corboss",
+      "niveau": -1,
+      "nomMethode": "Pierre Nuit",
+      "informationComplementaire": ""
+    }
+  ],
+  "Feuforêve": [
+    {
+      "nomPokemon": "Magirêve",
+      "niveau": -1,
+      "nomMethode": "Pierre Nuit",
+      "informationComplementaire": ""
+    }
+  ],
+  "Girafarig": [
+    {
+      "nomPokemon": "Farigiraf",
+      "niveau": -1,
+      "nomMethode": "Connaitre une attaque",
+      "informationComplementaire": "Connaitre Double Laser"
+    }
+  ],
+  "Pomdepik": [
+    {
+      "nomPokemon": "Foretress",
+      "niveau": 31,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Insolourdo": [
+    {
+      "nomPokemon": "Deusolourdo",
+      "niveau": -1,
+      "nomMethode": "Connaitre une attaque",
+      "informationComplementaire": "Connaitre Hyperceuse"
+    }
+  ],
+  "Scorplane": [
+    {
+      "nomPokemon": "Scorvol",
+      "niveau": -1,
+      "nomMethode": "Level en tennant Croc Rasoir",
+      "informationComplementaire": "Uniquement la nuit"
+    }
+  ],
+  "Snubbull": [
+    {
+      "nomPokemon": "Granbull",
+      "niveau": 23,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Farfuret": [
+    {
+      "nomPokemon": "Dimoret",
+      "niveau": -1,
+      "nomMethode": "Level en tennant Griffe Rasoir",
+      "informationComplementaire": "Uniquement la nuit"
+    }
+  ],
+  "Teddiursa": [
+    {
+      "nomPokemon": "Ursaring",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Limagma": [
+    {
+      "nomPokemon": "Volcaropod",
+      "niveau": 38,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Marcacrin": [
+    {
+      "nomPokemon": "Cochignon",
+      "niveau": 33,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Cochignon": [
+    {
+      "nomPokemon": "Mammochon",
+      "niveau": -1,
+      "nomMethode": "Connaitre une attaque",
+      "informationComplementaire": "Connaitre Pouvoir Antique"
+    }
+  ],
+  "Rémoraid": [
+    {
+      "nomPokemon": "Octillery",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Malosse": [
+    {
+      "nomPokemon": "Démolosse",
+      "niveau": 24,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Phanpy": [
+    {
+      "nomPokemon": "Donphan",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Porygon2": [
+    {
+      "nomPokemon": "Porygon-Z",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": "En tennant le CD Douteux"
+    }
+  ],
+  "Cerfrousse": [
+    {
+      "nomPokemon": "Cerbyllin",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Utiliser 20 fois l'attaque Sprint Bouclier sous style rapide, ou connaitre l'attaque."
+    }
+  ],
+  "Debugant": [
+    {
+      "nomPokemon": "Kicklee",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": "Attaque supérieur à la défense"
+    },
+    {
+      "nomPokemon": "Tygnon",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": "Attaque inférieur à la défense"
+    },
+    {
+      "nomPokemon": "Kapoera",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": "Attaque et défense identiques"
+    }
+  ],
+  "Lippouti": [
+    {
+      "nomPokemon": "Lippoutou",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Élekid": [
+    {
+      "nomPokemon": "Élektek",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Magby": [
+    {
+      "nomPokemon": "Magmar",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Embrylex": [
+    {
+      "nomPokemon": "Ymphect",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Ymphect": [
+    {
+      "nomPokemon": "Tyranocif",
+      "niveau": 55,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Arcko": [
+    {
+      "nomPokemon": "Massko",
+      "niveau": 16,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Massko": [
+    {
+      "nomPokemon": "Jungko",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Poussifeu": [
+    {
+      "nomPokemon": "Galifeu",
+      "niveau": 16,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Galifeu": [
+    {
+      "nomPokemon": "Braségali",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Gobou": [
+    {
+      "nomPokemon": "Flobio",
+      "niveau": 16,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Flobio": [
+    {
+      "nomPokemon": "Laggron",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Medhyèna": [
+    {
+      "nomPokemon": "Grahyèna",
+      "niveau": 18,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Zigzaton": [
+    {
+      "nomPokemon": "Linéon",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Chenipotte": [
+    {
+      "niveau": 7,
+      "nomPokemon": "Blindalys",
+      "nomMethode": "Level",
+      "informationComplementaire": "Soit Armulys, soit Blindalys."
+    },
+    {
+      "nomPokemon": "Armulys",
+      "niveau": 7,
+      "nomMethode": "Level",
+      "informationComplementaire": "Soit Armulys, soit Blindalys."
+    }
+  ],
+  "Armulys": [
+    {
+      "nomPokemon": "Charmillon",
+      "niveau": 10,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Blindalys": [
+    {
+      "nomPokemon": "Papinox",
+      "niveau": 10,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Nénupiot": [
+    {
+      "nomPokemon": "Lombre",
+      "niveau": 14,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Lombre": [
+    {
+      "nomPokemon": "Ludicolo",
+      "niveau": -1,
+      "nomMethode": "Pierre Eau",
+      "informationComplementaire": ""
+    }
+  ],
+  "Grainipiot": [
+    {
+      "nomPokemon": "Pifeuil",
+      "niveau": 14,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Pifeuil": [
+    {
+      "nomPokemon": "Tengalice",
+      "niveau": -1,
+      "nomMethode": "Pierre Plante",
+      "informationComplementaire": ""
+    }
+  ],
+  "Nirondelle": [
+    {
+      "nomPokemon": "Hélédelle",
+      "niveau": 22,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Goélise": [
+    {
+      "nomPokemon": "Bekipan",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Tarsal": [
+    {
+      "nomPokemon": "Kirlia",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Kirlia": [
+    {
+      "nomPokemon": "Gardevoir",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    },
+    {
+      "nomPokemon": "Gallame",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Mâle et Pierre Aube"
+    }
+  ],
+  "Arakdo": [
+    {
+      "nomPokemon": "Maskadra",
+      "niveau": 22,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Balignon": [
+    {
+      "nomPokemon": "Chapignon",
+      "niveau": 23,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Parecool": [
+    {
+      "nomPokemon": "Vigoroth",
+      "niveau": 18,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Vigoroth": [
+    {
+      "nomPokemon": "Monaflèmit",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Ningale": [
+    {
+      "nomPokemon": "Ninjask",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    },
+    {
+      "nomPokemon": "Munja",
+      "niveau": 20,
+      "nomMethode": "Special",
+      "informationComplementaire": "À l'évoluttion, si un emplacement libre dans la team et une poké ball dans l'inventaire"
+    }
+  ],
+  "Chuchmur": [
+    {
+      "nomPokemon": "Ramboum",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Ramboum": [
+    {
+      "nomPokemon": "Brouhabam",
+      "niveau": 40,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Makuhita": [
+    {
+      "nomPokemon": "Hariyama",
+      "niveau": 24,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Azurill": [
+    {
+      "nomPokemon": "Marill",
+      "niveau": -1,
+      "nomMethode": "Bonheur",
+      "informationComplementaire": ""
+    }
+  ],
+  "Tarinor": [
+    {
+      "nomPokemon": "Tarinorme",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Le joueur doit-être dans une zone avec un champ magnétique spécial, depuis LPA avec Pierre Foudre."
+    }
+  ],
+  "Skitty": [
+    {
+      "nomPokemon": "Delcatty",
+      "niveau": -1,
+      "nomMethode": "Pierre Lune",
+      "informationComplementaire": ""
+    }
+  ],
+  "Galekid": [
+    {
+      "nomPokemon": "Galegon",
+      "niveau": 32,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Galegon": [
+    {
+      "nomPokemon": "Galeking",
+      "niveau": 42,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Méditikka": [
+    {
+      "nomPokemon": "Charmina",
+      "niveau": 37,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Dynavolt": [
+    {
+      "nomPokemon": "Élecsprint",
+      "niveau": 26,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Rosélia": [
+    {
+      "nomPokemon": "Roserade",
+      "niveau": -1,
+      "nomMethode": "Pierre Éclat",
+      "informationComplementaire": ""
+    }
+  ],
+  "Gloupti": [
+    {
+      "nomPokemon": "Avaltout",
+      "niveau": 26,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Carvanha": [
+    {
+      "nomPokemon": "Sharpedo",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Wailmer": [
+    {
+      "nomPokemon": "Wailord",
+      "niveau": 40,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Chamallot": [
+    {
+      "nomPokemon": "Camérupt",
+      "niveau": 33,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Spoink": [
+    {
+      "nomPokemon": "Groret",
+      "niveau": 32,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Kraknoix": [
+    {
+      "nomPokemon": "Vibraninf",
+      "niveau": 35,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Vibraninf": [
+    {
+      "nomPokemon": "Libégon",
+      "niveau": 45,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Cacnea": [
+    {
+      "nomPokemon": "Cacturne",
+      "niveau": 32,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Tylton": [
+    {
+      "nomPokemon": "Altaria",
+      "niveau": 35,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Barloche": [
+    {
+      "nomPokemon": "Barbicha",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Écrapince": [
+    {
+      "nomPokemon": "Colhomard",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Balbuto": [
+    {
+      "nomPokemon": "Kaorine",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Lilia": [
+    {
+      "nomPokemon": "Vacilys",
+      "niveau": 40,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Anorith": [
+    {
+      "nomPokemon": "Armaldo",
+      "niveau": 40,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Barpau": [
+    {
+      "nomPokemon": "Milobellus",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Niveau de beauté supérieur ou égale à 170 puis gagner un niveau jusqu'à N2B2, dans ROSA et DEPS ou échange en tenant l'objet Bel'Écaille."
+    }
+  ],
+  "Polichombr": [
+    {
+      "nomPokemon": "Branette",
+      "niveau": 37,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Skelénox": [
+    {
+      "nomPokemon": "Téraclope",
+      "niveau": 37,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Téraclope": [
+    {
+      "nomPokemon": "Noctunoir",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": "En tenant le Tissu Fauche"
+    }
+  ],
+  "Okéoké": [
+    {
+      "nomPokemon": "Qulbutoké",
+      "niveau": 15,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Stalgamin": [
+    {
+      "nomPokemon": "Oniglali",
+      "niveau": 42,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    },
+    {
+      "nomPokemon": "Momartik",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Femelle et une pierre Aube"
+    }
+  ],
+  "Obalie": [
+    {
+      "nomPokemon": "Phogleur",
+      "niveau": 32,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Phogleur": [
+    {
+      "nomPokemon": "Kaimorse",
+      "niveau": 44,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Coquiperl": [
+    {
+      "nomPokemon": "Serpang",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": "Tenir la Dent Océan"
+    },
+    {
+      "nomPokemon": "Rosabyss",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": "Tenir l'Écaille Océan"
+    }
+  ],
+  "Draby": [
+    {
+      "nomPokemon": "Drackhaus",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Drackhaus": [
+    {
+      "nomPokemon": "Drattak",
+      "niveau": 50,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Terhal": [
+    {
+      "nomPokemon": "Métang",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Métang": [
+    {
+      "nomPokemon": "Métalosse",
+      "niveau": 45,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Tortipouss": [
+    {
+      "nomPokemon": "Boskara",
+      "niveau": 18,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Boskara": [
+    {
+      "nomPokemon": "Torterra",
+      "niveau": 32,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Ouisticram": [
+    {
+      "nomPokemon": "Chimpenfeu",
+      "niveau": 14,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Chimpenfeu": [
+    {
+      "nomPokemon": "Simiabraz",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Tiplouf": [
+    {
+      "nomPokemon": "Prinplouf",
+      "niveau": 16,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Prinplouf": [
+    {
+      "nomPokemon": "Pingoléon",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Étourmi": [
+    {
+      "nomPokemon": "Étourvol",
+      "niveau": 14,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Étourvol": [
+    {
+      "nomPokemon": "Étouraptor",
+      "niveau": 34,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Keunotor": [
+    {
+      "nomPokemon": "Castorno",
+      "niveau": 15,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Crikzik": [
+    {
+      "nomPokemon": "Mélokrik",
+      "niveau": 10,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Lixy": [
+    {
+      "nomPokemon": "Luxio",
+      "niveau": 15,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Luxio": [
+    {
+      "nomPokemon": "Luxray",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Rozbouton": [
+    {
+      "nomPokemon": "Rosélia",
+      "niveau": -1,
+      "nomMethode": "Bonheur",
+      "informationComplementaire": "Uniquement le jour."
+    }
+  ],
+  "Kranidos": [
+    {
+      "nomPokemon": "Charkos",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Dinoclier": [
+    {
+      "nomPokemon": "Bastiodon",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Cheniti": [
+    {
+      "nomPokemon": "Cheniselle",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": "Femelle"
+    },
+    {
+      "nomPokemon": "Papilord",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": "Mâle"
+    }
+  ],
+  "Apitrini": [
+    {
+      "nomPokemon": "Apireine",
+      "niveau": 21,
+      "nomMethode": "Level",
+      "informationComplementaire": "Femelle"
+    }
+  ],
+  "Mustébouée": [
+    {
+      "nomPokemon": "Mustéflott",
+      "niveau": 26,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Ceribou": [
+    {
+      "nomPokemon": "Ceriflor",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Sancoki": [
+    {
+      "nomPokemon": "Tritosor",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Baudrive": [
+    {
+      "nomPokemon": "Grodrive",
+      "niveau": 28,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Laporeille": [
+    {
+      "nomPokemon": "Lockpin",
+      "niveau": -1,
+      "nomMethode": "Bonheur",
+      "informationComplementaire": ""
+    }
+  ],
+  "Chaglam": [
+    {
+      "nomPokemon": "Chaffreux",
+      "niveau": 38,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Korillon": [
+    {
+      "nomPokemon": "Éoko",
+      "niveau": -1,
+      "nomMethode": "Bonheur",
+      "informationComplementaire": "Uniquement la nuit."
+    }
+  ],
+  "Moufouette": [
+    {
+      "nomPokemon": "Moufflair",
+      "niveau": 34,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Archéomire": [
+    {
+      "nomPokemon": "Archéodong",
+      "niveau": 33,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Manzaï": [
+    {
+      "nomPokemon": "Simularbre",
+      "niveau": -1,
+      "nomMethode": "Connaitre une attaque",
+      "informationComplementaire": "Connaitre l'attaque Copie"
+    }
+  ],
+  "Mime Jr.": [
+    {
+      "nomPokemon": "M. Mime",
+      "niveau": -1,
+      "nomMethode": "Connaitre une attaque",
+      "informationComplementaire": "Connaitre l'attaque Copie"
+    }
+  ],
+  "Ptiravi": [
+    {
+      "nomPokemon": "Leveinard",
+      "niveau": -1,
+      "nomMethode": "Tenir la Pierre Ovale",
+      "informationComplementaire": "Uniquement le jour."
+    }
+  ],
+  "Griknot": [
+    {
+      "nomPokemon": "Carmache",
+      "niveau": 24,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Carmache": [
+    {
+      "nomPokemon": "Carchacrok",
+      "niveau": 48,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Goinfrex": [
+    {
+      "nomPokemon": "Ronflex",
+      "niveau": -1,
+      "nomMethode": "Bonheur",
+      "informationComplementaire": ""
+    }
+  ],
+  "Riolu": [
+    {
+      "nomPokemon": "Lucario",
+      "niveau": -1,
+      "nomMethode": "Bonheur",
+      "informationComplementaire": "Uniquement de jour."
+    }
+  ],
+  "Hippopotas": [
+    {
+      "nomPokemon": "Hippodocus",
+      "niveau": 34,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Rapion": [
+    {
+      "nomPokemon": "Drascore",
+      "niveau": 40,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Cradopaud": [
+    {
+      "nomPokemon": "Coatox",
+      "niveau": 37,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Écayon": [
+    {
+      "nomPokemon": "Luminéon",
+      "niveau": 31,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Babimanta": [
+    {
+      "nomPokemon": "Démanta",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Gagner un niveau avec Rémoraid dans son équipe"
+    }
+  ],
+  "Blizzi": [
+    {
+      "nomPokemon": "Blizzaroi",
+      "niveau": 40,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Vipélierre": [
+    {
+      "nomPokemon": "Lianaja",
+      "niveau": 17,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Lianaja": [
+    {
+      "nomPokemon": "Majaspic",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Gruikui": [
+    {
+      "nomPokemon": "Grotichon",
+      "niveau": 17,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Grotichon": [
+    {
+      "nomPokemon": "Roitiflam",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Moustillon": [
+    {
+      "nomPokemon": "Mateloutre",
+      "niveau": 17,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Mateloutre": [
+    {
+      "nomPokemon": "Clamiral",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Ratentif": [
+    {
+      "nomPokemon": "Miradar",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Ponchiot": [
+    {
+      "nomPokemon": "Ponchien",
+      "niveau": 16,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Ponchien": [
+    {
+      "nomPokemon": "Mastouffe",
+      "niveau": 32,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Chacripan": [
+    {
+      "nomPokemon": "Léopardus",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Feuillajou": [
+    {
+      "nomPokemon": "Feuiloutan",
+      "niveau": -1,
+      "nomMethode": "Pierre Plante",
+      "informationComplementaire": ""
+    }
+  ],
+  "Flamajou": [
+    {
+      "nomPokemon": "Flamoutan",
+      "niveau": -1,
+      "nomMethode": "Pierre Feu",
+      "informationComplementaire": ""
+    }
+  ],
+  "Flotajou": [
+    {
+      "nomPokemon": "Flotoutan",
+      "niveau": -1,
+      "nomMethode": "Pierre Eau",
+      "informationComplementaire": ""
+    }
+  ],
+  "Munna": [
+    {
+      "nomPokemon": "Mushana",
+      "niveau": -1,
+      "nomMethode": "Pierre Lune",
+      "informationComplementaire": ""
+    }
+  ],
+  "Poichigeon": [
+    {
+      "nomPokemon": "Colombeau",
+      "niveau": 21,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Colombeau": [
+    {
+      "nomPokemon": "Déflaisan",
+      "niveau": 32,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Zébibron": [
+    {
+      "nomPokemon": "Zéblitz",
+      "niveau": 27,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Nodulithe": [
+    {
+      "nomPokemon": "Géolithe",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Géolithe": [
+    {
+      "nomPokemon": "Gigalithe",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": ""
+    }
+  ],
+  "Chovsourir": [
+    {
+      "nomPokemon": "Rhinolove",
+      "niveau": -1,
+      "nomMethode": "Bonheur",
+      "informationComplementaire": ""
+    }
+  ],
+  "Rototaupe": [
+    {
+      "nomPokemon": "Minotaupe",
+      "niveau": 31,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Charpenti": [
+    {
+      "nomPokemon": "Ouvrifier",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Ouvrifier": [
+    {
+      "nomPokemon": "Bétochef",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": ""
+    }
+  ],
+  "Tritonde": [
+    {
+      "nomPokemon": "Batracné",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Batracné": [
+    {
+      "nomPokemon": "Crapustule",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Larveyette": [
+    {
+      "nomPokemon": "Couverdure",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Couverdure": [
+    {
+      "nomPokemon": "Manternel",
+      "niveau": -1,
+      "nomMethode": "Bonheur",
+      "informationComplementaire": ""
+    }
+  ],
+  "Venipatte": [
+    {
+      "nomPokemon": "Scobolide",
+      "niveau": 22,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Scobolide": [
+    {
+      "nomPokemon": "Brutapode",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Doudouvet": [
+    {
+      "nomPokemon": "Farfaduvet",
+      "niveau": -1,
+      "nomMethode": "Pierre Soleil",
+      "informationComplementaire": ""
+    }
+  ],
+  "Chlorobule": [
+    {
+      "nomPokemon": "Fragilady",
+      "niveau": -1,
+      "nomMethode": "Pierre Soleil",
+      "informationComplementaire": ""
+    },
+    {
+      "nomPokemon": "Fragilady de Hisui",
+      "niveau": -1,
+      "nomMethode": "Pierre Soleil",
+      "informationComplementaire": "À Hisui."
+    }
+  ],
+  "Mascaïman": [
+    {
+      "nomPokemon": "Escroco",
+      "niveau": 29,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Escroco": [
+    {
+      "nomPokemon": "Crocorible",
+      "niveau": 40,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Darumarond": [
+    {
+      "nomPokemon": "Darumacho",
+      "niveau": 35,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Crabicoque": [
+    {
+      "nomPokemon": "Crabaraque",
+      "niveau": 34,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Baggiguane": [
+    {
+      "nomPokemon": "Baggaïd",
+      "niveau": 39,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Tutafeh": [
+    {
+      "nomPokemon": "Tutankafer",
+      "niveau": 34,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Carapagos": [
+    {
+      "nomPokemon": "Mégapagos",
+      "niveau": 37,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Arkéapti": [
+    {
+      "nomPokemon": "Aéroptéryx",
+      "niveau": 37,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Miamiasme": [
+    {
+      "nomPokemon": "Miasmax",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Zorua": [
+    {
+      "nomPokemon": "Zoroark",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Chinchidou": [
+    {
+      "nomPokemon": "Pashmilla",
+      "niveau": -1,
+      "nomMethode": "Pierre Éclat",
+      "informationComplementaire": ""
+    }
+  ],
+  "Scrutella": [
+    {
+      "nomPokemon": "Mesmérella",
+      "niveau": 32,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Mesmérella": [
+    {
+      "nomPokemon": "Sidérella",
+      "niveau": 41,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Nucléos": [
+    {
+      "nomPokemon": "Méios",
+      "niveau": 32,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Méios": [
+    {
+      "nomPokemon": "Symbios",
+      "niveau": 41,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Couaneton": [
+    {
+      "nomPokemon": "Lakmécygne",
+      "niveau": 35,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Sorbébé": [
+    {
+      "nomPokemon": "Sorboul",
+      "niveau": 35,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Sorboul": [
+    {
+      "nomPokemon": "Sorbouboul",
+      "niveau": 47,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Vivaldaim": [
+    {
+      "nomPokemon": "Haydaim",
+      "niveau": 34,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Carabing": [
+    {
+      "nomPokemon": "Lançargot",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": "Contre un Escargaume"
+    }
+  ],
+  "Trompignon": [
+    {
+      "nomPokemon": "Gaulet",
+      "niveau": 39,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Viskuse": [
+    {
+      "nomPokemon": "Moyade",
+      "niveau": 40,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Statitik": [
+    {
+      "nomPokemon": "Mygavolt",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Tic": [
+    {
+      "nomPokemon": "Clic",
+      "niveau": 38,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Clic": [
+    {
+      "nomPokemon": "Cliticlic",
+      "niveau": 49,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Grindur": [
+    {
+      "nomPokemon": "Noacier",
+      "niveau": 40,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Anchwatt": [
+    {
+      "nomPokemon": "Lampéroie",
+      "niveau": 39,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Lampéroie": [
+    {
+      "nomPokemon": "Ohmassacre",
+      "niveau": -1,
+      "nomMethode": "Pierre Foudre",
+      "informationComplementaire": ""
+    }
+  ],
+  "Lewsor": [
+    {
+      "nomPokemon": "Neitram",
+      "niveau": 42,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Funécire": [
+    {
+      "nomPokemon": "Mélancolux",
+      "niveau": 41,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Mélancolux": [
+    {
+      "nomPokemon": "Lugulabre",
+      "niveau": -1,
+      "nomMethode": "Pierre Nuit",
+      "informationComplementaire": ""
+    }
+  ],
+  "Coupenotte": [
+    {
+      "nomPokemon": "Incisache",
+      "niveau": 38,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Incisache": [
+    {
+      "nomPokemon": "Tranchodon",
+      "niveau": 48,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Polarhume": [
+    {
+      "nomPokemon": "Polagriffe",
+      "niveau": 37,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Escargaume": [
+    {
+      "nomPokemon": "Limaspeed",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": "Contre Carabing"
+    }
+  ],
+  "Kungfouine": [
+    {
+      "nomPokemon": "Shaofouine",
+      "niveau": 50,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Gringolem": [
+    {
+      "nomPokemon": "Golemastoc",
+      "niveau": 43,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Scalpion": [
+    {
+      "nomPokemon": "Scalproie",
+      "niveau": 52,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Scalproie": [
+    {
+      "nomPokemon": "Scalpereur",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Vaincre 3 Scalproie qui tiennent l'Emblème du Général en le tenant soit même, puis gagner un niveau."
+    }
+  ],
+  "Furaiglon": [
+    {
+      "nomPokemon": "Gueriaigle",
+      "niveau": 54,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    },
+    {
+      "nomPokemon": "Gueriaigle de Hisui",
+      "niveau": 54,
+      "nomMethode": "Level",
+      "informationComplementaire": "À Hisui"
+    }
+  ],
+  "Vostourno": [
+    {
+      "nomPokemon": "Vaututrice",
+      "niveau": 54,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Solochi": [
+    {
+      "nomPokemon": "Diamat",
+      "niveau": 50,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Diamat": [
+    {
+      "nomPokemon": "Trioxhydre",
+      "niveau": 64,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Pyronille": [
+    {
+      "nomPokemon": "Pyrax",
+      "niveau": 59,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Marisson": [
+    {
+      "nomPokemon": "Boguérisse",
+      "niveau": 16,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Boguérisse": [
+    {
+      "nomPokemon": "Blindépique",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Feunnec": [
+    {
+      "nomPokemon": "Roussil",
+      "niveau": 16,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Roussil": [
+    {
+      "nomPokemon": "Goupelin",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Grenousse": [
+    {
+      "nomPokemon": "Croâporal",
+      "niveau": 16,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Croâporal": [
+    {
+      "nomPokemon": "Amphinobi",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Sapereau": [
+    {
+      "nomPokemon": "Excavarenne",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Passerouge": [
+    {
+      "nomPokemon": "Braisillon",
+      "niveau": 17,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Braisillon": [
+    {
+      "nomPokemon": "Flambusard",
+      "niveau": 35,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Lépidonille": [
+    {
+      "nomPokemon": "Pérégrain",
+      "niveau": 9,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Pérégrain": [
+    {
+      "nomPokemon": "Prismillon",
+      "niveau": 12,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Hélionceau": [
+    {
+      "nomPokemon": "Némélios",
+      "niveau": 35,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Flabébé": [
+    {
+      "nomPokemon": "Floette",
+      "niveau": 19,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Floette": [
+    {
+      "nomPokemon": "Florges",
+      "niveau": -1,
+      "nomMethode": "Pierre Éclat",
+      "informationComplementaire": ""
+    }
+  ],
+  "Cabriolaine": [
+    {
+      "nomPokemon": "Chevroum",
+      "niveau": 32,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Pandespiègle": [
+    {
+      "nomPokemon": "Pandarbare",
+      "niveau": 32,
+      "nomMethode": "Level",
+      "informationComplementaire": "Avec un pokémon de type ténèbre dans l'équipe"
+    }
+  ],
+  "Psystigri": [
+    {
+      "nomPokemon": "Mistigrix Mâle",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": "Mâle"
+    },
+    {
+      "nomPokemon": "Mistigrix Femelle",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": "Femelle"
+    }
+  ],
+  "Monorpale": [
+    {
+      "nomPokemon": "Dimoclès",
+      "niveau": 35,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Dimoclès": [
+    {
+      "nomPokemon": "Exagide",
+      "niveau": -1,
+      "nomMethode": "Pierre Nuit",
+      "informationComplementaire": ""
+    }
+  ],
+  "Fluvetin": [
+    {
+      "nomPokemon": "Cocotine",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": "Tenir Sachet Senteur"
+    }
+  ],
+  "Sucroquin": [
+    {
+      "nomPokemon": "Cupcanaille",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": "Tenir Chantibonbon"
+    }
+  ],
+  "Sepiatop": [
+    {
+      "nomPokemon": "Sepiatroce",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": "En retournant la console"
+    }
+  ],
+  "Opermine": [
+    {
+      "nomPokemon": "Golgopathe",
+      "niveau": 39,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Venalgue": [
+    {
+      "nomPokemon": "Kravarech",
+      "niveau": 48,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Flingouste": [
+    {
+      "nomPokemon": "Gamblast",
+      "niveau": 37,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Galvaran": [
+    {
+      "nomPokemon": "Iguolta",
+      "niveau": -1,
+      "nomMethode": "Pierre Soleil",
+      "informationComplementaire": ""
+    }
+  ],
+  "Ptyranidur": [
+    {
+      "nomPokemon": "Rexillius",
+      "niveau": 39,
+      "nomMethode": "Level",
+      "informationComplementaire": "Uniquement le jour"
+    }
+  ],
+  "Amagara": [
+    {
+      "nomPokemon": "Dragmara",
+      "niveau": 39,
+      "nomMethode": "Level",
+      "informationComplementaire": "Uniquement de nuit"
+    }
+  ],
+  "Mucuscule": [
+    {
+      "nomPokemon": "Colimucus",
+      "niveau": 40,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Colimucus": [
+    {
+      "nomPokemon": "Muplodocus",
+      "niveau": 50,
+      "nomMethode": "Level",
+      "informationComplementaire": "Sous la pluie ou le brouillard"
+    }
+  ],
+  "Brocélôme": [
+    {
+      "nomPokemon": "Desséliande",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": ""
+    }
+  ],
+  "Pitrouille": [
+    {
+      "nomPokemon": "Banshitrouye",
+      "niveau": -1,
+      "nomMethode": "Échange",
+      "informationComplementaire": ""
+    }
+  ],
+  "Grelaçon": [
+    {
+      "nomPokemon": "Séracrawl",
+      "niveau": 37,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    },
+    {
+      "nomPokemon": "Séracrawl de Hisui",
+      "niveau": 37,
+      "nomMethode": "Level",
+      "informationComplementaire": "À Hisui"
+    }
+  ],
+  "Sonistrelle": [
+    {
+      "nomPokemon": "Bruyverne",
+      "niveau": 48,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Brindibou": [
+    {
+      "nomPokemon": "Efflèche",
+      "niveau": 17,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Efflèche": [
+    {
+      "nomPokemon": "Archéduc",
+      "niveau": 34,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    },
+    {
+      "nomPokemon": "Archéduc de Hisui",
+      "niveau": 37,
+      "nomMethode": "Level",
+      "informationComplementaire": "À Hisui"
+    }
+  ],
+  "Flamiaou": [
+    {
+      "nomPokemon": "Matoufeu",
+      "niveau": 17,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Matoufeu": [
+    {
+      "nomPokemon": "Félinferno",
+      "niveau": 34,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Otaquin": [
+    {
+      "nomPokemon": "Otarlette",
+      "niveau": 17,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Otarlette": [
+    {
+      "nomPokemon": "Oratoria",
+      "niveau": 34,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Picassaut": [
+    {
+      "nomPokemon": "Piclairon",
+      "niveau": 14,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Piclairon": [
+    {
+      "nomPokemon": "Bazoucan",
+      "niveau": 28,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Manglouton": [
+    {
+      "nomPokemon": "Argouste",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": "Uniquement de jour"
+    }
+  ],
+  "Larvibule": [
+    {
+      "nomPokemon": "Chrysapile",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Chrysapile": [
+    {
+      "nomPokemon": "Lucanon",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Le joueur doit-être dans une zone avec un champ magnétique spécial, depuis EB avec Pierre Foudre."
+    }
+  ],
+  "Crabagarre": [
+    {
+      "nomPokemon": "Crabominable",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Gagner un niveau au Mont Lanakila, depuis la EV Pierre Glace."
+    }
+  ],
+  "Bombydou": [
+    {
+      "nomPokemon": "Rubombelle",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Rocabot": [
+    {
+      "nomPokemon": "Lougaroc Diurne",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": "Uniquement de jour"
+    },
+    {
+      "nomPokemon": "Lougaroc Nocturne",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": "Uniquement de nuit"
+    },
+    {
+      "nomPokemon": "Lougaroc Crépusculaire",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": "Avec Tempo Perso au crépuscule"
+    }
+  ],
+  "Vorastérie": [
+    {
+      "nomPokemon": "Prédastérie",
+      "niveau": 38,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Tiboudet": [
+    {
+      "nomPokemon": "Bourrinos",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Araqua": [
+    {
+      "nomPokemon": "Tarenbulle",
+      "niveau": 22,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Mimantis": [
+    {
+      "nomPokemon": "Floramantis",
+      "niveau": 34,
+      "nomMethode": "Level",
+      "informationComplementaire": "Uniquement de jour"
+    }
+  ],
+  "Spododo": [
+    {
+      "nomPokemon": "Lampignon",
+      "niveau": 24,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Tritox": [
+    {
+      "nomPokemon": "Malamandre",
+      "niveau": 33,
+      "nomMethode": "Level",
+      "informationComplementaire": "Femelle"
+    }
+  ],
+  "Nounourson": [
+    {
+      "nomPokemon": "Chelours",
+      "niveau": 27,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Croquine": [
+    {
+      "nomPokemon": "Candine",
+      "niveau": 18,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Candine": [
+    {
+      "nomPokemon": "Sucreine",
+      "niveau": -1,
+      "nomMethode": "Connaitre une attaque",
+      "informationComplementaire": "Connaitre l'attaque Écrasement, puis gagner un niveau."
+    }
+  ],
+  "Sovkipou": [
+    {
+      "nomPokemon": "Sarmuraï",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Bacabouh": [
+    {
+      "nomPokemon": "Trépassable",
+      "niveau": 42,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Type:0": [
+    {
+      "nomPokemon": "Silvallié",
+      "niveau": -1,
+      "nomMethode": "Bonheur",
+      "informationComplementaire": ""
+    }
+  ],
+  "Bébécaille": [
+    {
+      "nomPokemon": "Écaïd",
+      "niveau": 35,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Écaïd": [
+    {
+      "nomPokemon": "Ékaïser",
+      "niveau": 45,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Cosmog": [
+    {
+      "nomPokemon": "Cosmovum",
+      "niveau": 43,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Cosmovum": [
+    {
+      "nomPokemon": "Solgaleo",
+      "niveau": 53,
+      "nomMethode": "Level",
+      "informationComplementaire": "Sur Soleil, Ultra-Soleil, Épée et Écarlate"
+    },
+    {
+      "nomPokemon": "Lunala",
+      "niveau": 53,
+      "nomMethode": "Level",
+      "informationComplementaire": "Sur Lune, Ultra-Lune, Bouclier et Violet"
+    }
+  ],
+  "Meltan": [
+    {
+      "nomPokemon": "Melmetal",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Donner 400 bonbons sur Pokémon Go"
+    }
+  ],
+  "Ouistempo": [
+    {
+      "nomPokemon": "Badabouin",
+      "niveau": 16,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Badabouin": [
+    {
+      "nomPokemon": "Gorythmic",
+      "niveau": 35,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Flambino": [
+    {
+      "nomPokemon": "Lapyro",
+      "niveau": 16,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Lapyro": [
+    {
+      "nomPokemon": "Pyrobut",
+      "niveau": 35,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Larméléon": [
+    {
+      "nomPokemon": "Arrozard",
+      "niveau": 16,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Arrozard": [
+    {
+      "nomPokemon": "Lézargus",
+      "niveau": 35,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Rongourmand": [
+    {
+      "nomPokemon": "Rongrigou",
+      "niveau": 24,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Minisange": [
+    {
+      "nomPokemon": "Bleuseille",
+      "niveau": 18,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Bleuseille": [
+    {
+      "nomPokemon": "Corvaillus",
+      "niveau": 38,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Larvadar": [
+    {
+      "nomPokemon": "Coléodôme",
+      "niveau": 10,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Coléodôme": [
+    {
+      "nomPokemon": "Astronelle",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Goupilou": [
+    {
+      "nomPokemon": "Roublenard",
+      "niveau": 18,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Tournicoton": [
+    {
+      "nomPokemon": "Blancoton",
+      "niveau": 20,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Moumouton": [
+    {
+      "nomPokemon": "Moumouflon",
+      "niveau": 24,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Khélocrok": [
+    {
+      "nomPokemon": "Torgamord",
+      "niveau": 22,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Voltoutou": [
+    {
+      "nomPokemon": "Fulgudog",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Charbi": [
+    {
+      "nomPokemon": "Wagomine",
+      "niveau": 18,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Wagomine": [
+    {
+      "nomPokemon": "Monthracite",
+      "niveau": 34,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Verpom": [
+    {
+      "nomPokemon": "Pomdrapi",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Contact avec Pomme acidulée"
+    },
+    {
+      "nomPokemon": "Dratatin",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Contact avec Pomme sucrée"
+    },
+    {
+      "nomPokemon": "Pomdramour",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Contact avec Pomme nectar"
+    }
+  ],
+  "Dunaja": [
+    {
+      "nomPokemon": "Dunaconda",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Embrochet": [
+    {
+      "nomPokemon": "Hastacuda",
+      "niveau": 26,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Toxizap": [
+    {
+      "nomPokemon": "Salarsen aigüe",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    },
+    {
+      "nomPokemon": "Salarsen grave",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Grillepattes": [
+    {
+      "nomPokemon": "Scolocendre",
+      "niveau": 28,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Poulpaf": [
+    {
+      "nomPokemon": "Krakos",
+      "niveau": -1,
+      "nomMethode": "Connaitre une attaque",
+      "informationComplementaire": "Connaitre l'attaque Provoc, puis gagner un niveau."
+    }
+  ],
+  "Théffroi -forme- Authentique": [
+    {
+      "nomPokemon": "Polthégeist",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Contact avec Théière Fêlée ou Ébréchée"
+    }
+  ],
+  "Bibichut": [
+    {
+      "nomPokemon": "Chapotus",
+      "niveau": 32,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Chapotus": [
+    {
+      "nomPokemon": "Sorcilence",
+      "niveau": 42,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Grimalin": [
+    {
+      "nomPokemon": "Fourbelin",
+      "niveau": 32,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Fourbelin": [
+    {
+      "nomPokemon": "Angoliath",
+      "niveau": 42,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Crèmy": [
+    {
+      "nomPokemon": "Charmilly",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Faire tenir un objets en sucre et tourner sur soit."
+    }
+  ],
+  "Frissonille": [
+    {
+      "nomPokemon": "Beldeneige",
+      "niveau": -1,
+      "nomMethode": "Bonheur",
+      "informationComplementaire": "Uniquement de nuit."
+    }
+  ],
+  "Charibari": [
+    {
+      "nomPokemon": "Pachyradjah",
+      "niveau": 34,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Duralugon": [
+    {
+      "nomPokemon": "Pondralugon",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Contact avec le Fer Composite."
+    }
+  ],
+  "Fantyrm": [
+    {
+      "nomPokemon": "Dispareptil",
+      "niveau": 50,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Dispareptil": [
+    {
+      "nomPokemon": "Lanssorien",
+      "niveau": 60,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Wushours": [
+    {
+      "nomPokemon": "Shifours Style Poing Final",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Contact avec le Rouleau des Ténèbres."
+    },
+    {
+      "nomPokemon": "Shifours Style Mille Poings",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Contact avec le Rouleau de l'Eau."
+    }
+  ],
+  "Poussacha": [
+    {
+      "nomPokemon": "Matourgeon",
+      "niveau": 16,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Matourgeon": [
+    {
+      "nomPokemon": "Miascarade",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Chochodile": [
+    {
+      "nomPokemon": "Crocogril",
+      "niveau": 16,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Crocogril": [
+    {
+      "nomPokemon": "Flâmigator",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Coiffeton": [
+    {
+      "nomPokemon": "Canarbello",
+      "niveau": 16,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Canarbello": [
+    {
+      "nomPokemon": "Palmaval",
+      "niveau": 36,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Gourmelet": [
+    {
+      "nomPokemon": "Fragroin",
+      "niveau": 18,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Tissenboule": [
+    {
+      "nomPokemon": "Filentrappe",
+      "niveau": 15,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Lilliterelle": [
+    {
+      "nomPokemon": "Gambex",
+      "niveau": 24,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Pohm": [
+    {
+      "nomPokemon": "Pohmotte",
+      "niveau": 18,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Pohmotte": [
+    {
+      "nomPokemon": "Pohmarmotte",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Marcher 1000 Pas, puis gagner un niveau."
+    }
+  ],
+  "Compagnol": [
+    {
+      "nomPokemon": "Famignol",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": "Gagner un niveau en combat."
+    }
+  ],
+  "Pâtachiot": [
+    {
+      "nomPokemon": "Briochien",
+      "niveau": 26,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Olivini": [
+    {
+      "nomPokemon": "Olivado",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Olivado": [
+    {
+      "nomPokemon": "Arboliva",
+      "niveau": 35,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Selutin": [
+    {
+      "nomPokemon": "Amassel",
+      "niveau": 24,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Amassel": [
+    {
+      "nomPokemon": "Gigansel",
+      "niveau": 38,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Charbambin": [
+    {
+      "nomPokemon": "Carmadura",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Contact avec l'Armure de la Fortune."
+    },
+    {
+      "nomPokemon": "Malvalame",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Contact avec l'Armure de la Rancune."
+    }
+  ],
+  "Têtampoule": [
+    {
+      "nomPokemon": "Ampibidou",
+      "niveau": -1,
+      "nomMethode": "Pierre Foudre",
+      "informationComplementaire": ""
+    }
+  ],
+  "Zapétrel": [
+    {
+      "nomPokemon": "Fulgulairo",
+      "niveau": 25,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Grondogue": [
+    {
+      "nomPokemon": "Dogrino",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Gribouraigne": [
+    {
+      "nomPokemon": "Tag-Tag",
+      "niveau": 28,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Virovent": [
+    {
+      "nomPokemon": "Virevorreur",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Marcher 1000 Pas, puis gagner un niveau."
+    }
+  ],
+  "Terracool": [
+    {
+      "nomPokemon": "Terracruel",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Pimito": [
+    {
+      "nomPokemon": "Scovilain",
+      "niveau": -1,
+      "nomMethode": "Pierre Feu",
+      "informationComplementaire": ""
+    }
+  ],
+  "Léboulérou": [
+    {
+      "nomPokemon": "Bérasca",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Marcher 1000 Pas, puis gagner un niveau."
+    }
+  ],
+  "Flotillon": [
+    {
+      "nomPokemon": "Cléopsytra",
+      "niveau": 35,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Forgerette": [
+    {
+      "nomPokemon": "Forgella",
+      "niveau": 24,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Forgella": [
+    {
+      "nomPokemon": "Forgelina",
+      "niveau": 38,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Taupikeau": [
+    {
+      "nomPokemon": "Triopikeau",
+      "niveau": 26,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Dofin": [
+    {
+      "nomPokemon": "Superdofin",
+      "niveau": 38,
+      "nomMethode": "Level",
+      "informationComplementaire": "En club union."
+    }
+  ],
+  "Vrombi": [
+    {
+      "nomPokemon": "Vrombotor",
+      "niveau": 40,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Germéclat": [
+    {
+      "nomPokemon": "Floréclat",
+      "niveau": 35,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Toutombe": [
+    {
+      "nomPokemon": "Tomberro",
+      "niveau": 30,
+      "nomMethode": "Level",
+      "informationComplementaire": "Uniquement de nuit."
+    }
+  ],
+  "Piétacé": [
+    {
+      "nomPokemon": "Balbalèze",
+      "niveau": -1,
+      "nomMethode": "Pierre Glace",
+      "informationComplementaire": ""
+    }
+  ],
+  "Frigodo": [
+    {
+      "nomPokemon": "Cryodo",
+      "niveau": 35,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Cryodo": [
+    {
+      "nomPokemon": "Glaivodo",
+      "niveau": 54,
+      "nomMethode": "Level",
+      "informationComplementaire": ""
+    }
+  ],
+  "Mordudor Coffre": [
+    {
+      "nomPokemon": "Gromago",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Avoir 999 Pièces de Mordudor, puis gagner un niveau."
+    }
+  ],
+  "Mordudor Marche": [
+    {
+      "nomPokemon": "Gromago",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Avoir 999 Pièces de Mordudor, puis gagner un niveau."
+    }
+  ],
+  "Pomdramour": [
+    {
+      "nomPokemon": "Pomdorochi",
+      "niveau": -1,
+      "nomMethode": "Connaitre une attaque",
+      "informationComplementaire": "Connaitre l'attaque Cri Draconique."
+    }
+  ],
+  "Poltchageist": [
+    {
+      "nomPokemon": "Théffroyable",
+      "niveau": -1,
+      "nomMethode": "Special",
+      "informationComplementaire": "Contact avec Bol Médiocre ou Exceptionnel."
+    }
+  ]
+}

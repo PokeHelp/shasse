@@ -1,0 +1,2450 @@
+[
+    {
+        "nameFr": "Absentéisme",
+        "nameEn": "Truant",
+        "nameJp": "なまけ",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent ne peux pas attaquer 2 fois de suite.\nSoucigraine, Tend-danse et Rayon Simple ne fontcionnent pas.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Absorbe-Eau",
+        "nameEn": "Water Absorb",
+        "nameJp": "ちょすい",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent récupère 25% de ses PV max quand il reçoit une attaque de type eau et ne subit pas de dégâts.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Absorbe-Volt",
+        "nameEn": "Volt Absorb",
+        "nameJp": "ちくでん",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent récupère 25% de ses PV max quand il reçoit une attaque de type électrik et ne subit pas de dégâts.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Agitation",
+        "nameEn": "Hustle",
+        "nameJp": "はりきり",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent voit son attaque augmentée de 50%, mais sa précision baisse de 20%.\nS'applique uniquement pour les attaques physique.",
+        "effectWithoutFight": "Si le possesseur de ce talent est en tête d'équipe, vous avez 50% de chance de plus de rencontrer des pokémons sauvages au niveau le plus élevé possible."
+    },
+    {
+        "nameFr": "Air Lock",
+        "nameEn": "Air Lock",
+        "nameJp": "エアロック",
+        "genApparition": "RS",
+        "effectInFight": "Tant que le possesseur de ce talent est sur le terrain le climat est annulé.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Anti-Bruit",
+        "nameEn": "Soundproof",
+        "nameJp": "ぼうおん",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent est alors immunisé aux attaques sonor.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Armumagma",
+        "nameEn": "Magma Armor",
+        "nameJp": "マグマのよろい",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent est immunisé au gel.",
+        "effectWithoutFight": "Si un possesseur de ce talent est dans l'équipe il divise par 2 le nombre de pas requis pour faire éclore une oeuf, ne peut pas être cummulable."
+    },
+    {
+        "nameFr": "Armurbaston",
+        "nameEn": "Battle Armor",
+        "nameJp": "カブトアーマー",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent ne peut pas subir de coup critique.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Attention",
+        "nameEn": "Inner Focus",
+        "nameJp": "せいしんりょく",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent ne peut pas être appeuré.\nDepuis la 8ème génération le possesseur de ce talent est immunisé au talent Intimidation.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Benêt",
+        "nameEn": "Oblivious",
+        "nameJp": "どんかん",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent ne subit pas de malus suivant une opposition de sexe.\nDepuis la 6ème génération le possesseur de ce talent est immunisé à la provocation.\nDepuis la 8ème génération le possesseur de ce talent est immunisé au talent Intimidation.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Brasier",
+        "nameEn": "Blaze",
+        "nameJp": "もうか",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent voit la puissance de ses attaques Feu augmenter de 50%, quand ses PV sont inférieurs à 1/3 de ses PV max.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Calque",
+        "nameEn": "Trace",
+        "nameJp": "トレース",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent copie le talent d'un autre pokémon adjacent.\nSi aucun talent n'est copiable, le talent copiera le premier talent copiable.\nLes talents qui ne peuvent pas être copiés sont: Osmose Équine, Synergie, Hypersommeil, Fantômasque, Don Floral, Météo, Dégobage, Déclic Fringale, Tête de Gel, Illusion, Imposteur, Multitype, Gaz Inhibiteur, Rassemblement, Receveur, Système Alpha, Banc, Bouclier-Carcan, Déclic Tactique, Calque, Charge Quantique, Paléosynthèse et Mode Transe.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Chlorophylle",
+        "nameEn": "Chlorophyll",
+        "nameJp": "ようりょくそ",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent voit sa vitesse doublée sous le soleil.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Ciel Gris",
+        "nameEn": "Cloud Nine",
+        "nameJp": "ノーてんき",
+        "genApparition": "RS",
+        "effectInFight": "Tant que le possesseur de ce talent est sur le terrain le climat est annulé.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Coloforce",
+        "nameEn": "Huge Power",
+        "nameJp": "ちからもち",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent voit son attaque doublée.\nSi le talent est obtenu via un échange, l'attaque est alors augmentée de 50% et non doublée.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Coque Armure",
+        "nameEn": "Shell Armor",
+        "nameJp": "シェルアーマー",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent ne peut pas subir de coup critique.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Corps Ardent",
+        "nameEn": "Flame Body",
+        "nameJp": "ほのおのからだ",
+        "genApparition": "RS",
+        "effectInFight": "Si le possesseur de ce talent est touché d'une attaque de contact, l'attaquant possède 30% de chance de le brûler.",
+        "effectWithoutFight": "Si un possesseur de ce talent est dans l'équipe il divise par 2 le nombre de pas requis pour faire éclore une oeuf, ne peut pas être cummulable."
+    },
+    {
+        "nameFr": "Corps Sain",
+        "nameEn": "Clear Body",
+        "nameJp": "クリアボディ",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent ne peut pas subir de baisse de statistique venant des adversaires.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Crachin",
+        "nameEn": "Drizzle",
+        "nameJp": "あめふらし",
+        "genApparition": "RS",
+        "effectInFight": "Quand le possesseur de ce talent arrive en combat il déclenche la pluie.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Cran",
+        "nameEn": "Guts",
+        "nameJp": "こんじょう",
+        "genApparition": "RS",
+        "effectInFight": "Si le possesseur de ce talent a un problème de statut son attaque est augmentée de 50%.\nLa réduction de l'Attaque causée par la brûlure est alors ignorée.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Cuvette",
+        "nameEn": "Rain Dish",
+        "nameJp": "あめうけざら",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent récupère 1/16ème de ses PV max à la fin de chaque tour sous la pluie.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Homochromie",
+        "nameEn": "Color Change",
+        "nameJp": "へんしょく",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent voit son type changer pour correspondre au type de la dernière attaque l’ayant touché, sauf si ce type est déjà l’un de ses types.\nCet effet s’applique après tous les coups d’une attaque à coups multiples.\nLe talent Sans Limite l’empêche de s’activer si l’attaque a un effet secondaire.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Écaille Spéciale",
+        "nameEn": "Marvel Scale",
+        "nameJp": "ふしぎなうろこ",
+        "genApparition": "RS",
+        "effectInFight": "Si le possesseur de ce talent a un problème de statut sa défense est augmentée de 50%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Échauffement",
+        "nameEn": "Limber",
+        "nameJp": "じゅうなん",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent ne peut pas être paralyser, ou est soigné si il l'obtient en étant déjà paralyser.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Écran Fumée",
+        "nameEn": "White Smoke",
+        "nameJp": "しろいけむり",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent ne peut pas subir de baisse de statistique venant des adversaires.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Écran Poudre",
+        "nameEn": "Shield Dust",
+        "nameJp": "りんぷん",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent n'est pas affecté par les effets secondaires de l'attaque venant des adversaires.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Engrais",
+        "nameEn": "Overgrow",
+        "nameJp": "しんりょく",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent voit la puissance de ses attaques Plante augmenter de 50%, quand ses PV sont inférieurs à 1/3 de ses PV max.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Esprit Vital",
+        "nameEn": "Vital Spirit",
+        "nameJp": "やるき",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent ne peut pas être endormis.\nLes attaques rendant le lanceur endormis échouent.",
+        "effectWithoutFight": "Si le possesseur de ce talent est en tête d'équipe, vous avez 50% de chance de plus de rencontrer des pokémons sauvages au niveau le plus élevé possible."
+    },
+    {
+        "nameFr": "Essaim",
+        "nameEn": "Swarm",
+        "nameJp": "むしのしらせ",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent voit la puissance de ses attaques Insecte augmenter de 50%, quand ses PV sont inférieurs à 1/3 de ses PV max.",
+        "effectWithoutFight": "Dans pokémon Émeraude si le possesseur de ce talent est en première position dans l'équipe les chance d'entendre un cri de pokémon augmente."
+    },
+    {
+        "nameFr": "Fermeté",
+        "nameEn": "Sturdy",
+        "nameJp": "がんじょう",
+        "genApparition": "RS",
+        "effectInFight": "Jusqu'à la 4ème génération le possesseur de ce talent ne peut pas être touché par les attaque d'OHKO.\nDepuis la 5ème génération le possesseur de ce talent, le possesseur de ce talent à tous ses PV et se fait touché par une attaque il ne peut pas tomber K.O., si le possesseur récupère tous ses PV le talent ne se réactive pas.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Force Pure",
+        "nameEn": "Pure Power",
+        "nameJp": "ヨガパワー",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent voit son attaque de base doublée.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Fuite",
+        "nameEn": "Run Away",
+        "nameJp": "にげあし",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent peut fuir à coup sûr sauf si il est bloqué sur le terrain à cause d'une attaque.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Garde Mystik",
+        "nameEn": "Wonder Guard",
+        "nameJp": "ふしぎなまもり",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent est imunisé aux attaques qui ne sont pas super-efficace sur lui, à l'exception de Lutte.\nLe talent ne peux pas être échangé via Échange, Imitation, Osmose, Receveur ou Âme Vagabonde.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Glissade",
+        "nameEn": "Swift Swim",
+        "nameJp": "すいすい",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent voit sa vitesse doublée sous la pluie.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Glu",
+        "nameEn": "Sticky Hold",
+        "nameJp": "ねんちゃく",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent ne peut pas perdre son objet.",
+        "effectWithoutFight": "Depuis pokémon Émeraude si le possesseur de ce talent est en tête d'équipe il est plus facile de pêcher des pokémons."
+    },
+    {
+        "nameFr": "Hyper Cutter",
+        "nameEn": "Hyper Cutter",
+        "nameJp": "かいりきバサミ",
+        "genApparition": "RS",
+        "effectInFight": "Immunité contre la diminution de l'Attaque du Pokémon.",
+        "effectWithoutFight": "Dans pokémon Émeraude si le possesseur de ce talent utilise coupe le rayon d'action est augmenté."
+    },
+    {
+        "nameFr": "Ignifu-Voile",
+        "nameEn": "Water Veil",
+        "nameJp": "みずのベール",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent ne peut pas être brûlé, ou est soigné si il l'obtient en étant déjà brûlé.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Insomnia",
+        "nameEn": "Insomnia",
+        "nameJp": "ふみん",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent ne peut pas être endormi, ou est soigné si il l'obtient en étant déjà endormi.\nLes attaques rendant le lanceur endormis échouent.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Intimidation",
+        "nameEn": "Intimidate",
+        "nameJp": "いかく",
+        "genApparition": "RS",
+        "effectInFight": "Quand le possesseur de ce talent arrive en combat il réduit l'attaque des adversaires de 1 niveau.",
+        "effectWithoutFight": "Si le possesseur de ce talent est en première position dans l'équipe, le joueur possède 50% de chance en moins de rencontrer un pokémon avec au moins 5 niveaux de moins que le pokémon de tête."
+    },
+    {
+        "nameFr": "Isograisse",
+        "nameEn": "Thick Fat",
+        "nameJp": "あついしぼう",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent obtient une résistance aux types feu et glace.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Joli Sourire",
+        "nameEn": "Cute Charm",
+        "nameJp": "メロメロボディ",
+        "genApparition": "RS",
+        "effectInFight": "Quand le pokémon de ce talent subit une attaque physique, il a 30 % de chances de rendre amoureux son attaquant s'il est du sexe opposé.",
+        "effectWithoutFight": "Si le possesseur de ce talent est en première position dans l'équipe, le joueur à 2 chances sur 3 que le pokémon sauvage rencontré soit de sexe opposé au premier pokémon dans l'équipe.\nNe fonctionne pas sur les Essaim de pokémon.\nDans les jeux de la 4ème gen, les chances de rencontrer un shiny sont réduites."
+    },
+    {
+        "nameFr": "Lévitation",
+        "nameEn": "Levitate",
+        "nameJp": "ふゆう",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent est immunisé aux attaques de type sol, aux Picots, Pics Toxik, à la Toile Gluante, au Piège Sable, à Fertilisation et aux champs.\nJets de Sable peut quand même toucher le possesseur du talent.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Lumiattirance",
+        "nameEn": "Illuminate",
+        "nameJp": "はっこう",
+        "genApparition": "RS",
+        "effectInFight": "Depuis la 9ème gen le possesseur de ce talent ignore les augmentations d'esquive de sa cible, et l'immunise aux baisses de précision.",
+        "effectWithoutFight": "Jusqu'à la 8ème gen, si le possesseur de ca talent est en tête d'équipe les chances de rencontre de pokémon sauvage sont doublées."
+    },
+    {
+        "nameFr": "Magnépiège",
+        "nameEn": "Magnet Pull",
+        "nameJp": "じりょく",
+        "genApparition": "RS",
+        "effectInFight": "Empêche les Pokémon adjacents au possesseur du talent de type Acier à quitter le terrain, sauf s'ils sont de type Spectre, qu'ils tiennent la Carapace Mue ou qu'ils utilisent Demi-Tour, Eau Revoir, Change Éclair, ou Téléport. Si le Pokémon piégé obtient les talents Fuite, Escampette ou Repli Tactique ou s'il utilise des capacités comme Hurlement ou Cyclone, il peut être de nouveau échangé.",
+        "effectWithoutFight": "À partir de Pokémon Émeraude, si le possesseur de ce talent est placé en tête d'équipe, les chances de rencontrer un Pokémon de type Acier augmentent de 50 %.\nDans Pokémon X et Y, l'augmentation de chance de rencontre n'agit pas sur Grindur."
+    },
+    {
+        "nameFr": "Marque Ombre",
+        "nameEn": "Shadow Tag",
+        "nameJp": "かげふみ",
+        "genApparition": "RS",
+        "effectInFight": "Empêche les Pokémon adjacents au possesseur de ce talent de quitter le terrain, sauf s'ils sont de type Spectre, qu'ils tiennent la Carapace Mue ou qu'ils utilisent Demi-Tour, Eau Revoir, Change Éclair, ou Téléport. Si le Pokémon piégé obtient les talents Fuite, Marque Ombre, Escampette ou Repli Tactique ou s'il utilise des capacités comme Hurlement ou Cyclone, il peut être de nouveau échangé.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Matinal",
+        "nameEn": "Early Bird",
+        "nameJp": "はやおき",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent se réveille deux fois plus rapidement.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Médic Nature",
+        "nameEn": "Natural Cure",
+        "nameJp": "しぜんかいふく",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent soigne ses altérations de statut quand il quitte le terrain ou en fin de combat.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Météo",
+        "nameEn": "Forecast",
+        "nameJp": "てんきや",
+        "genApparition": "RS",
+        "effectInFight": "Si le possesseur de ce talent est un Morphéo, son type change en fonction du climat, sauf la Tempête de Sable.\nSi le possesseur tient Parapluie Solide et que le climat est le soleil intense ou non, ou la pluie intense ou non, il ne changera pas de type.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Moins",
+        "nameEn": "Minus",
+        "nameJp": "マイナス",
+        "genApparition": "RS",
+        "effectInFight": "La statistique d'Attaque Spéciale du Pokémon augmente de 50% si un allié en Combat Multiple posséde le talent Plus.\nDepuis la 5ème gen fonctionne aussi si l'allié posséde le talent Moins.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Moiteur",
+        "nameEn": "Damp",
+        "nameJp": "しめりけ",
+        "genApparition": "RS",
+        "effectInFight": "Tant qu'un possesseur de ce talent est sur le terrain, toutes les capacités d'auto-destruction lancées échouent.\nDestruction, Explosion, Caboche-Kaboum, Explo-Brume, Boom-Final sont alors inefficaces.\nLe talent bloque ni Souvenir, ni Vœu Soin.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Mue",
+        "nameEn": "Shed Skin",
+        "nameJp": "だっぴ",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent à 1/3 de chance de perdre son statut à la fin de chaque tour allié.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Œil Composé",
+        "nameEn": "Compound Eyes",
+        "nameJp": "ふくがん",
+        "genApparition": "RS",
+        "effectInFight": "La précision des attaques du possesseur de ce talent sont augmentés de 30%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Paratonnerre",
+        "nameEn": "Lightning Rod",
+        "nameJp": "ひらいしん",
+        "genApparition": "RS",
+        "effectInFight": "Si le possesseur de ce talent est touché par une attaque de type électrik, le possesseur ne subit pas de dégât et voit son attaque spéciale augmenter de 1 niveau.\nLe possesseur attire également les attaques de type électrik sur lui si il est à porté.\nLe boost à lieu même si le possesseur est de type Sol.",
+        "effectWithoutFight": "Dans Pokémon Émeraude, si un possesseur de ce talent est dans l'équipe les chances de recevoir des appels téléphoniques sur le PokéNav son augmentés.\nDepuis la 8ème gen, si un possesseur du talent est placé en tête d'équipe, le joueur a de plus fortes chances de rencontrer des Pokémon sauvages de type Électrik."
+    },
+    {
+        "nameFr": "Peau Dure",
+        "nameEn": "Rough Skin",
+        "nameJp": "さめはだ",
+        "genApparition": "RS",
+        "effectInFight": "Les attaques physiques touchant le possesseur de ce talent font perdre 1/8 des PV max de l'attaquant.\nDurant la 3ème gen c'était 1/16.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Piège Sable",
+        "nameEn": "Arena Trap",
+        "nameJp": "ありじごく",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent empêche les adversaires de quitter le terrain, à moins qu’ils ne soient de type Spectre ou Vol, qu'ils tiennent la Carapace Mue ou qu'ils utilisent Demi-Tour, Eau Revoir, Change Éclair, Cyclone, Hurlement, ou Téléport.\nLes Pokémon peuvent quitter le terrain s'ils possèdent les talents: Lévitation, Fuite, Escampette, Gaz Inhibiteur ou Repli Tactique.",
+        "effectWithoutFight": "Jusqu'à la 8ème gen, si le possesseur de ca talent est en tête d'équipe les chances de rencontre de pokémon sauvage sont doublées."
+    },
+    {
+        "nameFr": "Plus",
+        "nameEn": "Plus",
+        "nameJp": "プラス",
+        "genApparition": "RS",
+        "effectInFight": "La statistique d'Attaque Spéciale du Pokémon augmente de 50% si un allié en Combat Multiple posséde le talent Moins.\nDepuis la 5ème gen fonctionne aussi si l'allié posséde le talent Plus.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Point Poison",
+        "nameEn": "Poison Point",
+        "nameJp": "どくのトゲ",
+        "genApparition": "RS",
+        "effectInFight": "Quand le possesseur de ce talent subit une attaque physique il a 30% d'empoisonner l'attaquant.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Pose Spore",
+        "nameEn": "Effect Spore",
+        "nameJp": "ほうし",
+        "genApparition": "RS",
+        "effectInFight": "Quand le possesseur de ce talent subit une attaque physique, il a 9% de chances d'empoisonner, 10% de chances de paralyser et 11 % de chances d'endormir l'attaquant.\nÀ partir de la 6ème gen, les type plante, les Lunettes Filtre et Envelocape immunisent à ce talent.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Pression",
+        "nameEn": "Pressure",
+        "nameJp": "プレッシャー",
+        "genApparition": "RS",
+        "effectInFight": "Chaque attaques lancée sur un pokémon possedant ce talent perd 1 PP supplémentaire.\nL'effet est cumulable si plusieurs possesseurs de ce talent sont sur le terrain.\nLes PPs alliés ne sont pas affectés.",
+        "effectWithoutFight": "Si le possesseur de ce talent est en tête d'équipe, vous avez 50% de chance de plus de rencontrer des pokémons sauvages au niveau le plus élevé possible."
+    },
+    {
+        "nameFr": "Puanteur",
+        "nameEn": "Stench",
+        "nameJp": "あくしゅう",
+        "genApparition": "RS",
+        "effectInFight": "Depuis la 5ème gen, si le possesseur de ce talent attaque un adversaire avec une attaque offensive, alors il a 10% de chances de l'apeurer.\nCette probabilité ne peut pas être améliorée.",
+        "effectWithoutFight": "Si un possesseur de ce talent est dans l'équipe, le joueur rencontre deux fois moins de Pokémon sauvages."
+    },
+    {
+        "nameFr": "Ramassage",
+        "nameEn": "Pickup",
+        "nameJp": "ものひろい",
+        "genApparition": "RS",
+        "effectInFight": "Si le possesseur de ce talent ne tient pas d'objets il possède 10% de chance de gagner un nouvel objet à la fin d'un combat victorieux.\nLe talent s'active même si le possesseur n'as pas participé au combat ou est K.O..\nDepuis la 5ème gen si un autre pokémon que le possesseur du talent utilise un objet à usage unique et que le possesseur du talent ne tient rien, le possesseur du talent récupère l'objet utilisé, si il n'a pas été utilisé lors du combat le joueur peut récupérer l'objet si c'étais un combat sauvage.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Regard Vif",
+        "nameEn": "Keen Eye",
+        "nameJp": "するどいめ",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent ne peut pas se faire baisser sa précision.\nÀ partir de la 6ème gen, l'augmentation de l'esquive adverse est également ignorée.",
+        "effectWithoutFight": "Si le possesseur de ce talent est en première position dans l'équipe, le joueur possède 50% de chance en moins de rencontrer un pokémon avec au moins 5 niveaux de moins que le pokémon de tête."
+    },
+    {
+        "nameFr": "Sable Volant",
+        "nameEn": "Sand Stream",
+        "nameJp": "すなおこし",
+        "genApparition": "RS",
+        "effectInFight": "Quand le possesseur de ce talent arrive en combat il déclenche la tempête de sable.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Sécheresse",
+        "nameEn": "Drought",
+        "nameJp": "ひでり",
+        "genApparition": "RS",
+        "effectInFight": "Quand le possesseur de ce talent arrive en combat il déclenche le soleil.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Sérénité",
+        "nameEn": "Serene Grace",
+        "nameJp": "てんのめぐみ",
+        "genApparition": "RS",
+        "effectInFight": "Si le possesseur de ce talent utilise une attaque offensive avec un effet additionnel, l'effet a deux fois plus de chance de se produire.\nCela fonctionne également pour les effets des objets tenus.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Statik",
+        "nameEn": "Static",
+        "nameJp": "せいでんき",
+        "genApparition": "RS",
+        "effectInFight": "Si le possesseur de ce talent subit une capacité physique, il a 30% de chances de paralyser son attaquant.",
+        "effectWithoutFight": "Si le possesseur de ce talent est placé en tête d'équipe, le joueur a 50% de chances de plus de rencontrer un pokémon de type Électrik."
+    },
+    {
+        "nameFr": "Suintement",
+        "nameEn": "Liquid Ooze",
+        "nameJp": "ヘドロえき",
+        "genApparition": "RS",
+        "effectInFight": "Inflige des dégâts au lieu de redonner des PV lorsqu'un pokémon adverse utilise une capacité drainant des PV.\nS'active même si l'attaquant est à 100% de sa vie ou est sous l'effet Anti-Soin.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Synchro",
+        "nameEn": "Synchronize",
+        "nameJp": "シンクロ",
+        "genApparition": "RS",
+        "effectInFight": "Si le possesseur de ce talent subit un statut, alors il donne le même statut à l'attaquant s'il n'en possède aucun.\nLe gel et le sommeil n'activent pas le talent.\nLes objets et pièges à l'entrés du terrain n'activent pas le talent.\nLe statut n'est pas transmis si l'attaquant est immunisé au talent.",
+        "effectWithoutFight": "Depuis Émeraude, si un possesseur de ce talent est placé en tête d'équipe, alors le joueur a une chance sur deux de rencontrer un Pokémon sauvage avec la même nature que lui.\nDepuis ROSA, si le possesseur de ce talent est placé en tête d'équipe appartient au groupe d'Œuf «Inconnu», les pokémon offert par les PNJ, appartennant également au groupe d'Œuf «Inconnu», alors le pokémon donné aura forcément la même nature que le Pokémon doté du talent Synchro.\nDepuis USUL, le talent fonctionne toujours sans prendre en compte les groupes d'œufs respectif. Cela ne fonctionne pas avec les Œufs ou les Pokémon obtenus par cadeau mystère.\nDepuis la 8ème gen, si un possesseur du talent est placé en tête d'équipe, alors le joueur rencontrera toujours un Pokémon sauvage avec la même Nature que lui (sans prendre en compte les aromates). Les Pokémon rencontrés lors de raid, ceux offerts et fixes ne sont pas affectés par Synchro et ont une nature aléatoire. Les Lames de la Justice et les Oiseaux légendaires de Galar sont affectés par le talent.\nDepuis la 9ème gen le talent n'a plus d'effets en dehors des combats."
+    },
+    {
+        "nameFr": "Tempo Perso",
+        "nameEn": "Own Tempo",
+        "nameJp": "マイペース",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent ne peut pas être confus, même si il lance des attaques qui rendent confus.\nDepuis la 8ème gen le possesseur de ce talent n'est plus affecté par le talent Intimidation.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Tête de Roc",
+        "nameEn": "Rock Head",
+        "nameJp": "いしあたま",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur du talent ne subit pas de contrecoup dus à une attaque qui réussit.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Torche",
+        "nameEn": "Flash Fire",
+        "nameJp": "もらいび",
+        "genApparition": "RS",
+        "effectInFight": "Si un possesseur de ce talent est touché par une attaque de type feu, il ne subit alors aucun dégât, s'il ne quitte pas le terrain sa prochaine attaque de type feu sera 50% plus puissante.\nDepuis la 4ème gen s'active également s'il obtient le statut brûlure.\nSi le possesseur de ce talent est gelé et se fait touché par une attaque de type feu il se dégel, avant la 5ème gen il ne bénéficiait pas du boost.",
+        "effectWithoutFight": "Depuis la 8ème gen, si le possesseur de ce talent est en première position dans l'équipe, le joueur a plus de chances de rencontrer les lokémon sauvages de type feu."
+    },
+    {
+        "nameFr": "Torrent",
+        "nameEn": "Torrent",
+        "nameJp": "げきりゅう",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent voit la puissance de ses attaques Eau augmenter de 50%, quand ses PV sont inférieurs à 1/3 de ses PV max.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Turbo",
+        "nameEn": "Speed Boost",
+        "nameJp": "かそく",
+        "genApparition": "RS",
+        "effectInFight": "Si le possesseur de ce talent passe un tour complet sur le terrain, alors il gagne 1 niveau en vitesse.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Vaccin",
+        "nameEn": "Immunity",
+        "nameJp": "めんえき",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent ne peut pas être empoisonné, ou est soigné s'il l'obtient en étant déjà empoisonné.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Ventouse",
+        "nameEn": "Suction Cups",
+        "nameJp": "きゅうばん",
+        "genApparition": "RS",
+        "effectInFight": "Le possesseur de ce talent ne peut pas quitter le terrain de force.",
+        "effectWithoutFight": "Depuis pokémon Émeraude si le possesseur de ce talent est en tête d'équipe il est plus facile de pêcher des pokémons."
+    },
+    {
+        "nameFr": "Voile Sable",
+        "nameEn": "Sand Veil",
+        "nameJp": "すながくれ",
+        "genApparition": "RS",
+        "effectInFight": "Sous la tempête sable l'esquive du possesseur du talent est augmentée de 25%, il est immunisé aux dégâts de la tempête de sable.",
+        "effectWithoutFight": "Si le possesseur de ce talent est en tête d'équipe et que le joueur se trouve dans une zone sous tempête sable, les chances de rencontrer un pokémon sauvage sont alors divisées par deux."
+    },
+    {
+        "nameFr": "Adaptabilité",
+        "nameEn": "Adaptability",
+        "nameJp": "てきおうりょく",
+        "genApparition": "DP",
+        "effectInFight": "Le possesseur de ce talent voit la puissance de ses attaques STAB doublée au lieu de multiplié par 150%.\nDans EV, si le possesseur du talent est téracristallisé, alors le talent fonctionne que sur le type de son teracristal, si son teracristal est l'un des types, son STAB fera alors 225% de plus en puissance.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Alerte Neige",
+        "nameEn": "Snow Warning",
+        "nameJp": "ゆきふらし",
+        "genApparition": "DP",
+        "effectInFight": "Quand le possesseur de ce talent arrive en combat il déclenche la grêle.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Annule Garde",
+        "nameEn": "No Guard",
+        "nameJp": "ノーガード",
+        "genApparition": "DP",
+        "effectInFight": "Tant que le possesseur de ce talent est sur le terrain, aucune attaque ne peut échouer, ni manquer sa cible.\nCet effet s'applique pour tous les pokémons sur le terrain.",
+        "effectWithoutFight": "Jusqu'à la 8ème gen, si le possesseur de ca talent est en tête d'équipe les chances de rencontre de pokémon sauvage sont doublées."
+    },
+    {
+        "nameFr": "Anticipation",
+        "nameEn": "Anticipation",
+        "nameJp": "きけんよち",
+        "genApparition": "DP",
+        "effectInFight": "Quand le possesseur de ce talent arrive en combat un message s'affiche si un adversaire possède une attaque super efficace, une attaque d'OHKO, ou Destruction ou Explosion.\nLe message ne s'affiche pas si un adversaire possède Glaciation et que le possesseur du talent est de type Eau.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Boom Final",
+        "nameEn": "Aftermath",
+        "nameJp": "ゆうばく",
+        "genApparition": "DP",
+        "effectInFight": "Quand un possesseur de ce talent subit une attaque physique le mettant K.O., l'attaquant perd 1/4 de ses PV max.\nSi un Pokémon possédant le talent Moiteur se trouve sur le terrain, ce talent ne s'active pas.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Brise Moule",
+        "nameEn": "Mold Breaker",
+        "nameJp": "かたやぶり",
+        "genApparition": "DP",
+        "effectInFight": "Le possesseur de ce talent ignore les effets de certains talents lorsqu'il attaque.\nCe talent affecte tous les autres Pokémon sur le terrain alliés comme adverses, qu'ils soient ou non la cible de l'attaque de ce Pokémon.\nLes talents affectés sont: Aroma-Voile, Aura Inversée, Armurbaston, Cœur de Coq, Pare-Balles, Corps Sain, Contestation, Moiteur, Aura Ténébreuse, Corps Coloré, Fantômasque, Peau Sèche, Aura Féérique, Filtre, Torche, Don Floral, Flora-Voile, Boule de Poils, Garde Amie, Toison Épaisse, Toison Herbue, Ignifugé, Heavy Metal, Hyper Cutter, Tête de Gel, Écailles Glacées, Vaccin, Attention, Insomnie, Regard Vif, Feuille Garde, Lévitation, Light Metal, Paratonnerre, Échauffement, Miroir Magik, Armumagma, Écaille Spéciale, Armure Miroir, Motorisé, Multiécaille, Benêt, Envelocape, Tempo Perso, Voile Pastel, Punk Rock, Prestance Royale, Voile Sable, Herbivore, Coque Armure, Écran Poudre, Simple, Rideau Neige, Solide Roc, Anti-Bruit, Glue, Lavabo, Fermeté, Ventouse, Gluco-Voile, Pieds Confus, Télépathe, Isograisse, Inconscient, Esprit Vital, Absorb-Volt, Absorb-Eau, Aquabulle, Ignifu-Voile, Écran Fumée, Garde Mystik, et Peau Miracle.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Chanceux",
+        "nameEn": "Super Luck",
+        "nameJp": "きょううん",
+        "genApparition": "DP",
+        "effectInFight": "Les attaques du possesseur de ce talent voient leurs taux de coup critique doubler.",
+        "effectWithoutFight": "Depuis la 8ème gen, si le possesseur de ce talent est à la première position dans l'équipe, le joueur a de plus fortes chances de rencontrer des Pokémon sauvages tennant un objet."
+    },
+    {
+        "nameFr": "Cherche Miel",
+        "nameEn": "Honey Gather",
+        "nameJp": "みつあつめ",
+        "genApparition": "DP",
+        "effectInFight": "Si le possesseur de ce talent n'as pas d'objet il a des chances d'obtenir un Miel à la fin d'un combat.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Colérique",
+        "nameEn": "Anger Point",
+        "nameJp": "いかりのつぼ",
+        "genApparition": "DP",
+        "effectInFight": "Si le possesseur de ce talent subit un coup critique, son attaque augmente alors pour arriver à 6 niveaux, s'active même s'il est derrière un clone.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Corps Gel",
+        "nameEn": "Ice Body",
+        "nameJp": "アイスボディ",
+        "genApparition": "DP",
+        "effectInFight": "Le possesseur de ce talent récupère 1/16 de ses PV max à la fin de chaque tour sous la grêle, l'immunisant également aux dégâts de la grêle.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Début Calme",
+        "nameEn": "Slow Start",
+        "nameJp": "スロースタート",
+        "genApparition": "DP",
+        "effectInFight": "Le possesseur de ce talent voit son attaque et sa vitesse divisée par 2, pendant les 5 premiers tours complets où il est au combat.\nLe compteur est réinitialisé s'il quitte le terrain.\nDans la version japonaise de DP, perdre ce talent ne remet pas les statistiques à la normale, il faut obligatoirement attendre les 5 tours effectifs.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Délestage",
+        "nameEn": "Unburden",
+        "nameJp": "かるわざ",
+        "genApparition": "DP",
+        "effectInFight": "Quand le possesseur de ce talent perd son objet, sa vitesse est doublée.\nLe gain de vitesse est perdu si le possesseur quitte le terrain ou regagne un objet.\nPeut-être activé plusieurs fois dans un seul combat.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Don Floral",
+        "nameEn": "Flower Gift",
+        "nameJp": "フラワーギフト",
+        "genApparition": "DP",
+        "effectInFight": "Quand le possesseur de ce talent est en combat avec un climat ensoleillé, les statistiques d'attaque et de défense spéciale sont alors augmentées de 50%.\nCe bonus est partagé aux alliés en combat multiple.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Feuille Garde",
+        "nameEn": "Leaf Guard",
+        "nameJp": "リーフガード",
+        "genApparition": "DP",
+        "effectInFight": "Si le climat est ensoleillé le possesseur de ce talent est immunisé aux statuts, mais ne soigne pas les alterations qui sont déjà présentes\nÀ partir de la 5me gen, le talent empêche d'attaque endormant le lanceur.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Filtre",
+        "nameEn": "Filter",
+        "nameJp": "フィルター",
+        "genApparition": "DP",
+        "effectInFight": "Si le possesseur de ce talent est touché par une capacité super efficace, les dégâts infligés par celle-ci sont réduits de 25%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Force Soleil",
+        "nameEn": "Solar Power",
+        "nameJp": "サンパワー",
+        "genApparition": "DP",
+        "effectInFight": "Sous le soleil, le possesseur de ce talent voit son attaque spéciale augmenter de 50%, mais il perd 1/8 de ses PV max à la fin de chaque tour.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Fouille",
+        "nameEn": "Frisk",
+        "nameJp": "おみとおし",
+        "genApparition": "DP",
+        "effectInFight": "Quand un possesseur de ce talent arrive sur le terrain, il détecte l'objet tenu par l'adversaire, l'adversaire est choisi aléatoirement en combat multiple.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Frein",
+        "nameEn": "Stall",
+        "nameJp": "あとだし",
+        "genApparition": "DP",
+        "effectInFight": "Le possesseur de ce talent attaque toujours en dernier, malgré le niveau de priorité, ou alteration de terrain actif.\nLe talent ne fais pas effet si la Vive Griffe s'active.\nDurant la 4ème gen, c'est le pokémon le plus lent qui attaque en premier si plusieurs possesseurs de ce talent doivent attaquer avec la même prioritée.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Garde Magik",
+        "nameEn": "Magic Guard",
+        "nameJp": "マジックガード",
+        "genApparition": "DP",
+        "effectInFight": "Le possesseur de ce talent ne subi des dégâts que venant d'attaque directe.\nClonage, Malédiction, Cognobidon, Balance, le recul de Lutte, et les dégâts de confusion sont considérés comme des dégâts directs.\nLe possesseur est immunisé aux pièges d'arrivée sur le terrain, aux statuts, aux dégâts du climat, aux attaques invoquant un piège et aux contrecoups d'attaque et d'objet.\nLes Effets secondaires des attaques immunisés eux sont bien pris en compte, sauf dans la 4ème gen le possesseur de ce talent était également immunisé à l'effet immobilisant de la paralysie.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Gloutonnerie",
+        "nameEn": "Gluttony",
+        "nameJp": "くいしんぼう",
+        "genApparition": "DP",
+        "effectInFight": "Le possesseur de ce talent mange les baies  augmentant ses statistiques qu'il tient dès qu'il lui reste 50% de ses PV max ou moins",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Hydratation",
+        "nameEn": "Hydration",
+        "nameJp": "うるおいボディ",
+        "genApparition": "DP",
+        "effectInFight": "Sous la pluie, le possesseur de ce talent soit toutes ses altérations de statut soignées à la fin de chaque tour.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Ignifugé",
+        "nameEn": "Heatproof",
+        "nameJp": "たいねつ",
+        "genApparition": "DP",
+        "effectInFight": "Quand le possesseur de ce talent subit des dégâts d'une capacité de type Feu ou d'une brûlure, ces dégâts sont divisés par deux.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Impassible",
+        "nameEn": "Steadfast",
+        "nameJp": "ふくつのこころ",
+        "genApparition": "DP",
+        "effectInFight": "Si le possesseur de ce talent est apeuré, il voit sa statistique de Vitesse augmenter de 1 niveau.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Inconscient",
+        "nameEn": "Unaware",
+        "nameJp": "てんねん",
+        "genApparition": "DP",
+        "effectInFight": "Le possesseur de ce talent ignore les changement de statistique des pokémon adverse ormis la statistique de vitesse.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Lavabo",
+        "nameEn": "Storm Drain",
+        "nameJp": "よびみず",
+        "genApparition": "DP",
+        "effectInFight": "Si le possesseur de ce talent est touché par une attaque de type eau, le possesseur ne subit pas de dégât et voit son attaque spéciale augmenter de 1 niveau.\nLe possesseur attire également les attaques de type eau sur lui si il est à porté, faisant que les attaques ennemis de type eau touche toujours.\nDans la 4ème gen le talent redirige les attaques mais ne protège pas le possesseur des dégâts infligés.",
+        "effectWithoutFight": "Depuis la 8ème gen si le possesseur de ce talent est en première position dan sl'équipe le joueur a plus de chance de rencontrer des pokemon de type eau."
+    },
+    {
+        "nameFr": "Lentiteintée",
+        "nameEn": "Tinted Lens",
+        "nameJp": "いろめがね",
+        "genApparition": "DP",
+        "effectInFight": "Si les attaques du possesseur de ce talent sont pas très efficace sur un adversaire, les dégâts infligés sont doublés.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Maladresse",
+        "nameEn": "Klutz",
+        "nameJp": "ぶきよう",
+        "genApparition": "DP",
+        "effectInFight": "Le possesseur de ce talent ne peut pas utiliser les objets qu'il tient.\nDepuis la 5ème gen il ne peut pas utiliser Dégommage.\nLes cristaux-Z et les Méga-Gemmes gardent par contre leurs effets.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Mauvais Rêve",
+        "nameEn": "Bad Dreams",
+        "nameJp": "ナイトメア",
+        "genApparition": "DP",
+        "effectInFight": "Si un possesseur de ce talent est sur le terrain, tous pokémon endormi perds 1/8e de ses PV max à la fin de chaque tour.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Motorisé",
+        "nameEn": "Motor Drive",
+        "nameJp": "でんきエンジン",
+        "genApparition": "DP",
+        "effectInFight": "Si le possesseur de ce talent est touché par une attaque de type électrik, le possesseur ne subit pas de dégât et voit sa vitesse augmenter de 1 niveau.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Multi-Coups",
+        "nameEn": "Skill Link",
+        "nameJp": "スキルリンク",
+        "genApparition": "DP",
+        "effectInFight": "Le possesseur de ce talent effectue toujours le nombre maximum de coups pour les attaques à coup multiple.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Multi-Type",
+        "nameEn": "Multitype",
+        "nameJp": "マルチタイプ",
+        "genApparition": "DP",
+        "effectInFight": "Si le possesseur de ce talent est Arceus, son type changee suivant la Plaque qu'il tient.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Normalise",
+        "nameEn": "Normalize",
+        "nameJp": "ノーマルスキン",
+        "genApparition": "DP",
+        "effectInFight": "Les attaques lancées par le possesseur de ce talent deviennent de type normal.\nDepuis la 7ème gen les dégâts sont également augmentés de 20%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Peau Sèche",
+        "nameEn": "Dry Skin",
+        "nameJp": "かんそうはだ",
+        "genApparition": "DP",
+        "effectInFight": "Sous la pluie le possesseur de ce talent récupère 1/8 de ses PV max à la fin de chaque tour.\nSous le soleil le possesseur de ce talent perd 1/8 de ses PV max à la fin de chaque tour.\nSi le possesseur de ce talent subit une attaque de type feu il prend 25% de dégâts en plus, mais si il subit une attaque de type eau il récupère 25% de ses PV max.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Pieds Confus",
+        "nameEn": "Tangled Feet",
+        "nameJp": "ちどりあし",
+        "genApparition": "DP",
+        "effectInFight": "Si le possesseur de ce talent est confus, son esquive est doublée.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Pied Véloce",
+        "nameEn": "Quick Feet",
+        "nameJp": "はやあし",
+        "genApparition": "DP",
+        "effectInFight": "Si le possesseur de ce talent subit une altération de statut, sa vitesse est augmentée de 50%.\nLe possesseur de ce talent est immunisé au malus de vitesse.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Poing de Fer",
+        "nameEn": "Iron Fist",
+        "nameJp": "てつのこぶし",
+        "genApparition": "DP",
+        "effectInFight": "La puissance des attaques de coups de poing du possesseur de ce talent sont augmentée de 20%.\nLes attaques concernées sont : Dynamopoing, Écrous d'Poing, Mach Punch, Marteau de Glace, Marto-Poing, Mitra-Poing, Pisto-Poing, Poing Boost, Poing Comète, Poing de Feu, Poing Éclair, Poing Glace, Poing Météore, Poing Obscur, Poing Ombre, Stratopercut, Torrent de Coups, Ultimapoing, Uppercut, Vampipoing, Assault Frontal, Plasma Punch et Poing de Colère.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Prédiction",
+        "nameEn": "Forewarn",
+        "nameJp": "よちむ",
+        "genApparition": "DP",
+        "effectInFight": "En arrivant sur le terrain, un message dit quelle est l'attaque qui a le plus de puissance de base que l'adversaire connais.\nSi 2 attaques ont la même puissance de base celle qui sera avertie est choisie aléatoirement, en combat multiple tous les adversaires sont comptabilisés.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Querelleur",
+        "nameEn": "Scrappy",
+        "nameJp": "きもったま",
+        "genApparition": "DP",
+        "effectInFight": "Le possesseur de ce talent peut toucher les pokemon de type spectre avec des attaques de type normal ou combat en étant neutre sur ses derniers.\nDepuis la 8ème gen le talent intimidation n'a plus aucun effet sur le possesseur de ce talent.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Rideau Neige",
+        "nameEn": "Snow Cloak",
+        "nameJp": "ゆきがくれ",
+        "genApparition": "DP",
+        "effectInFight": "Sous la grêle l'esquive du possesseur du talent est augmentée de 20% et est immunisé aux dégâts de la grêle.",
+        "effectWithoutFight": "Sous la grêle, si le possesseur de ce talent est placé en tête d'équipe, le joueur rencontre alors deux fois moins de pokémon sauvages."
+    },
+    {
+        "nameFr": "Rivalité",
+        "nameEn": "Rivalry",
+        "nameJp": "とうそうしん",
+        "genApparition": "DP",
+        "effectInFight": "Si la cible du possesseur de ce talent est de sexe opposé la puissance des attaques sont dimminuées de 25%, mais si elle est de même sexe alors la puisance des attaques du possesseur de ce talent sont augmentées de 25%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Simple",
+        "nameEn": "Simple",
+        "nameJp": "たんじゅん",
+        "genApparition": "DP",
+        "effectInFight": "Les augmentations et diminutions de statistiques du possesseur de ce talent sont doublées.\nLes augmentations de statistique dus à une attaque Z ne sont pas pris en compte.\nEn 4ème génération les statistiques transmise par relais n'est pas doublés par le talent mais uniquement celle reçu de base, si le pokémon arrivant avec Relais possède le talent Simple alors les statistiques transmises sont doublées.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Sniper",
+        "nameEn": "Sniper",
+        "nameJp": "スナイパー",
+        "genApparition": "DP",
+        "effectInFight": "Quand le possesseur de ce talent effectue un coup critique, les dégâts du coup critique sont augmentés de 50%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Soin Poison",
+        "nameEn": "Poison Heal",
+        "nameJp": "ポイズンヒール",
+        "genApparition": "DP",
+        "effectInFight": "Si le possesseur de ce talent est empoisonné il est immunisé aux dégâts du poison et récupère 1/8 de ses PV max à la fin de chaque tour quand il est empoisonné.\nEn 4ème gen, parler avec un pokémon empoisonné possedant ce talent lui faisait tout de même perdre des PV.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Solide Roc",
+        "nameEn": "Solid Rock",
+        "nameJp": "ハードロック",
+        "genApparition": "DP",
+        "effectInFight": "Si le possesseur de ce talent est touché par une capacité super efficace, les dégâts infligés par celle-ci sont réduits de 25%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Technicien",
+        "nameEn": "Technician",
+        "nameJp": "テクニシャン",
+        "genApparition": "DP",
+        "effectInFight": "Si le possesseur de ce talent lance une attaque dont sa puissance de base est inférieure ou égale à 60, alors la puissance de base de cette attaque augmente de 50%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Télécharge",
+        "nameEn": "Download",
+        "nameJp": "ダウンロード",
+        "genApparition": "DP",
+        "effectInFight": "A son arrivée sur le terrain, le possesseur de ce talent augmente son attaque ou son attaque spéciale de 1 niveau suivant la statistique défensive la plus faible de l'adversaire.\nSi les statistiques défensives de la cible sont égales ce sera la statitique offesnsive du possesseur la plus élevée qui augmentera, si elles sont également identiques alors c'est choisi aléatoirement.\nLors d'un combat multiple, un des pokémon adverses est choisi au hasard.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Téméraire",
+        "nameEn": "Reckless",
+        "nameJp": "すてみ",
+        "genApparition": "DP",
+        "effectInFight": "Le possesseur de ce talent voit la puissance de ses attaques avec un contre coup augmentées de 20%, sauf pour Lutte.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Acharné",
+        "nameEn": "Defiant",
+        "nameJp": "まけんき",
+        "genApparition": "NB",
+        "effectInFight": "Quand le possesseur de ce talent subit une baisse de statistique, son attaque augmente de 2 niveaux.\nLe talent ne s'active pas, si c'est le pokémon lui même ou un de ses alliés qui lui fait baisser une de ses statistiques ou si c'est un piège d'entrée de terrain qui lui inflige la baisse de statistique.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Analyste",
+        "nameEn": "Analytic",
+        "nameJp": "アナライズ",
+        "genApparition": "NB",
+        "effectInFight": "Si le possesseur de ce talent est le dernier à attaquer durant ce tour la puissance de son attaque est augmentée de 30%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Armurouillée",
+        "nameEn": "Weak Armor",
+        "nameJp": "くだけるよろい",
+        "genApparition": "NB",
+        "effectInFight": "La statistique de Défense du Pokémon diminue d'un niveau et sa Vitesse augmente de deux lorsqu'il est touché par une capacité physique.\nJusqu'à la 6ème gen la vitesse augmentait d'un.\nS'active à chaque fois pour les attaques multicoups.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Baigne Sable",
+        "nameEn": "Sand Rush",
+        "nameJp": "すなかき",
+        "genApparition": "NB",
+        "effectInFight": "Sous la tempête de sable, la Vitesse du Pokémon est doublée.\nImmunité contre les dégâts de la tempête de sable.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Cœur de Coq",
+        "nameEn": "Big Pecks",
+        "nameJp": "はとむね",
+        "genApparition": "NB",
+        "effectInFight": "Imunise le possesseur de ce talent de se faire réduire sa défense, mais il peut se la réduire lui-même.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Cœur Noble",
+        "nameEn": "Justified",
+        "nameJp": "せいぎのこころ",
+        "genApparition": "NB",
+        "effectInFight": "L'attaque du Pokémon augmente d'un à chaque fois qu'il est touché par une attaque de type Ténèbres.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Cœur Soin",
+        "nameEn": "Healer",
+        "nameJp": "いやしのこころ",
+        "genApparition": "NB",
+        "effectInFight": "Le Pokémon à 30% de chance de soigner les altérations de statut d'un allié adjacent.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Contestation",
+        "nameEn": "Contrary",
+        "nameJp": "あまのじゃく",
+        "genApparition": "NB",
+        "effectInFight": "Les effets des changements de statistiques sont inversés.\nLes seules variations de statistiques non concernées sont celles transmises par Relais et par les Capacités Z.\nLorsqu'une attaque lancée par un Pokémon avec Brise Moule, Turbo Brasier ou Téra-Voltage, le talent ne s'active pas.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Corps Maudit",
+        "nameEn": "Cursed Body",
+        "nameJp": "のろわれボディ",
+        "genApparition": "NB",
+        "effectInFight": "30% de chance d'entraver l'attaque d'un Pokémon touchant le posseur de ce talent.\nNe s'active pas sur les attaques dynamax, ni si le possesseur de ce talent est derrière un clone.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Défaitiste",
+        "nameEn": "Defeatist",
+        "nameJp": "よわき",
+        "genApparition": "NB",
+        "effectInFight": "La statistique d'Attaque et d'Attaque Spéciale du Pokémon sont divisées par deux s'il a moins de 50 % de ses PV.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Envelocape",
+        "nameEn": "Overcoat",
+        "nameJp": "ぼうじん",
+        "genApparition": "NB",
+        "effectInFight": "Immunité contre les dégâts du climat.\nDepuis la 6ème gen, immunité contre les attaques de poudre.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Épine de Fer",
+        "nameEn": "Iron Barbs",
+        "nameJp": "てつのトゲ",
+        "genApparition": "NB",
+        "effectInFight": "Les attaques physiques reçues font perdre 1/8 des PV maximum du lanceur.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Farceur",
+        "nameEn": "Prankster",
+        "nameJp": "いたずらごころ",
+        "genApparition": "NB",
+        "effectInFight": "Les attaques non-offensives augmentent leurs priorités de 1 niveau.\nDepuis la 7ème gen le type Ténèbres est imunisé  à ce talent.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Force Sable",
+        "nameEn": "Sand Force",
+        "nameJp": "すなのちから",
+        "genApparition": "NB",
+        "effectInFight": "Sous la tempête de sable, la puissance des attaques de type Acier, Roche et Sol du augmente de 30 %.\nImmunité contre les dégâts de la tempête de sable.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Garde-Ami",
+        "nameEn": "Friend Guard",
+        "nameJp": "フレンドガード",
+        "genApparition": "NB",
+        "effectInFight": "Diminue de 25% les dégâts subits par les alliés.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Heavy Metal",
+        "nameEn": "Heavy Metal",
+        "nameJp": "ヘヴィメタル",
+        "genApparition": "NB",
+        "effectInFight": "Le poids du Pokémon est doublé.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Herbivore",
+        "nameEn": "Sap Sipper",
+        "nameJp": "そうしょく",
+        "genApparition": "NB",
+        "effectInFight": "Quand le possesseur de ce talent subit une attaque de type Plante, il ne subit aucun dégâts et augmente son attaque de 1 niveau.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Illusion",
+        "nameEn": "Illusion",
+        "nameJp": "イリュージョン",
+        "genApparition": "NB",
+        "effectInFight": "Change l'apparence du Pokémon en celle du dernier Pokémon de l'équipe pouvant se battre, lorsque le Pokémon est envoyé au combat.\nPour un pokémon sauvage l'apparence est changé en celle d'un autre pokémon sauvage de la zone.\nLe talent est perdu si le possesseur perds son talent ou si il subit des dégât venant d'adversaire.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Imposteur",
+        "nameEn": "Imposter",
+        "nameJp": "かわりもの",
+        "genApparition": "NB",
+        "effectInFight": "Transforme le possesseur du talent en l'adversaire lors de son entrée au combat.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Impudence",
+        "nameEn": "Moxie",
+        "nameJp": "じしんかじょう",
+        "genApparition": "NB",
+        "effectInFight": "Si le possesseur de ce talent mets K.O. un pokémon il augmente son attaque de 1 niveau.\nLes talents Momie, Âme Vagabonde et Odeur Tenace remplace le talent avant l'augmentation d'attaque.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Infiltration",
+        "nameEn": "Infiltrator",
+        "nameJp": "すりぬけ",
+        "genApparition": "NB",
+        "effectInFight": "Ignore les capacités de protection adverses.\nDepuis la 6ème gen le possesseur de ce talent frapper les pokémon derrière les clones.",
+        "effectWithoutFight": "Depuis la 8ème gen, si le possesseur de ce talent est en première place dans son équipe, le joueur a de plus faibles chances de rencontrer des Pokémon sauvages."
+    },
+    {
+        "nameFr": "Light Metal",
+        "nameEn": "Light Metal",
+        "nameJp": "ライトメタル",
+        "genApparition": "NB",
+        "effectInFight": "Le poids du Pokémon est divisé par deux.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Lunatique",
+        "nameEn": "Moody",
+        "nameJp": "ムラっけ",
+        "genApparition": "NB",
+        "effectInFight": "Augmente aléatoirement une statistique du Pokémon de deux niveaux et en baisse une autre d'un niveau à chaque tour.\nLa Précision et l'Esquive ne sont plus comprises depuis la 8ème gen.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Miroir Magik",
+        "nameEn": "Magic Bounce",
+        "nameJp": "マジックミラー",
+        "genApparition": "NB",
+        "effectInFight": "Les capacités de statut sont retournées contre le Pokémon adverse.\nLes talents Brise Moule, Turbo Brasier ou Téra-Voltage n'active pas le talent.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Mode Transe",
+        "nameEn": "Zen Mode",
+        "nameJp": "ダルマモード",
+        "genApparition": "NB",
+        "effectInFight": "Change la forme de Darumacho si ses PV sont inférieurs à 50 % du maximum.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Momie",
+        "nameEn": "Mummy",
+        "nameJp": "ミイラ",
+        "genApparition": "NB",
+        "effectInFight": "Remplace le talent de l'adversaire attaquant par Momie lorsque le détenteur subit une attaque physique.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Multiécaille",
+        "nameEn": "Multiscale",
+        "nameJp": "マルチスケイル",
+        "genApparition": "NB",
+        "effectInFight": "Les dégâts sont divisés par 2 si le possesseur de ce talent possède tous ses PV.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Peau Miracle",
+        "nameEn": "Wonder Skin",
+        "nameJp": "ミラクルスキン",
+        "genApparition": "NB",
+        "effectInFight": "Les capacités de statut du Pokémon adverse ont 50% de chance d'échouer.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Phobique",
+        "nameEn": "Rattled",
+        "nameJp": "びびり",
+        "genApparition": "NB",
+        "effectInFight": "La statistique de Vitesse du Pokémon augmente d'un niveau s'il est touché par une capacité de type Insecte, Spectre ou Ténèbres.\nDepuis la 8ème gen, le talent Intimidation active le talent.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Pickpocket",
+        "nameEn": "Pickpocket",
+        "nameJp": "わるいてぐせ",
+        "genApparition": "NB",
+        "effectInFight": "Les capacités directes reçues font voler au Pokémon l'objet tenu du lanceur, s'il n'en porte pas déjà un.\nLe talent Glu imunise l'activation de ce talent.\nLes objets permettant de changer de forme et les cristaux Z ne peuvent pas être volés.\nLe talent s'active après l'utilisation de l'objet.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Rage Brûlure",
+        "nameEn": "Flare Boost",
+        "nameJp": "ねつぼうそう",
+        "genApparition": "NB",
+        "effectInFight": "L'attaque spéciale du Pokémon augmente de 50% s'il est brûlé.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Rage Poison",
+        "nameEn": "Toxic Boost",
+        "nameJp": "どくぼうそう",
+        "genApparition": "NB",
+        "effectInFight": "L'attaque du Pokémon augmente de 50% s'il est empoisonné.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Récolte",
+        "nameEn": "Harvest",
+        "nameJp": "しゅうかく",
+        "genApparition": "NB",
+        "effectInFight": "La Baie consommée a 50% de chances d'être récupérée à la fin du tour.\nS'active à la fin de tous les tour sous le soleil.",
+        "effectWithoutFight": "Depuis la 8ème gen, si le possesseur du talent est placé en tête d'équipe, le joueur a de plus fortes chances de rencontrer des Pokémon sauvages de type Plante."
+    },
+    {
+        "nameFr": "Régé-Force",
+        "nameEn": "Regenerator",
+        "nameJp": "さいせいりょく",
+        "genApparition": "NB",
+        "effectInFight": "Le Pokémon soigne 1/3 de ses PV quand il revient sur le terrain après un switch.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Sans Limite",
+        "nameEn": "Sheer Force",
+        "nameJp": "ちからずく",
+        "genApparition": "NB",
+        "effectInFight": "Augmente la puissance des capacités pouvant avoir un effet secondaire de 30%, mais l'annule.\nLes effets secondaires pris en compte sont l'augmentation des statistiques du lanceur, la baisse des statistiques de la cible, le changement de statut de la cible, l'application de la confusion, apeurer la cible.\nNe sont par contre pas pris en compte les réductions de statistiques du lanceur, le contrecoup, les attaques qui volent des PV, les capacités de switch, les attaques permettant mettre fin au combat, les attaques en deux tours, les augmentations de statistiques de la cible, les attaques d'augmentation du taux de coup critique, les coups qui ne manquent jamais, les attaques qui changent de puissance suivant les tours, les attaques qui volent ou supprime l'objet, ou les attaques à puissance variable.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Télépathe",
+        "nameEn": "Telepathy",
+        "nameJp": "テレパシー",
+        "genApparition": "NB",
+        "effectInFight": "Immunité contre les capacités des alliés en Combat Duo ou Trio.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Tension",
+        "nameEn": "Unnerve",
+        "nameJp": "きんちょうかん",
+        "genApparition": "NB",
+        "effectInFight": "La Baie tenue par le Pokémon adverse ne peut pas être consommée tant que le Pokémon est sur le terrain, sauf si une attaque le force l'utilisation de sa baie.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Téra-Voltage",
+        "nameEn": "Teravolt",
+        "nameJp": "テラボルテージ",
+        "genApparition": "NB",
+        "effectInFight": "Ignore les talents adverses ayant un effet sur les capacités du Pokémon.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Toxitouche",
+        "nameEn": "Poison Touch",
+        "nameJp": "どくしゅ",
+        "genApparition": "NB",
+        "effectInFight": "Les attaques physiques ont 30% de chances d'empoisonner la cible.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Turbo Brasier",
+        "nameEn": "Turboblaze",
+        "nameJp": "ターボブレイズ",
+        "genApparition": "NB",
+        "effectInFight": "Ignore les talents adverses ayant un effet sur les capacités du Pokémon.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Victorieux",
+        "nameEn": "Victory Star",
+        "nameJp": "しょうりのほし",
+        "genApparition": "NB",
+        "effectInFight": "La statistique de Précision du Pokémon et de ses alliés augmente de 10 %.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Ailes Bourrasque",
+        "nameEn": "Gale Wings",
+        "nameJp": "はやてのつばさ",
+        "genApparition": "XY",
+        "effectInFight": "La priorité des capacités de type Vol augmente d'un niveau.\nDepuis la 7ème gen le talent s'active que si le possesseur du talent à tous ses PV.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Amour Filial",
+        "nameEn": "Parental Bond",
+        "nameJp": "おやこあい",
+        "genApparition": "XY",
+        "effectInFight": "Les capacités du Pokémon frappe deux fois par tour au lieu d'un, mais le deuxième coup frappe 50% moins fort.\nDepuis la 7ème gen ce n'est 75% moins fort.\nLes attaques Z n'activevnt pas le talent.\nLes attaques qui font quitter le terrain à l'adversaire voit son effet s'activer que au second coup.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Aroma-Voile",
+        "nameEn": "Aroma Veil",
+        "nameJp": "アロマベール",
+        "genApparition": "XY",
+        "effectInFight": "Immunité contre les le Pokémon et ses alliés sur le terrain des attaques Provoc, Tourmente, Encore, Entrave, Anti-Soin, Attraction et Lien du Destin, ainsi que du talent Joli Sourire et Corps Maudit.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Aura Féérique",
+        "nameEn": "Fairy Aura",
+        "nameJp": "フェアリーオーラ",
+        "genApparition": "XY",
+        "effectInFight": "Augmente la puissance des capacités de type Fée de 30% pour tous les Pokémon sur le terrain.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Aura Inversée",
+        "nameEn": "Aura Break",
+        "nameJp": "オーラブレイク",
+        "genApparition": "XY",
+        "effectInFight": "Inverse  l'effet des talents Aura Féérique et Aura Ténébreuse.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Aura Ténébreuse",
+        "nameEn": "Dark Aura",
+        "nameJp": "ダークオーラ",
+        "genApparition": "XY",
+        "effectInFight": "Augmente la puissance des capacités de type Ténèbres de 30% pour tous les Pokémon sur le terrain.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Bajoues",
+        "nameEn": "Cheek Pouch",
+        "nameJp": "ほおぶくろ",
+        "genApparition": "XY",
+        "effectInFight": "La Baie tenue permet aussi de récupérer 1/3 de ses PV totaux.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Battant",
+        "nameEn": "Competitive",
+        "nameJp": "かちき",
+        "genApparition": "XY",
+        "effectInFight": "Quand le possesseur de ce talent subit une baisse de statistique, son attaque augmente de 2 niveaux.\nLe talent ne s'active pas, si c'est le pokémon lui même ou un de ses alliés qui lui fait baisser une de ses statistiques ou si c'est un piège d'entrée de terrain qui lui inflige la baisse de statistique.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Déclic Tactique",
+        "nameEn": "Stance Change",
+        "nameJp": "バトルスイッチ",
+        "genApparition": "XY",
+        "effectInFight": "Change la forme d'Exagide selon les capacités qu'il utilise.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Flora-Voile",
+        "nameEn": "Flower Veil",
+        "nameJp": "フラワーベール",
+        "genApparition": "XY",
+        "effectInFight": "Immunité contre la diminution de statistiques adverse du Pokémon et des alliés de type Plante.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Gluco-Voile",
+        "nameEn": "Sweet Veil",
+        "nameJp": "スイートベール",
+        "genApparition": "XY",
+        "effectInFight": "Immunité contre le statut sommeil pour le Pokémon et ses alliés.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Griffe Dure",
+        "nameEn": "Tough Claws",
+        "nameJp": "かたいツメ",
+        "genApparition": "XY",
+        "effectInFight": "Les attaques physiques augmentent de 30%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Magicien",
+        "nameEn": "Magician",
+        "nameJp": "マジシャン",
+        "genApparition": "XY",
+        "effectInFight": "Le possesseur de ce talent vole l'objet du Pokémon adverse si il l'attaque avec une attaque physique.\nLe talent ne s'active pas si le Possesseur tient un objet, la cible n'en tient pas, l'un des 2 Pokémon est derrière un clone, ou la cible tient un objet changeant sa forme ou un cristal Z.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Méga Blaster",
+        "nameEn": "Mega Launcher",
+        "nameJp": "メガランチャー",
+        "genApparition": "XY",
+        "effectInFight": "Augmente la puissance des capacités d'aura de 50%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Pare-Balles",
+        "nameEn": "Bulletproof",
+        "nameJp": "ぼうだん",
+        "genApparition": "XY",
+        "effectInFight": "Immunité contre les capacités à projectiles.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Peau Céleste",
+        "nameEn": "Aerilate",
+        "nameJp": "スカイスキン",
+        "genApparition": "XY",
+        "effectInFight": "Change les attaques de type Normal du Pokémon en attaque de type Vol en augmentant la puissance des attaques qui ont vus leurs type changer de 20%.\nL'augmentation était de 30% en 6ème gen.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Peau Féérique",
+        "nameEn": "Pixilate",
+        "nameJp": "フェアリースキン",
+        "genApparition": "XY",
+        "effectInFight": "Change les attaques de type Normal du Pokémon en attaque de type Fée en augmentant la puissance des attaques qui ont vus leurs type changer de 20%.\nL'augmentation était de 30% en 6ème gen.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Peau Gelée",
+        "nameEn": "Refrigerate",
+        "nameJp": "フリーズスキン",
+        "genApparition": "XY",
+        "effectInFight": "Change les attaques de type Normal du Pokémon en attaque de type Glace en augmentant la puissance des attaques qui ont vus leurs type changer de 20%.\nL'augmentation était de 30% en 6ème gen.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Poisseux",
+        "nameEn": "Gooey",
+        "nameJp": "ぬめぬめ",
+        "genApparition": "XY",
+        "effectInFight": "Les attaques physique reçues font diminuer la Vitesse du lanceur.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Prognathe",
+        "nameEn": "Strong Jaw",
+        "nameJp": "がんじょうあご",
+        "genApparition": "XY",
+        "effectInFight": "Augmente la puissance des attaques morsures de 50%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Protéen",
+        "nameEn": "Protean",
+        "nameJp": "へんげんじざい",
+        "genApparition": "XY",
+        "effectInFight": "Change le type du Pokémon en celui de l'attaque qu'il utilise avant de la lancer.\nDepuis la 9ème gen, le talent ne s'active que 1 fois à chaque switch du possesseur du talent et ne s'active pas si le possesseur du talent téracristallisé.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Symbiose",
+        "nameEn": "Symbiosis",
+        "nameJp": "きょうせい",
+        "genApparition": "XY",
+        "effectInFight": "L'objet tenu est donné à l'allié lorsque ce dernier utilise le sien.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Toison Épaisse",
+        "nameEn": "Fur Coat",
+        "nameJp": "ファーコート",
+        "genApparition": "XY",
+        "effectInFight": "La statistique de Défense du Pokémon est doublée.\nLe talent n'affecte pas la puissance de Big Splash",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Toison Herbue",
+        "nameEn": "Grass Pelt",
+        "nameJp": "くさのけがわ",
+        "genApparition": "XY",
+        "effectInFight": "Sous le Champ Herbu, la Défense du Pokémon augmente de 50%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Mer Primaire",
+        "nameEn": "Primordial Sea",
+        "nameJp": "はじまりのうみ",
+        "genApparition": "ROSA",
+        "effectInFight": "Active le climat pluie battante lorsque le Pokémon est envoyé au combat.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Souffle Delta",
+        "nameEn": "Delta Stream",
+        "nameJp": "デルタストリーム",
+        "genApparition": "ROSA",
+        "effectInFight": "Active le climat vent mystérieux lorsque le Pokémon est envoyé au combat.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Terre Finale",
+        "nameEn": "Desolate Land",
+        "nameJp": "おわりのだいち",
+        "genApparition": "ROSA",
+        "effectInFight": "Active le climat soleil intense lorsque le Pokémon est envoyé au combat.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Animacœur",
+        "nameEn": "Soul-Heart",
+        "nameJp": "ソウルハート",
+        "genApparition": "SL",
+        "effectInFight": "La statistique d'Attaque Spéciale du Pokémon augmente e 1 niveau si un Pokémon est mis K.O sur le terrain.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Aquabulle",
+        "nameEn": "Water Bubble",
+        "nameJp": "すいほう",
+        "genApparition": "SL",
+        "effectInFight": "Diminue les dégâts subits par les attaques de type Feu de 50%.\nDouble la puissance des capacités de type Eau.\nImmunise à la brûlure.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Banc",
+        "nameEn": "Schooling",
+        "nameJp": "ぎょぐん",
+        "genApparition": "SL",
+        "effectInFight": "Change la forme de Froussardine s'il a plus de 20% de ses PV max et est au moins niveau 20.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Batterie",
+        "nameEn": "Battery",
+        "nameJp": "バッテリー",
+        "genApparition": "SL",
+        "effectInFight": "Augmente la puissance des attaques spéciales des alliés de 30%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Boost Chimère",
+        "nameEn": "Beast Boost",
+        "nameJp": "ビーストブースト",
+        "genApparition": "SL",
+        "effectInFight": "La statistique (sans augmentation) la plus élevée du Pokémon augmente de 1 niveau s'il met un Pokémon K.O.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Bouclier-Carcan",
+        "nameEn": "Shields Down",
+        "nameJp": "リミットシールド",
+        "genApparition": "SL",
+        "effectInFight": "Change la forme de Météno lorsque ses PV descendent sous les 50 %.\nIl est immunisé aux statuts s'il possède son bouclier.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Boule de Poils",
+        "nameEn": "Fluffy",
+        "nameJp": "もふもふ",
+        "genApparition": "SL",
+        "effectInFight": "Diminue les dégâts subits par les attaque physique de 50%, mais les double si l'attaque est de type Feu.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Chasse-Neige",
+        "nameEn": "Slush Rush",
+        "nameJp": "ゆきかき",
+        "genApparition": "SL",
+        "effectInFight": "Sous le climat grêle, la Vitesse du Pokémon est doublée.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Corps Coloré",
+        "nameEn": "Dazzling",
+        "nameJp": "ビビッドボディ",
+        "genApparition": "SL",
+        "effectInFight": "Le Pokémon adverse ne peux pas utiliser d'attaque de priorité.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Corrosion",
+        "nameEn": "Corrosion",
+        "nameJp": "ふしょく",
+        "genApparition": "SL",
+        "effectInFight": "Ignore l'immunité à l'empoisonnement des types Acier et Poison.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Créa-Brume",
+        "nameEn": "Misty Surge",
+        "nameJp": "ミストメイカー",
+        "genApparition": "SL",
+        "effectInFight": "Active un Champ Brumeux lorsque le Pokémon est envoyé au combat.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Créa-Élec",
+        "nameEn": "Electric Surge",
+        "nameJp": "エレキメイカ",
+        "genApparition": "SL",
+        "effectInFight": "Active un Champ Électrifié lorsque le Pokémon est envoyé au combat.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Créa-Herbe",
+        "nameEn": "Grassy Surge",
+        "nameJp": "グラスメイカー",
+        "genApparition": "SL",
+        "effectInFight": "Active un Champ Herbu lorsque le Pokémon est envoyé au combat.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Créa-Psy",
+        "nameEn": "Psychic Surge",
+        "nameJp": "サイコメイカー",
+        "genApparition": "SL",
+        "effectInFight": "Active un Champ Psychique lorsque le Pokémon est envoyé au combat.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Cruauté",
+        "nameEn": "Merciless",
+        "nameJp": "ひとでなし",
+        "genApparition": "SL",
+        "effectInFight": "Si la cible est empoisonné, le possesseur de ce talent fait toujours un coup critique.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Danseuse",
+        "nameEn": "Dancer",
+        "nameJp": "おどりこ",
+        "genApparition": "SL",
+        "effectInFight": "Permet d'utiliser les capacités de danse utilisées par les autres Pokémon.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Endurance",
+        "nameEn": "Stamina",
+        "nameJp": "じきゅうりょく",
+        "genApparition": "SL",
+        "effectInFight": "La Défense du Pokémon augmente de 1 niveau s'il est touché par une capacité physique.\nLe talent s'active aux attaques multicoups.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Escampette",
+        "nameEn": "Wimp Out",
+        "nameJp": "にげごし",
+        "genApparition": "SL",
+        "effectInFight": "La fuite ou le switch du Pokémon est automatique s'il a moins de 50% de ses PV max.\nSi il tient un baie celle ci est mangée avant que le talent s'active.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Expert Acier",
+        "nameEn": "Steelworker",
+        "nameJp": "はがねつかい",
+        "genApparition": "SL",
+        "effectInFight": "Augmente la puissance des attaques de type Acier de 50%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Expuls'Organes",
+        "nameEn": "Innards Out",
+        "nameJp": "とびだすなかみ",
+        "genApparition": "SL",
+        "effectInFight": "Inflige à l'adversaire des dégâts équivalents au nombre de PV qu'il restait au Pokémon avant d'être mis K.O.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Fantômasque",
+        "nameEn": "Disguise",
+        "nameJp": "ばけのかわ",
+        "genApparition": "SL",
+        "effectInFight": "Change la forme de Mimiqui après les premiers dégâts encaissés par une attaque ennemie.\nDepuis la 8ème gen, quand Mimiqui change de forme il perds 1/8 de ses PV max.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Filature",
+        "nameEn": "Stakeout",
+        "nameJp": "はりこみ",
+        "genApparition": "SL",
+        "effectInFight": "Double la puissance des attaques des Pokémon arrivant sur le terrain.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Folle Furie",
+        "nameEn": "Berserk",
+        "nameJp": "ぎゃくじょう",
+        "genApparition": "SL",
+        "effectInFight": "L''Attaque Spéciale du Pokémon augmente de 1 niveau a chaque fois qu'il passe en dessous de 50% de ses PV max.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Hydrata-Son",
+        "nameEn": "Liquid Voice",
+        "nameJp": "うるおいボイス",
+        "genApparition": "SL",
+        "effectInFight": "Les attaques sonores du Pokémon deviennent de type Eau.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Hypersommeil",
+        "nameEn": "Comatose",
+        "nameJp": "ぜったいねむり",
+        "genApparition": "SL",
+        "effectInFight": "Le Pokémon est considéré comme endormi, sans l'être.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Longue Portée",
+        "nameEn": "Long Reach",
+        "nameJp": "うるおいボイス",
+        "genApparition": "SL",
+        "effectInFight": "Les attaques du Pokémon sont toutes considérées comme étant sans contact.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Mèche Rebelle",
+        "nameEn": "Tangling Hair",
+        "nameJp": "カーリーヘアー",
+        "genApparition": "SL",
+        "effectInFight": "La Vitesse de l'attaquant diminue a chaque fois que le Pokémon subit une attaque physique.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Métallo-Garde",
+        "nameEn": "Full Metal Body",
+        "nameJp": "メタルプロテクト",
+        "genApparition": "SL",
+        "effectInFight": "Immunité contre la diminution de statistiques du Pokémon venant d'un autre Pokémon.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Osmose",
+        "nameEn": "Power of Alchemy",
+        "nameJp": "かがくのちから",
+        "genApparition": "SL",
+        "effectInFight": "Change le talent du Pokémon en celui d'un allié mis K.O.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Peau Électrique",
+        "nameEn": "Galvanize",
+        "nameJp": "エレキスキン",
+        "genApparition": "SL",
+        "effectInFight": "Change les attaques de type Normal du Pokémon en attaque de type Électrick en augmentant la puissance des attaques qui ont vus leurs type changer de 20%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Prestance Royale",
+        "nameEn": "Queenly Majesty",
+        "nameJp": "じょおうのいげん",
+        "genApparition": "SL",
+        "effectInFight": "Le Pokémon adverse n'a pas la possibilité d'utiliser une capacité de priorité.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Prioguérison",
+        "nameEn": "Triage",
+        "nameJp": "ヒーリングシフト",
+        "genApparition": "SL",
+        "effectInFight": "La priorité des capacités de soin augmente de 3 niveaux.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Prisme-Armure",
+        "nameEn": "Prism Armor",
+        "nameJp": "プリズムアーマー",
+        "genApparition": "SL",
+        "effectInFight": "Si le possesseur de ce talent est touché par une capacité super efficace, les dégâts infligés par celle-ci sont réduits de 25%.\nCe talent ne peut pas être désactiver.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Rassemblement",
+        "nameEn": "Power Construct",
+        "nameJp": "スワームチェンジ",
+        "genApparition": "SL",
+        "effectInFight": "Change la forme de Zygarde en forme 100% si ses PV sont inférieurs à 50% de son maximum.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Receveur",
+        "nameEn": "Receiver",
+        "nameJp": "レシーバー",
+        "genApparition": "SL",
+        "effectInFight": "Change le talent du Pokémon en celui d'un allié mis K.O.\nLes talents ne pouvant être récupérés sont: Osmose, Calque, Météo, Don Floral, Multi-Type, Illusion, Garde Mystik, Mode Transe, Imposteur, Déclic Tactique, Rassemblement, Banc, Hypersommeil, Bouclier-Carcan, Fantômasque, Système Alpha et Synergie.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Repli Tactique",
+        "nameEn": "Emergency Exit",
+        "nameJp": "ききかいひ",
+        "genApparition": "SL",
+        "effectInFight": "Déclenche la fuite en combat sauvage ou le switch en combat de dresseur du Pokémon s'il tombe sous les 50% de ses PV max suite à une attaque.\nLe talent s'active après l'utilisation des baies.\nSi le talent s'active suite à une attaque permettant de revenir dans son équipe, alors le pokémon l'ayant lancée ne retourne pas dans son équipe.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Sable Humide",
+        "nameEn": "Water Compaction",
+        "nameJp": "みずがため",
+        "genApparition": "SL",
+        "effectInFight": "La statistique de Défense du Pokémon augmente de 2 niveaux quand il est touché par une capacité de type Eau.\nLes attaques à multi-coups de type Eau activent le talent à chaque fois.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Spectro-Bouclier",
+        "nameEn": "Shadow Shield",
+        "nameJp": "ファントムガード",
+        "genApparition": "SL",
+        "effectInFight": "Réduit les dégâts subits par les attaques si le Pokémon a tous ses PV de 50%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Surf Caudal",
+        "nameEn": "Surge Surfer",
+        "nameJp": "サーフテール",
+        "genApparition": "SL",
+        "effectInFight": "Sous le Champ Électrifié, la Vitesse du Pokémon est doublée.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Synergie",
+        "nameEn": "Battle Bond",
+        "nameJp": "きずなへんげ",
+        "genApparition": "SL",
+        "effectInFight": "Change la forme d'Amphinobi après avoir vaincu un adversaire, ne se réactive pas si l'Amphinobi est tombé K.O. puis est réanimé.\nDepuis la 9ème gen,  quand Amphinobi met K.O. un Pokémon adverse, son Attaque, son Attaque Spéciale et sa Vitesse augmentent de 1 niveau, ne s'active qu'une seule fois par combat.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Système Alpha",
+        "nameEn": "RKS System",
+        "nameJp": "ＡＲシステム",
+        "genApparition": "SL",
+        "effectInFight": "Change la forme de Silvallié selon la ROM tenue.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Cérébro-Force",
+        "nameEn": "Neuroforce",
+        "nameJp": "ブレインフォース",
+        "genApparition": "USUL",
+        "effectInFight": "Augmente la puissance des attaques super efficaces de 25%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Âme Vagabonde",
+        "nameEn": "Wandering Spirit",
+        "nameJp": "さまようたましい",
+        "genApparition": "EB",
+        "effectInFight": "Échange le talent du Pokémon adverse et celuis du possesseur de ce talent, quand le possesseur subit une attaque physique.\nMême si la cible de l'échange de talent tombe K.O. durant le tour de l'échange, les talents sont échangés.\nLe nouveau talent s'active dès qu'il est reçu.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Armure Miroir",
+        "nameEn": "Mirror Armor",
+        "nameJp": "ミラーアーマー",
+        "genApparition": "EB",
+        "effectInFight": "Les effets réducteurs de statistiques sont renvoyés au Pokémon adverse.\nMais ne renvoie pas les baisses de statistiques renvoyées par Miroir Magik.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Boost Acier",
+        "nameEn": "Steely Spirit",
+        "nameJp": "はがねのせいしん",
+        "genApparition": "EB",
+        "effectInFight": "Augmente la puissance des capacités de type Acier du Pokémon et de ses alliés de 50%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Brise-Barrière",
+        "nameEn": "Screen Cleaner",
+        "nameJp": "バリアフリー",
+        "genApparition": "EB",
+        "effectInFight": "Annule les effets de Mur Lumière, Protection et Voile Aurore pour tous les Pokémon lorsque le Pokémon est envoyé au combat.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Cercle d'Énergie",
+        "nameEn": "Power Spot",
+        "nameJp": "パワースポット",
+        "genApparition": "EB",
+        "effectInFight": "Augmente la puissance des attaques des alliés sur le terrain de 30%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Corps Condamné",
+        "nameEn": "Perish Body",
+        "nameJp": "ほろびのボディ",
+        "genApparition": "EB",
+        "effectInFight": "Force le Pokémon et l'adversaire à tomber K.O. trois tours après que le Pokémon a été touché par une attaque physique, le compteur pour le Pokémon est annulé s'il quitte le terrain et ce de façon indépendante.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Déclic Fringale",
+        "nameEn": "Hunger Switch",
+        "nameJp": "はらぺこスイッチ",
+        "genApparition": "EB",
+        "effectInFight": "Change la forme de Morpeko a chaque tour.\nChange le type de Roue Libre a chaque tour.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Dégobage",
+        "nameEn": "Gulp Missile",
+        "nameJp": "うのミサイル",
+        "genApparition": "EB",
+        "effectInFight": "Change la forme de Nigosier lorsqu'il utilise la capacité Surf ou Plongée, passe en forme Gobe-Tout s'il possède plus de 50% de ses PV max et en Gobe-Chu s'il possède moins de 50% de ses PV max.\nS'il subit des dégâts sous l'une de ses formes il contre-attaque et fait perdre 25% des PV max de l'attaquant.\nLa forme Gobe-Tout baisse la défense de 1 niveau et la forme Gobe-Chu paralyse.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Écailles Glacées",
+        "nameEn": "Ice Scales",
+        "nameJp": "こおりのりんぷん",
+        "genApparition": "EB",
+        "effectInFight": "Diminue les dégâts subits par les attaques spéciales de 50%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Effilochage",
+        "nameEn": "Cotton Down",
+        "nameJp": "わたげ",
+        "genApparition": "EB",
+        "effectInFight": "La statistique de Vitesse du Pokémon adverse diminue de 1 niveau lorsque le Pokémon est touché par une attaque.\nAffecte également les alliés",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Égide Inflexible",
+        "nameEn": "Dauntless Shield",
+        "nameJp": "ふくつのたて",
+        "genApparition": "EB",
+        "effectInFight": "La statistique de Défense du Pokémon augmente de 1 niveau en entrant sur le terrain.\nDepuis la 9ème gen, ce talent ne s'active qu'une seule fois.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Entêtement",
+        "nameEn": "Gorilla Tactics",
+        "nameJp": "ごりむちゅう",
+        "genApparition": "EB",
+        "effectInFight": "La statistique d'Attaque est augmentée de 50%, mais le Pokémon reste bloqué sur une seule attaque.\nCe talent est désactivé une si le Pokémon est dynamaxé.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Expul'Sable",
+        "nameEn": "Sand Spit",
+        "nameJp": "すなはき",
+        "genApparition": "EB",
+        "effectInFight": "Active la tempête de sable qui dure 5tours lorsque le Pokémon est touché par une attaque physique.\nLa tempête de sable dure 8 tours si le Pokémon tient la Roche Lisse.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Gaz Inhibiteur",
+        "nameEn": "Neutralizing Gas",
+        "nameJp": "かがくへんかガス",
+        "genApparition": "EB",
+        "effectInFight": "Annule les effets des talents des autres Pokémon et ce même des alliés, tant que le Pokémon est sur  le terrain.\nLe talent ne peut pas désactiver les talents  Multi-Type, Mode Transe, Déclic Tactique, Bouclier-Carcan, Banc, Fantômasque, Synergie, Rassemblement, Hypersommeil, Système Alpha, Dégobage, Tête de Gel, Osmose Équine, Gaz Inhibiteur, Charge Quantique, Paléosynthèse et Téramorphose.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Lame Indomptable",
+        "nameEn": "Intrepid Sword",
+        "nameJp": "ふとうのけん",
+        "genApparition": "EB",
+        "effectInFight": "La statistique d'Attaque du Pokémon augmente de 1 niveau en entrant sur le terrain.\nDepuis la 9ème gen, ce talent ne s'active qu'une seule fois.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Libéro",
+        "nameEn": "Libero",
+        "nameJp": "リベロ",
+        "genApparition": "EB",
+        "effectInFight": "Change le type du Pokémon en celui de toute attaque qu'il utilise.\nDepuis la 9ème gen, le talent ne s'active que sur la première attaque d'un type différent de celui du lanceur, le talent s'active à chaque arrivée sur le terrain.\nLe talent ne s'active pas sur les Pokémon téracristallisés.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Mimétisme",
+        "nameEn": "Mimicry",
+        "nameJp": "ぎたい",
+        "genApparition": "EB",
+        "effectInFight": "Change le type du Pokémon en celui du champ actif.\nSi un adversaire se transforme en le possesseur de ce talent, il aura le type du pokémon de base et non le type changé s'il y a un terrain.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Mûrissement",
+        "nameEn": "Ripen",
+        "nameJp": "じゅくせい",
+        "genApparition": "EB",
+        "effectInFight": "La Baie tenue a un effet doublé, sauf pour celles qui soigne les status.\nLes Restes et le Jus de Baie activent le talent, mais n'activent pas l'effet du talent.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Nerfs d'Acier",
+        "nameEn": "Stalwart",
+        "nameJp": "すじがねいり",
+        "genApparition": "EB",
+        "effectInFight": "Ignore les effets des capacités ou des talents attirant les capacités.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Propulseur",
+        "nameEn": "Propeller Tail",
+        "nameJp": "スクリューおびれ",
+        "genApparition": "EB",
+        "effectInFight": "Ignore les effets des capacités ou des talents attirant les capacités.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Punk Rock",
+        "nameEn": "Punk Rock",
+        "nameJp": "パンクロック",
+        "genApparition": "EB",
+        "effectInFight": "Augmente la puissance des attaques sonores de 30%.\nLe Pokémon prends 50% de dégât en moins quand il est touché par une attaque sonore.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Ramasse Ball",
+        "nameEn": "Ball Fetch",
+        "nameJp": "たまひろい",
+        "genApparition": "EB",
+        "effectInFight": "Si le Pokémon ne tient pas d'objet, si le dresseur rate une capture, alors ce Pokémon récupère la première ball perdue.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Tête de Gel",
+        "nameEn": "Ice Face",
+        "nameJp": "アイスフェイス",
+        "genApparition": "EB",
+        "effectInFight": "Quand Bekaglaçon est sous sa Forme Tête de Gel et qu'il subit une attaque physique, il ne subit pas de dégâts et prend sa forme Tête Dégel.\n Bekaglaçon est sous sa forme Tête Dégel reprend sa forme Tête de Gel sous la grêle ou une tempête de neige.\nOr, si Bekaglaçon perds sa forme Tête de Gel sous la grêle ou la tempête de neige, il faudra qu'il quitte et revienne sur le terrain pour réobtenir sa forme Tête de Gel.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Turbine",
+        "nameEn": "Steam Engine",
+        "nameJp": "じょうききかん",
+        "genApparition": "EB",
+        "effectInFight": "Si le possesseur de ce talent subit une attaque Eau ou Feu, sa statistique de vitesse augmente de 6 niveaux.",
+        "effectWithoutFight": "Si un possesseur de ce talent est dans l'équipe il divise par 2 le nombre de pas requis pour faire éclore une oeuf, ne peut pas être cummulable."
+    },
+    {
+        "nameFr": "Voile Pastel",
+        "nameEn": "Pastel Veil",
+        "nameJp": "パステルベール",
+        "genApparition": "EB",
+        "effectInFight": "Immunise et guérit contre l'empoisonnement pour le Pokémon et ses alliés sur le terrain.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Poing Invisible",
+        "nameEn": "Unseen Fist",
+        "nameJp": "ふかしのこぶし",
+        "genApparition": "ISA",
+        "effectInFight": "Les attaques physique ignorent les effets des attaques de protection totale, ormis Gardomax.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Tir Vif",
+        "nameEn": "Quick Draw",
+        "nameJp": "クイックドロウ",
+        "genApparition": "ISA",
+        "effectInFight": "En combat, un Pokémon doté de ce talent a 30% de chances qu'une capacité de même priorité soit activée en premier durant un tour, en ignorant les statistiques de vitesse respectives des deux Pokémon.\nUn Pokémon ayant Tir Vif et portant la Vive Griffe voit alors les probabilités que l'effet se déclenche passer à 44 %.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Blanche Ruade",
+        "nameEn": "Chilling Neigh",
+        "nameJp": "しろのいななき",
+        "genApparition": "TEC",
+        "effectInFight": "La statistique d'Attaque du Pokémon augmente de 1 niveau s'il met un Pokémon K.O.\nSi le Pokémon mis K.O. possède le talent  Momie, Âme Vagabonde ou Odeur Tenace, alors le talent ne s'active pas car le talent est remplacé avant son activation.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Breuvage Suspect",
+        "nameEn": "Curious Medicine",
+        "nameJp": "きみょうなくすり",
+        "genApparition": "TEC",
+        "effectInFight": "Annule tous les changements de statistiques des alliés lorsque le Pokémon est envoyé au combat.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Dent de Dragon",
+        "nameEn": "Dragon's Maw",
+        "nameJp": "りゅうのあぎと",
+        "genApparition": "TEC",
+        "effectInFight": "Augmente la puissance des attaques de type Dragon de 50%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Osmose Équine",
+        "nameEn": "As One",
+        "nameJp": "じんばいったい",
+        "genApparition": "TEC",
+        "effectInFight": "Combine les talents Tension et Blanche Ruade, pour Sylveroy, le Cavalier du Froid;\nCombine les talents Tension et Sombre Ruade pour Sylveroy, le Cavalier d'Effroi.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Sombre Ruade",
+        "nameEn": "Grim Neigh",
+        "nameJp": "くろのいななき",
+        "genApparition": "TEC",
+        "effectInFight": "La statistique d'Attaque Spéciale du Pokémon augmente de 1 niveau s'il met un Pokémon K.O.\nSi le Pokémon mis K.O. possède le talent  Momie, Âme Vagabonde ou Odeur Tenace, alors le talent ne s'active pas car le talent est remplacé avant son activation.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Transistor",
+        "nameEn": "Transistor",
+        "nameJp": "トランジスタ",
+        "genApparition": "TEC",
+        "effectInFight": "Augmente la puissance des capacités de type Électrik de 50%.\nDepuis la 9ème gen le boost est de 30%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Absorbe-Terre",
+        "nameEn": "Earth Eater",
+        "nameJp": "どしょく",
+        "genApparition": "EV",
+        "effectInFight": "Immunise et permet de récupérer 25% de ses PV max si le Pokémon est touché par une attaque de type Sol.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Aéroporté",
+        "nameEn": "Wind Rider",
+        "nameJp": "かぜのり",
+        "genApparition": "EV",
+        "effectInFight": "Imunise et augmente l'Attaque de 1 niveau si l'adversaire fait une attaque faisant appel au vent.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Armure Caudale",
+        "nameEn": "Armor Tail",
+        "nameJp": "テイルアーマー",
+        "genApparition": "EV",
+        "effectInFight": "Immunité contre les capacités prioritaires.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Bien Cuit",
+        "nameEn": "Well-Baked Body",
+        "nameJp": "こんがりボディ",
+        "genApparition": "EV",
+        "effectInFight": "Immunité contre les capacités de type Feu et leurs effets, la Défense augmente alors de 2 niveaux.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Bois du Fléau",
+        "nameEn": "Tablets of Ruin",
+        "nameJp": "わざわいのおふだ",
+        "genApparition": "EV",
+        "effectInFight": "L'Attaque de tous les autres Pokémon diminue de 25% lorsque le Pokémon est sur le terrain.\nLes Pokémon avec ce talent sont imunisés à l'effet du talent.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Charge Quantique",
+        "nameEn": "Quark Drive",
+        "nameJp": "クォークチャージ",
+        "genApparition": "EV",
+        "effectInFight": "La statistique la plus élevée du Pokémon augmente quand un Champ Électrifié est actif ou qu'une capsule d'Énergie Booster est tenue.\nSi le Pokémon tient une capsule d'Énergie Booster sous le Champ Électrifié, alors l'objet ne sera utilisé qu'a la fin du Champ.\nLe boost est de 50% pour la vitesse et de 30% pour les autres statistiques.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Chien de Garde",
+        "nameEn": "Guard Dog",
+        "nameJp": "ばんけん",
+        "genApparition": "EV",
+        "effectInFight": "Immunité contre les capacités ou objets faisant quitter le terrain au Pokémon.\nLe talent Intimidation augmente l'attaque au lieu de le diminuer.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Collab",
+        "nameEn": "Costar",
+        "nameJp": "きょうえん",
+        "genApparition": "EV",
+        "effectInFight": "Copie les changements de statistiques de l'allié lorsque le Pokémon est envoyé au combat.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Commandant",
+        "nameEn": "Commander",
+        "nameJp": "ぼうだん",
+        "genApparition": "EV",
+        "effectInFight": "Le talent s'active tant que Nigirigon et Oyacata sont sur le terrain ensemble.\nLe Nigirigon reste alors sur le terrain mais n'attaque plus et ne peut plus subit d'attaque, mais il prends les dégâts de status.\nEn contrepartie Oyacata voit toutes ses statistiques (ormis l'Esquive et la Précision) augmenter de 2 niveaux.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Corps en Or",
+        "nameEn": "Good as Gold",
+        "nameJp": "おうごんのからだ",
+        "genApparition": "EV",
+        "effectInFight": "Immunise contre les capacités de statut.\nN'imunise pas contre les status que le lanceur s'inflige à lui même, ou les status donnés par les attaques.\nImunise également contre les effets positifs des capacités de statut des alliés.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Courroupace",
+        "nameEn": "Anger Shell",
+        "nameJp": "いかりのこうら",
+        "genApparition": "EV",
+        "effectInFight": "Si le Pokémon tombe sous les 50% de PV max après avoir subit des dégâts, la statistique de Défense et de Défense Spéciale baisse de 1 niveau, mais la statistique d'Attaque, d'Attaque Spéciale et de Vitesse augmentent de 1 niveau.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Dépôt Toxique",
+        "nameEn": "Toxic Debris",
+        "nameJp": "どくげしょう",
+        "genApparition": "EV",
+        "effectInFight": "Pose des pics toxiques dans le camp adverse lorsque le Pokémon est touché par une attaque physique.\nLes attaques à multi-coups activent à chaque fois le talent.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Épée du Fléau",
+        "nameEn": "Sword of Ruin",
+        "nameJp": "わざわいのつるぎ",
+        "genApparition": "EV",
+        "effectInFight": "La statistique de Défense de tous les Pokémon diminue de 25% tant que le Pokémon est sur le terrain.\nLes Pokémon avec ce talent sont imunisés à l'effet du talent.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Force Fongique",
+        "nameEn": "Mycelium Might",
+        "nameJp": "きんしのちから",
+        "genApparition": "EV",
+        "effectInFight": "Ignore les talents adverses, mais le Pokémon agit toujours en dernier s'il utilise une attaque de statut.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Général Suprême",
+        "nameEn": "Supreme Overlord",
+        "nameJp": "そうだいしょう",
+        "genApparition": "EV",
+        "effectInFight": "La statistique d'Attaque et d'Attaque Spéciale augmentent de 10% pour chaque allié K.O. dans l'équipe.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Grecharge",
+        "nameEn": "Electromorphosis",
+        "nameJp": "でんきにかえる",
+        "genApparition": "EV",
+        "effectInFight": "La puissance de la prochaine attaque de type Électrik est doublée, si le Pokémon subit des dégâts.\nL'effet s'annule si le Pokémon quitte le terrain.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Incisif",
+        "nameEn": "Sharpness",
+        "nameJp": "きれあじ",
+        "genApparition": "EV",
+        "effectInFight": "Augmente la puissance des capacités tranchantes de 50%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Moteur à Hadrons",
+        "nameEn": "Hadron Engine",
+        "nameJp": "ハドロンエンジン",
+        "genApparition": "EV",
+        "effectInFight": "Invoque le Champ Électrifié lorsque le Pokémon est envoyé sur le terrain.\nLa statistique d'Attaque Spéciale augmente de 30% si un Champ Électrifié est actif.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Odeur Tenace",
+        "nameEn": "Lingering Aroma",
+        "nameJp": "とれないにおい",
+        "genApparition": "EV",
+        "effectInFight": "Remplace le talent de l'adversaire attaquant par Odeur Tenace lorsque le Pokémon subit une attaque physique.\nLes talents suivant sont ne peuvent pas activer le talent Fantômasque et Hypersommeil.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Opportuniste",
+        "nameEn": "Opportunist",
+        "nameJp": "びんじょう",
+        "genApparition": "EV",
+        "effectInFight": "Copie les augmentations de statistique que l'adversaire gagne.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Paléosynthèse",
+        "nameEn": "Protosynthesis",
+        "nameJp": "こだいかっせい",
+        "genApparition": "EV",
+        "effectInFight": "La statistique la plus élevée du Pokémon augmente quand le soleil est actif ou qu'une capsule d'Énergie Booster est tenue.\nSi le Pokémon tient une capsule d'Énergie Booster sous le soleil, alors l'objet ne sera utilisé qu'a la fin du soleil.\nLe boost est de 50% pour la vitesse et de 30% pour les autres statistiques.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Perles du Fléau",
+        "nameEn": "Beads of Ruin",
+        "nameJp": "わざわいのたま",
+        "genApparition": "EV",
+        "effectInFight": "La statistique de Défense Spéciale de tous les Pokémon diminue de 25% tant que le Pokémon est sur le terrain.\nLes Pokémon avec ce talent sont imunisés à l'effet du talent.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Porte-Roche",
+        "nameEn": "Rocky Payload",
+        "nameJp": "いわはこび",
+        "genApparition": "EV",
+        "effectInFight": "Augmente la puissance des capacités de type Roche de 50%.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Pouls Orichalque",
+        "nameEn": "Orichalcum Pulse",
+        "nameJp": "ひひいろのこどう",
+        "genApparition": "EV",
+        "effectInFight": "Invoque le soleil lorsque le Pokémon est envoyé sur le terrain.\nLa statistique d'Attaque augmente de 30% si le soleil est actif.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Ruminant",
+        "nameEn": "Cud Chew",
+        "nameJp": "はんすう",
+        "genApparition": "EV",
+        "effectInFight": "La Baie tenue peut être consommée une deuxième fois à la fin du tour suivant.\nCet effet ne s'active pas si le Pokémon quitte le terrain avant l'activation de l'effet.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Sel Purificateur",
+        "nameEn": "Purifying Salt",
+        "nameJp": "きよめのしお",
+        "genApparition": "EV",
+        "effectInFight": "Immunité contre les altérations de statut.\nDiminue de 50% les dégâts des attaques de type Spectre.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Semencier",
+        "nameEn": "Seed Sower",
+        "nameJp": "こぼれダネ",
+        "genApparition": "EV",
+        "effectInFight": "Active un Champ Herbu pour 5 tours lorsque le Pokémon subit une attaque.\nLe champ dure 8 tours si le Pokémon tient l'objet Champ'Duit.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Supermutation",
+        "nameEn": "Zero to Hero",
+        "nameJp": "マイティチェンジ",
+        "genApparition": "EV",
+        "effectInFight": "Change la forme de Superdofin lorsqu'il est retiré du combat.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Thermodynamique",
+        "nameEn": "Thermal Exchange",
+        "nameJp": "ねつこうかん",
+        "genApparition": "EV",
+        "effectInFight": "Imunisé contre la brûlure.\nS'il subit une attaque de type feu, alors sa statistique d'Attaque de 1 niveau.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Turbine Éolienne",
+        "nameEn": "Wind Power",
+        "nameJp": "ふうりょくでんき",
+        "genApparition": "EV",
+        "effectInFight": "La puissance de la prochaine capacité de type Électrik est doublée lorsque le Pokémon est touché par une capacité faisant appel au vent.\nCet effet est perdu si le Pokémon quitte le terrain.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Urne du Fléau",
+        "nameEn": "Vessel of Ruin",
+        "nameJp": "わざわいのうつわ",
+        "genApparition": "EV",
+        "effectInFight": "La statistique de Attaque Spéciale de tous les Pokémon diminue de 25% tant que le Pokémon est sur le terrain.\nLes Pokémon avec ce talent sont imunisés à l'effet du talent.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Aux Petits Soins",
+        "nameEn": "Hospitality",
+        "nameJp": "おもてなし",
+        "genApparition": "MT",
+        "effectInFight": "A son entrée en combat, le Pokémon restaure 25% des PV max des PV d'un allié.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Chaîne Toxique",
+        "nameEn": "Toxic Chain",
+        "nameJp": "どくのくさり",
+        "genApparition": "MT",
+        "effectInFight": "Les attaques ont 30% de chances d'empoisonnement gravement la cible.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Force Mémorielle",
+        "nameEn": "Embody Aspect",
+        "nameJp": "おもかげやどし",
+        "genApparition": "MT",
+        "effectInFight": "Lors de sa téracristalisation Ogerpon voit une de ses statistiques augmenter de 1 niveau selon le masque du Pokémon.\nVitesse pour le Masque Turquoise, Défense SPéciale pour le Masque du Puits, Attaque pour le Masque du Fourneau et Défense pour le Masque de la Pierre.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Nectar Mielleux",
+        "nameEn": "Supersweet Syrup",
+        "nameJp": "かんろなミツ",
+        "genApparition": "MT",
+        "effectInFight": "La statistique d'Esquive des Pokémon adverses baisse de 1 niveau lorsque le Pokémon arrive sur le terrain.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Œil Révélateur",
+        "nameEn": "Mind's Eye",
+        "nameJp": "しんがん",
+        "genApparition": "MT",
+        "effectInFight": "Imunité contre la réduction de Précision et augmentation de l'Esquive de la cible.\nLe Pokémon peut toucher les Pokémon de type Spectre avec des attaques de type Normal.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Téramorphose",
+        "nameEn": "Tera Shift",
+        "nameJp": "テラスチェンジ",
+        "genApparition": "DI",
+        "effectInFight": "Transforme Terapagos en sa forme Téracristal à son entrée sur le terrain.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Téra-Carapace",
+        "nameEn": "Tera Shell",
+        "nameJp": "テラスシェル",
+        "genApparition": "DI",
+        "effectInFight": "Les attaques reçues toujours peu efficaces si le Pokémon a tous de ses PV.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Téraformation 0",
+        "nameEn": "Teraform Zero",
+        "nameJp": "ゼロフォーミング",
+        "genApparition": "DI",
+        "effectInFight": "Annule les effets des climats et champs actifs en entrant sur le terrain.\nNe s'active qu'une seule fois par combat.",
+        "effectWithoutFight": null
+    },
+    {
+        "nameFr": "Emprise Toxique",
+        "nameEn": "Poison Puppeteer",
+        "nameJp": "どくくぐつ",
+        "genApparition": "DI",
+        "effectInFight": "Avec un statut empoisonné obtenu autrement que via des Pics Toxik, le Pokémon adverse devient confus.\nNe s'active que sur Pêchaminus.",
+        "effectWithoutFight": null
+    }
+]
