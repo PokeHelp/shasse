@@ -45,6 +45,7 @@ model user {
   status        String          @default("on") @db.VarChar(45)
   ownedPokemons owned_pokemon[]
   roleUsers     role_user[]
+  refreshTokens refresh_token[]
   langues       langue          @relation(fields: [langueId], references: [id])
 
   @@index([langueId], map: "user_langue_id_fkey")
@@ -52,7 +53,7 @@ model user {
 
 model role {
   id          Int         @id @default(autoincrement()) @db.UnsignedInt
-  name        String      @db.VarChar(45)
+  name        String      @unique @db.VarChar(45)
   levelAccess Int         @map("level_access")
   createdAt   DateTime    @default(now()) @map("created_at") @db.DateTime(0)
   updatedAt   DateTime?   @updatedAt @map("updated_at") @db.DateTime(0)
@@ -724,6 +725,15 @@ model skill_obtation {
   @@id([pokemonId, groupGameId, capacityId, skillObtationTypeId, detail])
   @@index([capacityId], map: "skill_obtation_capacity_id_fkey")
   @@index([skillObtationTypeId], map: "skill_obtation_skill_obtation_type_id_fkey")
+}
+
+model refresh_token {
+  id        Int      @id @default(autoincrement()) @db.UnsignedInt
+  userId    Int      @map("user_id") @db.UnsignedInt
+  token     String   @unique @db.VarChar(255)
+  expiresAt DateTime @map("expires_at") @db.Timestamp()
+
+  users user @relation(references: [id], fields: [userId])
 }
 
 enum reference_table {
