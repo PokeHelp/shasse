@@ -1,10 +1,17 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import jwt from 'jsonwebtoken';
+import { refreshAccessToken } from '@/utils/auth';
+
+interface Role {
+    name: string;
+    levelAccess: number;
+}
 
 interface User {
     userId: number;
-    roles: { name: string; levelAccess: number }[];
+    roles: Role[];
+    exp: number;
 }
 
 interface ProtectedPageProps {
@@ -17,30 +24,61 @@ export default function ProtectedPage({ requiredLevelAccess, children }: Protect
     const [isAuthorized, setIsAuthorized] = useState(false);
 
     useEffect(() => {
-        const accessToken = localStorage.getItem('accessToken');
-        if (!accessToken) {
-            router.push('/login'); // Rediriger vers la page de connexion
-            return;
-        }
+        const checkAuth = async () => {
+            const accessToken = localStorage.getItem('accessToken');
 
-        // Vérifier si le token est valide
-        const decoded = jwt.decode(accessToken) as User;
-        if (!decoded) {
-            router.push('/login'); // Rediriger si le token est invalide
-            return;
-        }
+            // Si aucun access token n'est trouvé, rediriger vers la page de connexion
+            // Si aucun access token n'est trouvé, essayer de le rafraîchir
+            if (!accessToken) {
+                const newToken = await refreshAccessToken();
+                if (!newToken) {
+                    router.push('/login'); // Rediriger si le rafraîchissement échoue
+                    return;
+                }
+                // Stocker le nouvel access token
+                localStorage.setItem('accessToken', newToken);
+                // Recharger la page pour utiliser le nouveau token
+                window.location.reload();
+                return;
+            }
 
-        // Vérifier le levelAccess
-        const hasAccess = decoded.roles.some(
-            (role) => role.levelAccess >= requiredLevelAccess
-        );
+            // Décoder le token pour vérifier son expiration
+            const decoded = jwt.decode(accessToken) as User | null;
+            if (!decoded || !decoded.roles) {
+                router.push('/login');
+                return;
+            }
 
-        if (!hasAccess) {
-            router.push('/unauthorized'); // Rediriger vers une page d'erreur
-            return;
-        }
+            const now = Date.now() / 1000; // Temps actuel en secondes
 
-        setIsAuthorized(true);
+            // Si le token est expiré, essayer de le rafraîchir
+            if (decoded.exp < now) {
+                const newToken = await refreshAccessToken();
+                if (!newToken) {
+                    router.push('/login'); // Rediriger si le rafraîchissement échoue
+                    return;
+                }
+                // Stocker le nouvel access token
+                localStorage.setItem('accessToken', newToken);
+                // Recharger la page pour utiliser le nouveau token
+                window.location.reload();
+                return;
+            }
+
+            // Vérifier les permissions de l'utilisateur
+            const hasAccess = decoded.roles.some(
+                (role) => role.levelAccess >= requiredLevelAccess
+            );
+
+            if (!hasAccess) {
+                router.push('/unauthorized');
+                return;
+            }
+
+            setIsAuthorized(true);
+        };
+
+        checkAuth();
     }, [router, requiredLevelAccess]);
 
     if (!isAuthorized) {

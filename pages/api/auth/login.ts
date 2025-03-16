@@ -66,7 +66,7 @@ export default async function handler(
         const accessToken: string = jwt.sign(
             {userId: user.id, roles},
             process.env.JWT_SECRET!,
-            {expiresIn: '15m'}
+            {expiresIn: '2s'}
         );
 
         const refreshToken: string = jwt.sign(

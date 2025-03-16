@@ -2,54 +2,52 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import jwt from 'jsonwebtoken';
 import prisma from '@/lib/prisma';
 
-interface RefreshRequest {
-    refreshToken: string;
-}
-
-interface RefreshResponse {
-    accessToken: string;
-}
-
 export default async function handler(
     req: NextApiRequest,
-    res: NextApiResponse<RefreshResponse | { message: string }>
-): Promise<void> {
+    res: NextApiResponse
+) {
     if (req.method !== 'POST') {
         return res.status(405).json({ message: 'Method not allowed' });
     }
 
-    const { refreshToken } = req.body as RefreshRequest;
+    const { refreshToken } = req.body;
 
     try {
-        const storedToken = await prisma.refresh_token.findUnique({
-            where: { token: refreshToken },
+        // Vérifier le refresh token
+        const decoded = jwt.verify(refreshToken, process.env.REFRESH_SECRET!) as { userId: number };
+
+        // Récupérer l'utilisateur avec ses rôles
+        const user = await prisma.user.findUnique({
+            where: { id: decoded.userId },
             include: {
-                users: {
+                roleUsers: {
                     include: {
-                        roleUsers: {
-                            include: {
-                                role: true,
-                            },
-                        },
+                        role: true,
                     },
                 },
             },
         });
 
-        if (!storedToken || new Date(storedToken.expiresAt) < new Date()) {
-            return res.status(401).json({ message: 'Invalid or expired refresh token' });
+        if (!user) {
+            return res.status(401).json({ message: 'User not found' });
         }
 
-        const roles: string[] = storedToken.users.roleUsers.map((roleUser) => roleUser.role.name);
-        const accessToken: string = jwt.sign(
-            { userId: storedToken.users.id, roles },
+        // Extraire les rôles de l'utilisateur
+        const roles = user.roleUsers.map((roleUser) => ({
+            name: roleUser.role.name,
+            levelAccess: roleUser.role.levelAccess,
+        }));
+
+        // Générer un nouvel access token avec les rôles
+        const accessToken = jwt.sign(
+            { userId: user.id, roles },
             process.env.JWT_SECRET!,
-            { expiresIn: '15m' }
+            { expiresIn: '2s' } // Nouvelle durée de validité
         );
 
         res.status(200).json({ accessToken });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ message: 'Internal server error' });
+        res.status(401).json({ message: 'Invalid or expired refresh token' });
     }
 }

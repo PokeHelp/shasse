@@ -23,10 +23,15 @@ export default function Login() {
                 throw new Error('Login failed');
             }
 
-            const { accessToken } = await response.json();
+            const { accessToken, refreshToken } = await response.json();
 
             // Stocker l'access token dans le localStorage
             localStorage.setItem('accessToken', accessToken);
+
+            // Stocker le refresh token dans un cookie sécurisé
+            // TODO: rajouter "HttpOnly" quand on aura les tests pour voir que tt fonctionne
+            // TODO: rajouter "Secure" sur le site quand on aura le https
+            document.cookie = `refreshToken=${refreshToken}; SameSite=Strict; Path=/; Max-Age=${7 * 24 * 60 * 60}`;
 
             // Rediriger vers une page sécurisée
             router.push('/protectedPage');
