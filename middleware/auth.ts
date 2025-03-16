@@ -1,10 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import jwt from 'jsonwebtoken';
-import prisma from '@/lib/prisma';
 
 interface JwtPayload {
     userId: number;
-    roles: string[];
+    roles: { name: string; levelAccess: number }[];
 }
 
 export function authenticate(requiredLevelAccess: number) {
@@ -12,7 +11,7 @@ export function authenticate(requiredLevelAccess: number) {
         req: NextApiRequest,
         res: NextApiResponse,
         next: () => void
-    ): Promise<void> => {
+    ) => {
         const token = req.headers.authorization?.split(' ')[1];
         if (!token) {
             return res.status(401).json({ message: 'No token provided' });
@@ -20,29 +19,11 @@ export function authenticate(requiredLevelAccess: number) {
 
         try {
             const decoded = jwt.verify(token, process.env.JWT_SECRET!) as JwtPayload;
+            req.user = decoded;
 
-            req.user = {
-                userId: decoded.userId,
-                roles: decoded.roles,
-            };
-
-            const user = await prisma.user.findUnique({
-                where: { id: decoded.userId },
-                include: {
-                    roleUsers: {
-                        include: {
-                            role: true,
-                        },
-                    },
-                },
-            });
-
-            if (!user) {
-                return res.status(401).json({ message: 'User not found' });
-            }
-
-            const hasAccess = user.roleUsers.some(
-                (roleUser) => roleUser.role.levelAccess >= requiredLevelAccess
+            // Vérifier si l'utilisateur a le levelAccess requis
+            const hasAccess = decoded.roles.some(
+                (role) => role.levelAccess >= requiredLevelAccess
             );
 
             if (!hasAccess) {
