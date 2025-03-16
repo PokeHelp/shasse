@@ -10,7 +10,7 @@ datasource db {
 model langue {
   id           Int           @id @default(autoincrement()) @db.UnsignedInt
   name         String        @unique @db.VarChar(100)
-  isoCode      String        @map("iso_code") @db.Char(2)
+  isoCode      String        @unique @map("iso_code") @db.Char(2)
   createdAt    DateTime      @default(now()) @map("created_at") @db.DateTime(0)
   updatedAt    DateTime?     @updatedAt @map("updated_at") @db.DateTime(0)
   status       String        @default("on") @db.VarChar(45)
