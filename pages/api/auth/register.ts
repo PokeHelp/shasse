@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import prisma from '@/lib/prisma';
+import prisma from '@/src/lib/prisma';
 import { user, langue } from '@prisma/client';
 
 interface RegisterRequest {

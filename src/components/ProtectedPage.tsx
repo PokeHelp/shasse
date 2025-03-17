@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import {ReactNode, useEffect, useState} from 'react';
 import { useRouter } from 'next/router';
 import jwt from 'jsonwebtoken';
-import { refreshAccessToken } from '@/utils/auth';
+import { refreshAccessToken } from '@/src/utils/auth';
 
 interface Role {
     name: string;
@@ -16,7 +16,7 @@ interface User {
 
 interface ProtectedPageProps {
     requiredLevelAccess: number;
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 export default function ProtectedPage({ requiredLevelAccess, children }: ProtectedPageProps) {

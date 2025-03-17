@@ -28,7 +28,7 @@ export default function Register() {
 
             if (!response.ok) {
                 const data = await response.json();
-                throw new Error(data.message || 'Registration failed');
+                new Error(data.message || 'Registration failed');
             }
 
             const { accessToken, refreshToken } = await response.json();
@@ -38,7 +38,7 @@ export default function Register() {
             document.cookie = `refreshToken=${refreshToken}; SameSite=Strict; Path=/; Max-Age=${7 * 24 * 60 * 60}`;
 
             // Rediriger vers la page d'accueil ou une autre page sécurisée
-            router.push('/');
+            router.push('/protectedPage');
         } catch (error) {
             setError(error instanceof Error ? error.message : 'Registration failed');
         }

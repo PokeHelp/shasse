@@ -1,4 +1,4 @@
-import ProtectedPage from '@/components/ProtectedPage';
+import ProtectedPage from '@/src/components/ProtectedPage';
 
 export default function Dashboard() {
     return (

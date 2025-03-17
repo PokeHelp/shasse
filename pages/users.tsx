@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 
 interface User {
     id: number;
@@ -6,43 +7,38 @@ interface User {
     email: string;
 }
 
+async function fetchUsers(): Promise<User[]> {
+    const { data } = await axios.get<User[]>('/api/users');
+    return data;
+}
+
 export default function UsersPage() {
-    const [users, setUsers] = useState<User[]>([]);
-    const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null);
+    const {
+              data: users,
+              isLoading,
+              error,
+          } = useQuery<User[], Error>({
+        queryKey: ['users'],
+        queryFn: fetchUsers,
+    });
 
-    useEffect(() => {
-        fetch('/api/users')
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error(`Erreur réseau : ${response.status} ${response.statusText}`);
-                }
-                return response.json();
-            })
-            .then((data: User[]) => {
-                setUsers(data);
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.error('Erreur lors de la récupération des utilisateurs :', error);
-                setError(error.message);
-                setLoading(false);
-            });
-    }, []);
-
-    if (loading) return <p>Chargement...</p>;
-    if (error) return <p>Erreur : {error}</p>;
+    if (isLoading) return <p>Chargement...</p>;
+    if (error) return <p>Erreur : {error.message}</p>;
 
     return (
         <div>
             <h1>Liste des Utilisateurs</h1>
             <h2>Test - affichage</h2>
-            {users.length > 0 ? (
+            {users && users.length > 0 ? (
                 <ul>
                     {users.map((user) => (
                         <li key={user.id}>
-                            <p><strong>Nom :</strong> {user.name}</p>
-                            <p><strong>Email :</strong> {user.email}</p>
+                            <p>
+                                <strong>Nom :</strong> {user.name}
+                            </p>
+                            <p>
+                                <strong>Email :</strong> {user.email}
+                            </p>
                         </li>
                     ))}
                 </ul>

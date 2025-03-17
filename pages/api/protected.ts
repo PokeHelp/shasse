@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { authenticate } from '@/middleware/auth';
+import { authenticate } from '@/src/middleware/auth';
 
 interface ProtectedResponse {
     message: string;
