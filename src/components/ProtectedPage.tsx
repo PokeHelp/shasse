@@ -1,18 +1,6 @@
-import {ReactNode, useEffect, useState} from 'react';
 import { useRouter } from 'next/router';
-import jwt from 'jsonwebtoken';
-import { refreshAccessToken } from '@/src/utils/auth';
-
-interface Role {
-    name: string;
-    levelAccess: number;
-}
-
-interface User {
-    userId: number;
-    roles: Role[];
-    exp: number;
-}
+import {ReactNode, useEffect} from 'react';
+import {useAuth} from "@/src/context/AuthContext";
 
 interface ProtectedPageProps {
     requiredLevelAccess: number;
@@ -20,70 +8,38 @@ interface ProtectedPageProps {
 }
 
 export default function ProtectedPage({ requiredLevelAccess, children }: ProtectedPageProps) {
+    const { isAuthenticated, user, isLoading } = useAuth(); // Ajout de isLoading
     const router = useRouter();
-    const [isAuthorized, setIsAuthorized] = useState(false);
+
+    console.log(user)
 
     useEffect(() => {
-        const checkAuth = async () => {
-            const accessToken = localStorage.getItem('accessToken');
+        // Ne rien faire si le chargement est en cours
+        if (isLoading) return;
 
-            // Si aucun access token n'est trouvé, rediriger vers la page de connexion
-            // Si aucun access token n'est trouvé, essayer de le rafraîchir
-            if (!accessToken) {
-                const newToken = await refreshAccessToken();
-                if (!newToken) {
-                    router.push('/login'); // Rediriger si le rafraîchissement échoue
-                    return;
-                }
-                // Stocker le nouvel access token
-                localStorage.setItem('accessToken', newToken);
-                // Recharger la page pour utiliser le nouveau token
-                window.location.reload();
-                return;
-            }
+        // Si l'utilisateur n'est pas authentifié, redirigez-le vers la page de connexion
+        if (!isAuthenticated || !user) {
+            router.push('/login');
+            return;
+        }
 
-            // Décoder le token pour vérifier son expiration
-            const decoded = jwt.decode(accessToken) as User | null;
-            if (!decoded || !decoded.roles) {
-                router.push('/login');
-                return;
-            }
+        // Vérifiez si l'utilisateur a le niveau d'accès requis
+        const hasAccess = user.roles.some((role) => role.levelAccess >= requiredLevelAccess);
+        if (!hasAccess) {
+            router.push('/unauthorized'); // Redirigez vers une page non autorisée
+        }
+    }, [isAuthenticated, user, requiredLevelAccess, router, isLoading]);
 
-            const now = Date.now() / 1000; // Temps actuel en secondes
-
-            // Si le token est expiré, essayer de le rafraîchir
-            if (decoded.exp < now) {
-                const newToken = await refreshAccessToken();
-                if (!newToken) {
-                    router.push('/login'); // Rediriger si le rafraîchissement échoue
-                    return;
-                }
-                // Stocker le nouvel access token
-                localStorage.setItem('accessToken', newToken);
-                // Recharger la page pour utiliser le nouveau token
-                window.location.reload();
-                return;
-            }
-
-            // Vérifier les permissions de l'utilisateur
-            const hasAccess = decoded.roles.some(
-                (role) => role.levelAccess >= requiredLevelAccess
-            );
-
-            if (!hasAccess) {
-                router.push('/unauthorized');
-                return;
-            }
-
-            setIsAuthorized(true);
-        };
-
-        checkAuth();
-    }, [router, requiredLevelAccess]);
-
-    if (!isAuthorized) {
-        return null; // Ou un spinner de chargement
+    // Afficher un spinner pendant le chargement
+    if (isLoading) {
+        return <div>Chargement...</div>; // Ou un composant de spinner
     }
 
+    // Si l'utilisateur n'est pas authentifié ou n'a pas accès, ne rien afficher
+    if (!isAuthenticated || !user) {
+        return null;
+    }
+
+    // Si l'utilisateur est authentifié et a accès, affichez le contenu
     return <>{children}</>;
 }
