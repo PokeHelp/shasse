@@ -1,36 +1,63 @@
-export async function refreshAccessToken(): Promise<string | null> {
-    try {
-        // Récupérer le refresh token depuis les cookies
-        const refreshToken = document.cookie
-            .split('; ')
-            .find((row) => row.startsWith('refreshToken='))
-            ?.split('=')[1];
+import jwt, {JwtPayload, SignOptions} from "jsonwebtoken";
+import {StringValue} from "ms";
 
-        if (!refreshToken) {
-            throw new Error('No refresh token found');
-        }
+/**
+ * Permet de créer un JWT Token
+ *
+ * @param data
+ * @param isRefresh
+ * @param expireIn
+ */
+export function createJWT(data: object, isRefresh: boolean = false, expireIn: StringValue | number = "1h"): string
+{
+    if (!process.env.JWT_SECRET || !process.env.REFRESH_SECRET) throw new Error("Les clés secrètes JWT ne sont pas configurées.");
 
-        // Envoyer une requête pour rafraîchir l'access token
-        const response = await fetch('/api/auth/refresh', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ refreshToken }),
-        });
+    const options: SignOptions = {
+        expiresIn: expireIn
+    };
 
-        if (!response.ok) {
-            throw new Error('Failed to refresh token');
-        }
-
-        const { accessToken } = await response.json();
-
-        // Stocker le nouvel access token dans le localStorage
-        localStorage.setItem('accessToken', accessToken);
-
-        return accessToken;
-    } catch (error) {
-        console.error(error);
-        return null;
+    try
+    {
+        return jwt.sign(
+            data,
+            isRefresh ? process.env.REFRESH_SECRET : process.env.JWT_SECRET,
+            options
+        );
+    } catch (error)
+    {
+        console.log(error);
+        throw new Error("Erreur lors de la création du JWT");
     }
+}
+
+/**
+ * Permet de vérifier et décoder un JWT Token
+ *
+ * @param token
+ * @param isRefresh
+ */
+export function verifyJWT(token: string, isRefresh: boolean = false): JwtPayload
+{
+    if (!process.env.JWT_SECRET || !process.env.REFRESH_SECRET) throw new Error("Les clés secrètes JWT ne sont pas configurées.");
+
+    return jwt.verify(token, isRefresh ? process.env.REFRESH_SECRET : process.env.JWT_SECRET) as JwtPayload;
+}
+
+/**
+ * Permet de récupérer la valeur d'un cookie suivant son nom
+ *
+ * @param cookieName
+ */
+export function getCookie(cookieName: string): string | null
+{
+    for (const cookie of document.cookie.split('; '))
+    {
+        const [name, value] = cookie.split('=');
+        if (name === cookieName)
+        {
+            return value;
+        }
+    }
+
+    return null;
 }
