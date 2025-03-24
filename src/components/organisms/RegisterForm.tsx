@@ -99,7 +99,7 @@ export default function RegisterForm(): JSX.Element
                 required={true}
             />
 
-            <Button variant="contained" type={'submit'}>
+            <Button type={'submit'}>
                 Inscription
             </Button>
 

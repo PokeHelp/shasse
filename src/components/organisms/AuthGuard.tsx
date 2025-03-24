@@ -19,8 +19,7 @@ export default function AuthGuard({requiredLevelAccess, children}: AuthGuardProp
             setIsLoading(false);
             if (levelAccess < requiredLevelAccess)
             {
-                // TODO: faire une redirection sur /unauthorize
-                router.push('/');
+                router.push('/unauthorize');
             }
         }
     }, [levelAccess, requiredLevelAccess, router]);

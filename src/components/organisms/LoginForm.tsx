@@ -62,7 +62,7 @@ export default function LoginForm(): JSX.Element
                 required={true}
             />
 
-            <Button variant="contained" type={'submit'}>
+            <Button type={'submit'}>
                 Connexion
             </Button>
 
