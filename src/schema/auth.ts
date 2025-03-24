@@ -26,21 +26,29 @@ const RefreshTokenSchema: ZodObject<{ refreshToken: ZodString }> = z.object({
     refreshToken: z.string()
 });
 
+const RefreshTokenDataSchema = z.object({
+    userId: z.number().int().positive(),
+    exp: z.number().int().positive()
+                .refine(
+                    exp => exp > Math.floor(Date.now() / 1000),
+                    { message: "Le token est expiré" }
+                ),
+    iat: z.number().int().positive()
+                .refine(
+                    iat => iat <= Math.floor(Date.now() / 1000),
+                    { message: "La date d'émission est dans le futur" }
+                ),
+});
+
+const AccessTokenDataSchema: ZodObject<{ levelAccess: ZodNumber, exp: ZodNumber, iat: ZodNumber }> = z.object({
+    levelAccess: z.number().int().positive(),
+    exp:         z.number().int(),
+    iat:         z.number().int()
+});
+
 const RoleSchema: ZodObject<{ name: ZodString, levelAccess: ZodNumber }> = z.object({
     name:        z.string(),
     levelAccess: z.number(),
-});
-
-const JwtInfoSchema: ZodObject<{
-    exp: ZodNumber,
-    iat: ZodNumber,
-    userId: ZodNumber,
-    roles: ZodArray<typeof RoleSchema>
-}> = z.object({
-    exp:    z.number(),
-    iat:    z.number(),
-    userId: z.number(),
-    roles:  z.array(RoleSchema),
 });
 
 export {
@@ -48,5 +56,6 @@ export {
     RegisterSchema,
     RefreshTokenSchema,
     RoleSchema,
-    JwtInfoSchema
+    RefreshTokenDataSchema,
+    AccessTokenDataSchema
 }

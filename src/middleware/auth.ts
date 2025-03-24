@@ -1,7 +1,9 @@
 import jwt, {JwtPayload} from 'jsonwebtoken';
-import {verifyJWT, sendResponse} from "@utils";
+import {verifyJWT, sendResponse, mapError} from "@utils";
 import {HttpStatusCode} from "axios";
-import {SimplifyRole} from "@types";
+import {AccessTokenData} from "@types";
+import {SafeParseReturnType} from "zod";
+import {AccessTokenDataSchema} from "@schema";
 
 export async function authenticate(request: Request, requiredLevelAccess: number): Promise<Response | JwtPayload>
 {
@@ -14,15 +16,19 @@ export async function authenticate(request: Request, requiredLevelAccess: number
             return sendResponse({message: 'No token provided'}, HttpStatusCode.Unauthorized);
         }
 
-        const decoded: JwtPayload = verifyJWT(token);
-        const hasAccess: boolean = decoded.roles.some((role: SimplifyRole): boolean => role.levelAccess >= requiredLevelAccess);
+        const decodedJWT: SafeParseReturnType<AccessTokenData, AccessTokenData> = AccessTokenDataSchema.safeParse(verifyJWT(token));
 
-        if (!hasAccess)
+        if (!decodedJWT.success)
+        {
+            return sendResponse({error: mapError(decodedJWT)}, HttpStatusCode.BadRequest);
+        }
+
+        if (decodedJWT.data.levelAccess < requiredLevelAccess)
         {
             return sendResponse({message: 'Insufficient permissions'}, HttpStatusCode.Forbidden);
         }
 
-        return decoded;
+        return decodedJWT;
 
     } catch (error)
     {

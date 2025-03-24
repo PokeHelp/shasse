@@ -1,12 +1,11 @@
-import {JwtPayload} from 'jsonwebtoken';
 import {prisma} from '@lib';
 import {SafeParseReturnType} from "zod";
-import {RefreshTokenData, SimplifyRole, UserWithRoles} from "@types";
-import {createJWT, verifyJWT, mapError, sendResponse, logError} from "@utils";
+import {RefreshToken, RefreshTokenData} from "@types";
+import {createJWT, verifyJWT, mapError, sendResponse, logError, getLevelAccess} from "@utils";
 import {HttpStatusCode} from "axios";
-import {role} from "@prisma/client";
+import {user} from "@prisma/client";
 import {NextResponse} from "next/server";
-import {RefreshTokenSchema} from "@schema";
+import {RefreshTokenDataSchema, RefreshTokenSchema} from "@schema";
 
 /**
  * Route: /api/auth/refresh
@@ -18,26 +17,24 @@ export async function POST(request: Request): Promise<NextResponse>
 {
     try
     {
-        const refreshTokenData: SafeParseReturnType<RefreshTokenData, RefreshTokenData> = RefreshTokenSchema.safeParse(await request.json());
+        const refreshTokenData: SafeParseReturnType<RefreshToken, RefreshToken> = RefreshTokenSchema.safeParse(await request.json());
 
         if (!refreshTokenData.success)
         {
             return sendResponse({error: mapError(refreshTokenData)}, HttpStatusCode.BadRequest);
         }
 
-        const decodedJWT: JwtPayload = verifyJWT(refreshTokenData.data?.refreshToken, true);
+        const decodedJWT: SafeParseReturnType<RefreshTokenData, RefreshTokenData> = RefreshTokenDataSchema.safeParse(verifyJWT(refreshTokenData.data.refreshToken, true));
 
-        const user: UserWithRoles | null = await prisma.user.findUnique({
+        if (!decodedJWT.success)
+        {
+            return sendResponse({error: mapError(decodedJWT)}, HttpStatusCode.BadRequest);
+        }
+
+        const user: user | null = await prisma.user.findUnique({
             where:   {
-                id: decodedJWT.userId
-            },
-            include: {
-                roleUsers: {
-                    include: {
-                        role: true
-                    },
-                },
-            },
+                id: decodedJWT.data.userId
+            }
         });
 
         if (!user)
@@ -45,18 +42,13 @@ export async function POST(request: Request): Promise<NextResponse>
             return sendResponse({"message": 'User not found'}, HttpStatusCode.BadRequest);
         }
 
-        const roles: SimplifyRole[] = user.roleUsers.map((roleUser: { role: role }): SimplifyRole => ({
-            name:        roleUser.role.name,
-            levelAccess: roleUser.role.levelAccess,
-        }));
-
-        const accessToken: string = createJWT({userId: user.id, roles});
+        const accessToken: string = createJWT({levelAccess: getLevelAccess(user.role)});
 
         return sendResponse({accessToken}, HttpStatusCode.Ok);
 
     } catch (error)
     {
         logError(error);
-        return sendResponse({message: 'Invalid or expired refresh token'}, HttpStatusCode.BadRequest);
+        return sendResponse({message: 'Invalid refresh token'}, HttpStatusCode.BadRequest);
     }
 }

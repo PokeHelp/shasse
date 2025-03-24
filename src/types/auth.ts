@@ -1,14 +1,22 @@
 import {ReactNode} from "react";
 
-export interface SimplifyRole
+export interface RefreshToken
 {
-    name: string;
-    levelAccess: number;
+    refreshToken: string;
 }
 
 export interface RefreshTokenData
 {
-    refreshToken: string;
+    userId: number;
+    exp: number;
+    iat: number;
+}
+
+export interface AccessTokenData
+{
+    levelAccess: number;
+    exp: number;
+    iat: number;
 }
 
 export interface LoginData
@@ -30,14 +38,6 @@ export interface AuthContext
     levelAccess: number | null;
     setAuth: (token: string) => void;
     clearAuth: () => void;
-}
-
-export interface JwtInfo
-{
-    exp: number;
-    iat: number;
-    userId: number;
-    roles: { name: string; levelAccess: number }[];
 }
 
 export interface AuthGuardProps

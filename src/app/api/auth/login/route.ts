@@ -1,10 +1,10 @@
 import {HttpStatusCode} from "axios";
-import {sendResponse, createJWT, mapError, logError} from "@utils";
-import {LoginData, SimplifyRole, UserWithRoles} from "@types";
+import {sendResponse, createJWT, mapError, logError, getLevelAccess} from "@utils";
+import {LoginData} from "@types";
 import {SafeParseReturnType} from "zod";
 import {prisma} from "@lib";
 import bcrypt from 'bcrypt';
-import {role} from "@prisma/client";
+import {user} from "@prisma/client";
 import {NextResponse} from "next/server";
 import {LoginSchema} from "@schema";
 
@@ -25,17 +25,10 @@ export async function POST(request: Request): Promise<NextResponse>
             return sendResponse({error: mapError(loginData)}, HttpStatusCode.BadRequest);
         }
 
-        const user: UserWithRoles | null = await prisma.user.findFirst({
+        const user: user | null = await prisma.user.findFirst({
             where:   {
                 email:  loginData.data.email,
                 status: "on"
-            },
-            include: {
-                roleUsers: {
-                    include: {
-                        role: true
-                    },
-                },
             },
         });
 
@@ -51,22 +44,42 @@ export async function POST(request: Request): Promise<NextResponse>
             return sendResponse({message: 'Invalid credentials'}, HttpStatusCode.Unauthorized);
         }
 
-        const roles: SimplifyRole[] = user.roleUsers.map((roleUser: { role: role }): SimplifyRole => ({
-            name:        roleUser.role.name,
-            levelAccess: roleUser.role.levelAccess,
-        }));
-
-        const accessToken: string = createJWT({userId: user.id, roles});
-        const refreshToken: string = createJWT({userId: user.id}, true, '15d');
-
-        await prisma.refresh_token.create({
-            data: {
-                expiresAt: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000),
-                token:     refreshToken,
-                userId:    user.id
+        const userRefreshTokens: {token: string} | null = await prisma.refresh_token.findFirst({
+            where: {
+                expiresAt: { gt: new Date() }
             },
+            select: {
+                token: true
+            },
+            orderBy: {
+                expiresAt: 'desc'
+            }
         });
 
+        let refreshToken: string;
+
+        if (!userRefreshTokens)
+        {
+            refreshToken = createJWT({userId: user.id}, true, '15d');
+
+            await prisma.refresh_token.create({
+                data: {
+                    expiresAt: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000),
+                    token:     refreshToken,
+                    userId:    user.id
+                },
+                select: {
+                    token: true,
+                    expiresAt: true
+                },
+            });
+        }
+        else
+        {
+            refreshToken = userRefreshTokens.token;
+        }
+
+        const accessToken: string = createJWT({levelAccess: getLevelAccess(user.role)});
         return sendResponse({accessToken, refreshToken}, HttpStatusCode.Ok);
 
     } catch (error)

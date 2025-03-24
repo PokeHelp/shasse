@@ -1,28 +1,26 @@
 import {
-    SimplifyRole,
     LoginData,
     RegisterData,
-    RefreshTokenData,
+    RefreshToken,
     AuthContext,
-    JwtInfo,
     AuthGuardProps,
-    AuthState
+    AuthState,
+    RefreshTokenData,
+    AccessTokenData
 } from "./auth";
-import {UserWithRoles} from "./user";
 import {DataError, ErrorMap} from "./zod";
 import {Errors} from './error';
 
 export type {
-    SimplifyRole,
-    UserWithRoles,
     LoginData,
     RegisterData,
-    RefreshTokenData,
+    RefreshToken,
     DataError,
     ErrorMap,
     Errors,
     AuthContext,
-    JwtInfo,
     AuthGuardProps,
-    AuthState
+    AuthState,
+    RefreshTokenData,
+    AccessTokenData
 }

@@ -2,6 +2,7 @@
 
 import {AuthGuard} from "@components";
 import {JSX} from "react";
+import {role} from "@prisma/client";
 
 /**
  * Page: /protectedPage
@@ -12,7 +13,7 @@ import {JSX} from "react";
 export default function ProtectedPage(): JSX.Element
 {
     return (
-        <AuthGuard requiredLevelAccess={1}>
+        <AuthGuard requiredRole={role.PUBLIC}>
             <h1>Route protégée</h1>
         </AuthGuard>
     );
