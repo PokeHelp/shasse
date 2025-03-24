@@ -2,7 +2,6 @@
 
 import {useQuery} from '@tanstack/react-query';
 import {JSX} from "react";
-import {AuthGuard} from "@components";
 import {axiosService} from "@lib";
 
 interface User
@@ -39,7 +38,7 @@ export default function Users(): JSX.Element
     if (error) return <p>Erreur : {error.message}</p>;
 
     return (
-        <AuthGuard requiredLevelAccess={1}>
+        <>
             <h1>Liste des Utilisateurs</h1>
             <h2>Test - affichage</h2>
             {users && users.length > 0 ? (
@@ -58,6 +57,6 @@ export default function Users(): JSX.Element
             ) : (
                 <p>Aucun utilisateur trouvé.</p>
             )}
-        </AuthGuard>
+        </>
     );
 }

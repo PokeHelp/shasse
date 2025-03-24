@@ -12,7 +12,7 @@ import {JSX} from "react";
 export default function ProtectedPage(): JSX.Element
 {
     return (
-        <AuthGuard requiredLevelAccess={2}>
+        <AuthGuard requiredLevelAccess={1}>
             <h1>Route protégée</h1>
         </AuthGuard>
     );

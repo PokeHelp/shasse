@@ -1,38 +1,47 @@
 'use client';
 
-import {JSX, useEffect, useState} from 'react';
-import {useRouter} from 'next/navigation';
-import {useAuthStore} from '@store';
-import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import {AuthGuardProps} from "@types";
+import {ReactNode, useEffect} from 'react';
+import { useRouter } from 'next/navigation';
+import { useAuthStore } from '@store';
 
-export default function AuthGuard({requiredLevelAccess, children}: AuthGuardProps): JSX.Element | null
-{
-    const router: AppRouterInstance = useRouter();
-    const {levelAccess} = useAuthStore();
-    const [isLoading, setIsLoading] = useState(true);
+interface AuthGuardProps {
+    requiredLevelAccess?: number;
+    fallback?: ReactNode;
+    children: ReactNode;
+    redirectUnauthenticated?: string;
+    redirectUnauthorized?: string;
+}
 
-    useEffect((): void =>
-    {
-        if (levelAccess !== null)
-        {
-            setIsLoading(false);
-            if (levelAccess < requiredLevelAccess)
-            {
-                router.push('/unauthorize');
-            }
+export default function AuthGuard({
+                                      requiredLevelAccess = 0,
+                                      fallback = <div>Chargement...</div>,
+                                      children,
+                                      redirectUnauthenticated = '/login',
+                                      redirectUnauthorized = '/unauthorized'
+                                  }: AuthGuardProps) {
+    const router = useRouter();
+    const { levelAccess, isInitialized } = useAuthStore();
+
+    useEffect(() => {
+        if (!isInitialized) return;
+
+        // Page publique
+        if (requiredLevelAccess === 0) return;
+
+        // Non authentifié
+        if (levelAccess === null) {
+            router.push(redirectUnauthenticated);
         }
-    }, [levelAccess, requiredLevelAccess, router]);
+        // Niveau insuffisant
+        else if (levelAccess < requiredLevelAccess) {
+            router.push(redirectUnauthorized);
+        }
+    }, [levelAccess, isInitialized, requiredLevelAccess]);
 
-    if (isLoading)
-    {
-        return <p>Vérification de l authentification...</p>;
-    }
+    if (!isInitialized) return fallback;
 
-    if (levelAccess !== null && levelAccess >= requiredLevelAccess)
-    {
-        return <>{children}</>;
-    }
+    if (requiredLevelAccess === 0) return children; // Page publique
+    if (levelAccess !== null && levelAccess >= requiredLevelAccess) return children;
 
     return null;
 }

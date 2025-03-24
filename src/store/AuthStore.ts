@@ -3,11 +3,51 @@ import jwt from 'jsonwebtoken';
 import {JwtInfoSchema} from '@schema';
 import {AuthState, JwtInfo, SimplifyRole} from "@types";
 import {SafeParseReturnType} from "zod";
+import {getCookie} from "@utils";
+import {AxiosResponse} from "axios";
+import {axiosService} from "@lib";
 
 export const useAuthStore: UseBoundStore<StoreApi<AuthState>> = create<AuthState>((set: (state: Partial<AuthState> | ((prev: AuthState) => Partial<AuthState>)) => void): AuthState => ({
     levelAccess:     null,
     isAuthenticated: false,
     isLoading:       true,
+    isInitialized:   false,
+
+    initializeAuth: async (): Promise<void> =>
+                    {
+                        try
+                        {
+                            let token: string | null = localStorage.getItem('accessToken');
+                            const refreshToken: string | null = getCookie('refreshToken');
+
+                            if (refreshToken && !token)
+                            {
+                                const response: AxiosResponse = await axiosService.post('/api/auth/refresh', {refreshToken});
+                                const {accessToken} = response.data;
+                                localStorage.setItem('accessToken', accessToken);
+                                token = accessToken;
+                            }
+
+                            if (token && refreshToken)
+                            {
+                                const decoded: SafeParseReturnType<JwtInfo, JwtInfo> = JwtInfoSchema.safeParse(jwt.decode(token));
+                                if (decoded.success)
+                                {
+                                    set({
+                                        levelAccess:     decoded.data.roles[0].levelAccess,
+                                        isAuthenticated: true,
+                                        isInitialized:   true
+                                    });
+                                    return;
+                                }
+                            }
+                            set({isInitialized: true});
+                        } catch (error)
+                        {
+                            console.log(error)
+                            set({isInitialized: true});
+                        }
+                    },
 
     setAuth: (accessToken: string, refreshToken: string): void =>
              {

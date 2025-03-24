@@ -53,4 +53,6 @@ export interface AuthState
     isLoading: boolean;
     setAuth: (accessToken: string, refreshToken: string) => void;
     clearAuth: () => void;
+    isInitialized: boolean;
+    initializeAuth: () => Promise<void>;
 }
