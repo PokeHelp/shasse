@@ -10,7 +10,7 @@ datasource db {
 model langue {
   id           Int           @id @default(autoincrement()) @db.UnsignedInt
   name         String        @unique @db.VarChar(100)
-  isoCode      String        @map("iso_code") @db.Char(2)
+  isoCode      String        @unique @map("iso_code") @db.Char(2)
   createdAt    DateTime      @default(now()) @map("created_at") @db.DateTime(0)
   updatedAt    DateTime?     @updatedAt @map("updated_at") @db.DateTime(0)
   status       String        @default("on") @db.VarChar(45)
@@ -36,38 +36,24 @@ model user {
   id            Int             @id @default(autoincrement()) @db.UnsignedInt
   discordId     BigInt?         @map("discord_id") @db.UnsignedBigInt
   email         String          @unique @db.VarChar(255)
-  username      String          @db.VarChar(100)
+  pseudonym     String          @unique @db.VarChar(100)
   password      String          @db.VarChar(255)
-  lastConnexion DateTime        @map("last_connexion") @db.DateTime(0)
   langueId      Int             @map("langue_id") @db.UnsignedInt
   createdAt     DateTime        @default(now()) @map("created_at") @db.DateTime(0)
   updatedAt     DateTime?       @updatedAt @map("updated_at") @db.DateTime(0)
   status        String          @default("on") @db.VarChar(45)
   ownedPokemons owned_pokemon[]
-  roleUsers     role_user[]
+  refreshTokens refresh_token[]
+  role          role            @default(PUBLIC)
   langues       langue          @relation(fields: [langueId], references: [id])
 
   @@index([langueId], map: "user_langue_id_fkey")
 }
 
-model role {
-  id          Int         @id @default(autoincrement()) @db.UnsignedInt
-  name        String      @db.VarChar(45)
-  levelAccess Int         @map("level_access")
-  createdAt   DateTime    @default(now()) @map("created_at") @db.DateTime(0)
-  updatedAt   DateTime?   @updatedAt @map("updated_at") @db.DateTime(0)
-  status      String      @default("on") @db.VarChar(45)
-  roleUsers   role_user[]
-}
-
-model role_user {
-  roleId Int  @map("role_id") @db.UnsignedInt
-  userId Int  @map("user_id") @db.UnsignedInt
-  role   role @relation(fields: [roleId], references: [id])
-  user   user @relation(fields: [userId], references: [id])
-
-  @@id([roleId, userId])
-  @@index([userId], map: "role_user_user_id_fkey")
+enum role {
+  PUBLIC
+  ADMIN
+  SUPER_ADMIN
 }
 
 model shiny_hunting_method {
@@ -724,6 +710,17 @@ model skill_obtation {
   @@id([pokemonId, groupGameId, capacityId, skillObtationTypeId, detail])
   @@index([capacityId], map: "skill_obtation_capacity_id_fkey")
   @@index([skillObtationTypeId], map: "skill_obtation_skill_obtation_type_id_fkey")
+}
+
+model refresh_token {
+  id        Int      @id @default(autoincrement()) @db.UnsignedInt
+  userId    Int      @map("user_id") @db.UnsignedInt
+  token     String   @unique @db.VarChar(255)
+  expiresAt DateTime @map("expires_at") @db.Timestamp()
+
+  users user @relation(references: [id], fields: [userId])
+
+  @@index([userId, expiresAt])
 }
 
 enum reference_table {
