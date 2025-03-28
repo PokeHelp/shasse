@@ -1,5 +1,3 @@
-'use server';
-
 import {Typography, LoginForm} from "@components";
 import {JSX} from "react";
 
@@ -12,7 +10,7 @@ export default async function Login(): Promise<JSX.Element>
 {
     return (
         <>
-            <Typography variant="h1">Login</Typography>
+            <Typography>Login</Typography>
             <LoginForm/>
         </>
     );

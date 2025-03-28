@@ -1,12 +1,12 @@
-import {Button, TextField, Typography} from './atoms';
+import {Button, Input, Typography} from './atoms';
 import {AuthGuard, LoginForm, RegisterForm} from './organisms';
-import {PasswordTextField} from './moleculs';
+import {PasswordInput} from './moleculs';
 
 export {
     Button,
-    TextField,
+    Input,
     Typography,
-    PasswordTextField,
+    PasswordInput,
     AuthGuard,
     LoginForm,
     RegisterForm

@@ -6,11 +6,12 @@ import {JSX} from "react";
  *
  * @constructor
  */
-export default function Home(): JSX.Element
+export default function HomePage(): JSX.Element
 {
     return (
         <>
-            <Typography variant={'h1'}>Ceci est la page de home</Typography>
+            <Typography>Ceci est la page de home</Typography>
+            <h1 className={"text-3xl font-bold underline"}>Ceci est un test</h1>
         </>
     );
 }

@@ -1,6 +1,6 @@
 import {sendResponse} from "./http";
 import {createJWT, verifyJWT, getCookie} from "./auth";
-import {setFieldError, clearFieldError, clearAllErrors, handleGenericError, validateData, mapError} from './error';
+import {setFieldError, clearFieldError, clearAllErrors, handleError, validateData, mapError} from './error';
 import {logError} from './server'
 import {getRole, RoleLevels, RoleName, getLevelAccess} from './role';
 
@@ -12,7 +12,7 @@ export {
     setFieldError,
     clearFieldError,
     clearAllErrors,
-    handleGenericError,
+    handleError,
     validateData,
     logError,
     getCookie,

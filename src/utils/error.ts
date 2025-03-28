@@ -51,7 +51,7 @@ export function clearAllErrors(setErrors: Dispatch<SetStateAction<Errors>>): voi
  * @param setErrors
  * @param defaultErrorMessage
  */
-export function handleGenericError(error: unknown, setErrors: Dispatch<SetStateAction<Errors>>, defaultErrorMessage: string = 'Une erreur est survenue'): void
+export function handleError(error: unknown, setErrors: Dispatch<SetStateAction<Errors>>, defaultErrorMessage: string = 'Une erreur est survenue'): void
 {
     if (error instanceof AxiosError)
     {

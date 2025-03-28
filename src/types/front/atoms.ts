@@ -1,11 +1,7 @@
-import {TextFieldProps, TypographyProps} from "@mui/material";
+import {ComponentProps} from "react";
+import {Button as UiButton} from '@ui/button';
+import {Input as UiInput} from '@ui/input';
 
-export interface CustomTextFieldProps extends Omit<TextFieldProps, 'error'>
-{
-    errorText?: string;
-}
-
-export interface CustomTypographyProps extends TypographyProps
-{
-    type?: 'error';
-}
+export type ButtonProps = ComponentProps<typeof UiButton>
+export type InputProps = ComponentProps<typeof UiInput>
+export type TypographyProps = ComponentProps<"h1" | "h2">

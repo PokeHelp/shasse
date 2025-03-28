@@ -2,8 +2,8 @@
 
 import {ChangeEvent, FormEvent, JSX, useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
-import {Button, TextField, PasswordTextField} from "@components";
-import {clearAllErrors, handleGenericError, setFieldError, validateData} from "@utils";
+import {Button, Input, PasswordInput} from "@components";
+import {clearAllErrors, handleError, setFieldError, validateData} from "@utils";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {Errors} from "@types";
 import {AxiosResponse} from "axios";
@@ -54,13 +54,13 @@ export default function RegisterForm(): JSX.Element
             router.push('/');
         } catch (error)
         {
-            handleGenericError(error, setErrors);
+            handleError(error, setErrors);
         }
     };
 
     return (
         <form onSubmit={handleSubmit}>
-            <TextField
+            <Input
                 label="E-mail"
                 variant="outlined"
                 fullWidth
@@ -70,7 +70,7 @@ export default function RegisterForm(): JSX.Element
                 onChange={(e: ChangeEvent<HTMLInputElement>): void => setEmail(e.target.value)}
                 required={true}
             />
-            <TextField
+            <Input
                 label="Pseudonyme"
                 variant="outlined"
                 fullWidth
@@ -80,7 +80,7 @@ export default function RegisterForm(): JSX.Element
                 onChange={(e: ChangeEvent<HTMLInputElement>): void => setPseudonym(e.target.value)}
                 required={true}
             />
-            <PasswordTextField
+            <PasswordInput
                 label="Mot de passe"
                 variant="outlined"
                 fullWidth
@@ -89,7 +89,7 @@ export default function RegisterForm(): JSX.Element
                 onChange={(e: ChangeEvent<HTMLInputElement>): void => setPassword(e.target.value)}
                 required={true}
             />
-            <PasswordTextField
+            <PasswordInput
                 label="Vérification du mot de passe"
                 variant="outlined"
                 fullWidth

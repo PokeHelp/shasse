@@ -1,9 +1,9 @@
 import Typography from "./Typography/Typography";
-import TextField from "./TextField/TextField";
+import Input from "./Input/Input";
 import Button from "./Button/Button";
 
 export {
     Typography,
-    TextField,
+    Input,
     Button
 }
