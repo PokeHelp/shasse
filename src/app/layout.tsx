@@ -11,7 +11,7 @@ export default function RootLayout({children}: { children: ReactNode }): JSX.Ele
 {
     return (
         <html lang="en" suppressHydrationWarning>
-        <body>
+        <body className={"w-11/12 max-w-7xl mx-auto"}>
         <Providers>
             {children}
         </Providers>

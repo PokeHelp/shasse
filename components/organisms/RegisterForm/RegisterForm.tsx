@@ -2,7 +2,7 @@
 
 import {ChangeEvent, FormEvent, JSX, useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
-import {Button, Input, PasswordInput} from "@components";
+import {Button, Input} from "@components";
 import {clearAllErrors, handleError, setFieldError, validateData} from "@utils";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {Errors} from "@types";
@@ -61,43 +61,43 @@ export default function RegisterForm(): JSX.Element
     return (
         <form onSubmit={handleSubmit}>
             <Input
-                label="E-mail"
-                variant="outlined"
-                fullWidth
-                type="email"
-                value={email}
-                errorText={errors.email || ''}
-                onChange={(e: ChangeEvent<HTMLInputElement>): void => setEmail(e.target.value)}
-                required={true}
+                // label="E-mail"
+                // variant="outlined"
+                // fullWidth
+                // type="email"
+                // value={email}
+                // errorText={errors.email || ''}
+                // onChange={(e: ChangeEvent<HTMLInputElement>): void => setEmail(e.target.value)}
+                // required={true}
             />
             <Input
-                label="Pseudonyme"
-                variant="outlined"
-                fullWidth
-                type="text"
-                value={pseudonym}
-                errorText={errors.pseudonym || ''}
-                onChange={(e: ChangeEvent<HTMLInputElement>): void => setPseudonym(e.target.value)}
-                required={true}
+                // label="Pseudonyme"
+                // variant="outlined"
+                // fullWidth
+                // type="text"
+                // value={pseudonym}
+                // errorText={errors.pseudonym || ''}
+                // onChange={(e: ChangeEvent<HTMLInputElement>): void => setPseudonym(e.target.value)}
+                // required={true}
             />
-            <PasswordInput
-                label="Mot de passe"
-                variant="outlined"
-                fullWidth
-                value={password}
-                errorText={errors.password || ''}
-                onChange={(e: ChangeEvent<HTMLInputElement>): void => setPassword(e.target.value)}
-                required={true}
-            />
-            <PasswordInput
-                label="Vérification du mot de passe"
-                variant="outlined"
-                fullWidth
-                value={passwordVerify}
-                errorText={errors.passwordVerify || ''}
-                onChange={(e: ChangeEvent<HTMLInputElement>): void => setPasswordVerify(e.target.value)}
-                required={true}
-            />
+            {/*<PasswordInput*/}
+            {/*    label="Mot de passe"*/}
+            {/*    variant="outlined"*/}
+            {/*    fullWidth*/}
+            {/*    value={password}*/}
+            {/*    errorText={errors.password || ''}*/}
+            {/*    onChange={(e: ChangeEvent<HTMLInputElement>): void => setPassword(e.target.value)}*/}
+            {/*    required={true}*/}
+            {/*/>*/}
+            {/*<PasswordInput*/}
+            {/*    label="Vérification du mot de passe"*/}
+            {/*    variant="outlined"*/}
+            {/*    fullWidth*/}
+            {/*    value={passwordVerify}*/}
+            {/*    errorText={errors.passwordVerify || ''}*/}
+            {/*    onChange={(e: ChangeEvent<HTMLInputElement>): void => setPasswordVerify(e.target.value)}*/}
+            {/*    required={true}*/}
+            {/*/>*/}
 
             <Button type={'submit'}>
                 Inscription

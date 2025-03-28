@@ -31,9 +31,6 @@ export default function Providers({children}: { children: ReactNode }): JSX.Elem
 }
 
 
-function ThemeProvider({
-                                  children,
-                                  ...props
-                              }: ComponentProps<typeof NextThemesProvider>) {
+function ThemeProvider({children, ...props }: ComponentProps<typeof NextThemesProvider>): JSX.Element {
     return <NextThemesProvider {...props}>{children}</NextThemesProvider>
 }

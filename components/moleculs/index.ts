@@ -1,7 +1,7 @@
-import PasswordInput from "./PasswordTextField/PasswordInput";
 import RedirectButton from "./RedirectButton/RedirectButton";
+import InputFormField from './InputFormField/InputFormField';
 
 export {
-    PasswordInput,
-    RedirectButton
+    RedirectButton,
+    InputFormField
 };
