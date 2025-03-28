@@ -33,6 +33,11 @@ export interface RegisterData
     langue?: string | undefined;
 }
 
+export interface RegisterForm extends RegisterData
+{
+    passwordVerify: string;
+}
+
 export interface AuthContext
 {
     levelAccess: number | null;

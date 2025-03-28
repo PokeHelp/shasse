@@ -3,6 +3,7 @@ import {createJWT, verifyJWT, getCookie} from "./auth";
 import {setFieldError, clearFieldError, clearAllErrors, handleError, validateData, mapError} from './error';
 import {logError} from './server'
 import {getRole, RoleLevels, RoleName, getLevelAccess} from './role';
+import {excludeFields} from './other';
 
 export {
     sendResponse,
@@ -18,7 +19,8 @@ export {
     getCookie,
     getRole,
     RoleLevels,
-    getLevelAccess
+    getLevelAccess,
+    excludeFields
 }
 
 export type {

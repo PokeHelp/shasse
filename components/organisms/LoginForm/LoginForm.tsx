@@ -26,7 +26,7 @@ export default function LoginForm(): JSX.Element
         },
     });
 
-    async function onSubmit(data: LoginData): Promise<void>
+    const handleSubmit: (data: LoginData) => Promise<void> = async (data: LoginData): Promise<void> =>
     {
         clearAllErrors(setErrors);
 
@@ -49,7 +49,7 @@ export default function LoginForm(): JSX.Element
     return (
         <>
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)}>
+                <form onSubmit={form.handleSubmit(handleSubmit)}>
                     <InputFormField
                         name={"email"}
                         label={"Email"}
@@ -74,6 +74,5 @@ export default function LoginForm(): JSX.Element
 
             {errors.general && <p style={{color: 'red'}}>{errors.general}</p>}
         </>
-
     );
 }
