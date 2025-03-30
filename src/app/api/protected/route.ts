@@ -1,4 +1,4 @@
-import {withAuth} from '@middleware';
+import {withAuth} from '@provider';
 import {JwtPayload} from "jsonwebtoken";
 import {sendResponse} from "@utils";
 import {HttpStatusCode} from "axios";

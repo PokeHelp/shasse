@@ -28,12 +28,13 @@
       "@types": ["./src/types/index"],
       "@typesFront": ["./src/types/front/index"],
       "@store": ["./src/store/index"],
-      "@middleware": ["./src/middleware/index"],
+      "@provider": ["./src/provider/index"],
       "@lib": ["./src/lib/index"],
       "@utils": ["./src/utils/index"],
       "@schema": ["./src/schema/index"],
       "@ui/*": ["./components/ui/*"],
-      "@svg/*": ["./public/svg/*"]
+      "@svg/*": ["./public/svg/*"],
+      "@service": ["./src/service/index"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

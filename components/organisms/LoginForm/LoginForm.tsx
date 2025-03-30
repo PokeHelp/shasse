@@ -12,12 +12,14 @@ import {clearAllErrors, handleError, validateData} from "@utils";
 import {AxiosResponse} from "axios";
 import {axiosService} from "@lib";
 import {LoginSchema} from "@schema";
+import {useTranslations} from "next-intl";
 
 export default function LoginForm(): JSX.Element
 {
     const router: AppRouterInstance = useRouter();
     const [errors, setErrors] = useState<Errors>({});
     const {setAuth} = useAuthStore();
+    const t = useTranslations();
 
     const form: UseFormReturn<LoginData> = useForm<LoginData>({
         defaultValues: {
@@ -52,23 +54,23 @@ export default function LoginForm(): JSX.Element
                 <form onSubmit={form.handleSubmit(handleSubmit)}>
                     <InputFormField
                         name={"email"}
-                        label={"Email"}
+                        label={t('auth.email.label')}
                         formControl={form.control}
                         type={"email"}
-                        placeholder="E-mail"
+                        placeholder={t('auth.email.placeholder')}
                         errorText={errors.email || ''}
                         required
                     />
                     <InputFormField
-                        label="Mot de passe"
+                        label={t('auth.password.label')}
                         formControl={form.control}
                         errorText={errors.password || ''}
                         name={"password"}
-                        placeholder={"Veuillez-entrer votre mot de passe"}
+                        placeholder={t('auth.password.placeholder')}
                         type={"password"}
                         required
                     />
-                    <Button type="submit">Connexion</Button>
+                    <Button type="submit">{t('LoginPage.form.btnLogin')}</Button>
                 </form>
             </Form>
 

@@ -1,0 +1,35 @@
+{
+  "HomePage": {
+    "title": "Ceci est la page de home."
+  },
+  "LoginPage": {
+    "title": "Login",
+    "form": {
+      "btnLogin": "Connexion"
+    }
+  },
+  "RegisterPage": {
+    "title": "Register",
+    "form": {
+      "btnRegister": "Inscription"
+    }
+  },
+  "auth": {
+    "email": {
+      "label": "E-mail",
+      "placeholder": "Veuillez entre votre e-mail"
+    },
+    "password": {
+      "label": "Mot de passe",
+      "placeholder": "Veuillez-entrer votre mot de passe"
+    },
+    "passwordVerify": {
+      "label": "Confirmation du mot de passe",
+      "placeholder": "Veuillez-entrer votre mot de passe"
+    },
+    "pseudonym": {
+      "label": "Pseudonyme",
+      "placeholder": "Veuillez-entrer votre pseudonyme"
+    }
+  }
+}

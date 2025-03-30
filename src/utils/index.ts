@@ -1,5 +1,5 @@
 import {sendResponse} from "./http";
-import {createJWT, verifyJWT, getCookie} from "./auth";
+import {createJWT, verifyJWT, getCookie, setCookie} from "./auth";
 import {setFieldError, clearFieldError, clearAllErrors, handleError, validateData, mapError} from './error';
 import {logError} from './server'
 import {getRole, RoleLevels, RoleName, getLevelAccess} from './role';
@@ -20,7 +20,8 @@ export {
     getRole,
     RoleLevels,
     getLevelAccess,
-    excludeFields
+    excludeFields,
+    setCookie
 }
 
 export type {

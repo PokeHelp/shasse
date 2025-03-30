@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import {AccessTokenDataSchema} from '@schema';
 import {AccessTokenData, AuthState} from "@types";
 import {SafeParseReturnType} from "zod";
-import {getCookie} from "@utils";
+import {getCookie, setCookie} from "@utils";
 import {AxiosResponse} from "axios";
 import {axiosService} from "@lib";
 
@@ -58,7 +58,7 @@ export const useAuthStore: UseBoundStore<StoreApi<AuthState>> = create<AuthState
                  {
                      set({levelAccess: decoded.data.levelAccess, isAuthenticated: true, isLoading: false});
                      localStorage.setItem('accessToken', accessToken);
-                     document.cookie = `refreshToken=${refreshToken}; SameSite=Strict; Path=/; Max-Age=${14 * 24 * 60 * 60}`;
+                     setCookie('refreshToken', refreshToken, (14 * 24 * 60 * 60));
                  }
              },
 

@@ -12,6 +12,7 @@ import {useAuthStore} from "@store";
 import {axiosService} from "@lib";
 import {useForm, UseFormReturn} from "react-hook-form";
 import {Form} from "@ui/form";
+import {useTranslations} from "next-intl";
 
 export default function RegisterForm(): JSX.Element
 {
@@ -19,6 +20,7 @@ export default function RegisterForm(): JSX.Element
     const [langue, setLangue] = useState('fr');
     const [errors, setErrors] = useState<Errors>({});
     const {setAuth} = useAuthStore();
+    const t = useTranslations();
 
     useEffect((): void =>
     {
@@ -69,41 +71,41 @@ export default function RegisterForm(): JSX.Element
                 <form onSubmit={form.handleSubmit(handleSubmit)}>
                     <InputFormField
                         name={"pseudonym"}
-                        label={"Pseudonyme"}
+                        label={t('auth.pseudonym.label')}
                         formControl={form.control}
                         type={"text"}
-                        placeholder="Votre pseudonyme"
+                        placeholder={t('auth.pseudonym.placeholder')}
                         errorText={errors.pseudonym || ''}
                         required
                     />
                     <InputFormField
                         name={"email"}
-                        label={"Email"}
+                        label={"auth.email.label"}
                         formControl={form.control}
                         type={"email"}
-                        placeholder="votre e-mail"
+                        placeholder={t('auth.email.placeholder')}
                         errorText={errors.email || ''}
                         required
                     />
                     <InputFormField
-                        label="Mot de passe"
+                        label={t("auth.password.label")}
                         formControl={form.control}
                         errorText={errors.password || ''}
                         name={"password"}
-                        placeholder={"Veuillez-entrer votre mot de passe"}
+                        placeholder={t('auth.password.placeholder')}
                         type={"password"}
                         required
                     />
                     <InputFormField
-                        label="Vérification du mot de passe"
+                        label={t("auth.passwordVerify.label")}
                         formControl={form.control}
                         errorText={errors.passwordVerify || ''}
                         name={"passwordVerify"}
-                        placeholder={"Veuillez-entrer votre mot de passe"}
+                        placeholder={t("auth.passwordVerify.label")}
                         type={"password"}
                         required
                     />
-                    <Button type="submit">Inscription</Button>
+                    <Button type="submit">{t('RegisterPage.form.btnRegister')}</Button>
                 </form>
             </Form>
 

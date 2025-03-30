@@ -1,6 +1,6 @@
 import {Button, Input, Typography} from './atoms';
 import {AuthGuard, LoginForm, RegisterForm} from './organisms';
-import {InputFormField} from './moleculs';
+import {InputFormField, RedirectButton, LangueButton} from './moleculs';
 
 export {
     Button,
@@ -9,5 +9,7 @@ export {
     AuthGuard,
     LoginForm,
     RegisterForm,
-    InputFormField
+    InputFormField,
+    LangueButton,
+    RedirectButton
 }

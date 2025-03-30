@@ -50,14 +50,23 @@ export function verifyJWT(token: string, isRefresh: boolean = false): JwtPayload
  */
 export function getCookie(cookieName: string): string | null
 {
-    for (const cookie of document.cookie.split('; '))
-    {
-        const [name, value] = cookie.split('=');
-        if (name === cookieName)
-        {
-            return value;
-        }
-    }
+    if (typeof window === 'undefined') return null;
 
-    return null;
+    return document.cookie
+        .split('; ')
+        .find(row => row.startsWith(`${cookieName}=`))
+        ?.split('=')[1] || null;
+}
+
+/**
+ * Permet de définir un cookie
+ *
+ * @param key
+ * @param value
+ * @param maxAge (en secondes)
+ */
+export function setCookie(key: string, value: string, maxAge: number): void
+{
+// TODO: sécuriser les cookie quand on passera en https
+    document.cookie = `${key}=${value}; SameSite=Strict; Path=/; Max-Age=${maxAge}`;
 }
