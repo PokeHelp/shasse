@@ -1,8 +1,10 @@
-import {getUser, createUser} from './user';
-import {createRefreshToken} from './refreshToken';
+import {getUser, createUser, getActiveUser} from './user';
+import {createRefreshToken, getRefreshToken} from './refreshToken';
 
 export {
     getUser,
     createUser,
-    createRefreshToken
+    createRefreshToken,
+    getActiveUser,
+    getRefreshToken
 }

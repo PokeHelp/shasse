@@ -20,6 +20,9 @@
   "refresh": {
     "userNotFound": "L'utilisateur n'a pas été trouvé."
   },
+  "login": {
+    "invalidCredentials": "Identifiants incorrect."
+  },
   "auth": {
     "email": {
       "label": "E-mail",

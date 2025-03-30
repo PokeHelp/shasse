@@ -24,7 +24,7 @@ export default function Logout(): JSX.Element
     }, [clearAuth, router]);
 
     return (
-        <Typography variant="body1" align="center">
+        <Typography>
             Déconnexion ...
         </Typography>
     );

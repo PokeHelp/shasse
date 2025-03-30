@@ -33,7 +33,7 @@ export interface RegisterData
     password: string;
 }
 
-export type RegisterResponse = | {
+export type AuthResponse = | {
     success: true;
     accessToken: string;
     refreshToken: string;

@@ -2,17 +2,16 @@
 
 import {JSX, useState} from 'react';
 import {Button, InputFormField} from "@components";
-import {Errors, LoginData} from "@types";
+import {AuthResponse, Errors, LoginData} from "@types";
 import {Form} from "@/components/ui/form"
 import {useForm, UseFormReturn} from "react-hook-form"
 import {useRouter} from "next/navigation";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useAuthStore} from "@store";
 import {clearAllErrors, handleError, validateData} from "@utils";
-import {AxiosResponse} from "axios";
-import {axiosService} from "@lib";
 import {LoginSchema} from "@schema";
 import {useTranslations} from "next-intl";
+import {login} from "@service";
 
 export default function LoginForm(): JSX.Element
 {
@@ -35,16 +34,15 @@ export default function LoginForm(): JSX.Element
         const isValid: boolean = validateData(data, LoginSchema, setErrors);
         if (!isValid) return;
 
-        try
-        {
-            const response: AxiosResponse = await axiosService.post('/api/auth/login', data);
-            const {accessToken, refreshToken} = response.data;
+        const response: AuthResponse = await login(data);
 
-            setAuth(accessToken, refreshToken)
-            router.push('/');
-        } catch (error)
+        if (response.success)
         {
-            handleError(error, setErrors);
+            setAuth(response.accessToken, response.refreshToken);
+            router.push('/');
+        } else
+        {
+            handleError(response.error, setErrors);
         }
     }
 

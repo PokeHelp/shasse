@@ -8,7 +8,7 @@ import {
     RefreshTokenData,
     AccessTokenData,
     RegisterForm,
-    RegisterResponse,
+    AuthResponse,
     RefreshTokenResponse
 } from "./auth";
 import {DataError, ErrorMap} from "./zod";
@@ -27,7 +27,7 @@ export type {
     RefreshTokenData,
     AccessTokenData,
     RegisterForm,
-    RegisterResponse,
+    AuthResponse,
     ErrorResponse,
     RefreshTokenResponse
 }

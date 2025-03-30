@@ -5,7 +5,7 @@ import {useRouter} from "next/navigation";
 import {Button, InputFormField} from "@components";
 import {clearAllErrors, excludeFields, handleError, setFieldError, validateData} from "@utils";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import {Errors, RegisterData, RegisterForm as RegisterFormType, RegisterResponse} from "@types";
+import {Errors, RegisterData, RegisterForm as RegisterFormType, AuthResponse} from "@types";
 import {RegisterSchema} from "@schema";
 import {useAuthStore} from "@store";
 import {useForm, UseFormReturn} from "react-hook-form";
@@ -41,7 +41,7 @@ export default function RegisterForm(): JSX.Element
         if (!isValid || data.password !== data.passwordVerify) return;
         const registerData: RegisterData = excludeFields(data, ["passwordVerify"]);
 
-        const response: RegisterResponse = await register(registerData);
+        const response: AuthResponse = await register(registerData);
 
         if (response.success)
         {

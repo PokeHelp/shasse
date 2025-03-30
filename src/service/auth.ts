@@ -3,13 +3,13 @@
 import bcrypt from 'bcryptjs';
 import {role, user} from '@prisma/client';
 import {SafeParseReturnType} from "zod";
-import {RefreshToken, RefreshTokenData, RefreshTokenResponse, RegisterData, RegisterResponse} from "@types";
+import {LoginData, RefreshToken, RefreshTokenData, RefreshTokenResponse, RegisterData, AuthResponse} from "@types";
 import {createJWT, mapError, getLevelAccess, verifyJWT} from "@utils";
-import {RefreshTokenDataSchema, RefreshTokenSchema, RegisterSchema} from "@schema";
+import {LoginSchema, RefreshTokenDataSchema, RefreshTokenSchema, RegisterSchema} from "@schema";
 import {getTranslations} from "next-intl/server";
-import {createRefreshToken, createUser, getUser} from "@query";
+import {createRefreshToken, createUser, getActiveUser, getRefreshToken, getUser} from "@query";
 
-export async function register(data: RegisterData): Promise<RegisterResponse>
+export async function register(data: RegisterData): Promise<AuthResponse>
 {
     const registerData: SafeParseReturnType<RegisterData, RegisterData> = RegisterSchema.safeParse(data);
     const t = await getTranslations('register');
@@ -20,7 +20,7 @@ export async function register(data: RegisterData): Promise<RegisterResponse>
     }
 
     const searchUser = {email: registerData.data.email, pseudonym: registerData.data.pseudonym}
-    const existingUser: { id: number } | null = await getUser(searchUser, {id: true});
+    const existingUser: { id: number } | null = await getUser(searchUser, {id: true}); // TODO: changer le unique pour qu'il soit que si l'utilisateur soit actif
 
     if (existingUser)
     {
@@ -60,7 +60,7 @@ export async function refreshToken(data: RefreshToken): Promise<RefreshTokenResp
         return {success: false, error: mapError(decodedJWT)};
     }
 
-    const user: {role: role} | null = await getUser({id: decodedJWT.data.userId}, {role: true});
+    const user: { role: role } | null = await getActiveUser({id: decodedJWT.data.userId}, {role: true});
 
     if (!user)
     {
@@ -70,4 +70,49 @@ export async function refreshToken(data: RefreshToken): Promise<RefreshTokenResp
     const accessToken: string = createJWT({levelAccess: getLevelAccess(user.role)});
 
     return {success: true, accessToken};
+}
+
+export async function login(data: LoginData): Promise<AuthResponse>
+{
+    const loginData: SafeParseReturnType<LoginData, LoginData> = LoginSchema.safeParse(data);
+    const t = await getTranslations('login');
+
+    if (!loginData.success)
+    {
+        return {success: false, error: mapError(loginData)};
+    }
+
+    const user: {
+        role: role,
+        id: number,
+        password: string
+    } | null = await getActiveUser({email: loginData.data.email}, {role: true, id: true, password: true});
+
+    if (!user)
+    {
+        return {success: false, error: t("invalidCredentials")};
+    }
+
+    const isValid: boolean = bcrypt.compareSync(loginData.data.password + process.env.PASSWORD_SECRET!, user.password);
+
+    if (!isValid)
+    {
+        return {success: false, error: t("invalidCredentials")};
+    }
+
+    const userRefreshTokens: { token: string } | null = await getRefreshToken({userId: user.id}, {token: true});
+
+    let refreshToken: string;
+
+    if (!userRefreshTokens)
+    {
+        refreshToken = createJWT({userId: user.id}, true, '15d');
+        await createRefreshToken({token: refreshToken, userId: user.id});
+    } else
+    {
+        refreshToken = userRefreshTokens.token;
+    }
+
+    const accessToken: string = createJWT({levelAccess: getLevelAccess(user.role)});
+    return {success: true, accessToken, refreshToken};
 }
