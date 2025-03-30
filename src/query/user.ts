@@ -1,12 +1,12 @@
 import {Prisma, role, user} from "@prisma/client";
-import { prisma } from "@lib";
-import {createUserData} from "@types";
+import {prisma} from "@lib";
+import {RegisterData} from "@types";
 
-export async function getUser<T extends Prisma.UserSelect>(
+export async function getUser<T extends Prisma.userSelect>(
     data: { id?: number; email?: string; pseudonym?: string },
-    select: T = { id: true } as T
-): Promise<{ [K in keyof T]: K extends keyof user ? user[K] : never } | null> {
-    const result = await prisma.user.findFirst({
+    select?: T
+): Promise<Prisma.userGetPayload<{ select: T }> | null> {
+    return prisma.user.findFirst({
         where: {
             OR: [
                 { id: data?.id },
@@ -14,13 +14,11 @@ export async function getUser<T extends Prisma.UserSelect>(
                 { pseudonym: data?.pseudonym }
             ]
         },
-        select
+        select: select || { id: true } as T
     });
-
-    return result as { [K in keyof T]: K extends keyof user ? user[K] : never } | null;
 }
 
-export async function createUser(data: createUserData): Promise<user>
+export async function createUser(data: RegisterData): Promise<user>
 {
     return prisma.user.create({
         data: {

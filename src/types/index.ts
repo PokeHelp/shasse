@@ -9,7 +9,7 @@ import {
     AccessTokenData,
     RegisterForm,
     RegisterResponse,
-    createUserData
+    RefreshTokenResponse
 } from "./auth";
 import {DataError, ErrorMap} from "./zod";
 import {Errors, ErrorResponse} from './error';
@@ -29,5 +29,5 @@ export type {
     RegisterForm,
     RegisterResponse,
     ErrorResponse,
-    createUserData
+    RefreshTokenResponse
 }

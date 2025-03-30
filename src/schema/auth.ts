@@ -13,11 +13,9 @@ const RegisterSchema: ZodObject<{
     email: ZodString,
     pseudonym: ZodString,
     password: ZodString,
-    langue: ZodOptional<ZodString>
 }> = z.object({
     email:     z.string().email("L'email n'est pas valide"),
     pseudonym: z.string(),
-    langue:    z.string().optional(),
     password:  passwordSchema,
 });
 

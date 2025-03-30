@@ -31,13 +31,17 @@ export interface RegisterData
     email: string;
     pseudonym: string;
     password: string;
-    langue?: string | undefined;
 }
 
 export type RegisterResponse = | {
     success: true;
     accessToken: string;
     refreshToken: string;
+} | ErrorResponse
+
+export type RefreshTokenResponse = | {
+    success: true;
+    accessToken: string;
 } | ErrorResponse
 
 export interface RegisterForm extends RegisterData
@@ -67,11 +71,4 @@ export interface AuthState
     clearAuth: () => void;
     isInitialized: boolean;
     initializeAuth: () => Promise<void>;
-}
-
-export interface createUserData
-{
-    email: string,
-    pseudonym: string,
-    password: string
 }

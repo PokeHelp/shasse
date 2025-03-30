@@ -17,6 +17,9 @@
   "register": {
     "alreadyExist": "L'email ou le pseudonyme existent déjà."
   },
+  "refresh": {
+    "userNotFound": "L'utilisateur n'a pas été trouvé."
+  },
   "auth": {
     "email": {
       "label": "E-mail",
