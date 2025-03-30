@@ -11,7 +11,7 @@ import {getTranslations} from "next-intl/server";
  */
 export default async function RegisterPage(): Promise<JSX.Element>
 {
-    const t = await getTranslations('RegisterPage');
+    const t = await getTranslations('registerPage');
 
     return (
         <>

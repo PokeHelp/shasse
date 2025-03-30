@@ -3,7 +3,7 @@ import {sendResponse, createJWT, mapError, logError, getLevelAccess} from "@util
 import {LoginData} from "@types";
 import {SafeParseReturnType} from "zod";
 import {prisma} from "@lib";
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import {user} from "@prisma/client";
 import {NextResponse} from "next/server";
 import {LoginSchema} from "@schema";
@@ -37,7 +37,7 @@ export async function POST(request: Request): Promise<NextResponse>
             return sendResponse({message: 'Invalid credentials'}, HttpStatusCode.Unauthorized);
         }
 
-        const isValid: boolean = await bcrypt.compare(loginData.data.password + process.env.PASSWORD_SECRET!, user.password);
+        const isValid: boolean = bcrypt.compareSync(loginData.data.password + process.env.PASSWORD_SECRET!, user.password);
 
         if (!isValid)
         {

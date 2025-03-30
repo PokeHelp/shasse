@@ -14,7 +14,6 @@ model langue {
   createdAt    DateTime      @default(now()) @map("created_at") @db.DateTime(0)
   updatedAt    DateTime?     @updatedAt @map("updated_at") @db.DateTime(0)
   status       String        @default("on") @db.VarChar(45)
-  users        user[]
   translations translation[]
 }
 
@@ -26,34 +25,24 @@ model translation {
   createdAt      DateTime        @default(now()) @map("created_at") @db.DateTime(0)
   updatedAt      DateTime?       @updatedAt @map("updated_at") @db.DateTime(0)
   status         String          @default("on") @db.VarChar(45)
-
-  langue langue @relation(fields: [langueId], references: [id])
+  langue         langue          @relation(fields: [langueId], references: [id])
 
   @@id([referenceTable, referenceId, langueId])
+  @@index([langueId], map: "translation_langue_id_fkey")
 }
 
 model user {
   id            Int             @id @default(autoincrement()) @db.UnsignedInt
   discordId     BigInt?         @map("discord_id") @db.UnsignedBigInt
   email         String          @unique @db.VarChar(255)
-  pseudonym     String          @unique @db.VarChar(100)
   password      String          @db.VarChar(255)
-  langueId      Int             @map("langue_id") @db.UnsignedInt
   createdAt     DateTime        @default(now()) @map("created_at") @db.DateTime(0)
   updatedAt     DateTime?       @updatedAt @map("updated_at") @db.DateTime(0)
   status        String          @default("on") @db.VarChar(45)
+  pseudonym     String          @unique @db.VarChar(100)
+  role          role            @default(PUBLIC)
   ownedPokemons owned_pokemon[]
   refreshTokens refresh_token[]
-  role          role            @default(PUBLIC)
-  langues       langue          @relation(fields: [langueId], references: [id])
-
-  @@index([langueId], map: "user_langue_id_fkey")
-}
-
-enum role {
-  PUBLIC
-  ADMIN
-  SUPER_ADMIN
 }
 
 model shiny_hunting_method {
@@ -110,49 +99,50 @@ model game {
   updatedAt          DateTime?               @updatedAt @map("updated_at") @db.DateTime(0)
   status             String                  @default("on") @db.VarChar(45)
   generation         generation              @relation(fields: [generationId], references: [id])
+  gameGroupGames     game_group_game[]
   ownedPokemons      owned_pokemon[]
   pokemonRatingGames pokemon_game_location[]
-  gameGroupGames     game_group_game[]
 
   @@index([generationId], map: "game_generation_id_fkey")
 }
 
 model game_group_game {
-  gameId      Int @map("game_id") @db.UnsignedInt
-  groupGameId Int @map("group_game_id") @db.UnsignedInt
-  landId      Int @map("land_id") @db.UnsignedInt
-
-  land      land       @relation(fields: [landId], references: [id])
-  game      game       @relation(fields: [gameId], references: [id])
-  groupGame group_game @relation(fields: [groupGameId], references: [id])
+  gameId      Int        @map("game_id") @db.UnsignedInt
+  groupGameId Int        @map("group_game_id") @db.UnsignedInt
+  landId      Int        @map("land_id") @db.UnsignedInt
+  game        game       @relation(fields: [gameId], references: [id])
+  groupGame   group_game @relation(fields: [groupGameId], references: [id])
+  land        land       @relation(fields: [landId], references: [id])
 
   @@id([gameId, groupGameId, landId])
+  @@index([groupGameId], map: "game_group_game_group_game_id_fkey")
+  @@index([landId], map: "game_group_game_land_id_fkey")
 }
 
 model group_game {
-  id        Int       @id @default(autoincrement()) @db.UnsignedInt
-  createdAt DateTime  @default(now()) @map("created_at") @db.DateTime(0)
-  updatedAt DateTime? @updatedAt @map("updated_at") @db.DateTime(0)
-  status    String    @default("on") @db.VarChar(45)
-
+  id                        Int                          @id @default(autoincrement()) @db.UnsignedInt
+  createdAt                 DateTime                     @default(now()) @map("created_at") @db.DateTime(0)
+  updatedAt                 DateTime?                    @updatedAt @map("updated_at") @db.DateTime(0)
+  status                    String                       @default("on") @db.VarChar(45)
+  capsuleGameCapacityIinfos capsule_game_capacity_info[]
   gameGroupGames            game_group_game[]
   nationnalNumbers          national_number[]
   shinyHuntingMethodGames   shiny_hunting_method_game[]
   skillObtations            skill_obtation[]
   statisticGroupGames       statistic_group_game[]
-  capsuleGameCapacityIinfos capsule_game_capacity_info[]
 }
 
 model capsule_game_capacity_info {
-  capacityInfoId Int @map("capacity_info_id") @db.UnsignedInt
-  capsuleId      Int @map("capsule_id") @db.UnsignedInt
-  groupeGameId   Int @map("groupe_game_id") @db.UnsignedInt
-
-  groupGame    group_game    @relation(fields: [groupeGameId], references: [id])
-  capsule      capsule       @relation(fields: [capsuleId], references: [id])
-  capacityInfo capacity_info @relation(fields: [capacityInfoId], references: [id])
+  capacityInfoId Int           @map("capacity_info_id") @db.UnsignedInt
+  capsuleId      Int           @map("capsule_id") @db.UnsignedInt
+  groupeGameId   Int           @map("groupe_game_id") @db.UnsignedInt
+  capacityInfo   capacity_info @relation(fields: [capacityInfoId], references: [id])
+  capsule        capsule       @relation(fields: [capsuleId], references: [id])
+  groupGame      group_game    @relation(fields: [groupeGameId], references: [id])
 
   @@id([capacityInfoId, groupeGameId])
+  @@index([capsuleId], map: "capsule_game_capacity_info_capsule_id_fkey")
+  @@index([groupeGameId], map: "capsule_game_capacity_info_groupe_game_id_fkey")
 }
 
 model pokemon_category {
@@ -183,60 +173,57 @@ model pokemon {
   ownedPokemons       owned_pokemon[]
   pokemon_category    pokemon_category       @relation(fields: [pokemonCategoryId], references: [id])
   generation          generation             @relation(fields: [generationId], references: [id])
+  pokemonForms        pokemon_form[]
   pokemonInfos        pokemon_info[]
   skillObtations      skill_obtation[]
   statisticGroupGames statistic_group_game[]
-  pokemonForms        pokemon_form[]
 
   @@index([pokemonCategoryId], map: "pokemon_category_id_fkey")
   @@index([generationId], map: "pokemon_generation_id_fkey")
 }
 
 model gender {
-  id        Int       @id @default(autoincrement()) @db.UnsignedInt
-  createdAt DateTime  @default(now()) @map("created_at") @db.DateTime(0)
-  updatedAt DateTime? @updatedAt @map("updated_at") @db.DateTime(0)
-  status    String    @default("on") @db.VarChar(45)
-
+  id                 Int                   @id @default(autoincrement()) @db.UnsignedInt
+  createdAt          DateTime              @default(now()) @map("created_at") @db.DateTime(0)
+  updatedAt          DateTime?             @updatedAt @map("updated_at") @db.DateTime(0)
+  status             String                @default("on") @db.VarChar(45)
   pokemonFormGenders pokemon_form_gender[]
 }
 
 model form {
-  id        Int       @id @default(autoincrement()) @db.UnsignedInt
-  createdAt DateTime  @default(now()) @map("created_at") @db.DateTime(0)
-  updatedAt DateTime? @updatedAt @map("updated_at") @db.DateTime(0)
-  status    String    @default("on") @db.VarChar(45)
-
+  id           Int            @id @default(autoincrement()) @db.UnsignedInt
+  createdAt    DateTime       @default(now()) @map("created_at") @db.DateTime(0)
+  updatedAt    DateTime?      @updatedAt @map("updated_at") @db.DateTime(0)
+  status       String         @default("on") @db.VarChar(45)
   pokemonForms pokemon_form[]
 }
 
 model pokemon_form_gender {
-  pokemonFormId Int @map("pokemon_form_id") @db.UnsignedInt
-  genderId      Int @map("gender_id") @db.UnsignedInt
-
-  gender       gender       @relation(fields: [genderId], references: [id])
-  pokemon_form pokemon_form @relation(fields: [pokemonFormId], references: [id])
+  pokemonFormId Int          @map("pokemon_form_id") @db.UnsignedInt
+  genderId      Int          @map("gender_id") @db.UnsignedInt
+  gender        gender       @relation(fields: [genderId], references: [id])
+  pokemon_form  pokemon_form @relation(fields: [pokemonFormId], references: [id])
 
   @@id([genderId, pokemonFormId])
+  @@index([pokemonFormId], map: "pokemon_form_gender_pokemon_form_id_fkey")
 }
 
 model pokemon_form {
-  id        Int       @id @default(autoincrement()) @db.UnsignedInt
-  pokemonId Int       @map("pokemon_id") @db.UnsignedInt
-  formId    Int       @map("form_id") @db.UnsignedInt
-  createdAt DateTime  @default(now()) @map("created_at") @db.DateTime(0)
-  updatedAt DateTime? @updatedAt @map("updated_at") @db.DateTime(0)
-  status    String    @default("on") @db.VarChar(45)
-
-  pokemon pokemon @relation(fields: [pokemonId], references: [id])
-  form    form    @relation(fields: [formId], references: [id])
-
-  pokemonFormGenders pokemon_form_gender[]
-  pokemonRatingGames pokemon_game_location[]
+  pokemonId          Int                     @map("pokemon_id") @db.UnsignedInt
+  formId             Int                     @map("form_id") @db.UnsignedInt
+  createdAt          DateTime                @default(now()) @map("created_at") @db.DateTime(0)
+  id                 Int                     @id @default(autoincrement()) @db.UnsignedInt
+  status             String                  @default("on") @db.VarChar(45)
+  updatedAt          DateTime?               @updatedAt @map("updated_at") @db.DateTime(0)
   evolutionEnds      evolution[]             @relation("EvolutionEnd")
   evolutionStarts    evolution[]             @relation("EvolutionStart")
+  form               form                    @relation(fields: [formId], references: [id])
+  pokemon            pokemon                 @relation(fields: [pokemonId], references: [id])
+  pokemonFormGenders pokemon_form_gender[]
+  pokemonRatingGames pokemon_game_location[]
 
   @@unique([pokemonId, formId])
+  @@index([formId], map: "pokemon_form_form_id_fkey")
 }
 
 model owned_pokemon {
@@ -290,21 +277,20 @@ model ability {
 }
 
 model ability_info {
-  id                   Int @id @default(autoincrement()) @db.UnsignedInt
-  generationId         Int @map("generation_id") @db.UnsignedInt
-  abilityId            Int @map("ability_id") @db.UnsignedInt
-  effectOutsideFightId Int @map("effect_outside_fight_id") @db.UnsignedInt
-
-  createdAt DateTime  @default(now()) @map("created_at") @db.DateTime(0)
-  updatedAt DateTime? @updatedAt @map("updated_at") @db.DateTime(0)
-  status    String    @default("on") @db.VarChar(45)
-
-  abilities          ability              @relation(fields: [abilityId], references: [id])
-  generation         generation           @relation(fields: [generationId], references: [id])
-  effectWithoutFight effect_outside_fight @relation(fields: [effectOutsideFightId], references: [id])
+  id                   Int                  @id @default(autoincrement()) @db.UnsignedInt
+  generationId         Int                  @map("generation_id") @db.UnsignedInt
+  abilityId            Int                  @map("ability_id") @db.UnsignedInt
+  effectOutsideFightId Int                  @map("effect_outside_fight_id") @db.UnsignedInt
+  createdAt            DateTime             @default(now()) @map("created_at") @db.DateTime(0)
+  updatedAt            DateTime?            @updatedAt @map("updated_at") @db.DateTime(0)
+  status               String               @default("on") @db.VarChar(45)
+  abilities            ability              @relation(fields: [abilityId], references: [id])
+  effectWithoutFight   effect_outside_fight @relation(fields: [effectOutsideFightId], references: [id])
+  generation           generation           @relation(fields: [generationId], references: [id])
 
   @@index([abilityId], map: "ability_info_ability_id_fkey")
   @@index([generationId], map: "ability_info_generation_id_fkey")
+  @@index([effectOutsideFightId], map: "ability_info_effect_outside_fight_id_fkey")
 }
 
 model pokemon_info {
@@ -400,8 +386,8 @@ model type {
   createdAt     DateTime        @default(now()) @map("created_at") @db.DateTime(0)
   updatedAt     DateTime?       @updatedAt @map("updated_at") @db.DateTime(0)
   status        String          @default("on") @db.VarChar(45)
-  typeOrders    type_order[]
   capacityInfos capacity_info[]
+  typeOrders    type_order[]
 }
 
 model type_order {
@@ -423,6 +409,7 @@ model national_number {
   pokemon     pokemon    @relation(fields: [pokemonId], references: [id])
 
   @@id([pokemonId, groupGameId])
+  @@index([groupGameId], map: "national_number_group_game_id_fkey")
 }
 
 model land {
@@ -453,11 +440,10 @@ model capacity_effect {
 }
 
 model capacity_category {
-  id        Int       @id @default(autoincrement()) @db.UnsignedInt
-  createdAt DateTime  @default(now()) @map("created_at") @db.DateTime(0)
-  updatedAt DateTime? @updatedAt @map("updated_at") @db.DateTime(0)
-  status    String    @default("on") @db.VarChar(45)
-
+  id            Int             @id @default(autoincrement()) @db.UnsignedInt
+  createdAt     DateTime        @default(now()) @map("created_at") @db.DateTime(0)
+  updatedAt     DateTime?       @updatedAt @map("updated_at") @db.DateTime(0)
+  status        String          @default("on") @db.VarChar(45)
   capacityInfos capacity_info[]
 }
 
@@ -479,11 +465,10 @@ model detail {
 }
 
 model effect_outside_fight {
-  id        Int       @id @default(autoincrement()) @db.UnsignedInt
-  createdAt DateTime  @default(now()) @map("created_at") @db.DateTime(0)
-  updatedAt DateTime? @updatedAt @map("updated_at") @db.DateTime(0)
-  status    String    @default("on") @db.VarChar(45)
-
+  id            Int             @id @default(autoincrement()) @db.UnsignedInt
+  createdAt     DateTime        @default(now()) @map("created_at") @db.DateTime(0)
+  updatedAt     DateTime?       @updatedAt @map("updated_at") @db.DateTime(0)
+  status        String          @default("on") @db.VarChar(45)
   abilityInfos  ability_info[]
   capacityInfos capacity_info[]
 }
@@ -516,11 +501,11 @@ model location_zone {
   id                 Int                     @id @default(autoincrement()) @db.UnsignedInt
   locationId         Int                     @map("location_id") @db.UnsignedInt
   zoneId             Int                     @map("zone_id") @db.UnsignedInt
-  location           location                @relation(fields: [locationId], references: [id])
-  zone               zone                    @relation(fields: [zoneId], references: [id])
   createdAt          DateTime                @default(now()) @map("created_at") @db.DateTime(0)
   updatedAt          DateTime?               @updatedAt @map("updated_at") @db.DateTime(0)
   status             String                  @default("on") @db.VarChar(45)
+  location           location                @relation(fields: [locationId], references: [id])
+  zone               zone                    @relation(fields: [zoneId], references: [id])
   pokemonRatingGames pokemon_game_location[]
 
   @@unique([locationId, zoneId])
@@ -553,10 +538,10 @@ model rate {
   meteoId                 Int                         @map("meteo_id") @db.UnsignedInt
   detailRateId            Int                         @map("detail_rate_id") @db.UnsignedInt
   conditionRateId         Int                         @map("condition_rate_id") @db.UnsignedInt
-  isAlpha                 Boolean                     @map("is_alpha")
   createdAt               DateTime                    @default(now()) @map("created_at") @db.DateTime(0)
   updatedAt               DateTime?                   @updatedAt @map("updated_at") @db.DateTime(0)
   status                  String                      @default("on") @db.VarChar(45)
+  isAlpha                 Boolean                     @map("is_alpha")
   pokemonRatingGames      pokemon_game_location[]
   conditionRate           detail                      @relation("conditionRate", fields: [conditionRateId], references: [id])
   detailRate              detail                      @relation("detailRate", fields: [detailRateId], references: [id])
@@ -621,6 +606,7 @@ model statistic_group_game {
 
   @@id([pokemonId, groupGameId])
   @@index([statisticId], map: "statistic_group_game_statistic_id_fkey")
+  @@index([groupGameId], map: "statistic_group_game_group_game_id_fkey")
 }
 
 model target {
@@ -649,45 +635,47 @@ model capacity_info {
   createdAt                DateTime                     @default(now()) @map("created_at") @db.DateTime(0)
   updatedAt                DateTime?                    @updatedAt @map("updated_at") @db.DateTime(0)
   status                   String                       @default("on") @db.VarChar(45)
+  capacityCategory         capacity_category            @relation(fields: [capacityCategoryId], references: [id])
   capacityEffect           capacity_effect              @relation("capacityEffect", fields: [capacityEffectId], references: [id])
   capacityEffectZ          capacity_effect              @relation("capacityEffectZ", fields: [capacityEffectZId], references: [id])
   capacity                 capacity                     @relation(fields: [capacityId], references: [id])
+  effectOutsideFight       effect_outside_fight         @relation(fields: [effectOutsideFightId], references: [id])
   target                   target                       @relation(fields: [targetId], references: [id])
   type                     type                         @relation(fields: [typeId], references: [id])
-  effectOutsideFight       effect_outside_fight         @relation(fields: [effectOutsideFightId], references: [id])
-  capacityCategory         capacity_category            @relation(fields: [capacityCategoryId], references: [id])
-  capsuleGameCapacityInfos capsule_game_capacity_info[]
   capacityInfoInfluences   capacity_info_influence[]
+  capsuleGameCapacityInfos capsule_game_capacity_info[]
 
   @@index([capacityEffectId], map: "capacity_info_capacity_effect_id_fkey")
   @@index([capacityEffectZId], map: "capacity_info_capacity_effect_z_id_fkey")
   @@index([capacityId], map: "capacity_info_capacity_id_fkey")
   @@index([targetId], map: "capacity_info_target_id_fkey")
   @@index([typeId], map: "capacity_info_type_id_fkey")
+  @@index([capacityCategoryId], map: "capacity_info_capacity_category_id_fkey")
+  @@index([effectOutsideFightId], map: "capacity_info_effect_outside_fight_id_fkey")
 }
 
 model capacity_info_influence {
-  capacityInfoId Int @map("capacity_info") @db.UnsignedInt
-  influenceId    Int @db.UnsignedInt
-
-  influence    influence     @relation(fields: [influenceId], references: [id])
-  capacityInfo capacity_info @relation(fields: [capacityInfoId], references: [id])
+  capacityInfoId Int           @map("capacity_info") @db.UnsignedInt
+  influenceId    Int           @db.UnsignedInt
+  capacityInfo   capacity_info @relation(fields: [capacityInfoId], references: [id])
+  influence      influence     @relation(fields: [influenceId], references: [id])
 
   @@id([capacityInfoId, influenceId])
+  @@index([influenceId], map: "capacity_info_influence_influenceId_fkey")
 }
 
 model pokemon_game_location {
-  id                Int              @id @default(autoincrement()) @db.UnsignedInt
   gameId            Int              @map("game_id") @db.UnsignedInt
   rateId            Int              @map("rate_id") @db.UnsignedInt
   locationZoneId    Int              @map("location_zone_id") @db.UnsignedInt
   pokemonObtationId Int              @map("pokemon_obtation_id") @db.UnsignedInt
   pokemonFormId     Int              @map("pokemon_id") @db.UnsignedInt
+  id                Int              @id @default(autoincrement()) @db.UnsignedInt
   game              game             @relation(fields: [gameId], references: [id])
+  locationZone      location_zone    @relation(fields: [locationZoneId], references: [id])
   pokemonForm       pokemon_form     @relation(fields: [pokemonFormId], references: [id])
   pokemonObtation   pokemon_obtation @relation(fields: [pokemonObtationId], references: [id])
   rate              rate             @relation(fields: [rateId], references: [id])
-  locationZone      location_zone    @relation(fields: [locationZoneId], references: [id])
 
   @@unique([gameId, rateId, locationZoneId, pokemonFormId, pokemonObtationId])
   @@index([pokemonFormId], map: "pokemon_rating_game_pokemon_form_id_fkey")
@@ -710,17 +698,29 @@ model skill_obtation {
   @@id([pokemonId, groupGameId, capacityId, skillObtationTypeId, detail])
   @@index([capacityId], map: "skill_obtation_capacity_id_fkey")
   @@index([skillObtationTypeId], map: "skill_obtation_skill_obtation_type_id_fkey")
+  @@index([groupGameId], map: "skill_obtation_group_game_id_fkey")
 }
 
 model refresh_token {
   id        Int      @id @default(autoincrement()) @db.UnsignedInt
   userId    Int      @map("user_id") @db.UnsignedInt
   token     String   @unique @db.VarChar(255)
-  expiresAt DateTime @map("expires_at") @db.Timestamp()
-
-  users user @relation(references: [id], fields: [userId])
+  expiresAt DateTime @map("expires_at") @db.Timestamp(0)
+  users     user     @relation(fields: [userId], references: [id])
 
   @@index([userId, expiresAt])
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+}
+
+enum role {
+  PUBLIC
+  ADMIN
+  SUPER_ADMIN
 }
 
 enum reference_table {

@@ -70,7 +70,7 @@ export default function LoginForm(): JSX.Element
                         type={"password"}
                         required
                     />
-                    <Button type="submit">{t('LoginPage.form.btnLogin')}</Button>
+                    <Button type="submit">{t('loginPage.form.btnLogin')}</Button>
                 </form>
             </Form>
 

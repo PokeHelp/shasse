@@ -9,7 +9,7 @@ import {getTranslations} from 'next-intl/server';
  */
 export default async function LoginPage(): Promise<JSX.Element>
 {
-    const t = await getTranslations('LoginPage');
+    const t = await getTranslations('loginPage');
 
     return (
         <>

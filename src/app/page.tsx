@@ -8,7 +8,7 @@ import {JSX} from "react";
  */
 export default function HomePage(): JSX.Element
 {
-    const t = useTranslations('HomePage');
+    const t = useTranslations('homePage');
 
     return (
         <h1 className={"text-3xl font-bold underline"}>{t('title')}</h1>

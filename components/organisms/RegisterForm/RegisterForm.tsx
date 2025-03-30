@@ -1,37 +1,30 @@
 'use client';
 
-import {JSX, useEffect, useState} from "react";
+import {JSX, useState} from "react";
 import {useRouter} from "next/navigation";
 import {Button, InputFormField} from "@components";
 import {clearAllErrors, excludeFields, handleError, setFieldError, validateData} from "@utils";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import {Errors, RegisterData, RegisterForm as RegisterFormType} from "@types";
-import {AxiosResponse} from "axios";
+import {Errors, RegisterData, RegisterForm as RegisterFormType, RegisterResponse} from "@types";
 import {RegisterSchema} from "@schema";
 import {useAuthStore} from "@store";
-import {axiosService} from "@lib";
 import {useForm, UseFormReturn} from "react-hook-form";
 import {Form} from "@ui/form";
 import {useTranslations} from "next-intl";
+import {register} from "@service";
 
 export default function RegisterForm(): JSX.Element
 {
     const router: AppRouterInstance = useRouter();
-    const [langue, setLangue] = useState('fr');
     const [errors, setErrors] = useState<Errors>({});
     const {setAuth} = useAuthStore();
     const t = useTranslations();
 
-    useEffect((): void =>
-    {
-        setLangue(navigator.language.split('-')[0]);
-    }, []);
-
     const form: UseFormReturn<RegisterFormType> = useForm<RegisterFormType>({
         defaultValues: {
-            email:    "",
-            pseudonym: "",
-            password: "",
+            email:          "",
+            pseudonym:      "",
+            password:       "",
             passwordVerify: ""
         },
     });
@@ -46,22 +39,17 @@ export default function RegisterForm(): JSX.Element
             setFieldError(setErrors, 'passwordVerify', 'Le mot de passe et le mot de passe de vériication ne sont pas identique');
         }
         if (!isValid || data.password !== data.passwordVerify) return;
-        const partData: RegisterData = excludeFields(data, ["passwordVerify"]);
+        const registerData: RegisterData = excludeFields(data, ["passwordVerify"]);
 
-        try
+        const response: RegisterResponse = await register(registerData);
+
+        if (response.success)
         {
-            const response: AxiosResponse = await axiosService.post('/api/auth/register', {
-                ...partData,
-                langue
-            });
-            const {accessToken, refreshToken} = response.data;
-
-            setAuth(accessToken, refreshToken);
-
+            setAuth(response.accessToken, response.refreshToken);
             router.push('/');
-        } catch (error)
+        } else
         {
-            handleError(error, setErrors);
+            handleError(response, setErrors);
         }
     };
 
@@ -80,7 +68,7 @@ export default function RegisterForm(): JSX.Element
                     />
                     <InputFormField
                         name={"email"}
-                        label={"auth.email.label"}
+                        label={t("auth.email.label")}
                         formControl={form.control}
                         type={"email"}
                         placeholder={t('auth.email.placeholder')}
@@ -105,7 +93,7 @@ export default function RegisterForm(): JSX.Element
                         type={"password"}
                         required
                     />
-                    <Button type="submit">{t('RegisterPage.form.btnRegister')}</Button>
+                    <Button type="submit">{t('registerPage.form.btnRegister')}</Button>
                 </form>
             </Form>
 

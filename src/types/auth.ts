@@ -1,4 +1,5 @@
 import {ReactNode} from "react";
+import {ErrorResponse} from "@types";
 
 export interface RefreshToken
 {
@@ -33,6 +34,12 @@ export interface RegisterData
     langue?: string | undefined;
 }
 
+export type RegisterResponse = | {
+    success: true;
+    accessToken: string;
+    refreshToken: string;
+} | ErrorResponse
+
 export interface RegisterForm extends RegisterData
 {
     passwordVerify: string;
@@ -60,4 +67,11 @@ export interface AuthState
     clearAuth: () => void;
     isInitialized: boolean;
     initializeAuth: () => Promise<void>;
+}
+
+export interface createUserData
+{
+    email: string,
+    pseudonym: string,
+    password: string
 }

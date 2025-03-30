@@ -1,18 +1,21 @@
 {
-  "HomePage": {
+  "homePage": {
     "title": "Ceci est la page de home."
   },
-  "LoginPage": {
+  "loginPage": {
     "title": "Login",
     "form": {
       "btnLogin": "Connexion"
     }
   },
-  "RegisterPage": {
+  "registerPage": {
     "title": "Register",
     "form": {
       "btnRegister": "Inscription"
     }
+  },
+  "register": {
+    "alreadyExist": "L'email ou le pseudonyme existent déjà."
   },
   "auth": {
     "email": {

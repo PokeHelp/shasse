@@ -7,10 +7,12 @@ import {
     AuthState,
     RefreshTokenData,
     AccessTokenData,
-    RegisterForm
+    RegisterForm,
+    RegisterResponse,
+    createUserData
 } from "./auth";
 import {DataError, ErrorMap} from "./zod";
-import {Errors} from './error';
+import {Errors, ErrorResponse} from './error';
 
 export type {
     LoginData,
@@ -24,5 +26,8 @@ export type {
     AuthState,
     RefreshTokenData,
     AccessTokenData,
-    RegisterForm
+    RegisterForm,
+    RegisterResponse,
+    ErrorResponse,
+    createUserData
 }
