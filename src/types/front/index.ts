@@ -1,9 +1,11 @@
-import {CustomTextFieldProps, CustomTypographyProps} from './atoms';
-import {RedirectButtonProps} from './moleculs';
+import {InputProps, ButtonProps, TypographyProps} from './atoms';
+import {RedirectButtonProps, InputFormFieldProps} from './moleculs';
 
 export type
 {
-    CustomTextFieldProps,
-    CustomTypographyProps,
-    RedirectButtonProps
+    InputProps,
+    RedirectButtonProps,
+    ButtonProps,
+    TypographyProps,
+    InputFormFieldProps
 }

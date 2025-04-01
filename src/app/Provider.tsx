@@ -2,8 +2,10 @@
 
 import {QueryClientProvider} from '@tanstack/react-query';
 import {queryClient} from '@lib';
-import {JSX, ReactNode, useEffect} from "react";
+import {ComponentProps, JSX, ReactNode, useEffect} from "react";
 import {useAuthStore} from "@store";
+import { ThemeProvider as NextThemesProvider } from "next-themes"
+import "@src/styles/global.css";
 
 export default function Providers({children}: { children: ReactNode }): JSX.Element
 {
@@ -16,7 +18,19 @@ export default function Providers({children}: { children: ReactNode }): JSX.Elem
 
     return (
         <QueryClientProvider client={queryClient}>
-            {children}
+            <ThemeProvider
+                attribute="class"
+                defaultTheme="system"
+                enableSystem
+                disableTransitionOnChange
+            >
+                {children}
+            </ThemeProvider>
         </QueryClientProvider>
     );
+}
+
+
+function ThemeProvider({children, ...props }: ComponentProps<typeof NextThemesProvider>): JSX.Element {
+    return <NextThemesProvider {...props}>{children}</NextThemesProvider>
 }

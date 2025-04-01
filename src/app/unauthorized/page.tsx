@@ -2,7 +2,7 @@
 
 import {JSX} from "react";
 import {Typography} from "@components";
-import {RedirectButton} from "@src/components/moleculs";
+import {RedirectButton} from "components/moleculs";
 
 export default async function Unauthorize(): Promise<JSX.Element>
 {

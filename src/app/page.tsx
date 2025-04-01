@@ -1,4 +1,4 @@
-import {Typography} from "@components";
+import {useTranslations} from 'next-intl';
 import {JSX} from "react";
 
 /**
@@ -6,11 +6,11 @@ import {JSX} from "react";
  *
  * @constructor
  */
-export default function Home(): JSX.Element
+export default function HomePage(): JSX.Element
 {
+    const t = useTranslations('homePage');
+
     return (
-        <>
-            <Typography variant={'h1'}>Ceci est la page de home</Typography>
-        </>
+        <h1 className={"text-3xl font-bold underline"}>{t('title')}</h1>
     );
 }

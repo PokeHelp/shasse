@@ -1,18 +1,19 @@
-'use server';
-
 import {Typography, LoginForm} from "@components";
 import {JSX} from "react";
+import {getTranslations} from 'next-intl/server';
 
 /**
  * Page: /login
  *
  * @constructor
  */
-export default async function Login(): Promise<JSX.Element>
+export default async function LoginPage(): Promise<JSX.Element>
 {
+    const t = await getTranslations('loginPage');
+
     return (
         <>
-            <Typography variant="h1">Login</Typography>
+            <Typography>{t('title')}</Typography>
             <LoginForm/>
         </>
     );
