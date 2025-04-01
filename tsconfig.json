@@ -24,14 +24,18 @@
       "@src/*": ["./src/*"],
       "@types/*": ["./src/types/*"],
       "@app/*": ["./src/app/*"],
-      "@components": ["./src/components/index"],
+      "@components": ["./components/index"],
       "@types": ["./src/types/index"],
       "@typesFront": ["./src/types/front/index"],
       "@store": ["./src/store/index"],
-      "@middleware": ["./src/middleware/index"],
+      "@provider": ["./src/provider/index"],
       "@lib": ["./src/lib/index"],
       "@utils": ["./src/utils/index"],
-      "@schema": ["./src/schema/index"]
+      "@schema": ["./src/schema/index"],
+      "@ui/*": ["./components/ui/*"],
+      "@svg/*": ["./public/svg/*"],
+      "@service": ["./src/service/index"],
+      "@query": ["./src/query/index"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

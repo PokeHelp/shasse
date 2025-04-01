@@ -6,10 +6,13 @@ import {
     AuthGuardProps,
     AuthState,
     RefreshTokenData,
-    AccessTokenData
+    AccessTokenData,
+    RegisterForm,
+    AuthResponse,
+    RefreshTokenResponse
 } from "./auth";
 import {DataError, ErrorMap} from "./zod";
-import {Errors} from './error';
+import {Errors, ErrorResponse} from './error';
 
 export type {
     LoginData,
@@ -22,5 +25,9 @@ export type {
     AuthGuardProps,
     AuthState,
     RefreshTokenData,
-    AccessTokenData
+    AccessTokenData,
+    RegisterForm,
+    AuthResponse,
+    ErrorResponse,
+    RefreshTokenResponse
 }

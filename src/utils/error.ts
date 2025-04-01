@@ -1,7 +1,7 @@
 import {Dispatch, SetStateAction} from 'react';
 import {AxiosError} from "axios";
 import {SafeParseReturnType, ZodIssue, ZodSchema} from "zod";
-import {DataError, ErrorMap, Errors} from "@types";
+import {DataError, ErrorMap, ErrorResponse, Errors} from "@types";
 
 /**
  * Ajoute une erreur
@@ -51,21 +51,31 @@ export function clearAllErrors(setErrors: Dispatch<SetStateAction<Errors>>): voi
  * @param setErrors
  * @param defaultErrorMessage
  */
-export function handleGenericError(error: unknown, setErrors: Dispatch<SetStateAction<Errors>>, defaultErrorMessage: string = 'Une erreur est survenue'): void
+export function handleError(error: unknown, setErrors: Dispatch<SetStateAction<Errors>>, defaultErrorMessage: string = 'Une erreur est survenue'): void
 {
     if (error instanceof AxiosError)
     {
         if (!error.response?.data.error)
         {
-
             setFieldError(setErrors, 'general', error.response?.data.message || defaultErrorMessage);
         } else
         {
-
             const apiErrors: { [key: string]: string } = error.response.data.error;
             for (const errorKey in apiErrors)
             {
                 setFieldError(setErrors, errorKey, apiErrors[errorKey]);
+            }
+        }
+    } else if (isErrorResponse(error))
+    {
+        if (typeof error.error === 'string')
+        {
+            setFieldError(setErrors, 'general', error.error);
+        } else
+        {
+            for (const errorKey in error.error)
+            {
+                setFieldError(setErrors, errorKey, error.error[errorKey]);
             }
         }
     } else
@@ -120,4 +130,20 @@ export function mapError(dataError: DataError): ErrorMap
 
         return acc;
     }, {} as ErrorMap);
+}
+
+/**
+ * Vérifie si l'erreur est formée comme un retour de server action
+ *
+ * @param error
+ */
+function isErrorResponse(error: unknown): error is ErrorResponse
+{
+    return (
+        typeof error === 'object' &&
+        error !== null &&
+        'success' in error &&
+        error.success === false &&
+        'error' in error
+    );
 }

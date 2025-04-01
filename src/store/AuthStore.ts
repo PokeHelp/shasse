@@ -1,11 +1,10 @@
 import {create, StoreApi, UseBoundStore} from 'zustand';
 import jwt from 'jsonwebtoken';
 import {AccessTokenDataSchema} from '@schema';
-import {AccessTokenData, AuthState} from "@types";
+import {AccessTokenData, AuthState, RefreshTokenResponse} from "@types";
 import {SafeParseReturnType} from "zod";
-import {getCookie} from "@utils";
-import {AxiosResponse} from "axios";
-import {axiosService} from "@lib";
+import {getCookie, setCookie} from "@utils";
+import {refreshToken as refreshTokenFn} from "@service";
 
 export const useAuthStore: UseBoundStore<StoreApi<AuthState>> = create<AuthState>((set: (state: Partial<AuthState> | ((prev: AuthState) => Partial<AuthState>)) => void): AuthState => ({
     levelAccess:     null,
@@ -15,39 +14,39 @@ export const useAuthStore: UseBoundStore<StoreApi<AuthState>> = create<AuthState
 
     initializeAuth: async (): Promise<void> =>
                     {
-                        try
+                        let token: string | null = localStorage.getItem('accessToken');
+                        const refreshToken: string | null = getCookie('refreshToken');
+
+                        if (refreshToken && !token)
                         {
-                            let token: string | null = localStorage.getItem('accessToken');
-                            const refreshToken: string | null = getCookie('refreshToken');
+                            const response: RefreshTokenResponse = await refreshTokenFn({refreshToken: refreshToken});
 
-                            if (refreshToken && !token)
+                            if (!response.success)
                             {
-                                const response: AxiosResponse = await axiosService.post('/api/auth/refresh', {refreshToken});
-                                const {accessToken} = response.data;
-                                localStorage.setItem('accessToken', accessToken);
-                                token = accessToken;
-                            }
-
-                            if (token && refreshToken)
+                                console.log(response.error);
+                                set({isInitialized: true})
+                            } else
                             {
-                                const decoded: SafeParseReturnType<AccessTokenData, AccessTokenData> = AccessTokenDataSchema.safeParse(jwt.decode(token));
-
-                                if (decoded.success)
-                                {
-                                    set({
-                                        levelAccess:     decoded.data.levelAccess,
-                                        isAuthenticated: true,
-                                        isInitialized:   true
-                                    });
-                                    return;
-                                }
+                                localStorage.setItem('accessToken', response.accessToken);
+                                token = response.accessToken;
                             }
-                            set({isInitialized: true});
-                        } catch (error)
-                        {
-                            console.log(error)
-                            set({isInitialized: true});
                         }
+
+                        if (token && refreshToken)
+                        {
+                            const decoded: SafeParseReturnType<AccessTokenData, AccessTokenData> = AccessTokenDataSchema.safeParse(jwt.decode(token));
+
+                            if (decoded.success)
+                            {
+                                set({
+                                    levelAccess:     decoded.data.levelAccess,
+                                    isAuthenticated: true,
+                                    isInitialized:   true
+                                });
+                                return;
+                            }
+                        }
+                        set({isInitialized: true});
                     },
 
     setAuth: (accessToken: string, refreshToken: string): void =>
@@ -58,7 +57,7 @@ export const useAuthStore: UseBoundStore<StoreApi<AuthState>> = create<AuthState
                  {
                      set({levelAccess: decoded.data.levelAccess, isAuthenticated: true, isLoading: false});
                      localStorage.setItem('accessToken', accessToken);
-                     document.cookie = `refreshToken=${refreshToken}; SameSite=Strict; Path=/; Max-Age=${14 * 24 * 60 * 60}`;
+                     setCookie('refreshToken', refreshToken, (14 * 24 * 60 * 60));
                  }
              },
 

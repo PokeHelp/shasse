@@ -1,4 +1,5 @@
 import {ReactNode} from "react";
+import {ErrorResponse} from "@types";
 
 export interface RefreshToken
 {
@@ -30,7 +31,22 @@ export interface RegisterData
     email: string;
     pseudonym: string;
     password: string;
-    langue?: string | undefined;
+}
+
+export type AuthResponse = | {
+    success: true;
+    accessToken: string;
+    refreshToken: string;
+} | ErrorResponse
+
+export type RefreshTokenResponse = | {
+    success: true;
+    accessToken: string;
+} | ErrorResponse
+
+export interface RegisterForm extends RegisterData
+{
+    passwordVerify: string;
 }
 
 export interface AuthContext

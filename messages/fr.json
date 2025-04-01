@@ -1,0 +1,44 @@
+{
+  "homePage": {
+    "title": "Ceci est la page de home."
+  },
+  "loginPage": {
+    "title": "Login",
+    "form": {
+      "btnLogin": "Connexion"
+    }
+  },
+  "registerPage": {
+    "title": "Register",
+    "form": {
+      "btnRegister": "Inscription"
+    }
+  },
+  "register": {
+    "alreadyExist": "L'email ou le pseudonyme existent déjà."
+  },
+  "refresh": {
+    "userNotFound": "L'utilisateur n'a pas été trouvé."
+  },
+  "login": {
+    "invalidCredentials": "Identifiants incorrect."
+  },
+  "auth": {
+    "email": {
+      "label": "E-mail",
+      "placeholder": "Veuillez entre votre e-mail"
+    },
+    "password": {
+      "label": "Mot de passe",
+      "placeholder": "Veuillez-entrer votre mot de passe"
+    },
+    "passwordVerify": {
+      "label": "Confirmation du mot de passe",
+      "placeholder": "Veuillez-entrer votre mot de passe"
+    },
+    "pseudonym": {
+      "label": "Pseudonyme",
+      "placeholder": "Veuillez-entrer votre pseudonyme"
+    }
+  }
+}
