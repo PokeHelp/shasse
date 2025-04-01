@@ -7,7 +7,7 @@ import {LoginData, RefreshToken, RefreshTokenData, RefreshTokenResponse, Registe
 import {createJWT, mapError, getLevelAccess, verifyJWT} from "@utils";
 import {LoginSchema, RefreshTokenDataSchema, RefreshTokenSchema, RegisterSchema} from "@schema";
 import {getTranslations} from "next-intl/server";
-import {createRefreshToken, createUser, getActiveUser, getRefreshToken, getUser} from "@query";
+import {createRefreshToken, createUser, getActiveUser, getRefreshToken} from "@query";
 
 export async function register(data: RegisterData): Promise<AuthResponse>
 {
@@ -19,8 +19,8 @@ export async function register(data: RegisterData): Promise<AuthResponse>
         return {success: false, error: mapError(registerData)};
     }
 
-    const searchUser = {email: registerData.data.email, pseudonym: registerData.data.pseudonym}
-    const existingUser: { id: number } | null = await getUser(searchUser, {id: true}); // TODO: changer le unique pour qu'il soit que si l'utilisateur soit actif
+    const searchUser = {email: registerData.data.email, pseudonym: registerData.data.pseudonym};
+    const existingUser: { id: number } | null = await getActiveUser(searchUser, {id: true});
 
     if (existingUser)
     {

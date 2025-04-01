@@ -43,6 +43,8 @@ model user {
   role          role            @default(PUBLIC)
   ownedPokemons owned_pokemon[]
   refreshTokens refresh_token[]
+
+  @@map("user")
 }
 
 model shiny_hunting_method {
@@ -709,12 +711,6 @@ model refresh_token {
   users     user     @relation(fields: [userId], references: [id])
 
   @@index([userId, expiresAt])
-}
-
-model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
 }
 
 enum role {
