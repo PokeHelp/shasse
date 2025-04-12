@@ -3,6 +3,7 @@ import {createRefreshToken, getRefreshToken} from './refreshToken';
 import {getPokemonForm, getPokemonFormPokedexQuery} from './pokemonForm';
 import {getLangue, getAllLangue} from './langue';
 import {getReferenceId, getTranslation} from './translation';
+import {getAllType, getAllTypeQuery} from './type';
 
 export {
     createUser,
@@ -14,5 +15,7 @@ export {
     getAllLangue,
     getReferenceId,
     getTranslation,
-    getPokemonFormPokedexQuery
+    getPokemonFormPokedexQuery,
+    getAllType,
+    getAllTypeQuery
 }

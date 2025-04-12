@@ -1,4 +1,4 @@
-import {InputProps, ButtonProps, TypographyProps} from './atoms';
+import {InputProps, ButtonProps, TypographyProps, DropdownProps, PaginationProps} from './atoms';
 import {RedirectButtonProps, InputFormFieldProps, PokedexCardProps} from './moleculs';
 
 export type
@@ -8,5 +8,7 @@ export type
     ButtonProps,
     TypographyProps,
     InputFormFieldProps,
-    PokedexCardProps
+    PokedexCardProps,
+    DropdownProps,
+    PaginationProps
 }

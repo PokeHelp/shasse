@@ -26,7 +26,7 @@ const Input: ({type, className}: InputProps) => JSX.Element = ({type, className,
     } else
     {
         return (
-            <UiInput type={type} {...other} />
+            <UiInput type={type} {...other} className={cn("border-primary", className)} />
         );
     }
 

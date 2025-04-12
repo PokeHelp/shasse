@@ -1,4 +1,4 @@
-import {Button, Input, Typography, Picture} from './atoms';
+import {Button, Input, Typography, Picture, Dropdown, Pagination} from './atoms';
 import {AuthGuard, LoginForm, RegisterForm, Pokedex} from './organisms';
 import {InputFormField, RedirectButton, LangueButton, PokedexCard} from './moleculs';
 
@@ -14,5 +14,7 @@ export {
     RedirectButton,
     Pokedex,
     PokedexCard,
-    Picture
+    Picture,
+    Dropdown,
+    Pagination
 }

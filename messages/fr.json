@@ -42,6 +42,7 @@
     }
   },
   "pokedex":      {
+    "searchPokemon": "Rechercher un pokemon ...",
     "card": {
       "pokemonPictureAlt": "Image du pokemon {pokemonName}",
       "typePictureAlt":    "Image du type {typeName}"

@@ -14,6 +14,7 @@ import {
 import {DataError, ErrorMap} from "./zod";
 import {Errors, ErrorResponse} from './error';
 import {PokedexResponse, Pokedex} from './pokemon';
+import {TypeName, TypesResponse} from './type';
 
 export type {
     LoginData,
@@ -32,5 +33,7 @@ export type {
     ErrorResponse,
     RefreshTokenResponse,
     PokedexResponse,
-    Pokedex
+    Pokedex,
+    TypeName,
+    TypesResponse
 }

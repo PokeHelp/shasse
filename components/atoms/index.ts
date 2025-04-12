@@ -2,10 +2,14 @@ import Typography from "./Typography/Typography";
 import Input from "./Input/Input";
 import Button from "./Button/Button";
 import Picture from "./Picture/Picture";
+import Dropdown from "./Dropdown/Dropdown";
+import Pagination from './Pagination/Pagination';
 
 export {
     Typography,
     Input,
     Button,
-    Picture
+    Picture,
+    Dropdown,
+    Pagination
 }
