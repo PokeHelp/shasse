@@ -4,6 +4,7 @@ import {setFieldError, clearFieldError, clearAllErrors, handleError, validateDat
 import {logError} from './server'
 import {getRole, RoleLevels, RoleName, getLevelAccess} from './role';
 import {excludeFields} from './other';
+import {getPokemonPictureFromId, getTypePictureById} from './picture';
 
 export {
     sendResponse,
@@ -21,7 +22,9 @@ export {
     RoleLevels,
     getLevelAccess,
     excludeFields,
-    setCookie
+    setCookie,
+    getPokemonPictureFromId,
+    getTypePictureById
 }
 
 export type {

@@ -15,7 +15,7 @@ export default async function RootLayout({children}: { children: ReactNode }): P
 
     return (
         <html lang={locale} suppressHydrationWarning>
-        <body className={"w-11/12 max-w-7xl mx-auto"}>
+        <body className={"w-11/12 max-w-8xl mx-auto"}>
         <NextIntlClientProvider>
             <Providers>
                 {children}

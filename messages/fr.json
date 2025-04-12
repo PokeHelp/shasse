@@ -1,44 +1,50 @@
 {
-  "homePage": {
+  "homePage":     {
     "title": "Ceci est la page de home."
   },
-  "loginPage": {
+  "loginPage":    {
     "title": "Login",
-    "form": {
+    "form":  {
       "btnLogin": "Connexion"
     }
   },
   "registerPage": {
     "title": "Register",
-    "form": {
+    "form":  {
       "btnRegister": "Inscription"
     }
   },
-  "register": {
+  "register":     {
     "alreadyExist": "L'email ou le pseudonyme existent déjà."
   },
-  "refresh": {
+  "refresh":      {
     "userNotFound": "L'utilisateur n'a pas été trouvé."
   },
-  "login": {
+  "login":        {
     "invalidCredentials": "Identifiants incorrect."
   },
-  "auth": {
-    "email": {
-      "label": "E-mail",
+  "auth":         {
+    "email":          {
+      "label":       "E-mail",
       "placeholder": "Veuillez entre votre e-mail"
     },
-    "password": {
-      "label": "Mot de passe",
+    "password":       {
+      "label":       "Mot de passe",
       "placeholder": "Veuillez-entrer votre mot de passe"
     },
     "passwordVerify": {
-      "label": "Confirmation du mot de passe",
+      "label":       "Confirmation du mot de passe",
       "placeholder": "Veuillez-entrer votre mot de passe"
     },
-    "pseudonym": {
-      "label": "Pseudonyme",
+    "pseudonym":      {
+      "label":       "Pseudonyme",
       "placeholder": "Veuillez-entrer votre pseudonyme"
+    }
+  },
+  "pokedex":      {
+    "card": {
+      "pokemonPictureAlt": "Image du pokemon {pokemonName}",
+      "typePictureAlt":    "Image du type {typeName}"
     }
   }
 }

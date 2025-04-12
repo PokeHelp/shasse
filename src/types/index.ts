@@ -13,6 +13,7 @@ import {
 } from "./auth";
 import {DataError, ErrorMap} from "./zod";
 import {Errors, ErrorResponse} from './error';
+import {PokedexResponse, Pokedex} from './pokemon';
 
 export type {
     LoginData,
@@ -29,5 +30,7 @@ export type {
     RegisterForm,
     AuthResponse,
     ErrorResponse,
-    RefreshTokenResponse
+    RefreshTokenResponse,
+    PokedexResponse,
+    Pokedex
 }

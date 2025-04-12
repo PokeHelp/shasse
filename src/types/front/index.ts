@@ -1,5 +1,5 @@
 import {InputProps, ButtonProps, TypographyProps} from './atoms';
-import {RedirectButtonProps, InputFormFieldProps} from './moleculs';
+import {RedirectButtonProps, InputFormFieldProps, PokedexCardProps} from './moleculs';
 
 export type
 {
@@ -7,5 +7,6 @@ export type
     RedirectButtonProps,
     ButtonProps,
     TypographyProps,
-    InputFormFieldProps
+    InputFormFieldProps,
+    PokedexCardProps
 }
