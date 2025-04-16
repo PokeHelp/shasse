@@ -70,9 +70,9 @@ export async function getPokemonFormPokedexQuery(formId: number, langId: number)
 
 
     return rawResults.map(row => ({
-        id:              Number(row.id),
-        name: row.name,
+        id:                   Number(row.id),
+        name:                 row.name,
         international_number: row.international_number,
-        types:           JSON.parse(row.types) as Array<{ type_id: number, order: number, type_name: string }>
+        types:                JSON.parse(row.types) as Array<{ type_id: number, order: number, type_name: string }>
     }));
 }

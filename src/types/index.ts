@@ -13,8 +13,11 @@ import {
 } from "./auth";
 import {DataError, ErrorMap} from "./zod";
 import {Errors, ErrorResponse} from './error';
-import {PokedexResponse, Pokedex} from './pokemon';
-import {TypeName, TypesResponse} from './type';
+import {PokedexResponse, Pokedex, PokemonInfoDetail, GroupedPokemonInfoDetailResponse, PokemonInfo, GroupedPokemonInfoDetail} from './pokemon';
+import {TypeName, TypesResponse, Type, TypeGeneration, TypeGenerationResponse} from './type';
+import {EggGroup, EggGroupGeneration, EggGroupGenerationResponse} from './eggGroup';
+import {Ability, AbilityGeneration, AbilityGenerationResponse} from './ability';
+import {Statistic, StatisticGenerationResponse, StatisticGeneration} from './statistic';
 
 export type {
     LoginData,
@@ -35,5 +38,21 @@ export type {
     PokedexResponse,
     Pokedex,
     TypeName,
-    TypesResponse
+    TypesResponse,
+    Type,
+    EggGroup,
+    Ability,
+    PokemonInfoDetail,
+    Statistic,
+    GroupedPokemonInfoDetailResponse,
+    TypeGeneration,
+    TypeGenerationResponse,
+    EggGroupGeneration,
+    EggGroupGenerationResponse,
+    AbilityGeneration,
+    AbilityGenerationResponse,
+    StatisticGenerationResponse,
+    StatisticGeneration,
+    PokemonInfo,
+    GroupedPokemonInfoDetail
 }

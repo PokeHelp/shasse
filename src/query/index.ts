@@ -3,7 +3,12 @@ import {createRefreshToken, getRefreshToken} from './refreshToken';
 import {getPokemonForm, getPokemonFormPokedexQuery} from './pokemonForm';
 import {getLangue, getAllLangue} from './langue';
 import {getReferenceId, getTranslation} from './translation';
-import {getAllType, getAllTypeQuery} from './type';
+import {getAllType, getAllTypeWithName, getPokemonTypeWithName} from './type';
+import {getPokemonInfoById} from './pokemon';
+import {getPokemonEggGroupWithName} from './eggGroup';
+import {getPokemonAbilityWithName} from './ability';
+import {getPokemonStatisticWithName} from './statistic';
+import {getLastGeneration} from './generation';
 
 export {
     createUser,
@@ -17,5 +22,11 @@ export {
     getTranslation,
     getPokemonFormPokedexQuery,
     getAllType,
-    getAllTypeQuery
+    getAllTypeWithName,
+    getPokemonTypeWithName,
+    getPokemonEggGroupWithName,
+    getPokemonAbilityWithName,
+    getPokemonStatisticWithName,
+    getPokemonInfoById,
+    getLastGeneration
 }

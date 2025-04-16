@@ -1,0 +1,48 @@
+import {mapError, sendResponse} from '@utils';
+import {HttpStatusCode} from "axios";
+import {NextResponse} from "next/server";
+import {numberSchema} from "@schema";
+import {SafeParseReturnType} from "zod";
+import {getDetail} from "@service";
+import {type NextRequest} from 'next/server'
+import {GroupedPokemonInfoDetail, GroupedPokemonInfoDetailResponse} from "@types";
+
+export async function GET(request: NextRequest, {params}: { params: Promise<{ id: string }> }): Promise<NextResponse<GroupedPokemonInfoDetailResponse>>
+{
+    try
+    {
+        const {id} = await params;
+        const idPassed: SafeParseReturnType<string, number> = numberSchema.safeParse(id);
+        let generationId: number | null = null;
+        const lastGeneration: boolean = request.nextUrl.searchParams.has('lastGeneration');
+
+        if (!idPassed.success)
+        {
+            return sendResponse({success: false, error: mapError(idPassed)}, HttpStatusCode.BadRequest);
+        }
+
+        if (request.nextUrl.searchParams.has('generationId'))
+        {
+            const idGenPassed: SafeParseReturnType<string, number> = numberSchema.safeParse(request.nextUrl.searchParams.get('generationId'));
+            if (!idGenPassed.success)
+            {
+                return sendResponse({success: false, error: mapError(idGenPassed)}, HttpStatusCode.BadRequest);
+            } else
+            {
+                generationId = idGenPassed.data;
+            }
+        }
+
+        const pokemon: GroupedPokemonInfoDetail = await getDetail(idPassed.data, lastGeneration, generationId);
+        if (pokemon === undefined)
+        {
+            return sendResponse({success: false, error: "La donnée demandée existe pas."}, HttpStatusCode.BadRequest);
+        }
+
+        return sendResponse({success: true, data: pokemon}, HttpStatusCode.Ok);
+    } catch (e)
+    {
+        console.log(e)
+        return sendResponse({success: false, error: 'Generic error'}, HttpStatusCode.InternalServerError);
+    }
+}

@@ -22,3 +22,10 @@ export interface PokedexCardProps extends ComponentProps<typeof UiCard>
 {
     pokemon: Pokedex;
 }
+
+export interface PokemonDetailSliderProps
+{
+    pokemonId: number;
+    isOpen: boolean;
+    onClose: () => void;
+}
