@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "DEBUG=* next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "DEBUG=* next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start --turbopack",
     "lint": "next lint",
     "seed": "node --loader ts-node/esm prisma/seed.ts",
     "db:init": "prisma migrate dev --name init && npm run seed all"

@@ -8,9 +8,10 @@ export type PokedexResponse = | {
 interface PokedexPokemonBase
 {
     id: number;
-    international_number: number;
+    internationalNumber: number;
+    generationIdApear: number;
     name?: string;
-    types: { type_id: number, order: number, type_name: string }[]
+    types: Type[]
 }
 
 export interface Pokedex extends Omit<PokedexPokemonBase, 'name'>

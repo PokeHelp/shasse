@@ -8,7 +8,7 @@ import {getPokemonInfoById} from './pokemon';
 import {getPokemonEggGroupWithName} from './eggGroup';
 import {getPokemonAbilityWithName} from './ability';
 import {getPokemonStatisticWithName} from './statistic';
-import {getLastGeneration} from './generation';
+import {getLastGeneration, getAllGeneration} from './generation';
 
 export {
     createUser,
@@ -28,5 +28,6 @@ export {
     getPokemonAbilityWithName,
     getPokemonStatisticWithName,
     getPokemonInfoById,
-    getLastGeneration
+    getLastGeneration,
+    getAllGeneration
 }

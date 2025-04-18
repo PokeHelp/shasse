@@ -19,7 +19,7 @@ export default function PokedexCard({pokemon, ...other}: PokedexCardProps): JSX.
                 <div className="absolute justify-center top-0 translate-y-[-18px] flex"
                      style={{width: '-webkit-fill-available'}}>
                     <div className="text-[24px] p-2 py-0.5 border border-primary bg-background rounded">
-                        {pokemon.international_number}
+                        {pokemon.internationalNumber}
                     </div>
                 </div>
                 <div
@@ -27,7 +27,7 @@ export default function PokedexCard({pokemon, ...other}: PokedexCardProps): JSX.
                     onClick={(): void => setIsSheetOpen(true)}
                 >
                     <Picture
-                        src={getPokemonPictureFromId(pokemon.international_number)}
+                        src={getPokemonPictureFromId(pokemon.internationalNumber)}
                         alt={t('pokemonPictureAlt', {pokemonName: pokemon.name})}
                         width={250}
                         height={250}
@@ -40,12 +40,12 @@ export default function PokedexCard({pokemon, ...other}: PokedexCardProps): JSX.
                         <div className="flex gap-2">
                             {pokemon.types.map((type): JSX.Element => (
                                 <Picture
-                                    src={getTypePictureById(type.type_id)}
+                                    src={getTypePictureById(type.id)}
                                     width={25}
                                     height={25}
-                                    title={type.type_name}
-                                    alt={t('typePictureAlt', {typeName: type.type_name})}
-                                    key={type.type_id}
+                                    title={type.name}
+                                    alt={t('typePictureAlt', {typeName: type.name})}
+                                    key={type.id}
                                 />
                             ))}
                         </div>

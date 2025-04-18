@@ -74,5 +74,9 @@
   "ability": {
     "name": "Talent",
     "hiddenName": "Talent caché"
+  },
+  "generation":
+  {
+    "all": "Toutes"
   }
 }

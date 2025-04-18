@@ -10,3 +10,12 @@ export async function getLastGeneration<T extends Prisma.generationSelect>(selec
         orderBy: {id: 'desc'}
     });
 }
+
+export async function getAllGeneration<T extends Prisma.generationSelect>(select?: T)
+    : Promise<Prisma.generationGetPayload<{ select: T }>[]>
+{
+    return prisma.generation.findMany({
+        where:  {status: "on"},
+        select: select || {id: true} as T
+    });
+}

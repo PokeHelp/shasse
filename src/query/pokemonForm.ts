@@ -1,6 +1,6 @@
 import {Prisma, reference_table} from "@prisma/client";
 import {prisma} from "@lib";
-import {Pokedex} from "@types";
+import {Pokedex, Type} from "@types";
 
 export async function getPokemonForm<T extends Prisma.pokemon_formSelect>(
     data: { pokemonId?: number; formId?: number; },
@@ -19,10 +19,18 @@ export async function getPokemonForm<T extends Prisma.pokemon_formSelect>(
 
 export async function getPokemonFormPokedexQuery(formId: number, langId: number): Promise<Pokedex[]>
 {
-    interface RawQueryResult extends Omit<Pokedex, 'types'>
+    interface RawQueryResult extends Omit<Pokedex, 'types' | 'generationIdApear' | 'internationalNumber'>
     {
         types: string;
         pokemon_info_id: bigint;
+        generation_id: number;
+        international_number: number;
+    }
+
+    interface RawQueryType extends Omit<Type, 'id' | 'name'>
+    {
+        type_id: number;
+        type_name: string;
     }
 
     const rawResults: RawQueryResult[] = await prisma.$queryRaw<RawQueryResult[]>`
@@ -33,6 +41,7 @@ export async function getPokemonFormPokedexQuery(formId: number, langId: number)
              pokemon_base AS (SELECT t.name,
                                      p.id,
                                      p.international_number,
+                                     p.generation_id,
                                      pi.id AS pokemon_info_id
                               FROM pokemon_form pf
                                        JOIN pokemon p ON pf.pokemon_id = p.id AND p.status = 'on'
@@ -54,6 +63,7 @@ export async function getPokemonFormPokedexQuery(formId: number, langId: number)
         SELECT pb.name,
                pb.id,
                pb.international_number,
+               pb.generation_id,
                JSON_ARRAYAGG(
                        JSON_OBJECT(
                                'type_id', tyo.type_id,
@@ -68,11 +78,15 @@ export async function getPokemonFormPokedexQuery(formId: number, langId: number)
         ORDER BY pb.international_number
     `;
 
-
     return rawResults.map(row => ({
-        id:                   Number(row.id),
-        name:                 row.name,
-        international_number: row.international_number,
-        types:                JSON.parse(row.types) as Array<{ type_id: number, order: number, type_name: string }>
+        id:                  Number(row.id),
+        name:                row.name,
+        internationalNumber: row.international_number,
+        generationIdApear:   Number(row.generation_id),
+        types: (JSON.parse(row.types) as RawQueryType[]).map((type: RawQueryType): Type => ({
+            id: type.type_id,
+            order: type.order,
+            name: type.type_name
+        }))
     }));
 }

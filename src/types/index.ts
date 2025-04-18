@@ -19,6 +19,7 @@ import {EggGroup, EggGroupGeneration, EggGroupGenerationResponse} from './eggGro
 import {Ability, AbilityGeneration, AbilityGenerationResponse} from './ability';
 import {Statistic, StatisticGenerationResponse, StatisticGeneration} from './statistic';
 import {TypePictureStyle} from './picture';
+import {Generation, GenerationResponse} from './generation';
 
 export type {
     LoginData,
@@ -56,5 +57,7 @@ export type {
     StatisticGeneration,
     PokemonInfo,
     GroupedPokemonInfoDetail,
-    TypePictureStyle
+    TypePictureStyle,
+    Generation,
+    GenerationResponse
 }
