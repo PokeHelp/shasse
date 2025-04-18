@@ -5,6 +5,7 @@ import Picture from "./Picture/Picture";
 import Dropdown from "./Dropdown/Dropdown";
 import Pagination from './Pagination/Pagination';
 import Slider from './Slider/Slider';
+import Link from './Link/Link';
 
 export {
     Typography,
@@ -13,5 +14,6 @@ export {
     Picture,
     Dropdown,
     Pagination,
-    Slider
+    Slider,
+    Link
 }

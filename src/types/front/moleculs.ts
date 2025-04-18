@@ -29,3 +29,8 @@ export interface PokemonDetailSliderProps
     isOpen: boolean;
     onClose: () => void;
 }
+
+export interface GenderGaugeProps extends ComponentProps<'div'>
+{
+    maleRate: number;
+}

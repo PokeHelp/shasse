@@ -1,0 +1,1 @@
+export type TypePictureStyle = 'fullName' | 'icon';

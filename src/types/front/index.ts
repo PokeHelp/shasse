@@ -1,5 +1,5 @@
-import {InputProps, ButtonProps, TypographyProps, DropdownProps, PaginationProps, SliderProps} from './atoms';
-import {RedirectButtonProps, InputFormFieldProps, PokedexCardProps, PokemonDetailSliderProps} from './moleculs';
+import {InputProps, ButtonProps, TypographyProps, DropdownProps, PaginationProps, SliderProps, LinkProps} from './atoms';
+import {RedirectButtonProps, InputFormFieldProps, PokedexCardProps, PokemonDetailSliderProps, GenderGaugeProps} from './moleculs';
 
 export type
 {
@@ -12,5 +12,7 @@ export type
     DropdownProps,
     PaginationProps,
     SliderProps,
-    PokemonDetailSliderProps
+    PokemonDetailSliderProps,
+    LinkProps,
+    GenderGaugeProps
 }

@@ -50,7 +50,7 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
             groupedData[genId] = {
                 ...pokemonData,
                 types:      types.filter((t: TypeGeneration): boolean => t.generationId === genId),
-                egGroups:   eggGroups.filter((e: EggGroupGeneration): boolean => e.generationId === genId),
+                eggGroups:   eggGroups.filter((e: EggGroupGeneration): boolean => e.generationId === genId),
                 abilities:  abilities.filter((a: AbilityGeneration): boolean => a.generationId === genId),
                 statistics: statistic.filter((s: StatisticGeneration): boolean => s.generationId === genId)
             };

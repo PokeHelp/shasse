@@ -49,6 +49,30 @@
     }
   },
   "pokemon": {
-    
+    "hatchingCycle": "Cycle d'éclosion",
+    "captureRate": "Taux de capture",
+    "callHelpRate": "Taux d'appel à l'aide",
+    "genderRate": "Taux mâle femelle",
+    "eggGroup": "Groupe d'oeuf",
+    "slider": {
+      "linkMoreDetail": "Plus d'informations sur le Pokémon."
+    }
+  },
+  "stats": {
+    "name": "Statistique",
+    "pv": "PV",
+    "attack": "Attaque",
+    "defense": "Défence",
+    "specialAttack": "Attaque spé.",
+    "specialDefense": "Défence spé.",
+    "special": "Spécial",
+    "speed": "Vitesse"
+  },
+  "type": {
+    "name": "Types"
+  },
+  "ability": {
+    "name": "Talent",
+    "hiddenName": "Talent caché"
   }
 }

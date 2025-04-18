@@ -40,14 +40,14 @@ export interface PokemonInfo
 export interface PokemonInfoDetail extends PokemonInfo
 {
     types: Type[];
-    egGroups: EggGroup[];
+    eggGroups: EggGroup[];
     abilities: Ability[];
     statistics: Statistic[];
 }
 
 export interface GroupedPokemonInfoDetail
 {
-    [key: number]: PokemonInfoDetail;
+    [key: string]: PokemonInfoDetail;
 }
 
 export type GroupedPokemonInfoDetailResponse = | {

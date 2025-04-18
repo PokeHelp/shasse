@@ -1,11 +1,15 @@
 'use client';
 
 import {TypographyProps} from "@typesFront";
+import {JSX} from "react";
 
-//TODO: faire toutes les variantes
-const CustomTypography = ({children, ...other}: TypographyProps) =>
+const CustomTypography: ({type}: TypographyProps) => JSX.Element = ({
+                                                                        type: Tag,
+                                                                        children,
+                                                                        ...   other
+                                                                    }: TypographyProps): JSX.Element =>
 {
-    return <div {...other}>{children}</div>;
+    return <Tag {...other}>{children}</Tag>;
 };
 
 export default CustomTypography;

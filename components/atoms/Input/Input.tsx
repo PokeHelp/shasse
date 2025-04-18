@@ -1,6 +1,6 @@
 'use client';
 
-import React, {JSX, useState} from 'react';
+import {JSX, useState} from 'react';
 import {Input as UiInput} from "@ui/input"
 import {InputProps} from "@typesFront";
 import {Button} from "@components";
