@@ -78,5 +78,8 @@
   "generation":
   {
     "all": "Toutes"
+  },
+  "gender": {
+    "assexual": "Assexué"
   }
 }

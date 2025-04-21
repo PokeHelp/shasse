@@ -11,7 +11,7 @@ import {useTranslations} from "next-intl";
 
 async function fetchShortDetail(id: number): Promise<GroupedPokemonInfoDetailResponse>
 {
-    const {data} = await axiosService.get<GroupedPokemonInfoDetailResponse>(`api/pokemon/${id}/details?lastGeneration=true`);
+    const {data} = await axiosService.get<GroupedPokemonInfoDetailResponse>(`api/pokemons/${id}/details?lastGeneration=true`);
     return data;
 }
 
@@ -104,9 +104,7 @@ export default function PokemonDetailSlider({
                     <div className="flex items-center justify-between">
                         <Typography type={"h3"}>{t('pokemon.genderRate')}</Typography>
                         <div className="flex gap-2 items-center">
-                            {pokemon.maleRate}
-                            <GenderGauge maleRate={pokemon.maleRate} className="w-[100px]"/>
-                            {pokemon.femelleRate}
+                            <GenderGauge maleRate={pokemon.maleRate} femelleRate={pokemon.femelleRate} className="w-[100px]"/>
                         </div>
                     </div>
 

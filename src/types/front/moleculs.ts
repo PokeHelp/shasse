@@ -33,4 +33,5 @@ export interface PokemonDetailSliderProps
 export interface GenderGaugeProps extends ComponentProps<'div'>
 {
     maleRate: number;
+    femelleRate: number;
 }
