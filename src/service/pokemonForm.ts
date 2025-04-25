@@ -9,6 +9,6 @@ export async function getPokemonFormPokedex(formId?: number | null, langId?: num
     langId = !langId ? await getLangueId('french') : langId;
     formId = !formId ? Number(await findIdByReferenceTable('Normal', reference_table.FORM)) : formId;
 
-    return await getPokemonFormPokedexQuery(langId, formId);
+    return await getPokemonFormPokedexQuery(formId, langId);
 }
 

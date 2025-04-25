@@ -8,6 +8,7 @@ import {getPokemonEggGroupWithTranslation} from './eggGroup';
 import {getPokemonAbilityWithTranslation} from './ability';
 import {getPokemonStatisticWithTranslation} from './statistic';
 import {getLastGeneration} from './generation';
+import {getFormChoice} from './form';
 
 export {
     getDefaultLangue,
@@ -25,5 +26,6 @@ export {
     getPokemonEggGroupWithTranslation,
     getPokemonAbilityWithTranslation,
     getPokemonStatisticWithTranslation,
-    getLastGeneration
+    getLastGeneration,
+    getFormChoice
 }

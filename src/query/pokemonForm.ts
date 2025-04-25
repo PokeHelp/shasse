@@ -33,6 +33,9 @@ export async function getPokemonFormPokedexQuery(formId: number, langId: number)
         type_name: string;
     }
 
+    console.log('----------------------------------')
+    console.log(formId)
+    console.log('----------------------------------')
     const rawResults: RawQueryResult[] = await prisma.$queryRaw<RawQueryResult[]>`
         WITH latest_pokemon_info AS (SELECT pokemon_id, MAX(generation_id) as max_generation
                                      FROM pokemon_info

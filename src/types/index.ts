@@ -20,6 +20,7 @@ import {Ability, AbilityGeneration, AbilityGenerationResponse} from './ability';
 import {Statistic, StatisticGenerationResponse, StatisticGeneration} from './statistic';
 import {TypePictureStyle} from './picture';
 import {Generation, GenerationResponse} from './generation';
+import {TranslationName} from './translation';
 
 export type {
     LoginData,
@@ -59,5 +60,6 @@ export type {
     GroupedPokemonInfoDetail,
     TypePictureStyle,
     Generation,
-    GenerationResponse
+    GenerationResponse,
+    TranslationName
 }

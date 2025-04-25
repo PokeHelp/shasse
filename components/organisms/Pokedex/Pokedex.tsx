@@ -5,7 +5,7 @@ import {
     Generation,
     GenerationResponse,
     Pokedex as PokedexType,
-    PokedexResponse,
+    PokedexResponse, TranslationName,
     Type,
     TypeName,
     TypesResponse
@@ -15,43 +15,51 @@ import {ChangeEvent, JSX, useEffect, useMemo, useState} from "react";
 import {Dropdown, Input, Pagination, PokedexCard} from "@components";
 import {useTranslations} from "next-intl";
 import {SelectItem} from "@ui/select";
-
-async function fetchPokedex(): Promise<PokedexResponse>
-{
-    const {data} = await axiosService.get<PokedexResponse>('/api/pokedex');
-    return data;
-}
-
-async function fetchTypes(): Promise<TypesResponse>
-{
-    const {data} = await axiosService.get<PokedexResponse>('/api/types');
-    return data;
-}
-
-async function fetchGenerations(): Promise<TypesResponse>
-{
-    const {data} = await axiosService.get<PokedexResponse>('/api/generations');
-    return data;
-}
+import {getFormChoice} from "@service";
 
 const allTypeSelected: TypeName = {id: 0, name: "Tous"};
 const allGenerationSelected: Generation = {id: 0}
 
+const handlePokedex: (formId?: number | null) => Promise<PokedexResponse> = async (formId?: number | null): Promise<PokedexResponse> =>
+{
+    const option: string = formId ? `?formId=${formId}` : '';
+    const {data} = await axiosService.get<PokedexResponse>(`/api/pokedex${option}`);
+    return data;
+}
+
 export default function Pokedex(): JSX.Element
 {
+    const [formSelected, setFormSelected] = useState<TranslationName | null>(null);
+
     const {data, isLoading, error} = useQuery<PokedexResponse, Error>({
-        queryKey: ['pokedex'],
-        queryFn:  fetchPokedex,
+        queryKey: [`pokedex${formSelected?.referenceId}`],
+        queryFn:  (): Promise<PokedexResponse> => handlePokedex(Number(formSelected?.referenceId))
     });
 
     const {data: typesData} = useQuery<TypesResponse, Error>({
         queryKey: ['types'],
-        queryFn:  fetchTypes,
+        queryFn:  async (): Promise<TypesResponse> =>
+                  {
+                      const {data} = await axiosService.get<TypesResponse>('/api/types');
+                      return data;
+                  },
     });
 
     const {data: generationsData} = useQuery<GenerationResponse, Error>({
         queryKey: ['generations'],
-        queryFn:  fetchGenerations,
+        queryFn:  async (): Promise<GenerationResponse> =>
+                  {
+                      const {data} = await axiosService.get<GenerationResponse>('/api/generations');
+                      return data;
+                  },
+    });
+
+    const {data: formChoicesData} = useQuery({
+        queryKey: ['formChoice'],
+        queryFn:  async (): Promise<TranslationName[]> =>
+                  {
+                      return getFormChoice();
+                  }
     });
 
     const [search, setSearch] = useState('');
@@ -63,6 +71,7 @@ export default function Pokedex(): JSX.Element
     const [typeSelected, setTypeSelected] = useState<TypeName>(allTypeSelected);
     const [generationSelection, setGenerationSelection] = useState<Generation[]>([]);
     const [generationSelected, setGenerationSelected] = useState<Generation>(allGenerationSelected);
+    const [formSelection, setFormSelection] = useState<TranslationName[]>([]);
 
     useEffect((): void =>
     {
@@ -74,8 +83,19 @@ export default function Pokedex(): JSX.Element
         setGenerationSelection((generationsData && generationsData.success) ? [allGenerationSelected, ...generationsData.data] : []);
     }, [generationsData])
 
+    useEffect((): void =>
+    {
+        if (formChoicesData)
+        {
+            setFormSelection(formChoicesData);
+            setFormSelected(formChoicesData.find((form: TranslationName): boolean => Number(form.referenceId) === 1) ?? null);
+        }
+
+    }, [formChoicesData])
+
     const filteredData: PokedexType[] = useMemo((): PokedexType[] =>
     {
+        setCurrentPage(1);
         const allPokemon: PokedexType[] = (data && data.success) ? data.data : [];
 
         return allPokemon.filter((pokemon: PokedexType): boolean =>
@@ -90,25 +110,17 @@ export default function Pokedex(): JSX.Element
         });
     }, [data, search, typeSelected, generationSelected]);
 
-    const handleElementPerPageChange: (value: string) => void = (value: string): void =>
-    {
-        setElementPerPage(Number(value));
-        setCurrentPage(1);
-    };
-
-    const totalPages: number = Math.ceil(filteredData.length / elementPerPage);
-
     const paginatedData: PokedexType[] = useMemo((): PokedexType[] =>
     {
         const start: number = (currentPage - 1) * elementPerPage;
         return filteredData.slice(start, start + elementPerPage);
     }, [filteredData, currentPage, elementPerPage]);
 
-    const handleSearchChange: (e: ChangeEvent<HTMLInputElement>) => void = (e: ChangeEvent<HTMLInputElement>): void =>
+    const handleFormChange: (value: string) => Promise<void> = async (value: string): Promise<void> =>
     {
-        setSearch(e.target.value);
+        setFormSelected(formSelection.find((form: TranslationName): boolean => Number(form.referenceId) === Number(value)) ?? null)
         setCurrentPage(1);
-    };
+    }
 
     if (isLoading) return <p>Chargement...</p>;
     if (error) return <p>Erreur : {error.message}</p>;
@@ -119,9 +131,9 @@ export default function Pokedex(): JSX.Element
 
             <div className="flex">
                 <Input type="text" placeholder={t("pokedex.searchPokemon")} value={search}
-                       onChange={handleSearchChange}/>
+                       onChange={(e: ChangeEvent<HTMLInputElement>): void => setSearch(e.target.value)}/>
 
-                <Dropdown onValueChange={handleElementPerPageChange}
+                <Dropdown onValueChange={(value: string): void => setElementPerPage(Number(value))}
                           value={elementPerPage.toString()}>
                     {elementsPerPage.map((numberElement: number): JSX.Element => (
                         <SelectItem value={numberElement.toString()} key={numberElement}>{numberElement}</SelectItem>
@@ -145,6 +157,16 @@ export default function Pokedex(): JSX.Element
                         </SelectItem>
                     ))}
                 </Dropdown>
+
+                <Dropdown
+                    onValueChange={handleFormChange}
+                    value={formSelected?.referenceId.toString()}>
+                    {formSelection.map((form: TranslationName): JSX.Element => (
+                        <SelectItem value={form.referenceId.toString()} key={form.referenceId}>
+                            {form.name}
+                        </SelectItem>
+                    ))}
+                </Dropdown>
             </div>
 
             <div className="flex flex-wrap gap-4 gap-y-9 justify-center">
@@ -153,7 +175,8 @@ export default function Pokedex(): JSX.Element
                 ))}
             </div>
 
-            <Pagination currentPage={currentPage} totalPages={totalPages} onChangeEvent={setCurrentPage}/>
+            <Pagination currentPage={currentPage} totalPages={Math.ceil(filteredData.length / elementPerPage)}
+                        onChangeEvent={setCurrentPage}/>
         </div>
     );
 }

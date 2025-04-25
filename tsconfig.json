@@ -35,7 +35,8 @@
       "@ui/*": ["./components/ui/*"],
       "@svg/*": ["./public/svg/*"],
       "@service": ["./src/service/index"],
-      "@query": ["./src/query/index"]
+      "@query": ["./src/query/index"],
+      "@config": ["./config/index"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

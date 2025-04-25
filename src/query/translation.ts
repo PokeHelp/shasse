@@ -1,5 +1,6 @@
 import {reference_table} from "@prisma/client";
 import {prisma} from "@lib";
+import {TranslationName} from "@types";
 
 /**
  * Récupère l'id d'une traduction
@@ -35,5 +36,22 @@ export async function getTranslation(data: {
             langueId:       data.langId
         },
         select: {name: true}
+    });
+}
+
+export async function getTranslationsByReferenceId(referenceIds: number[], langId: number, referenceTable: reference_table): Promise<TranslationName[]>
+{
+    return prisma.translation.findMany({
+        where: {
+            langueId: langId,
+            referenceTable: referenceTable,
+            referenceId: {
+                in: referenceIds
+            }
+        },
+        select: {
+            referenceId: true,
+            name: true
+        }
     });
 }
