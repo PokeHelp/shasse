@@ -25,6 +25,7 @@ export async function getPokemonFormPokedexQuery(formId: number, langId: number)
         pokemon_info_id: bigint;
         generation_id: number;
         international_number: number;
+        form_ids: string;
     }
 
     interface RawQueryType extends Omit<Type, 'id' | 'name'>
@@ -33,9 +34,6 @@ export async function getPokemonFormPokedexQuery(formId: number, langId: number)
         type_name: string;
     }
 
-    console.log('----------------------------------')
-    console.log(formId)
-    console.log('----------------------------------')
     const rawResults: RawQueryResult[] = await prisma.$queryRaw<RawQueryResult[]>`
         WITH latest_pokemon_info AS (SELECT pokemon_id, MAX(generation_id) as max_generation
                                      FROM pokemon_info
@@ -45,7 +43,11 @@ export async function getPokemonFormPokedexQuery(formId: number, langId: number)
                                      p.id,
                                      p.international_number,
                                      p.generation_id,
-                                     pi.id AS pokemon_info_id
+                                     pi.id                    AS pokemon_info_id,
+                                     (SELECT JSON_ARRAYAGG(pf.form_id)
+                                      FROM pokemon_form pf
+                                      WHERE pf.pokemon_id = p.id
+                                        AND pf.status = 'on') AS form_ids
                               FROM pokemon_form pf
                                        JOIN pokemon p ON pf.pokemon_id = p.id AND p.status = 'on'
                                        JOIN pokemon_info pi ON p.id = pi.pokemon_id
@@ -67,6 +69,7 @@ export async function getPokemonFormPokedexQuery(formId: number, langId: number)
                pb.id,
                pb.international_number,
                pb.generation_id,
+               pb.form_ids,
                JSON_ARRAYAGG(
                        JSON_OBJECT(
                                'type_id', tyo.type_id,
@@ -77,19 +80,22 @@ export async function getPokemonFormPokedexQuery(formId: number, langId: number)
         FROM pokemon_base pb
                  LEFT JOIN type_order tyo ON pb.pokemon_info_id = tyo.pokemon_info_id
                  LEFT JOIN type_translations tt ON tt.type_id = tyo.type_id
-        GROUP BY pb.name, pb.id, pb.international_number
+        GROUP BY pb.name, pb.id, pb.international_number, pb.generation_id, pb.form_ids
         ORDER BY pb.international_number
     `;
 
-    return rawResults.map(row => ({
+    console.log(rawResults[201])
+
+    return rawResults.map((row: RawQueryResult): Pokedex => ({
         id:                  Number(row.id),
         name:                row.name,
         internationalNumber: row.international_number,
         generationIdApear:   Number(row.generation_id),
-        types: (JSON.parse(row.types) as RawQueryType[]).map((type: RawQueryType): Type => ({
-            id: type.type_id,
+        formIds:             JSON.parse(row.form_ids) as number[],
+        types:               (JSON.parse(row.types) as RawQueryType[]).map((type: RawQueryType): Type => ({
+            id:    type.type_id,
             order: type.order,
-            name: type.type_name
+            name:  type.type_name
         }))
     }));
 }

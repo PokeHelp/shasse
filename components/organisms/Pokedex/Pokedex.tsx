@@ -171,7 +171,7 @@ export default function Pokedex(): JSX.Element
 
             <div className="flex flex-wrap gap-4 gap-y-9 justify-center">
                 {paginatedData.map((pokemon: PokedexType): JSX.Element => (
-                    <PokedexCard key={pokemon.id} pokemon={pokemon}/>
+                    <PokedexCard key={pokemon.id} pokemon={pokemon} formId={formSelected !== null ? Number(formSelected.referenceId) : null}/>
                 ))}
             </div>
 

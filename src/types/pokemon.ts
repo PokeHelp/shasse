@@ -12,6 +12,7 @@ interface PokedexPokemonBase
     generationIdApear: number;
     name?: string;
     types: Type[]
+    formIds: number[];
 }
 
 export interface Pokedex extends Omit<PokedexPokemonBase, 'name'>
@@ -44,6 +45,7 @@ export interface PokemonInfoDetail extends PokemonInfo
     eggGroups: EggGroup[];
     abilities: Ability[];
     statistics: Statistic[];
+    forms: number[];
 }
 
 export interface GroupedPokemonInfoDetail

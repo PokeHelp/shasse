@@ -1423,25 +1423,33 @@ async function seedPokemon(): Promise<void>
         for (const pokemonForm of pokemon.form)
         {
             const pokemonFormId: bigint = await findIdByName(pokemonForm, reference_table.FORM, langFrId)
-            const pokeFormId: number = (await prisma.pokemon_form.create({
+            await prisma.pokemon_form.create({
                 data:   {
                     pokemonId: pokemonId,
                     formId:    Number(pokemonFormId),
                 },
                 select: {id: true}
-            })).id;
+            });
 
-            for (const pokemonGender of pokemon.gender)
-            {
-                const pokemonGenderId: bigint = await findIdByName(pokemonGender, reference_table.GENDER, langFrId)
-
-                await prisma.pokemon_form_gender.create({
-                    data: {
-                        pokemonFormId: pokeFormId,
-                        genderId:      Number(pokemonGenderId)
-                    }
-                })
-            }
+            // pokeFormId: number = (await prisma.pokemon_form.create({
+            //     data:   {
+            //         pokemonId: pokemonId,
+            //         formId:    Number(pokemonFormId),
+            //     },
+            //     select: {id: true}
+            // })).id;
+            //
+            // for (const pokemonGender of pokemon.gender)
+            // {
+            //     const pokemonGenderId: bigint = await findIdByName(pokemonGender, reference_table.GENDER, langFrId)
+            //
+            //     await prisma.pokemon_form_gender.create({
+            //         data: {
+            //             pokemonFormId: pokeFormId,
+            //             genderId:      Number(pokemonGenderId)
+            //         }
+            //     })
+            // }
         }
 
         // Ajout des numéros nationnaux

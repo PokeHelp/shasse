@@ -33,7 +33,14 @@ export async function GET(request: NextRequest, {params}: { params: Promise<{ id
             }
         }
 
-        const pokemon: GroupedPokemonInfoDetail = await getDetail(idPassed.data, lastGeneration, generationId);
+        const pokemon: GroupedPokemonInfoDetail = await getDetail(idPassed.data, lastGeneration, generationId, null,
+            {
+                forms: request.nextUrl.searchParams.has('forms'),
+                eggGroups: request.nextUrl.searchParams.has('eggGroups'),
+                statistics: request.nextUrl.searchParams.has('statistics'),
+                types: request.nextUrl.searchParams.has('types'),
+                abilities: request.nextUrl.searchParams.has('abilities')
+            });
         if (pokemon === undefined)
         {
             return sendResponse({success: false, error: "La donnée demandée existe pas."}, HttpStatusCode.BadRequest);

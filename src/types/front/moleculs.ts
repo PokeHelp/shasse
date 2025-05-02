@@ -21,6 +21,7 @@ export interface InputFormFieldProps<T extends FieldValues> extends Omit<InputPr
 export interface PokedexCardProps extends ComponentProps<typeof UiCard>
 {
     pokemon: Pokedex;
+    formId?: number | null;
 }
 
 export interface PokemonDetailSliderProps

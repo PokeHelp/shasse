@@ -8,7 +8,7 @@ import {getPokemonPictureFromId, getTypePictureById} from "@utils";
 import {Picture} from "@components";
 import {PokemonDetailSlider} from "@components";
 
-export default function PokedexCard({pokemon, ...other}: PokedexCardProps): JSX.Element
+export default function PokedexCard({pokemon, formId, ...other}: PokedexCardProps): JSX.Element
 {
     const t = useTranslations('pokedex.card');
     const [isSheetOpen, setIsSheetOpen] = useState(false);
@@ -27,7 +27,7 @@ export default function PokedexCard({pokemon, ...other}: PokedexCardProps): JSX.
                     onClick={(): void => setIsSheetOpen(true)}
                 >
                     <Picture
-                        src={getPokemonPictureFromId(pokemon.internationalNumber)}
+                        src={getPokemonPictureFromId({internationalNumber: pokemon.internationalNumber, formId}, "Artwork")}
                         alt={t('pokemonPictureAlt', {pokemonName: pokemon.name})}
                         width={250}
                         height={250}

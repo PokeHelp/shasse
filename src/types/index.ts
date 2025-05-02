@@ -18,7 +18,7 @@ import {TypeName, TypesResponse, Type, TypeGeneration, TypeGenerationResponse} f
 import {EggGroup, EggGroupGeneration, EggGroupGenerationResponse} from './eggGroup';
 import {Ability, AbilityGeneration, AbilityGenerationResponse} from './ability';
 import {Statistic, StatisticGenerationResponse, StatisticGeneration} from './statistic';
-import {TypePictureStyle} from './picture';
+import {TypePictureStyle, PokemonPictureStyle, PokemonPicture} from './picture';
 import {Generation, GenerationResponse} from './generation';
 import {TranslationName} from './translation';
 
@@ -61,5 +61,7 @@ export type {
     TypePictureStyle,
     Generation,
     GenerationResponse,
-    TranslationName
+    TranslationName,
+    PokemonPictureStyle,
+    PokemonPicture
 }

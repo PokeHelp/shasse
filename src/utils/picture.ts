@@ -1,13 +1,47 @@
-import {TypePictureStyle} from "@types";
+import {PokemonPicture, PokemonPictureStyle, TypePictureStyle} from "@types";
 
 /**
  * Permet de récupérer une image à partir de l'id d'un pokemon
  *
- * @param id
+ * @param data
+ * @param style
  */
-export function getPokemonPictureFromId(id: number): string
+export function getPokemonPictureFromId(data: PokemonPicture, style: PokemonPictureStyle = 'Artwork'): string
 {
-    return `${process.env.NEXT_PUBLIC_PICTURE_URL}/Image/webp/artwork/${id.toString().padStart(4, '0')}.webp`
+    const extension: string = 'webp';
+    const baseUrl: string = `${process.env.NEXT_PUBLIC_PICTURE_URL}/Image/${extension}`;
+    const pokemonId: string = data.internationalNumber.toString().padStart(4, '0');
+    let form: string;
+
+    switch (data.formId)
+    {
+        case 141:
+            form = 'Alola';
+            break;
+
+        case 142:
+            form = 'Galar';
+            break;
+
+        case 143:
+            form = 'Hisui';
+            break;
+
+        case 144:
+            form = 'Paldea';
+            break;
+
+        default:
+            form = '';
+            break;
+    }
+
+    switch (style)
+    {
+        default:
+            const pokemonUrl: string = `${pokemonId}${form === '' ? '' : `_${form.toLowerCase()}`}`;
+            return `${baseUrl}/Artwork/${pokemonUrl}.${extension}`;
+    }
 }
 
 /**
