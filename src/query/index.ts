@@ -11,6 +11,7 @@ import {getPokemonStatisticWithName} from './statistic';
 import {getLastGeneration, getAllGeneration} from './generation';
 import {getFormsByPokemonId} from './form';
 import {getNationalNumber} from './nationalNumber';
+import {getCapacities} from './capacity';
 
 export {
     createUser,
@@ -34,5 +35,6 @@ export {
     getAllGeneration,
     getTranslationsByReferenceId,
     getFormsByPokemonId,
-    getNationalNumber
+    getNationalNumber,
+    getCapacities
 }

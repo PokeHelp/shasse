@@ -24,8 +24,6 @@ export async function getNationalNumber(pokemonId: number, generationId: number 
         WHERE nn.pokemon_id = ${pokemonId}
     `;
 
-    console.log(rawResults);
-
     return rawResults.map((raw: RawQueryResults): NationalNumberGeneration => ({
         number:        raw.number,
         groupGameName: raw.name,

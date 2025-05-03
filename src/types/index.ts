@@ -22,6 +22,7 @@ import {TypePictureStyle, PokemonPictureStyle, PokemonPicture} from './picture';
 import {Generation, GenerationResponse} from './generation';
 import {TranslationName} from './translation';
 import {NationalNumber, NationalNumberGeneration} from './nationalNumber';
+import {CapacityGeneration} from './capacity';
 
 export type {
     LoginData,
@@ -66,5 +67,6 @@ export type {
     PokemonPictureStyle,
     PokemonPicture,
     NationalNumber,
-    NationalNumberGeneration
+    NationalNumberGeneration,
+    CapacityGeneration
 }

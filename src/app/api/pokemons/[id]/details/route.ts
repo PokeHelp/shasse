@@ -7,7 +7,9 @@ import {getDetail} from "@service";
 import {type NextRequest} from 'next/server'
 import {GroupedPokemonInfoDetail, GroupedPokemonInfoDetailResponse} from "@types";
 
-export async function GET(request: NextRequest, {params}: { params: Promise<{ id: string }> }): Promise<NextResponse<GroupedPokemonInfoDetailResponse>>
+export async function GET(request: NextRequest, {params}: {
+    params: Promise<{ id: string }>
+}): Promise<NextResponse<GroupedPokemonInfoDetailResponse>>
 {
     try
     {
@@ -35,12 +37,13 @@ export async function GET(request: NextRequest, {params}: { params: Promise<{ id
 
         const pokemon: GroupedPokemonInfoDetail = await getDetail(idPassed.data, lastGeneration, generationId, null,
             {
-                forms: request.nextUrl.searchParams.has('forms'),
-                eggGroups: request.nextUrl.searchParams.has('eggGroups'),
-                statistics: request.nextUrl.searchParams.has('statistics'),
-                types: request.nextUrl.searchParams.has('types'),
-                abilities: request.nextUrl.searchParams.has('abilities'),
+                forms:           request.nextUrl.searchParams.has('forms'),
+                eggGroups:       request.nextUrl.searchParams.has('eggGroups'),
+                statistics:      request.nextUrl.searchParams.has('statistics'),
+                types:           request.nextUrl.searchParams.has('types'),
+                abilities:       request.nextUrl.searchParams.has('abilities'),
                 nationalNumbers: request.nextUrl.searchParams.has('nationalNumbers'),
+                capacities:      request.nextUrl.searchParams.has('capacities'),
             });
         if (pokemon === undefined)
         {
