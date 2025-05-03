@@ -22,7 +22,7 @@ export async function getPokemonEggGroupWithName(pokemonId: number, langId: numb
         ORDER BY pi.generation_id, ego.order;
     `;
 
-    return rawResults.map(row => ({
+    return rawResults.map((row: RawQueryEggGroupGeneration): EggGroupGeneration => ({
         id:           Number(row.id),
         generationId: Number(row.generation_id),
         name:         row.name,

@@ -39,7 +39,8 @@ export async function GET(request: NextRequest, {params}: { params: Promise<{ id
                 eggGroups: request.nextUrl.searchParams.has('eggGroups'),
                 statistics: request.nextUrl.searchParams.has('statistics'),
                 types: request.nextUrl.searchParams.has('types'),
-                abilities: request.nextUrl.searchParams.has('abilities')
+                abilities: request.nextUrl.searchParams.has('abilities'),
+                nationalNumbers: request.nextUrl.searchParams.has('nationalNumbers'),
             });
         if (pokemon === undefined)
         {

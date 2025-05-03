@@ -84,8 +84,6 @@ export async function getPokemonFormPokedexQuery(formId: number, langId: number)
         ORDER BY pb.international_number
     `;
 
-    console.log(rawResults[201])
-
     return rawResults.map((row: RawQueryResult): Pokedex => ({
         id:                  Number(row.id),
         name:                row.name,

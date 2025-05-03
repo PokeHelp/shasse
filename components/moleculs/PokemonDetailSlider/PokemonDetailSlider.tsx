@@ -11,7 +11,7 @@ import {useTranslations} from "next-intl";
 
 async function fetchShortDetail(id: number): Promise<GroupedPokemonInfoDetailResponse>
 {
-    const {data} = await axiosService.get<GroupedPokemonInfoDetailResponse>(`api/pokemons/${id}/details?lastGeneration=true&pokemon=true&forms=true&eggGroups=true&statistics=true&abilities=true&types=true`);
+    const {data} = await axiosService.get<GroupedPokemonInfoDetailResponse>(`api/pokemons/${id}/details?lastGeneration=true&forms=true&eggGroups=true&statistics=true&abilities=true&types=true`);
     return data;
 }
 

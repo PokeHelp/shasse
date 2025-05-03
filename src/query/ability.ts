@@ -23,7 +23,7 @@ export async function getPokemonAbilityWithName(pokemonId: number, langId: numbe
         ORDER BY pi.generation_id, ao.order;
     `;
 
-    return rawResults.map(row => ({
+    return rawResults.map((row: RawQueryAbilityGeneration): AbilityGeneration => ({
         id:           Number(row.id),
         generationId: Number(row.generation_id),
         name:         row.name,

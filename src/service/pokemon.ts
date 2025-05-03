@@ -5,10 +5,11 @@ import {
     getPokemonEggGroupWithName, getPokemonInfoById,
     getPokemonStatisticWithName,
     getPokemonTypeWithName,
+    getNationalNumber
 } from "@query";
 import {
     AbilityGeneration,
-    EggGroupGeneration, GroupedPokemonInfoDetail,
+    EggGroupGeneration, GroupedPokemonInfoDetail, NationalNumberGeneration,
     PokemonInfo,
     StatisticGeneration,
     TypeGeneration
@@ -21,17 +22,19 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
                                     abilities?: boolean;
                                     statistics?: boolean;
                                     forms?: boolean;
+                                    nationalNumbers?: boolean;
                                 }                                                                                                     = {}
 ): Promise<GroupedPokemonInfoDetail>
 {
     const resolvedLangId: number = langId ?? await getLangueId('french');
     const resolvedGenerationId: number | null = lastGeneration ? await getLastGeneration() : generationId;
     const {
-              types      = false,
-              eggGroups  = false,
-              abilities  = false,
-              statistics = false,
-              forms      = false
+              types           = false,
+              eggGroups       = false,
+              abilities       = false,
+              statistics      = false,
+              forms           = false,
+              nationalNumbers = false,
           } = checked;
 
     type PokemonDataResult =
@@ -39,6 +42,7 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
         | EggGroupGeneration[]
         | AbilityGeneration[]
         | StatisticGeneration[]
+        | NationalNumberGeneration[]
         | PokemonInfo[]
         | { formId: number }[];
 
@@ -50,6 +54,7 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
     if (abilities) promises.push(getPokemonAbilityWithName(pokemonId, resolvedLangId, resolvedGenerationId));
     if (statistics) promises.push(getPokemonStatisticWithName(pokemonId, resolvedGenerationId));
     if (forms) promises.push(getFormsByPokemonId(pokemonId, {formId: true}));
+    if (nationalNumbers) promises.push(getNationalNumber(pokemonId, resolvedGenerationId, resolvedLangId));
 
     const results: PromiseSettledResult<PokemonDataResult>[] = await Promise.allSettled(promises);
     let resultIndex: number = 0;
@@ -67,6 +72,7 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
     const abilityData: AbilityGeneration[] = getResult<AbilityGeneration>(abilities);
     const statisticData: StatisticGeneration[] = getResult<StatisticGeneration>(statistics);
     const formData: { formId: number }[] = getResult<{ formId: number }>(forms);
+    const nationalNumberData: NationalNumberGeneration[] = getResult<NationalNumberGeneration>(nationalNumbers);
 
     const groupedData: GroupedPokemonInfoDetail = {};
 
@@ -75,7 +81,8 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
         ...eggGroupData.map((e: EggGroupGeneration): number => e.generationId),
         ...abilityData.map((a: AbilityGeneration): number => a.generationId),
         ...statisticData.map((s: StatisticGeneration): number => s.generationId),
-        ...pokemonData.map((p: PokemonInfo): number => p.generationId)
+        ...pokemonData.map((p: PokemonInfo): number => p.generationId),
+        ...nationalNumberData.map((n: NationalNumberGeneration): number => n.generationId),
     ]);
 
     for (const genId of allGenerationIds)
@@ -89,7 +96,8 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
                 eggGroups:  eggGroupData.filter((e: EggGroupGeneration): boolean => e.generationId === genId),
                 abilities:  abilityData.filter((a: AbilityGeneration): boolean => a.generationId === genId),
                 statistics: statisticData.filter((s: StatisticGeneration): boolean => s.generationId === genId),
-                forms:      formData.map((f: { formId: number }): number => f.formId)
+                forms:      formData.map((f: { formId: number }): number => f.formId),
+                nationalNumber: nationalNumberData.filter((n: NationalNumberGeneration): boolean => n.generationId === genId)
             };
         }
     }
