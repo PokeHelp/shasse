@@ -12,6 +12,7 @@ import {getLastGeneration, getAllGeneration} from './generation';
 import {getFormsByPokemonId} from './form';
 import {getNationalNumber} from './nationalNumber';
 import {getCapacities} from './capacity';
+import {getLocationWithName} from './location';
 
 export {
     createUser,
@@ -36,5 +37,6 @@ export {
     getTranslationsByReferenceId,
     getFormsByPokemonId,
     getNationalNumber,
-    getCapacities
+    getCapacities,
+    getLocationWithName
 }

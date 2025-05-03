@@ -23,6 +23,7 @@ import {Generation, GenerationResponse} from './generation';
 import {TranslationName} from './translation';
 import {NationalNumber, NationalNumberGeneration} from './nationalNumber';
 import {CapacityGeneration} from './capacity';
+import {LocationGeneration} from './location';
 
 export type {
     LoginData,
@@ -68,5 +69,6 @@ export type {
     PokemonPicture,
     NationalNumber,
     NationalNumberGeneration,
-    CapacityGeneration
+    CapacityGeneration,
+    LocationGeneration
 }

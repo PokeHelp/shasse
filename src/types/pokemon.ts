@@ -1,4 +1,13 @@
-import {Ability, CapacityGeneration, EggGroup, ErrorResponse, NationalNumberGeneration, Statistic, Type} from "@types";
+import {
+    Ability,
+    CapacityGeneration,
+    EggGroup,
+    ErrorResponse,
+    LocationGeneration,
+    NationalNumberGeneration,
+    Statistic,
+    Type
+} from "@types";
 
 export type PokedexResponse = | {
     success: true;
@@ -47,7 +56,8 @@ export interface PokemonInfoDetail extends PokemonInfo
     statistics: Statistic[];
     forms: number[];
     nationalNumbers: NationalNumberGeneration[];
-    capacities: CapacityGeneration[]
+    capacities: CapacityGeneration[];
+    locations: LocationGeneration[];
 }
 
 export interface GroupedPokemonInfoDetail

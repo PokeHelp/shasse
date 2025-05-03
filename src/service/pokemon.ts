@@ -5,11 +5,11 @@ import {
     getPokemonEggGroupWithName, getPokemonInfoById,
     getPokemonStatisticWithName,
     getPokemonTypeWithName,
-    getNationalNumber, getCapacities
+    getNationalNumber, getCapacities, getLocationWithName
 } from "@query";
 import {
     AbilityGeneration, CapacityGeneration,
-    EggGroupGeneration, GroupedPokemonInfoDetail, NationalNumberGeneration,
+    EggGroupGeneration, GroupedPokemonInfoDetail, LocationGeneration, NationalNumberGeneration,
     PokemonInfo,
     StatisticGeneration,
     TypeGeneration
@@ -24,6 +24,7 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
                                     forms?: boolean;
                                     nationalNumbers?: boolean;
                                     capacities?: boolean;
+                                    locations?: boolean;
                                 }                                                                                                     = {}
 ): Promise<GroupedPokemonInfoDetail>
 {
@@ -36,7 +37,8 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
               statistics      = false,
               forms           = false,
               nationalNumbers = false,
-              capacities      = false
+              capacities      = false,
+              locations       = false,
           } = checked;
 
     type PokemonDataResult =
@@ -47,7 +49,8 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
         | NationalNumberGeneration[]
         | PokemonInfo[]
         | { formId: number }[]
-        | CapacityGeneration[];
+        | CapacityGeneration[]
+        | LocationGeneration[];
 
     const promises: Promise<PokemonDataResult>[] = [];
     promises.push(getPokemonInfoById(pokemonId, resolvedLangId, resolvedGenerationId));
@@ -59,6 +62,7 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
     if (forms) promises.push(getFormsByPokemonId(pokemonId, {formId: true}));
     if (nationalNumbers) promises.push(getNationalNumber(pokemonId, resolvedGenerationId, resolvedLangId));
     if (capacities) promises.push(getCapacities(pokemonId, resolvedGenerationId, resolvedLangId));
+    if (locations) promises.push(getLocationWithName(pokemonId, resolvedGenerationId, resolvedLangId));
 
     const results: PromiseSettledResult<PokemonDataResult>[] = await Promise.allSettled(promises);
     let resultIndex: number = 0;
@@ -78,6 +82,7 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
     const formData: { formId: number }[] = getResult<{ formId: number }>(forms);
     const nationalNumberData: NationalNumberGeneration[] = getResult<NationalNumberGeneration>(nationalNumbers);
     const capacitiesData: CapacityGeneration[] = getResult<CapacityGeneration>(capacities);
+    const locationsData: LocationGeneration[] = getResult<LocationGeneration>(locations);
 
     const groupedData: GroupedPokemonInfoDetail = {};
 
@@ -89,6 +94,7 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
         ...pokemonData.map((p: PokemonInfo): number => p.generationId),
         ...nationalNumberData.map((n: NationalNumberGeneration): number => n.generationId),
         ...capacitiesData.map((c: CapacityGeneration): number => c.generationId),
+        ...locationsData.map((l: LocationGeneration): number => l.generationId),
     ]);
 
     for (const genId of allGenerationIds)
@@ -105,6 +111,7 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
                 forms:           formData.map((f: { formId: number }): number => f.formId),
                 nationalNumbers: nationalNumberData.filter((n: NationalNumberGeneration): boolean => n.generationId === genId),
                 capacities:      capacitiesData.filter((c: CapacityGeneration): boolean => c.generationId === genId),
+                locations:       locationsData.filter((l: LocationGeneration): boolean => l.generationId === genId),
             };
         }
     }
