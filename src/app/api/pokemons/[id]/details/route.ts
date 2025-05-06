@@ -45,6 +45,7 @@ export async function GET(request: NextRequest, {params}: {
                 nationalNumbers: request.nextUrl.searchParams.has('nationalNumbers'),
                 capacities:      request.nextUrl.searchParams.has('capacities'),
                 locations:       request.nextUrl.searchParams.has('locations'),
+                onlyShassable:       request.nextUrl.searchParams.has('onlyShassable')
             });
         if (pokemon === undefined)
         {

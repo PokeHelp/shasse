@@ -25,6 +25,7 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
                                     nationalNumbers?: boolean;
                                     capacities?: boolean;
                                     locations?: boolean;
+                                    onlyShassable?: boolean;
                                 }                                                                                                     = {}
 ): Promise<GroupedPokemonInfoDetail>
 {
@@ -39,6 +40,7 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
               nationalNumbers = false,
               capacities      = false,
               locations       = false,
+              onlyShassable = false,
           } = checked;
 
     type PokemonDataResult =
@@ -62,7 +64,7 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
     if (forms) promises.push(getFormsByPokemonId(pokemonId, {formId: true}));
     if (nationalNumbers) promises.push(getNationalNumber(pokemonId, resolvedGenerationId, resolvedLangId));
     if (capacities) promises.push(getCapacities(pokemonId, resolvedGenerationId, resolvedLangId));
-    if (locations) promises.push(getLocationWithName(pokemonId, resolvedGenerationId, resolvedLangId));
+    if (locations || onlyShassable) promises.push(getLocationWithName(pokemonId, resolvedGenerationId, resolvedLangId, onlyShassable));
 
     const results: PromiseSettledResult<PokemonDataResult>[] = await Promise.allSettled(promises);
     let resultIndex: number = 0;
@@ -82,7 +84,7 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
     const formData: { formId: number }[] = getResult<{ formId: number }>(forms);
     const nationalNumberData: NationalNumberGeneration[] = getResult<NationalNumberGeneration>(nationalNumbers);
     const capacitiesData: CapacityGeneration[] = getResult<CapacityGeneration>(capacities);
-    const locationsData: LocationGeneration[] = getResult<LocationGeneration>(locations);
+    const locationsData: LocationGeneration[] = getResult<LocationGeneration>(locations || onlyShassable);
 
     const groupedData: GroupedPokemonInfoDetail = {};
 

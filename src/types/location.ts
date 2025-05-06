@@ -11,6 +11,7 @@ export interface Location
     meteoName: string;
     detailName: string;
     conditionName: string;
+    isShassable: boolean;
 }
 
 export interface LocationGeneration extends Location

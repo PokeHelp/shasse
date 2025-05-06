@@ -2,9 +2,9 @@ import {prisma} from "@lib";
 import {Prisma, reference_table} from "@prisma/client";
 import {LocationGeneration} from "@types";
 
-export async function getLocationWithName(pokemonId: number, generationId: number | null, langId: number, formId: number = 1): Promise<LocationGeneration[]> // TODO: Chnager pour la gestion des formes
+export async function getLocationWithName(pokemonId: number, generationId: number | null, langId: number, onlyShassable: boolean = false, formId: number = 1): Promise<LocationGeneration[]> // TODO: Chnager pour la gestion des formes
 {
-    interface RawQueryResults extends Omit<LocationGeneration, 'generationId' | 'minLevel' | 'maxLevel' | 'locationName' | 'conditionName' | 'detailName' | 'isAlpha' | 'meteoName' | 'obtationName' | 'zoneName'>
+    interface RawQueryResults extends Omit<LocationGeneration, 'generationId' | 'minLevel' | 'maxLevel' | 'locationName' | 'conditionName' | 'detailName' | 'isAlpha' | 'meteoName' | 'obtationName' | 'zoneName' | 'isShassable'>
     {
         generation_id: bigint;
         min_level: number;
@@ -16,6 +16,7 @@ export async function getLocationWithName(pokemonId: number, generationId: numbe
         meteo_name: string;
         obtation_name: string;
         zone_name: string;
+        obtation_id: number;
     }
 
     const rawResults: RawQueryResults[] = await prisma.$queryRaw<RawQueryResults[]>`
@@ -28,11 +29,12 @@ export async function getLocationWithName(pokemonId: number, generationId: numbe
                r.max_level,
                r.limit,
                r.is_alpha,
+               po.id    as obtation_id,
                tm.name  AS meteo_name,
                td.name  as detail_name,
                tc.name  as condition_name
         FROM pokemon_form pf
-                 INNER JOIN pokemon_game_location pgl ON pgl.pokemon_id = pf.pokemon_id
+                 INNER JOIN pokemon_game_location pgl ON pgl.pokemon_id = pf.pokemon_id ${onlyShassable ? Prisma.sql`AND pgl.pokemon_obtation_id != 1` : Prisma.empty}
                  INNER JOIN game g ON g.id = pgl.game_id AND g.status = 'on' ${generationId ? Prisma.sql`AND g.generation_id = ${generationId}` : Prisma.empty}
             INNER JOIN translation tpo
         ON tpo.reference_id = pgl.pokemon_obtation_id AND tpo.langue_id = 2 AND tpo.status = 'on' AND tpo.reference_table = ${reference_table.POKEMON_OBTENTION}
@@ -66,6 +68,7 @@ export async function getLocationWithName(pokemonId: number, generationId: numbe
         generationId:  Number(raw.generation_id),
         zoneName:      raw.zone_name,
         limit:         raw.limit,
-        rate:          raw.rate
+        rate:          raw.rate,
+        isShassable:   raw.obtation_id != 1
     }))
 }
