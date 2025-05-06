@@ -20,40 +20,70 @@ export async function getLocationWithName(pokemonId: number, generationId: numbe
     }
 
     const rawResults: RawQueryResults[] = await prisma.$queryRaw<RawQueryResults[]>`
-        SELECT tpo.name as obtation_name,
-               g.generation_id,
-               tz.name  as zone_name,
-               tl.name  as location_name,
-               r.rate,
-               r.min_level,
-               r.max_level,
-               r.limit,
-               r.is_alpha,
-               po.id    as obtation_id,
-               tm.name  AS meteo_name,
-               td.name  as detail_name,
-               tc.name  as condition_name
-        FROM pokemon_form pf
-                 INNER JOIN pokemon_game_location pgl ON pgl.pokemon_id = pf.pokemon_id ${onlyShassable ? Prisma.sql`AND pgl.pokemon_obtation_id != 1` : Prisma.empty}
-                 INNER JOIN game g ON g.id = pgl.game_id AND g.status = 'on' ${generationId ? Prisma.sql`AND g.generation_id = ${generationId}` : Prisma.empty}
-            INNER JOIN translation tpo
-        ON tpo.reference_id = pgl.pokemon_obtation_id AND tpo.langue_id = 2 AND tpo.status = 'on' AND tpo.reference_table = ${reference_table.POKEMON_OBTENTION}
-            INNER JOIN location_zone lz ON lz.id = pgl.location_zone_id AND lz.status = 'on'
-            INNER JOIN translation tz ON tz.reference_id = lz.zone_id AND tz.langue_id = ${langId} AND tz.status = 'on' AND tz.reference_table = ${reference_table.ZONE}
-            INNER JOIN translation tl ON tl.reference_id = lz.location_id AND tl.langue_id = ${langId} AND tl.status = 'on' AND tl.reference_table = ${reference_table.LOCATION}
-            INNER JOIN rate r ON r.id = pgl.rate_id AND r.status = 'on'
-            INNER JOIN translation tm ON tm.reference_id = r.meteo_id AND tm.langue_id = 2 AND tm.status = 'on' AND tm.reference_table = ${reference_table.METEO}
-            INNER JOIN translation td ON td.reference_id = r.detail_rate_id AND td.langue_id = ${langId} AND td.status = 'on' AND td.reference_table = ${reference_table.DETAIL}
-            INNER JOIN translation tc ON tc.reference_id = r.condition_rate_id AND tc.langue_id = ${langId} AND tc.status = 'on' AND tc.reference_table = ${reference_table.DETAIL}
-            INNER JOIN pokemon_obtation po ON pgl.pokemon_obtation_id = po.id AND po.status = 'on'
-            INNER JOIN zone z ON z.id = lz.zone_id AND z.status = 'on'
-            INNER JOIN location l ON l.id = lz.location_id AND l.status = 'on'
-            INNER JOIN meteo m ON m.id = r.meteo_id AND m.status = 'on'
-            INNER JOIN detail d1 ON d1.id = r.detail_rate_id AND d1.status = 'on'
-            INNER JOIN detail d2 ON d2.id = r.condition_rate_id AND d2.status = 'on'
+        WITH translations AS (SELECT *
+                              FROM translation
+                              WHERE status = 'on'
+                                AND langue_id IN (2, ${langId})),
+             active_games AS (SELECT *
+                              FROM game
+                              WHERE status = 'on' ${generationId ? Prisma.sql`AND generation_id = ${generationId}` : Prisma.empty}
+            ), active_forms AS (
+        SELECT *
+        FROM pokemon_form
+        WHERE status = 'on'
+            )
+            , active_pgl AS (
+        SELECT *
+        FROM pokemon_game_location
+        ${onlyShassable ? Prisma.sql`WHERE pokemon_obtation_id != 1` : Prisma.empty}
+            )
+            , active_rate AS (
+        SELECT *
+        FROM rate
+        WHERE status = 'on'
+            )
+
+        SELECT DISTINCT tpo.name AS obtation_name,
+                        g.generation_id,
+                        tz.name  AS zone_name,
+                        tl.name  AS location_name,
+                        r.rate,
+                        r.min_level,
+                        r.max_level,
+                        r.limit,
+                        r.is_alpha,
+                        po.id    AS obtation_id,
+                        tm.name  AS meteo_name,
+                        td.name  AS detail_name,
+                        tc.name  AS condition_name
+
+        FROM active_forms pf
+                 JOIN active_pgl pgl ON pgl.pokemon_id = pf.pokemon_id
+                 JOIN active_games g ON g.id = pgl.game_id
+                 JOIN active_rate r ON r.id = pgl.rate_id
+                 JOIN pokemon_obtation po ON po.id = pgl.pokemon_obtation_id AND po.status = 'on'
+                 JOIN location_zone lz ON lz.id = pgl.location_zone_id AND lz.status = 'on'
+                 JOIN zone z ON z.id = lz.zone_id AND z.status = 'on'
+                 JOIN location l ON l.id = lz.location_id AND l.status = 'on'
+                 JOIN meteo m ON m.id = r.meteo_id AND m.status = 'on'
+                 JOIN detail d1 ON d1.id = r.detail_rate_id AND d1.status = 'on'
+                 JOIN detail d2 ON d2.id = r.condition_rate_id AND d2.status = 'on'
+            
+                 LEFT JOIN translations tpo ON tpo.reference_id = pgl.pokemon_obtation_id AND tpo.langue_id = 2 AND
+                                               tpo.reference_table = ${reference_table.POKEMON_OBTENTION}
+                 LEFT JOIN translations tz ON tz.reference_id = lz.zone_id AND tz.langue_id = ${langId} AND
+                                              tz.reference_table = ${reference_table.ZONE}
+                 LEFT JOIN translations tl ON tl.reference_id = lz.location_id AND tl.langue_id = ${langId} AND
+                                              tl.reference_table = ${reference_table.LOCATION}
+                 LEFT JOIN translations tm ON tm.reference_id = r.meteo_id AND tm.langue_id = 2 AND
+                                              tm.reference_table = ${reference_table.METEO}
+                 LEFT JOIN translations td ON td.reference_id = r.detail_rate_id AND td.langue_id = ${langId} AND
+                                              td.reference_table = ${reference_table.DETAIL}
+                 LEFT JOIN translations tc ON tc.reference_id = r.condition_rate_id AND tc.langue_id = ${langId} AND
+                                              tc.reference_table = ${reference_table.DETAIL}
+
         WHERE pf.pokemon_id = ${pokemonId}
           AND pf.form_id = ${formId}
-          AND pf.status = 'on';
     `;
 
     return rawResults.map((raw: RawQueryResults): LocationGeneration => ({
