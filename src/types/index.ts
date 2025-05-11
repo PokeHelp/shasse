@@ -24,6 +24,7 @@ import {TranslationName} from './translation';
 import {NationalNumber, NationalNumberGeneration} from './nationalNumber';
 import {CapacityGeneration} from './capacity';
 import {LocationGeneration} from './location';
+import {EvolutionNode, EvolutionTree} from './evolution';
 
 export type {
     LoginData,
@@ -70,5 +71,7 @@ export type {
     NationalNumber,
     NationalNumberGeneration,
     CapacityGeneration,
-    LocationGeneration
+    LocationGeneration,
+    EvolutionNode,
+    EvolutionTree
 }

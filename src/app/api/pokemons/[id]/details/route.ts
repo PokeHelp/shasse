@@ -1,10 +1,9 @@
 import {mapError, sendResponse} from '@utils';
 import {HttpStatusCode} from "axios";
-import {NextResponse} from "next/server";
+import {NextRequest, NextResponse} from "next/server";
 import {numberSchema} from "@schema";
 import {SafeParseReturnType} from "zod";
 import {getDetail} from "@service";
-import {type NextRequest} from 'next/server'
 import {GroupedPokemonInfoDetail, GroupedPokemonInfoDetailResponse} from "@types";
 
 export async function GET(request: NextRequest, {params}: {
@@ -16,6 +15,7 @@ export async function GET(request: NextRequest, {params}: {
         const {id} = await params;
         const idPassed: SafeParseReturnType<string, number> = numberSchema.safeParse(id);
         let generationId: number | null = null;
+        let formId: number | null = null;
         const lastGeneration: boolean = request.nextUrl.searchParams.has('lastGeneration');
 
         if (!idPassed.success)
@@ -35,7 +35,19 @@ export async function GET(request: NextRequest, {params}: {
             }
         }
 
-        const pokemon: GroupedPokemonInfoDetail = await getDetail(idPassed.data, lastGeneration, generationId, null,
+        if (request.nextUrl.searchParams.has('formId'))
+        {
+            const idFormPassed: SafeParseReturnType<string, number> = numberSchema.safeParse(request.nextUrl.searchParams.get('formId'));
+            if (!idFormPassed.success)
+            {
+                return sendResponse({success: false, error: mapError(idFormPassed)}, HttpStatusCode.BadRequest);
+            } else
+            {
+                formId = idFormPassed.data;
+            }
+        }
+
+        const pokemon: GroupedPokemonInfoDetail = await getDetail(idPassed.data, lastGeneration, generationId, null, formId,
             {
                 forms:           request.nextUrl.searchParams.has('forms'),
                 eggGroups:       request.nextUrl.searchParams.has('eggGroups'),
@@ -45,7 +57,8 @@ export async function GET(request: NextRequest, {params}: {
                 nationalNumbers: request.nextUrl.searchParams.has('nationalNumbers'),
                 capacities:      request.nextUrl.searchParams.has('capacities'),
                 locations:       request.nextUrl.searchParams.has('locations'),
-                onlyShassable:       request.nextUrl.searchParams.has('onlyShassable')
+                onlyShassable:   request.nextUrl.searchParams.has('onlyShassable'),
+                evolutions:      request.nextUrl.searchParams.has('evolutions')
             });
         if (pokemon === undefined)
         {

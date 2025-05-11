@@ -2,7 +2,7 @@ import {
     Ability,
     CapacityGeneration,
     EggGroup,
-    ErrorResponse,
+    ErrorResponse, EvolutionTree,
     LocationGeneration,
     NationalNumberGeneration,
     Statistic,
@@ -58,6 +58,7 @@ export interface PokemonInfoDetail extends PokemonInfo
     nationalNumbers: NationalNumberGeneration[];
     capacities: CapacityGeneration[];
     locations: LocationGeneration[];
+    evolutions: EvolutionTree[]
 }
 
 export interface GroupedPokemonInfoDetail

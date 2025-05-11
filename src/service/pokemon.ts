@@ -5,17 +5,17 @@ import {
     getPokemonEggGroupWithName, getPokemonInfoById,
     getPokemonStatisticWithName,
     getPokemonTypeWithName,
-    getNationalNumber, getCapacities, getLocationWithName
+    getNationalNumber, getCapacities, getLocationWithName, getAllEvolutions, getPokemonForm
 } from "@query";
 import {
     AbilityGeneration, CapacityGeneration,
-    EggGroupGeneration, GroupedPokemonInfoDetail, LocationGeneration, NationalNumberGeneration,
+    EggGroupGeneration, EvolutionTree, GroupedPokemonInfoDetail, LocationGeneration, NationalNumberGeneration,
     PokemonInfo,
     StatisticGeneration,
     TypeGeneration
 } from "@types";
 
-export async function getDetail(pokemonId: number, lastGeneration: boolean, generationId: number | null = null, langId: number | null = null,
+export async function getDetail(pokemonId: number, lastGeneration: boolean, generationId: number | null = null, langId: number | null = null, formId: number | null = null,
                                 checked: {
                                     types?: boolean;
                                     eggGroups?: boolean;
@@ -26,9 +26,16 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
                                     capacities?: boolean;
                                     locations?: boolean;
                                     onlyShassable?: boolean;
+                                    evolutions?: boolean;
                                 }                                                                                                     = {}
 ): Promise<GroupedPokemonInfoDetail>
 {
+    let pokemonFormId: number = pokemonId;
+    if (formId)
+    {
+        pokemonFormId = (await getPokemonForm({formId: formId, pokemonId: pokemonId}, {id: true}))[0].id;
+    }
+
     const resolvedLangId: number = langId ?? await getLangueId('french');
     const resolvedGenerationId: number | null = lastGeneration ? await getLastGeneration() : generationId;
     const {
@@ -40,7 +47,8 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
               nationalNumbers = false,
               capacities      = false,
               locations       = false,
-              onlyShassable = false,
+              onlyShassable   = false,
+              evolutions      = false
           } = checked;
 
     type PokemonDataResult =
@@ -52,7 +60,8 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
         | PokemonInfo[]
         | { formId: number }[]
         | CapacityGeneration[]
-        | LocationGeneration[];
+        | LocationGeneration[]
+        | EvolutionTree[];
 
     const promises: Promise<PokemonDataResult>[] = [];
     promises.push(getPokemonInfoById(pokemonId, resolvedLangId, resolvedGenerationId));
@@ -65,6 +74,7 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
     if (nationalNumbers) promises.push(getNationalNumber(pokemonId, resolvedGenerationId, resolvedLangId));
     if (capacities) promises.push(getCapacities(pokemonId, resolvedGenerationId, resolvedLangId));
     if (locations || onlyShassable) promises.push(getLocationWithName(pokemonId, resolvedGenerationId, resolvedLangId, onlyShassable));
+    if (evolutions) promises.push(getAllEvolutions(pokemonFormId, resolvedLangId));
 
     const results: PromiseSettledResult<PokemonDataResult>[] = await Promise.allSettled(promises);
     let resultIndex: number = 0;
@@ -85,6 +95,7 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
     const nationalNumberData: NationalNumberGeneration[] = getResult<NationalNumberGeneration>(nationalNumbers);
     const capacitiesData: CapacityGeneration[] = getResult<CapacityGeneration>(capacities);
     const locationsData: LocationGeneration[] = getResult<LocationGeneration>(locations || onlyShassable);
+    const evolutionsData: EvolutionTree[] = getResult<EvolutionTree>(evolutions);
 
     const groupedData: GroupedPokemonInfoDetail = {};
 
@@ -96,7 +107,7 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
         ...pokemonData.map((p: PokemonInfo): number => p.generationId),
         ...nationalNumberData.map((n: NationalNumberGeneration): number => n.generationId),
         ...capacitiesData.map((c: CapacityGeneration): number => c.generationId),
-        ...locationsData.map((l: LocationGeneration): number => l.generationId),
+        ...locationsData.map((l: LocationGeneration): number => l.generationId)
     ]);
 
     for (const genId of allGenerationIds)
@@ -114,6 +125,7 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
                 nationalNumbers: nationalNumberData.filter((n: NationalNumberGeneration): boolean => n.generationId === genId),
                 capacities:      capacitiesData.filter((c: CapacityGeneration): boolean => c.generationId === genId),
                 locations:       locationsData.filter((l: LocationGeneration): boolean => l.generationId === genId),
+                evolutions:      evolutionsData
             };
         }
     }
