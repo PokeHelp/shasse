@@ -10,7 +10,7 @@ import {PokemonDetailSlider} from "@components";
 
 export default function PokedexCard({pokemon, formId, ...other}: PokedexCardProps): JSX.Element
 {
-    const t = useTranslations('pokedex.card');
+    const t = useTranslations();
     const [isSheetOpen, setIsSheetOpen] = useState(false);
 
     return (

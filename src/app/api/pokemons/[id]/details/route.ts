@@ -47,7 +47,7 @@ export async function GET(request: NextRequest, {params}: {
             }
         }
 
-        const pokemon: GroupedPokemonInfoDetail = await getDetail(idPassed.data, lastGeneration, generationId, null, formId,
+        const pokemon: GroupedPokemonInfoDetail = await getDetail(idPassed.data, lastGeneration, generationId, null, formId ?? 1,
             {
                 forms:           request.nextUrl.searchParams.has('forms'),
                 eggGroups:       request.nextUrl.searchParams.has('eggGroups'),
@@ -58,7 +58,8 @@ export async function GET(request: NextRequest, {params}: {
                 capacities:      request.nextUrl.searchParams.has('capacities'),
                 locations:       request.nextUrl.searchParams.has('locations'),
                 onlyShassable:   request.nextUrl.searchParams.has('onlyShassable'),
-                evolutions:      request.nextUrl.searchParams.has('evolutions')
+                evolutions:      request.nextUrl.searchParams.has('evolutions'),
+                regionalForm:    request.nextUrl.searchParams.has('regionnalForms')
             });
         if (pokemon === undefined)
         {

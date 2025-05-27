@@ -2,9 +2,9 @@ import {
     Ability,
     CapacityGeneration,
     EggGroup,
-    ErrorResponse, EvolutionTree,
+    ErrorResponse, EvolutionTree, FormWithName,
     LocationGeneration,
-    NationalNumberGeneration,
+    NationalNumberGeneration, RegionalFormWithName,
     Statistic,
     Type
 } from "@types";
@@ -54,11 +54,13 @@ export interface PokemonInfoDetail extends PokemonInfo
     eggGroups: EggGroup[];
     abilities: Ability[];
     statistics: Statistic[];
-    forms: number[];
+    forms: FormWithName[];
     nationalNumbers: NationalNumberGeneration[];
     capacities: CapacityGeneration[];
     locations: LocationGeneration[];
     evolutions: EvolutionTree[]
+    formId: number;
+    regionalForms: RegionalFormWithName[]
 }
 
 export interface GroupedPokemonInfoDetail

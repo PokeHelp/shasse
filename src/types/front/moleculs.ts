@@ -1,8 +1,8 @@
 import {FieldValues, Control, Path} from "react-hook-form";
 import {InputProps} from "@typesFront";
-import {ComponentProps} from "react";
+import {ComponentProps, Dispatch, RefObject, SetStateAction} from "react";
 import {Card as UiCard} from "@ui/card";
-import {Pokedex} from "@types";
+import {GroupedPokemonInfoDetail, Pokedex} from "@types";
 
 export interface RedirectButtonProps
 {
@@ -21,7 +21,7 @@ export interface InputFormFieldProps<T extends FieldValues> extends Omit<InputPr
 export interface PokedexCardProps extends ComponentProps<typeof UiCard>
 {
     pokemon: Pokedex;
-    formId?: number | null;
+    formId: number | null;
 }
 
 export interface PokemonDetailSliderProps
@@ -35,4 +35,11 @@ export interface GenderGaugeProps extends ComponentProps<'div'>
 {
     maleRate: number;
     femelleRate: number;
+}
+
+export interface GenerationChoiceProps extends ComponentProps<'div'>
+{
+    possibleGenerations: string[];
+    generationSelecter: Dispatch<SetStateAction<string | null>>;
+    generationSelected: string | null;
 }

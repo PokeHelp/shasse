@@ -9,7 +9,7 @@ import {getPokemonEggGroupWithName} from './eggGroup';
 import {getPokemonAbilityWithName} from './ability';
 import {getPokemonStatisticWithName} from './statistic';
 import {getLastGeneration, getAllGeneration} from './generation';
-import {getFormsByPokemonId} from './form';
+import {getFormsByPokemonId, getFormsByPokemonIdWithName, getRegionalFormsByPokemonIdWithName} from './form';
 import {getNationalNumber} from './nationalNumber';
 import {getCapacities} from './capacity';
 import {getLocationWithName} from './location';
@@ -41,5 +41,7 @@ export {
     getCapacities,
     getLocationWithName,
     getAllEvolutions,
-    getFirstEvolutionId
+    getFirstEvolutionId,
+    getFormsByPokemonIdWithName,
+    getRegionalFormsByPokemonIdWithName
 }

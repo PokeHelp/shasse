@@ -10,6 +10,11 @@ interface EvolutionResult
     pokemon_end_id: number;
     evolution_method_name: string;
     evolution_info_name: string;
+    evolution_info_id: bigint;
+    pokemon_start_international_number: number;
+    pokemon_end_international_number: number;
+    pokemon_start_form_id: bigint;
+    pokemon_end_form_id: bigint;
 }
 
 export async function getAllEvolutions(pokemonFormId: number, langId: number): Promise<EvolutionTree[]>
@@ -27,17 +32,22 @@ export async function getAllEvolutions(pokemonFormId: number, langId: number): P
 
         const evolutionNodes: EvolutionNode[] = await Promise.all(
             initialEvolutions.map(async (evolution: EvolutionResult): Promise<EvolutionNode> => ({
-                evolutionName: evolution.pokemon_end_name,
-                level:         evolution.level,
-                methodName:    evolution.evolution_method_name,
-                infoName:      evolution.evolution_info_name,
-                evos:          await buildEvolutionTree(evolution.pokemon_end_id, langId)
+                evolutionName:       evolution.pokemon_end_name,
+                level:               evolution.level,
+                methodName:          evolution.evolution_method_name,
+                infoName:            evolution.evolution_info_name,
+                infoId:              Number(evolution.evolution_info_id),
+                formId:              Number(evolution.pokemon_end_form_id),
+                internationalNumber: evolution.pokemon_end_international_number,
+                evos:                await buildEvolutionTree(evolution.pokemon_end_id, langId)
             }))
         );
 
         evolutionsTrees.push({
-            pokemonName: initialEvolutions[0].pokemon_start_name,
-            evos:        evolutionNodes
+            pokemonName:         initialEvolutions[0].pokemon_start_name,
+            formId:              Number(initialEvolutions[0].pokemon_start_form_id),
+            internationalNumber: initialEvolutions[0].pokemon_start_international_number,
+            evos:                evolutionNodes
         });
     }
 
@@ -88,11 +98,14 @@ async function buildEvolutionTree(pokemonId: number, langId: number): Promise<Ev
 
     return await Promise.all(
         evolutions.map(async (evolution: EvolutionResult): Promise<EvolutionNode> => ({
-            evolutionName: evolution.pokemon_end_name,
-            level:         evolution.level,
-            methodName:    evolution.evolution_method_name,
-            infoName:      evolution.evolution_info_name,
-            evos:          await buildEvolutionTree(evolution.pokemon_end_id, langId)
+            evolutionName:       evolution.pokemon_end_name,
+            level:               evolution.level,
+            methodName:          evolution.evolution_method_name,
+            infoName:            evolution.evolution_info_name,
+            infoId:              Number(evolution.evolution_info_id),
+            formId:              Number(evolution.pokemon_end_form_id),
+            internationalNumber: evolution.pokemon_end_international_number,
+            evos:                await buildEvolutionTree(evolution.pokemon_end_id, langId)
         }))
     );
 }
@@ -103,19 +116,27 @@ async function fetchEvolutions(pokemonStartId: number, langId: number): Promise<
         WITH translations AS (SELECT * FROM translation WHERE status = 'on' AND langue_id = ${langId}),
              active_evolution_method as (SELECT * FROM evolution_method WHERE status = 'on'),
              active_evolution_info as (SELECT * FROM evolution_info WHERE status = 'on'),
-             active_pokemon_form as (SELECT * FROM pokemon_form WHERE STATUS = 'on')
+             active_pokemon_form as (SELECT * FROM pokemon_form WHERE STATUS = 'on'),
+             active_pokemon as (SELECT * FROM pokemon WHERE status = 'on')
 
         SELECT e.level,
-               tps.name as pokemon_start_name,
-               tpe.name as pokemon_end_name,
-               tem.name as evolution_method_name,
-               tei.name as evolution_info_name,
-               e.pokemon_end_id
+               tps.name                 as pokemon_start_name,
+               tpe.name                 as pokemon_end_name,
+               tem.name                 as evolution_method_name,
+               tei.name                 as evolution_info_name,
+               e.pokemon_end_id,
+               e.evolution_info_id,
+               aps.international_number as pokemon_start_international_number,
+               ape.international_number as pokemon_end_international_number,
+               apfs.form_id             as pokemon_start_form_id,
+               apfe.form_id             as pokemon_end_form_id
         FROM evolution e
                  JOIN active_evolution_method aem ON aem.id = e.evolution_method
                  JOIN active_evolution_info aei ON aei.id = e.evolution_info_id
                  JOIN active_pokemon_form apfs ON apfs.id = e.pokemon_start_id
                  JOIN active_pokemon_form apfe ON apfe.id = e.pokemon_end_id
+                 JOIN active_pokemon aps ON aps.id = apfs.pokemon_id
+                 JOIN active_pokemon ape ON ape.id = apfe.pokemon_id
                  LEFT JOIN translations tps
                            ON tps.reference_table = ${reference_table.POKEMON} AND tps.reference_id = apfs.pokemon_id
                  LEFT JOIN translations tpe

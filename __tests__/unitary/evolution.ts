@@ -65,6 +65,7 @@ describe("Vérification de l'évolution d'un pokemon form", (): void =>
     {
         const evolutionResult: EvolutionTree[] = [{
             pokemonName: "Bulbizarre",
+            stageNumber: 3,
             evos:        [
                 {
                     evolutionName: "Herbizarre",
@@ -93,6 +94,7 @@ describe("Vérification de l'évolution d'un pokemon form", (): void =>
     {
         const evolutionResult: EvolutionTree[] = [{
             pokemonName: "Évoli",
+            stageNumber: 2,
             evos:        [
                 {
                     evolutionName: "Aquali",
@@ -161,6 +163,7 @@ describe("Vérification de l'évolution d'un pokemon form", (): void =>
     {
         const evolutionResult: EvolutionTree[] = [{
             "pokemonName": "Mordudor Coffre",
+            stageNumber: 2,
             "evos":        [
                 {
                     "evolutionName": "Gromago",
@@ -172,6 +175,7 @@ describe("Vérification de l'évolution d'un pokemon form", (): void =>
             ]
         }, {
             "pokemonName": "Mordudor Marche",
+            stageNumber: 2,
             "evos":        [{
                 "evolutionName": "Gromago",
                 "level":         -1,
@@ -188,6 +192,7 @@ describe("Vérification de l'évolution d'un pokemon form", (): void =>
     {
         const evolutionResult: EvolutionTree[] = [{
             pokemonName: "Verpom",
+            stageNumber: 3,
             evos: [
                 {
                     evolutionName: "Pomdrapi",

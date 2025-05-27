@@ -1,5 +1,5 @@
 import {SheetDescription, SheetTitle} from "@ui/sheet";
-import {Link, Slider, Typography, GenderGauge} from "@components";
+import {Link, Slider, Typography, GenderGauge, Statistique} from "@components";
 import {Picture} from "@components";
 import {getPokemonPictureFromId, getTypePictureById} from "@utils";
 import {JSX} from "react";
@@ -11,7 +11,7 @@ import {useTranslations} from "next-intl";
 
 async function fetchShortDetail(id: number): Promise<GroupedPokemonInfoDetailResponse>
 {
-    const {data} = await axiosService.get<GroupedPokemonInfoDetailResponse>(`api/pokemons/${id}/details?lastGeneration=true&forms=true&eggGroups=true&statistics=true&abilities=true&types=true`);
+    const {data} = await axiosService.get<GroupedPokemonInfoDetailResponse>(`api/pokemons/${id}/details?eggGroups=true&statistics=true&abilities=true&types=true&lastGeneration=true`);
     return data;
 }
 
@@ -98,7 +98,7 @@ export default function PokemonDetailSlider({
 
                     {/* Pokemon callHelpRate */}
                     <div className="flex items-center justify-between">
-                        <Typography type={"h3"}>T{t('pokemon.callHelpRate')}</Typography>
+                        <Typography type={"h3"}>{t('pokemon.callHelpRate')}</Typography>
                         <div>{pokemon.callHelpRate}</div>
                     </div>
 
@@ -138,27 +138,7 @@ export default function PokemonDetailSlider({
                     </div>
 
                     {/* Pokemon statistiques */}
-                    <div className="flex flex-col gap-3">
-                        <Typography type={"h3"}>{t('stats.name')}</Typography>
-                        <div className="pl-4">
-                            {
-                                pokemon.statistics.map((statistic: Statistic): (JSX.Element | undefined)[] => (
-                                    Object.entries(statistic).map(([name, value]: [string, number]): JSX.Element | undefined =>
-                                    {
-                                        if (!['id', 'generationId', 'special'].includes(name))
-                                        {
-                                            return (
-                                                <div key={name} className="grid grid-cols-2">
-                                                    <span className="font-medium">{t(`stats.${name}`)}</span>
-                                                    <span className="font-medium">{value}</span>
-                                                </div>
-                                            )
-                                        }
-                                    })
-                                ))
-                            }
-                        </div>
-                    </div>
+                    <Statistique pokemon={pokemon} />
                 </div>
             </div>
         </Slider>

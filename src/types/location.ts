@@ -12,6 +12,7 @@ export interface Location
     detailName: string;
     conditionName: string;
     isShassable: boolean;
+    gameName: string;
 }
 
 export interface LocationGeneration extends Location

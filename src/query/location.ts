@@ -17,31 +17,27 @@ export async function getLocationWithName(pokemonId: number, generationId: numbe
         obtation_name: string;
         zone_name: string;
         obtation_id: number;
+        game_name: string;
     }
 
     const rawResults: RawQueryResults[] = await prisma.$queryRaw<RawQueryResults[]>`
-        WITH translations AS (SELECT *
+        WITH
+            translations AS (SELECT *
                               FROM translation
                               WHERE status = 'on'
                                 AND langue_id IN (2, ${langId})),
-             active_games AS (SELECT *
+            active_games AS (SELECT *
                               FROM game
-                              WHERE status = 'on' ${generationId ? Prisma.sql`AND generation_id = ${generationId}` : Prisma.empty}
-            ), active_forms AS (
-        SELECT *
-        FROM pokemon_form
-        WHERE status = 'on'
-            )
-            , active_pgl AS (
-        SELECT *
-        FROM pokemon_game_location
-        ${onlyShassable ? Prisma.sql`WHERE pokemon_obtation_id != 1` : Prisma.empty}
-            )
-            , active_rate AS (
-        SELECT *
-        FROM rate
-        WHERE status = 'on'
-            )
+                              WHERE status = 'on' ${generationId ? Prisma.sql`AND generation_id = ${generationId}` : Prisma.empty}),
+            active_forms AS (SELECT *
+                            FROM pokemon_form
+                            WHERE status = 'on'),
+            active_pgl AS (SELECT *
+                            FROM pokemon_game_location
+                            ${onlyShassable ? Prisma.sql`WHERE pokemon_obtation_id != 1` : Prisma.empty}),
+            active_rate AS (SELECT *
+                            FROM rate
+                            WHERE status = 'on')
 
         SELECT DISTINCT tpo.name AS obtation_name,
                         g.generation_id,
@@ -55,7 +51,8 @@ export async function getLocationWithName(pokemonId: number, generationId: numbe
                         po.id    AS obtation_id,
                         tm.name  AS meteo_name,
                         td.name  AS detail_name,
-                        tc.name  AS condition_name
+                        tc.name  AS condition_name,
+                        tg.name  AS game_name
 
         FROM active_forms pf
                  JOIN active_pgl pgl ON pgl.pokemon_id = pf.pokemon_id
@@ -81,6 +78,8 @@ export async function getLocationWithName(pokemonId: number, generationId: numbe
                                               td.reference_table = ${reference_table.DETAIL}
                  LEFT JOIN translations tc ON tc.reference_id = r.condition_rate_id AND tc.langue_id = ${langId} AND
                                               tc.reference_table = ${reference_table.DETAIL}
+                 LEFT JOIN translations tg ON tg.reference_id = g.id AND tg.langue_id = ${langId} AND
+                                              tg.reference_table = ${reference_table.GAME}
 
         WHERE pf.pokemon_id = ${pokemonId}
           AND pf.form_id = ${formId}
@@ -99,6 +98,7 @@ export async function getLocationWithName(pokemonId: number, generationId: numbe
         zoneName:      raw.zone_name,
         limit:         raw.limit,
         rate:          raw.rate,
-        isShassable:   raw.obtation_id != 1
+        isShassable:   raw.obtation_id != 1,
+        gameName: raw.game_name
     }))
 }

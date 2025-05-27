@@ -6,6 +6,7 @@ import Dropdown from "./Dropdown/Dropdown";
 import Pagination from './Pagination/Pagination';
 import Slider from './Slider/Slider';
 import Link from './Link/Link';
+import TableWithFilter from './TableWithFilter/TableWithFilter';
 
 export {
     Typography,
@@ -15,5 +16,6 @@ export {
     Dropdown,
     Pagination,
     Slider,
-    Link
+    Link,
+    TableWithFilter
 }

@@ -1,24 +1,35 @@
-import Image, {ImageProps} from 'next/image';
+import Image from 'next/image';
 import {JSX} from "react";
+import {PictureProps} from "@typesFront";
+import {cn} from "@lib";
 
-interface PictureProps extends Omit<ImageProps, 'width' | 'height'>
-{
-    width: number;
-    height: number;
-}
-
-const Picture = ({src, alt, width, height, ...other}: PictureProps): JSX.Element =>
+const Picture: ({src, alt, width, height, ref, ...other}: PictureProps) => JSX.Element = ({
+                                                                                              src,
+                                                                                              alt,
+                                                                                              width,
+                                                                                              height,
+                                                                                              ref,
+                                                                                              ...other
+                                                                                          }: PictureProps): JSX.Element =>
 {
     return (
-        <div style={{
-            position: 'relative', maxWidth: '100%', margin: '0 auto',
-            width:    `${width}px`, height: `${height}px`
-        }}>
+        <div className={cn("relative", other.className)}
+             style={{
+                 ...(width && {width: `${width}px`}),
+                 ...(height && {height: `${height}px`}),
+             }}>
             <Image
-                src={src} alt={alt} width={width} height={height} loading="lazy"
+                ref={ref}
+                src={src}
+                alt={alt}
+                loading="lazy"
+                width={width ?? 200}
+                height={height ?? 200}
                 style={{
-                    objectFit: 'contain', objectPosition: 'center',
-                    width:     '100%', height: '100%'
+                    objectFit:      'contain',
+                    objectPosition: 'center',
+                    width:          '100%',
+                    height:         '100%',
                 }}
                 {...other}
             />

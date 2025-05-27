@@ -1,29 +1,29 @@
 {
-  "homePage":     {
+  "homePage":          {
     "title": "Ceci est la page de home."
   },
-  "loginPage":    {
+  "loginPage":         {
     "title": "Login",
     "form":  {
       "btnLogin": "Connexion"
     }
   },
-  "registerPage": {
+  "registerPage":      {
     "title": "Register",
     "form":  {
       "btnRegister": "Inscription"
     }
   },
-  "register":     {
+  "register":          {
     "alreadyExist": "L'email ou le pseudonyme existent déjà."
   },
-  "refresh":      {
+  "refresh":           {
     "userNotFound": "L'utilisateur n'a pas été trouvé."
   },
-  "login":        {
+  "login":             {
     "invalidCredentials": "Identifiants incorrect."
   },
-  "auth":         {
+  "auth":              {
     "email":          {
       "label":       "E-mail",
       "placeholder": "Veuillez entre votre e-mail"
@@ -41,45 +41,91 @@
       "placeholder": "Veuillez-entrer votre pseudonyme"
     }
   },
-  "pokedex":      {
-    "searchPokemon": "Rechercher un pokemon ...",
-    "card": {
-      "pokemonPictureAlt": "Image du pokemon {pokemonName}",
-      "typePictureAlt":    "Image du type {typeName}"
-    }
+  "pokedex":           {
+    "searchPokemon": "Rechercher un pokemon ..."
   },
-  "pokemon": {
+  "pokemon":           {
     "hatchingCycle": "Cycle d'éclosion",
-    "captureRate": "Taux de capture",
-    "callHelpRate": "Taux d'appel à l'aide",
-    "genderRate": "Taux mâle femelle",
-    "eggGroup": "Groupe d'oeuf",
-    "slider": {
+    "captureRate":   "Taux de capture",
+    "callHelpRate":  "Taux d'appel à l'aide",
+    "genderRate":    "Taux mâle femelle",
+    "eggGroup":      "Groupe d'oeuf",
+    "xpGift":        "Expérience donnée",
+    "globalXp":      "Exp global",
+    "globalXpTitle": "Exp nécéssaire pour arriver level 100",
+    "genAppear":     "Génération d'apparition",
+    "slider":        {
       "linkMoreDetail": "Plus d'informations sur le Pokémon."
+    },
+    "info":          {
+      "dymorphisme": "Dymorphisme possibles pour ce pokémon",
+      "form":        "Forme du pokémon"
     }
   },
-  "stats": {
-    "name": "Statistique",
-    "pv": "PV",
-    "attack": "Attaque",
-    "defense": "Défence",
-    "specialAttack": "Attaque spé.",
+  "stats":             {
+    "name":           "Statistique",
+    "pv":             "PV",
+    "attack":         "Attaque",
+    "defense":        "Défence",
+    "specialAttack":  "Attaque spé.",
     "specialDefense": "Défence spé.",
-    "special": "Spécial",
-    "speed": "Vitesse"
+    "special":        "Spécial",
+    "speed":          "Vitesse",
+    "bst":            "BST",
+    "bstTitle":       "Base Stat Totale"
   },
-  "type": {
+  "type":              {
     "name": "Types"
   },
-  "ability": {
-    "name": "Talent",
+  "ability":           {
+    "name":       "Talent",
     "hiddenName": "Talent caché"
   },
-  "generation":
-  {
-    "all": "Toutes"
+  "generation":        {
+    "all":    "Toutes",
+    "choice": "Choix de la génération:"
   },
-  "gender": {
+  "gender":            {
     "assexual": "Assexué"
-  }
+  },
+  "tableWithFilter":   {
+    "filters":        "Filtres",
+    "colToDisplay":   "Colonnes à afficher",
+    "rowsPerPage":    "Lignes par page",
+    "pageCount":      " sur ",
+    "goFirstPage":    "Aller à la première page",
+    "goPreviousPage": "Aller à la page précédente",
+    "goLastPage":     "Aller à la dernière page",
+    "goNextPage":     "Aller à la page suivante"
+  },
+  "regionalForms":     {
+    "title": "Forms régionales du pokémon"
+  },
+  "evolution":         {
+    "title": "Evolution du pokémon"
+  },
+  "nationalNumber":    "Numéro national",
+  "notAvailable":      "Pas disponible dans cette génération",
+  "name":              "Nom",
+  "detail":            "Détail",
+  "category":          "Catégorie",
+  "size":              "Taille",
+  "weight":            "Poids",
+  "searchByName":      "Rechercher par nom",
+  "isShassable":       "Est shassable",
+  "game":              "jeu",
+  "level":             "Niveau(x)",
+  "limit":             "Limite",
+  "rate":              "Taux",
+  "zone":              "Zone",
+  "obtationType":      "Méthode d'obtention",
+  "moreInfo":          "Plus d'info",
+  "meteo":             "Météo",
+  "isAlpha":           "Est baron",
+  "location":          "Localisation",
+  "condition":         "Condition",
+  "yes":               "Oui",
+  "no":                "Non",
+  "pokemonPictureAlt": "Image du pokemon {pokemonName}",
+  "typePictureAlt":    "Image du type {typeName}"
 }

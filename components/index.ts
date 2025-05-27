@@ -1,6 +1,6 @@
-import {Button, Input, Typography, Picture, Dropdown, Pagination, Slider, Link} from './atoms';
+import {Button, Input, Typography, Picture, Dropdown, Pagination, Slider, Link, TableWithFilter} from './atoms';
 import {AuthGuard, LoginForm, RegisterForm, Pokedex, PokemonDetail} from './organisms';
-import {InputFormField, RedirectButton, LangueButton, PokedexCard, PokemonDetailSlider, GenderGauge} from './moleculs';
+import {InputFormField, RedirectButton, LangueButton, PokedexCard, PokemonDetailSlider, GenderGauge, GenerationChoice, Statistique, PokemonRegionalFormCard, Evolution} from './moleculs';
 
 export {
     Button,
@@ -21,5 +21,10 @@ export {
     PokemonDetailSlider,
     Link,
     GenderGauge,
-    PokemonDetail
+    PokemonDetail,
+    GenerationChoice,
+    TableWithFilter,
+    Statistique,
+    PokemonRegionalFormCard,
+    Evolution
 }
