@@ -368,7 +368,8 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
                         className="absolute top-0 right-2"
                         src={getPokemonPictureFromId({
                             internationalNumber: pokemonInfo.internationalNumber,
-                            formId:              pokemonInfo.formId
+                            formId:              pokemonInfo.formId,
+                            style:               "HOME"
                         })}
                         alt="Pokémon animé"
                         width={150}

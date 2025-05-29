@@ -64,21 +64,28 @@ describe("Vérification de l'évolution d'un pokemon form", (): void =>
     test("Vérification des évolutions: Bulbizarre, Herbizarre et Florizarre", async (): Promise<void> =>
     {
         const evolutionResult: EvolutionTree[] = [{
-            pokemonName: "Bulbizarre",
-            stageNumber: 3,
-            evos:        [
+            pokemonName:         "Bulbizarre",
+            formId:              1,
+            internationalNumber: 1,
+            evos:                [
                 {
-                    evolutionName: "Herbizarre",
-                    level:         16,
-                    methodName:    "Level",
-                    infoName:      "Aucune information complémentaire d'évolution.",
-                    evos:          [
+                    evolutionName:       "Herbizarre",
+                    level:               16,
+                    internationalNumber: 2,
+                    formId:              1,
+                    infoId:              1,
+                    methodName:          "Level",
+                    infoName:            "Aucune information complémentaire d'évolution.",
+                    evos:                [
                         {
-                            evolutionName: "Florizarre",
-                            level:         32,
-                            methodName:    "Level",
-                            infoName:      "Aucune information complémentaire d'évolution.",
-                            evos:          []
+                            evolutionName:       "Florizarre",
+                            level:               32,
+                            infoId:              1,
+                            formId:              1,
+                            internationalNumber: 3,
+                            methodName:          "Level",
+                            infoName:            "Aucune information complémentaire d'évolution.",
+                            evos:                []
                         }
                     ]
                 }
@@ -93,64 +100,89 @@ describe("Vérification de l'évolution d'un pokemon form", (): void =>
     test("Vérification des évolutions: Pyroli et Phyllali", async (): Promise<void> =>
     {
         const evolutionResult: EvolutionTree[] = [{
-            pokemonName: "Évoli",
-            stageNumber: 2,
-            evos:        [
+            pokemonName:         "Évoli",
+            internationalNumber: 133,
+            formId:              1,
+            evos:                [
                 {
-                    evolutionName: "Aquali",
-                    level:         -1,
-                    methodName:    "Pierre Eau",
-                    infoName:      "Aucune information complémentaire d'évolution.",
-                    evos:          []
+                    evolutionName:       "Aquali",
+                    level:               -1,
+                    formId:              1,
+                    infoId:              1,
+                    internationalNumber: 134,
+                    methodName:          "Pierre Eau",
+                    infoName:            "Aucune information complémentaire d'évolution.",
+                    evos:                []
                 },
                 {
-                    evolutionName: "Pyroli",
-                    level:         -1,
-                    methodName:    "Pierre Feu",
-                    infoName:      "Aucune information complémentaire d'évolution.",
-                    evos:          []
+                    evolutionName:       "Pyroli",
+                    level:               -1,
+                    formId:              1,
+                    infoId:              1,
+                    internationalNumber: 136,
+                    methodName:          "Pierre Feu",
+                    infoName:            "Aucune information complémentaire d'évolution.",
+                    evos:                []
                 },
                 {
-                    evolutionName: "Voltali",
-                    level:         -1,
-                    methodName:    "Pierre Feu",
-                    infoName:      "Aucune information complémentaire d'évolution.",
-                    evos:          []
+                    evolutionName:       "Voltali",
+                    level:               -1,
+                    formId:              1,
+                    infoId:              1,
+                    internationalNumber: 135,
+                    methodName:          "Pierre Feu",
+                    infoName:            "Aucune information complémentaire d'évolution.",
+                    evos:                []
                 },
                 {
-                    evolutionName: "Mentali",
-                    level:         -1,
-                    methodName:    "Bonheur",
-                    infoName:      "Uniquement de jour en ne connaissant aucune attaque de type Fée.",
-                    evos:          []
+                    evolutionName:       "Mentali",
+                    level:               -1,
+                    formId:              1,
+                    infoId:              19,
+                    internationalNumber: 196,
+                    methodName:          "Bonheur",
+                    infoName:            "Uniquement de jour en ne connaissant aucune attaque de type Fée.",
+                    evos:                []
                 },
                 {
-                    evolutionName: "Noctali",
-                    level:         -1,
-                    methodName:    "Bonheur",
-                    infoName:      "Uniquement de nuit en ne connaissant aucune attaque de type Fée.",
-                    evos:          []
+                    evolutionName:       "Noctali",
+                    level:               -1,
+                    formId:              1,
+                    infoId:              20,
+                    internationalNumber: 197,
+                    methodName:          "Bonheur",
+                    infoName:            "Uniquement de nuit en ne connaissant aucune attaque de type Fée.",
+                    evos:                []
                 },
                 {
-                    evolutionName: "Phyllali",
-                    level:         -1,
-                    methodName:    "Special",
-                    infoName:      "Gagner un niveau près d'une Pierre Mousse avant EB et dans DEPS, Pierre Plante Pierre Plante depuis EB, être près du Rocher Moussu dans LPA",
-                    evos:          []
+                    evolutionName:       "Phyllali",
+                    level:               -1,
+                    formId:              1,
+                    infoId:              21,
+                    internationalNumber: 470,
+                    methodName:          "Special",
+                    infoName:            "Gagner un niveau près d'une Pierre Mousse avant EB et dans DEPS, Pierre Plante Pierre Plante depuis EB, être près du Rocher Moussu dans LPA",
+                    evos:                []
                 },
                 {
-                    evolutionName: "Givrali",
-                    level:         -1,
-                    methodName:    "Special",
-                    infoName:      "Gagner un niveau près d'une Pierre Glacée avant EB et dans DEPS, Pierre Glace Pierre Glace depuis EB, être près de la Pierre Gelée dans LPA",
-                    evos:          []
+                    evolutionName:       "Givrali",
+                    level:               -1,
+                    formId:              1,
+                    infoId:              22,
+                    internationalNumber: 471,
+                    methodName:          "Special",
+                    infoName:            "Gagner un niveau près d'une Pierre Glacée avant EB et dans DEPS, Pierre Glace Pierre Glace depuis EB, être près de la Pierre Gelée dans LPA",
+                    evos:                []
                 },
                 {
-                    evolutionName: "Nymphali",
-                    level:         -1,
-                    methodName:    "Bonheur",
-                    infoName:      "Connaitre une attaque de type Fée.",
-                    evos:          []
+                    evolutionName:       "Nymphali",
+                    level:               -1,
+                    formId:              1,
+                    infoId:              23,
+                    internationalNumber: 700,
+                    methodName:          "Bonheur",
+                    infoName:            "Connaitre une attaque de type Fée.",
+                    evos:                []
                 }
             ]
         }];
@@ -162,26 +194,34 @@ describe("Vérification de l'évolution d'un pokemon form", (): void =>
     test("Vérification des évolutions: Mordudor et Gromago", async (): Promise<void> =>
     {
         const evolutionResult: EvolutionTree[] = [{
-            "pokemonName": "Mordudor Coffre",
-            stageNumber: 2,
-            "evos":        [
+            pokemonName:         "Mordudor Coffre",
+            internationalNumber: 999,
+            formId:              1,
+            evos:                [
                 {
-                    "evolutionName": "Gromago",
-                    "level":         -1,
-                    "methodName":    "Special",
-                    "infoName":      "Avoir 999 Pièces de Mordudor, puis gagner un niveau.",
-                    "evos":          []
+                    evolutionName:       "Gromago",
+                    level:               -1,
+                    infoId:              85,
+                    internationalNumber: 1000,
+                    formId:              1,
+                    methodName:          "Special",
+                    infoName:            "Avoir 999 Pièces de Mordudor, puis gagner un niveau.",
+                    evos:                []
                 }
             ]
         }, {
-            "pokemonName": "Mordudor Marche",
-            stageNumber: 2,
-            "evos":        [{
-                "evolutionName": "Gromago",
-                "level":         -1,
-                "methodName":    "Special",
-                "infoName":      "Avoir 999 Pièces de Mordudor, puis gagner un niveau.",
-                "evos":          []
+            pokemonName:         "Mordudor Marche",
+            internationalNumber: 999,
+            formId:              131,
+            evos:                [{
+                evolutionName:       "Gromago",
+                level:               -1,
+                infoId:              85,
+                internationalNumber: 1000,
+                formId:              1,
+                methodName:          "Special",
+                infoName:            "Avoir 999 Pièces de Mordudor, puis gagner un niveau.",
+                evos:                []
             }]
         }];
 
@@ -191,35 +231,48 @@ describe("Vérification de l'évolution d'un pokemon form", (): void =>
     test("Vérification des évolutions: Dratatin, Pomdramour et Pomdorochi", async (): Promise<void> =>
     {
         const evolutionResult: EvolutionTree[] = [{
-            pokemonName: "Verpom",
-            stageNumber: 3,
-            evos: [
+            pokemonName:         "Verpom",
+            formId:              1,
+            internationalNumber: 840,
+            evos:                [
                 {
-                    evolutionName: "Pomdrapi",
-                    level: -1,
-                    methodName: "Special",
-                    infoName: "Contact avec Pomme acidulée",
-                    evos: []
+                    evolutionName:       "Pomdrapi",
+                    level:               -1,
+                    formId:              1,
+                    infoId:              70,
+                    internationalNumber: 841,
+                    methodName:          "Special",
+                    infoName:            "Contact avec Pomme acidulée",
+                    evos:                []
                 },
                 {
-                    evolutionName: "Dratatin",
-                    level: -1,
-                    methodName: "Special",
-                    infoName: "Contact avec Pomme sucrée",
-                    evos: []
+                    evolutionName:       "Dratatin",
+                    level:               -1,
+                    formId:              1,
+                    infoId:              71,
+                    internationalNumber: 842,
+                    methodName:          "Special",
+                    infoName:            "Contact avec Pomme sucrée",
+                    evos:                []
                 },
                 {
                     evolutionName: "Pomdramour",
-                    level: -1,
-                    methodName: "Special",
-                    infoName: "Contact avec Pomme nectar",
-                    evos: [
+                    level:         -1,
+                    formId:        1,
+                    infoId:        72,
+                    internationalNumber: 1011,
+                    methodName:    "Special",
+                    infoName:      "Contact avec Pomme nectar",
+                    evos:          [
                         {
                             evolutionName: "Pomdorochi",
-                            level: -1,
-                            methodName: "Connaitre une attaque",
-                            infoName: "Connaitre l'attaque Cri Draconique.",
-                            evos: []
+                            level:         -1,
+                            formId:        1,
+                            infoId:        86,
+                            internationalNumber: 1019,
+                            methodName:    "Connaitre une attaque",
+                            infoName:      "Connaitre l'attaque Cri Draconique.",
+                            evos:          []
                         }
                     ]
                 }
