@@ -6,6 +6,7 @@ import {
     RefreshTokenDataSchema,
     AccessTokenDataSchema
 } from './auth'
+import {numberSchema} from './other';
 
 export {
     LoginSchema,
@@ -13,5 +14,6 @@ export {
     RefreshTokenSchema,
     RoleSchema,
     RefreshTokenDataSchema,
-    AccessTokenDataSchema
+    AccessTokenDataSchema,
+    numberSchema
 }

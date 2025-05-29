@@ -1,4 +1,4 @@
-import {z, ZodNumber, ZodObject, ZodOptional, ZodString} from 'zod';
+import {z, ZodNumber, ZodObject, ZodString} from 'zod';
 
 const passwordSchema: ZodString = z.string().regex(
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\d\s]).{8,}$/,

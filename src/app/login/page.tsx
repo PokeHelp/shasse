@@ -13,7 +13,7 @@ export default async function LoginPage(): Promise<JSX.Element>
 
     return (
         <>
-            <Typography>{t('title')}</Typography>
+            <Typography type={"h1"}>{t('title')}</Typography>
             <LoginForm/>
         </>
     );
