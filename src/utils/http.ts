@@ -7,7 +7,7 @@ import {NextResponse} from "next/server";
  * @param message
  * @param status
  */
-function sendResponse(message: object, status: HttpStatusCode): NextResponse
+function sendResponse<T extends object = object>(message: T, status: HttpStatusCode): NextResponse<T>
 {
     return NextResponse.json(message, {status: status});
 }

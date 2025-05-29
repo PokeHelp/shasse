@@ -42,3 +42,6 @@ next-env.d.ts
 
 # Env de dev
 .idea/
+
+# Log
+*.log

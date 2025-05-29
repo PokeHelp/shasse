@@ -2943,7 +2943,7 @@
       "informationComplementaire": "Mâle"
     },
     {
-      "nomPokemon": "Mistigrix Femelle",
+      "nomPokemon": "Mistigrix Femelle -forme- Femelle",
       "niveau": 25,
       "nomMethode": "Level",
       "informationComplementaire": "Femelle"
@@ -3209,13 +3209,13 @@
       "informationComplementaire": "Uniquement de jour"
     },
     {
-      "nomPokemon": "Lougaroc Nocturne",
+      "nomPokemon": "Lougaroc Nocturne -forme- Nocturne",
       "niveau": 25,
       "nomMethode": "Level",
       "informationComplementaire": "Uniquement de nuit"
     },
     {
-      "nomPokemon": "Lougaroc Crépusculaire",
+      "nomPokemon": "Lougaroc Crépusculaire -forme- Crépusculaire",
       "niveau": 25,
       "nomMethode": "Level",
       "informationComplementaire": "Avec Tempo Perso au crépuscule"
@@ -3545,7 +3545,7 @@
   ],
   "Toxizap": [
     {
-      "nomPokemon": "Salarsen aigüe",
+      "nomPokemon": "Salarsen aigüe -forme- Aigüe",
       "niveau": 30,
       "nomMethode": "Level",
       "informationComplementaire": ""
@@ -3669,7 +3669,7 @@
       "informationComplementaire": "Contact avec le Rouleau des Ténèbres."
     },
     {
-      "nomPokemon": "Shifours Style Mille Poings",
+      "nomPokemon": "Shifours Style Mille Poings -forme- Style Mille Poings",
       "niveau": -1,
       "nomMethode": "Special",
       "informationComplementaire": "Contact avec le Rouleau de l'Eau."
@@ -3985,7 +3985,7 @@
       "informationComplementaire": "Avoir 999 Pièces de Mordudor, puis gagner un niveau."
     }
   ],
-  "Mordudor Marche": [
+  "Mordudor Marche -forme- Marche": [
     {
       "nomPokemon": "Gromago",
       "niveau": -1,

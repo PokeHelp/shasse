@@ -1,0 +1,10 @@
+.slider-overflow
+{
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.slider-overflow::-webkit-scrollbar
+{
+    display: none;
+}
