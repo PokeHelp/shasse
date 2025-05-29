@@ -118,7 +118,8 @@ export function mapError(dataError: DataError): ErrorMap
 {
     return dataError.error.errors.reduce((acc: ErrorMap, err: ZodIssue): ErrorMap =>
     {
-        const field: string = err.path.join('.');
+        let field: string = err.path.join('.');
+        field = field === '' ? 'custom' : field;
 
         if (acc[field])
         {

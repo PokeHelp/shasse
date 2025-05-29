@@ -1,11 +1,16 @@
 'use client';
 
 import {TypographyProps} from "@typesFront";
+import {JSX} from "react";
+import {cn} from "@lib";
 
-//TODO: faire toutes les variantes
-const CustomTypography = ({children, ...other}: TypographyProps) =>
+const CustomTypography: ({type}: TypographyProps) => JSX.Element = ({
+                                                                        type: Tag,
+                                                                        children,
+                                                                        ...   other
+                                                                    }: TypographyProps): JSX.Element =>
 {
-    return <div {...other}>{children}</div>;
+    return <Tag className={cn("flex items-center", other.className)} {...other}>{children}</Tag>;
 };
 
 export default CustomTypography;

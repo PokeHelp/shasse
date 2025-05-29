@@ -1,6 +1,6 @@
 'use client';
 
-import React, {JSX, useState} from 'react';
+import {JSX, useState} from 'react';
 import {Input as UiInput} from "@ui/input"
 import {InputProps} from "@typesFront";
 import {Button} from "@components";
@@ -26,7 +26,7 @@ const Input: ({type, className}: InputProps) => JSX.Element = ({type, className,
     } else
     {
         return (
-            <UiInput type={type} {...other} />
+            <UiInput type={type} {...other} className={cn("border-primary", className)} />
         );
     }
 
