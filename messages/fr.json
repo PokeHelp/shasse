@@ -52,7 +52,7 @@
     "eggGroup":      "Groupe d'oeuf",
     "xpGift":        "Expérience donnée",
     "globalXp":      "Exp global",
-    "globalXpTitle": "Exp nécéssaire pour arriver level 100",
+    "globalXpTitle": "Exp nécessaire pour arriver level 100",
     "genAppear":     "Génération d'apparition",
     "slider":        {
       "linkMoreDetail": "Plus d'informations sur le Pokémon."
@@ -127,5 +127,26 @@
   "yes":               "Oui",
   "no":                "Non",
   "pokemonPictureAlt": "Image du pokemon {pokemonName}",
-  "typePictureAlt":    "Image du type {typeName}"
+  "typePictureAlt":    "Image du type {typeName}",
+  "searchPokemon":     "Rechercher un pokémon",
+  "searchGame":        "Rechercher un jeu",
+  "searchForm":        "Rechercher une forme",
+  "api":               {
+    "base":                "Erreur générique",
+    "anyPokemonNameFound": "Aucun nom de pokémon n'a été trouvé",
+    "anyGameNameFound":    "Aucun nom de jeu n'a été trouvé"
+  },
+  "shinyHuntings":      {
+    "create": {
+      "selectPokemon":           "Sélectionnez un pokémon",
+      "choosePokemon":           "Choisissez un pokémon",
+      "selectGame":              "Sélectionnez un jeu",
+      "chooseGame":              "Choisissez un jeu",
+      "selectForm":              "Sélectionnez une forme",
+      "chooseForm":              "Choisissez une forme de {pokemonName}",
+      "selectPokemonBeforeForm": "Sélectionnez un pokémon avant de choisir une forme",
+      "hasOneForm":              "Ce pokémon possède une seule forme",
+      "btnCreate": "Créer un shasse"
+    }
+  }
 }

@@ -1,3 +1,3 @@
-import {formChoices} from './form';
+import {formChoices, normalForm} from './form';
 
-export {formChoices}
+export {formChoices, normalForm}

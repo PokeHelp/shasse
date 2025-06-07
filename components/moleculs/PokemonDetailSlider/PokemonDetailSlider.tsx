@@ -4,7 +4,7 @@ import {Picture} from "@components";
 import {getPokemonPictureFromId, getTypePictureById} from "@utils";
 import {JSX} from "react";
 import {PokemonDetailSliderProps} from "@typesFront";
-import {Ability, EggGroup, GroupedPokemonInfoDetailResponse, PokemonInfoDetail, Statistic, Type} from "@types";
+import {Ability, EggGroup, GroupedPokemonInfoDetailResponse, PokemonInfoDetail, Type} from "@types";
 import {axiosService} from "@lib";
 import {useQuery} from "@tanstack/react-query";
 import {useTranslations} from "next-intl";
@@ -56,7 +56,7 @@ export default function PokemonDetailSlider({
                     <Picture
                         key={pokemon.id}
                         src={getPokemonPictureFromId(
-                            {internationalNumber: pokemon.internationalNumber, formId: pokemon.forms[0]}
+                            {internationalNumber: pokemon.internationalNumber, formId: 1} // TODO: regarde ça ducon
                         )}
                         alt={pokemon.name}
                         width={300}

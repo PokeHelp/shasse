@@ -7,6 +7,8 @@ import Pagination from './Pagination/Pagination';
 import Slider from './Slider/Slider';
 import Link from './Link/Link';
 import TableWithFilter from './TableWithFilter/TableWithFilter';
+import SelectWithSearch from './SelectWithSearch/SelectWithSearch';
+import Switch from './Switch/Switch';
 
 export {
     Typography,
@@ -17,5 +19,7 @@ export {
     Pagination,
     Slider,
     Link,
-    TableWithFilter
+    TableWithFilter,
+    SelectWithSearch,
+    Switch
 }

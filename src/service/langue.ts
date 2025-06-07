@@ -1,4 +1,3 @@
-import {logger} from "@lib";
 import {getLangue, getAllLangue} from "@query";
 
 /**

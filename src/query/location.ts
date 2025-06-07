@@ -2,7 +2,7 @@ import {prisma} from "@lib";
 import {Prisma, reference_table} from "@prisma/client";
 import {LocationGeneration} from "@types";
 
-export async function getLocationWithName(pokemonId: number, generationId: number | null, langId: number, onlyShassable: boolean = false, formId: number = 1): Promise<LocationGeneration[]> // TODO: Chnager pour la gestion des formes
+export async function getLocationWithName(pokemonId: number | null, generationId: number | null, langId: number, onlyShassable: boolean = false, formId: number | null = null, gameId: number | null = null): Promise<LocationGeneration[]>
 {
     interface RawQueryResults extends Omit<LocationGeneration, 'generationId' | 'minLevel' | 'maxLevel' | 'locationName' | 'conditionName' | 'detailName' | 'isAlpha' | 'meteoName' | 'obtationName' | 'zoneName' | 'isShassable'>
     {
@@ -21,23 +21,26 @@ export async function getLocationWithName(pokemonId: number, generationId: numbe
     }
 
     const rawResults: RawQueryResults[] = await prisma.$queryRaw<RawQueryResults[]>`
-        WITH
-            translations AS (SELECT *
+        WITH translations AS (SELECT *
                               FROM translation
                               WHERE status = 'on'
                                 AND langue_id IN (2, ${langId})),
-            active_games AS (SELECT *
+             active_games AS (SELECT *
                               FROM game
-                              WHERE status = 'on' ${generationId ? Prisma.sql`AND generation_id = ${generationId}` : Prisma.empty}),
-            active_forms AS (SELECT *
-                            FROM pokemon_form
-                            WHERE status = 'on'),
-            active_pgl AS (SELECT *
-                            FROM pokemon_game_location
-                            ${onlyShassable ? Prisma.sql`WHERE pokemon_obtation_id != 1` : Prisma.empty}),
-            active_rate AS (SELECT *
-                            FROM rate
-                            WHERE status = 'on')
+                              WHERE status = 'on'
+            ${generationId ? Prisma.sql`AND generation_id = ${generationId}` : Prisma.empty}
+            ${gameId ? Prisma.sql`AND id = ${gameId}` : Prisma.empty}
+            ), active_forms AS (
+        SELECT *
+        FROM pokemon_form
+        WHERE status = 'on')
+            , active_pgl AS (
+        SELECT *
+        FROM pokemon_game_location
+            ${onlyShassable ? Prisma.sql`WHERE pokemon_obtation_id != 1` : Prisma.empty}), active_rate AS (
+        SELECT *
+        FROM rate
+        WHERE status = 'on')
 
         SELECT DISTINCT tpo.name AS obtation_name,
                         g.generation_id,
@@ -65,7 +68,7 @@ export async function getLocationWithName(pokemonId: number, generationId: numbe
                  JOIN meteo m ON m.id = r.meteo_id AND m.status = 'on'
                  JOIN detail d1 ON d1.id = r.detail_rate_id AND d1.status = 'on'
                  JOIN detail d2 ON d2.id = r.condition_rate_id AND d2.status = 'on'
-            
+
                  LEFT JOIN translations tpo ON tpo.reference_id = pgl.pokemon_obtation_id AND tpo.langue_id = 2 AND
                                                tpo.reference_table = ${reference_table.POKEMON_OBTENTION}
                  LEFT JOIN translations tz ON tz.reference_id = lz.zone_id AND tz.langue_id = ${langId} AND
@@ -81,8 +84,7 @@ export async function getLocationWithName(pokemonId: number, generationId: numbe
                  LEFT JOIN translations tg ON tg.reference_id = g.id AND tg.langue_id = ${langId} AND
                                               tg.reference_table = ${reference_table.GAME}
 
-        WHERE pf.pokemon_id = ${pokemonId}
-          AND pf.form_id = ${formId}
+        WHERE ${pokemonId ? Prisma.sql`pf.pokemon_id = ${pokemonId}` : Prisma.empty} ${(formId && pokemonId) ? Prisma.sql` AND ` : Prisma.empty} ${formId ? Prisma.sql`pf.form_id = ${formId}` : Prisma.empty}
     `;
 
     return rawResults.map((raw: RawQueryResults): LocationGeneration => ({
@@ -99,6 +101,22 @@ export async function getLocationWithName(pokemonId: number, generationId: numbe
         limit:         raw.limit,
         rate:          raw.rate,
         isShassable:   raw.obtation_id != 1,
-        gameName: raw.game_name
+        gameName:      raw.game_name
     }))
+}
+
+export async function getPokemonGameLocation(pokemonId: number | null, formId: number, gameId: number | null)
+{
+    return prisma.pokemon_game_location.findMany({
+        where:  {
+            pokemonForm: {
+                ...(pokemonId && {pokemonId: pokemonId}),
+                formId:    formId,
+            },
+            ...(gameId && {gameId: gameId}),
+        },
+        select: {
+            id: true
+        },
+    })
 }

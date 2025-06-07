@@ -13,7 +13,7 @@ import {
 } from "./auth";
 import {DataError, ErrorMap} from "./zod";
 import {Errors, ErrorResponse} from './error';
-import {PokedexResponse, Pokedex, PokemonInfoDetail, GroupedPokemonInfoDetailResponse, PokemonInfo, GroupedPokemonInfoDetail} from './pokemon';
+import {PokedexResponse, Pokedex, PokemonInfoDetail, GroupedPokemonInfoDetailResponse, PokemonInfo, GroupedPokemonInfoDetail, TranslationIdNamesResponse, TranslationIdNames} from './pokemon';
 import {TypeName, TypesResponse, Type, TypeGeneration, TypeGenerationResponse} from './type';
 import {EggGroup, EggGroupGeneration, EggGroupGenerationResponse} from './eggGroup';
 import {Ability, AbilityGeneration, AbilityGenerationResponse} from './ability';
@@ -23,9 +23,10 @@ import {Generation, GenerationResponse} from './generation';
 import {TranslationName} from './translation';
 import {NationalNumber, NationalNumberGeneration} from './nationalNumber';
 import {CapacityGeneration} from './capacity';
-import {LocationGeneration} from './location';
+import {LocationGeneration, LocationGenerationsResponse} from './location';
 import {EvolutionNode, EvolutionTree} from './evolution';
-import {FormWithName, RegionalFormWithName} from './forms';
+import {FormWithName, RegionalFormWithName, FormWithNamesResponse} from './forms';
+import {ShinyHuntingCreateData} from './shinyHunting';
 
 export type {
     LoginData,
@@ -76,5 +77,10 @@ export type {
     EvolutionNode,
     EvolutionTree,
     FormWithName,
-    RegionalFormWithName
+    RegionalFormWithName,
+    TranslationIdNames,
+    TranslationIdNamesResponse,
+    FormWithNamesResponse,
+    LocationGenerationsResponse,
+    ShinyHuntingCreateData
 }

@@ -1,5 +1,11 @@
-import {InputProps, ButtonProps, TypographyProps, DropdownProps, PaginationProps, SliderProps, LinkProps, PictureProps, CustomColumnDefTable, TableWithFilterProps} from './atoms';
-import {RedirectButtonProps, InputFormFieldProps, PokedexCardProps, PokemonDetailSliderProps, GenderGaugeProps, GenerationChoiceProps} from './moleculs';
+import {
+    InputProps, ButtonProps, TypographyProps, DropdownProps, PaginationProps, SliderProps, LinkProps, PictureProps,
+    CustomColumnDefTable, TableWithFilterProps, SelectWithSearchData, SelectWithSearchProps, SwitchProps
+} from './atoms';
+import {
+    RedirectButtonProps, InputFormFieldProps, PokedexCardProps, PokemonDetailSliderProps, GenderGaugeProps,
+    GenerationChoiceProps
+} from './moleculs';
 
 export type
 {
@@ -18,5 +24,8 @@ export type
     GenerationChoiceProps,
     PictureProps,
     CustomColumnDefTable,
-    TableWithFilterProps
+    TableWithFilterProps,
+    SelectWithSearchData,
+    SelectWithSearchProps,
+    SwitchProps
 }

@@ -4,9 +4,8 @@ import {JSX, useState} from 'react';
 import {Input as UiInput} from "@ui/input"
 import {InputProps} from "@typesFront";
 import {Button} from "@components";
-import Eye from '@svg/eye.svg';
-import EyeOff from '@svg/eye-off.svg';
 import {cn} from "@lib";
+import { ReactSVG } from 'react-svg'
 
 const Input: ({type, className}: InputProps) => JSX.Element = ({type, className, ...other}: InputProps): JSX.Element =>
 {
@@ -19,7 +18,10 @@ const Input: ({type, className}: InputProps) => JSX.Element = ({type, className,
                 <UiInput type={showPassword ? 'text' : 'password'} className={cn("pr-10", className)} {...other}/>
                 <Button type="button" className={"absolute right-0 top-1/2 -translate-y-1/2 h-8 w-8 p-0"}
                         onClick={(): void => setShowPassword(!showPassword)}>
-                    {showPassword ? (<EyeOff className={"h-4 w-4"}/>) : (<Eye className={"h-4 w-4"}/>)}
+                    <ReactSVG
+                        className="h-4 w-4"
+                        src={showPassword ? '/svg/eye-off.svg' : '/svg/eye.svg'}
+                    />
                 </Button>
             </div>
         );

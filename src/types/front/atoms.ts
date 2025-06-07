@@ -7,6 +7,8 @@ import {Sheet} from '@ui/sheet';
 import Link from 'next/link';
 import {ImageProps} from "next/image";
 import {ColumnDef, SortingState} from "@tanstack/react-table";
+import {Command} from "@ui/command";
+import {Switch} from "@ui/switch";
 
 export type InputProps = ComponentProps<typeof Input>
 export type LinkProps = ComponentProps<typeof Link>
@@ -62,4 +64,25 @@ export interface TableWithFilterProps<T>
     rawColumns: CustomColumnDefTable<T>[];
     placeholder: string;
     rowsPerPageSelection?: number[];
+}
+
+export interface SelectWithSearchData
+{
+    value: string;
+    label: string;
+}
+
+export interface SelectWithSearchProps extends Omit<ComponentProps<typeof Command>, "value">
+{
+    datas: SelectWithSearchData[];
+    placeholder: string;
+    defaultValue?: string;
+    value: SelectWithSearchData | null;
+    onSelectValueAction: (selected: SelectWithSearchData | null) => void;
+    // onSelectValueAction: Dispatch<SetStateAction<SelectWithSearchData | null>>;
+}
+
+export interface SwitchProps extends ComponentProps<typeof Switch>
+{
+    labelName?: string;
 }

@@ -1,6 +1,6 @@
 'use server';
 
-import {Typography, RegisterForm} from "@components";
+import {RegisterForm} from "@components";
 import {JSX} from "react";
 import {getTranslations} from "next-intl/server";
 
@@ -15,7 +15,7 @@ export default async function RegisterPage(): Promise<JSX.Element>
 
     return (
         <>
-            <Typography>{t('title')}</Typography>
+            <h1>{t('title')}</h1>
             <RegisterForm/>
         </>
     );

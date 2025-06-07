@@ -1,5 +1,5 @@
-import {Button, Input, Typography, Picture, Dropdown, Pagination, Slider, Link, TableWithFilter} from './atoms';
-import {AuthGuard, LoginForm, RegisterForm, Pokedex, PokemonDetail} from './organisms';
+import {Button, Input, Typography, Picture, Dropdown, Pagination, Slider, Link, TableWithFilter, SelectWithSearch, Switch} from './atoms';
+import {AuthGuard, LoginForm, RegisterForm, Pokedex, PokemonDetail, ShinyHuntingCreate} from './organisms';
 import {InputFormField, RedirectButton, LangueButton, PokedexCard, PokemonDetailSlider, GenderGauge, GenerationChoice, Statistique, PokemonRegionalFormCard, Evolution} from './moleculs';
 
 export {
@@ -26,5 +26,8 @@ export {
     TableWithFilter,
     Statistique,
     PokemonRegionalFormCard,
-    Evolution
+    Evolution,
+    ShinyHuntingCreate,
+    SelectWithSearch,
+    Switch
 }

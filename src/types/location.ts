@@ -1,3 +1,5 @@
+import {ErrorResponse} from "@types";
+
 export interface Location
 {
     obtationName: string;
@@ -19,3 +21,8 @@ export interface LocationGeneration extends Location
 {
     generationId: number;
 }
+
+export type LocationGenerationsResponse = | {
+    success: true;
+    data: LocationGeneration[];
+} | ErrorResponse

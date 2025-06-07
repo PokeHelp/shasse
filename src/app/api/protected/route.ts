@@ -15,5 +15,8 @@ async function handler(request: Request, jwt: JwtPayload): Promise<NextResponse>
 {
     return sendResponse({message: 'Protected route accessed', jwt}, HttpStatusCode.Ok);
 }
+const GET: (request: Request) => Promise<NextResponse> = withAuth(handler, role.PUBLIC);
 
-export const GET: (request: Request) => Promise<NextResponse | JwtPayload> = withAuth(handler, role.PUBLIC);
+export {
+    GET
+}

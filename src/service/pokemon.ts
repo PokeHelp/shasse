@@ -46,7 +46,7 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
     let pokemonFormId: number = pokemonId;
     if (formId)
     {
-        const formIds: {id: number}[] =  await getPokemonForm({formId: formId, pokemonId: pokemonId}, {id: true});
+        const formIds: { id: number }[] = await getPokemonForm({formId: formId, pokemonId: pokemonId}, {id: true});
 
         pokemonFormId = formIds.length > 0 ? formIds[0].id : pokemonFormId;
     }

@@ -27,7 +27,7 @@ export default function PokedexCard({pokemon, formId, ...other}: PokedexCardProp
                     onClick={(): void => setIsSheetOpen(true)}
                 >
                     <Picture
-                        src={getPokemonPictureFromId({internationalNumber: pokemon.internationalNumber, formId}, "Artwork")}
+                        src={getPokemonPictureFromId({internationalNumber: pokemon.internationalNumber, formId, style: "Artwork"})}
                         alt={t('pokemonPictureAlt', {pokemonName: pokemon.name})}
                         width={250}
                         height={250}

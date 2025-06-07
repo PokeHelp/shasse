@@ -110,7 +110,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -184,7 +184,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -5487,7 +5487,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Tritosor -forme- Mer Orient",
+                    "pokemon": "Tritosor Mer Orient -forme- Mer Orient",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -6083,7 +6083,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Tritosor -forme- Mer Orient",
+                    "pokemon": "Tritosor Mer Orient -forme- Mer Orient",
                     "method": "pokemon-cachés",
                     "rates": [
                         {
@@ -18066,7 +18066,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Sancoki -forme- Mer Orient",
+                    "pokemon": "Sancoki Mer Orient -forme- Mer Orient",
                     "method": "surf",
                     "rates": [
                         {
@@ -18220,7 +18220,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Sancoki -forme- Mer Orient",
+                    "pokemon": "Sancoki Mer Orient -forme- Mer Orient",
                     "method": "surf",
                     "rates": [
                         {
@@ -19315,7 +19315,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Tritosor -forme- Mer Orient",
+                    "pokemon": "Tritosor Mer Orient -forme- Mer Orient",
                     "method": "pokemon-vadrouilleur",
                     "rates": [
                         {
@@ -19342,7 +19342,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Tritosor -forme- Mer Orient",
+                    "pokemon": "Tritosor Mer Orient -forme- Mer Orient",
                     "method": "pokemon-vadrouilleur",
                     "rates": [
                         {
@@ -19374,7 +19374,7 @@
         {
             "list": [
                 {
-                    "pokemon": "Sancoki -forme- Mer Orient",
+                    "pokemon": "Sancoki Mer Orient -forme- Mer Orient",
                     "method": "surf",
                     "rates": [
                         {
@@ -19528,7 +19528,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Sancoki -forme- Mer Orient",
+                    "pokemon": "Sancoki Mer Orient -forme- Mer Orient",
                     "method": "surf",
                     "rates": [
                         {
@@ -21115,7 +21115,7 @@
         {
             "list": [
                 {
-                    "pokemon": "Tritosor -forme- Mer Orient",
+                    "pokemon": "Tritosor Mer Orient -forme- Mer Orient",
                     "method": "pokemon-vadrouilleur",
                     "rates": [
                         {
@@ -21142,7 +21142,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Tritosor -forme- Mer Orient",
+                    "pokemon": "Tritosor Mer Orient -forme- Mer Orient",
                     "method": "pokemon-vadrouilleur",
                     "rates": [
                         {
@@ -23275,7 +23275,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Sancoki -forme- Mer Orient",
+                    "pokemon": "Sancoki Mer Orient -forme- Mer Orient",
                     "method": "pokemon-cachés",
                     "rates": [
                         {
@@ -23301,7 +23301,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Sancoki -forme- Mer Orient",
+                    "pokemon": "Sancoki Mer Orient -forme- Mer Orient",
                     "method": "pokemon-cachés",
                     "rates": [
                         {
@@ -30874,7 +30874,7 @@
         {
             "list": [
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -31018,7 +31018,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -31786,7 +31786,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -31810,7 +31810,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -31936,7 +31936,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf",
                     "rates": [
                         {
@@ -32080,7 +32080,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf",
                     "rates": [
                         {
@@ -32224,7 +32224,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -32248,7 +32248,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -49675,7 +49675,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -49699,7 +49699,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -49723,7 +49723,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -49747,7 +49747,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -67731,7 +67731,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "pokemon-cachés",
                     "rates": [
                         {
@@ -68281,7 +68281,7 @@
         {
             "list": [
                 {
-                    "pokemon": "Sancoki -forme- Mer Orient",
+                    "pokemon": "Sancoki Mer Orient -forme- Mer Orient",
                     "method": "au-sol",
                     "rates": [
                         {
@@ -68489,7 +68489,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Tritosor -forme- Mer Orient",
+                    "pokemon": "Tritosor Mer Orient -forme- Mer Orient",
                     "method": "pokemon-vadrouilleur",
                     "rates": [
                         {

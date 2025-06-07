@@ -3,7 +3,7 @@
 import {JSX, useState} from 'react';
 import {Button, InputFormField} from "@components";
 import {AuthResponse, Errors, LoginData} from "@types";
-import {Form} from "@/components/ui/form"
+import {Form} from "@ui/form"
 import {useForm, UseFormReturn} from "react-hook-form"
 import {useRouter} from "next/navigation";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
