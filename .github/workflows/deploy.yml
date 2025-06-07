@@ -27,4 +27,5 @@ jobs:
             git clone git@github.com:${{ github.repository }} my-app && \
             cd my-app && \
             git checkout ${{ github.ref_name }} && \
+            npm install --save-dev cross-var@^1.1.0 && \
             npm run docker
