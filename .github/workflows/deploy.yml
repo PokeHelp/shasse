@@ -1,0 +1,30 @@
+name: Deploy via SSH
+
+on:
+  push:
+    branches:
+      - "feature/shiny-hunting"
+#    tags:
+#      - '*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Connect to server via SSH and deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            rm -rf my-app && \
+            git clone https://github.com/${{ github.repository }} my-app && \
+            cd my-app && \
+            git checkout ${{ github.ref_name }} && \
+            npm run docker
