@@ -1,7 +1,7 @@
 import {describe, expect, test} from '@jest/globals';
 import {getPokemonPictureFromId, getTypePictureById} from "@utils";
 
-const baseUrl: string = `${process.env.NEXT_PUBLIC_PICTURE_URL ?? ''}/Image/webp`;
+const baseUrl: string = `${process.env.NEXT_PUBLIC_PICTURE_URL ?? 'https://pokehelp.github.io'}/Image/webp`;
 
 test('Base url récupérée', (): void => {
     expect(baseUrl).not.toBe('/Image/webp');
