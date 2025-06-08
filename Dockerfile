@@ -9,6 +9,8 @@ RUN apk add --no-cache libc6-compat
 
 WORKDIR /app
 
+RUN npm install -g npm@11.4.1
+
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* .npmrc* ./
 RUN \
@@ -26,7 +28,7 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 # This will do the trick, use the corresponding env file for each environment.
 COPY .env.prod .env.prod
-RUN npm install -g npm@11.4.1
+RUN npx -y prisma generate
 RUN npm run build
 
 ENV NODE_ENV=production
@@ -41,5 +43,6 @@ USER nextjs
 EXPOSE 3000
 
 ENV PORT=3000
+
 
 CMD HOSTNAME="0.0.0.0" npm run prod
