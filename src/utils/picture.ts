@@ -120,5 +120,5 @@ export function getPokemonPictureFromId({
  */
 export function getTypePictureById(id: number, style: TypePictureStyle = 'icon'): string
 {
-    return `${process.env.NEXT_PUBLIC_PICTURE_URL}/Image/webp/types/${style}/${id}.webp`
+    return `${process.env.NEXT_PUBLIC_PICTURE_URL ?? 'https://pokehelp.github.io'}/Image/webp/types/${style}/${id}.webp`
 }
