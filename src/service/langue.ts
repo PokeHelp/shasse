@@ -1,11 +1,13 @@
-import {getLangue, getAllLangue} from "@query";
+import {getLangue} from "@query";
 
 /**
  * Permet de récupérer tous les isoCode
  */
 export async function getAllIsoCode(): Promise<string[]>
 {
-    const isoCode: { isoCode: string }[] = await getAllLangue({isoCode: true});
+    // TODO: fais une route pour le middleware
+    // const isoCode: { isoCode: string }[] = await getAllLangue({isoCode: true});
+    const isoCode: { isoCode: string }[] = [{"isoCode": "fr"}];
 
     return isoCode.map(item => item.isoCode)
 }
