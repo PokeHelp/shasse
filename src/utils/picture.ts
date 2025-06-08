@@ -18,7 +18,7 @@ export function getPokemonPictureFromId({
                                         }: PokemonPicture): string
 {
     const extension: string = 'webp';
-    const baseUrl: string = `${process.env.NEXT_PUBLIC_PICTURE_URL}/Image/${extension}`;
+    const baseUrl: string = `${process.env.NEXT_PUBLIC_PICTURE_URL ?? 'https://pokehelp.github.io'}/Image/${extension}`;
     const pokemonId: string = internationalNumber.toString().padStart(4, '0');
     let form: string;
     let generationName: string = '';
