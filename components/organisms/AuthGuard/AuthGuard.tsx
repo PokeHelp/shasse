@@ -25,12 +25,9 @@ export default function AuthGuard({requiredRole = role.SUPER_ADMIN, children}: A
 
         if (requiredLevelAccess === 0) return;
 
-        if (levelAccess === null)
+        if (levelAccess === null || levelAccess < requiredLevelAccess)
         {
             router.push('/login');
-        } else if (levelAccess < requiredLevelAccess)
-        {
-            router.push('/unauthorized');
         }
     }, [levelAccess, isInitialized, requiredLevelAccess, router]);
 

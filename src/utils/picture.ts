@@ -1,4 +1,5 @@
 import {PokemonPicture, TypePictureStyle} from "@types";
+import {pictureUrl} from "@config";
 
 /**
  * Permet de récupérer une image à partir de l'id d'un pokemon
@@ -18,7 +19,7 @@ export function getPokemonPictureFromId({
                                         }: PokemonPicture): string
 {
     const extension: string = 'webp';
-    const baseUrl: string = `${process.env.NEXT_PUBLIC_PICTURE_URL ?? 'https://pokehelp.github.io'}/Image/${extension}`;
+    const baseUrl: string = `${pictureUrl}/Image/${extension}`;
     const pokemonId: string = internationalNumber.toString().padStart(4, '0');
     let form: string;
     let generationName: string = '';
@@ -120,5 +121,5 @@ export function getPokemonPictureFromId({
  */
 export function getTypePictureById(id: number, style: TypePictureStyle = 'icon'): string
 {
-    return `${process.env.NEXT_PUBLIC_PICTURE_URL ?? 'https://pokehelp.github.io'}/Image/webp/types/${style}/${id}.webp`
+    return `${pictureUrl}/Image/webp/types/${style}/${id}.webp`
 }

@@ -1,16 +1,30 @@
-// TODO: faut moock !
+// TODO: voir pour les test, ici ça ne devrait pas être que des mock car on veut tester aussi les données
 
-test('faut moock', () => {
-    expect("toujours pas moock").toBe("toujours pas moock");
+describe('Test', () => {
+    test('test ok', () => {
+        expect(null).toBeNull();
+    })
 })
 
 // import {getAllEvolutions, getFirstEvolutionId} from "@query";
 // import {EvolutionTree} from "@types";
+// import {prisma} from "@lib";
+//
+// jest.mock('@lib', () => ({
+//     __esModule: true,
+//     prisma: {
+//         evolution: {
+//             findMany: jest.fn()
+//         }
+//     }
+// }));
 //
 // describe("Vérifie que le pokémon de base récupéré est correct", (): void =>
 // {
 //     test("Vérification pour Mewtwo", async (): Promise<void> =>
 //     {
+//         (prisma.evolution.findMany as jest.Mock).mockResolvedValue([]);
+//
 //         expect(await getFirstEvolutionId(194)).toBeNull();
 //     });
 //

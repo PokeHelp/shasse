@@ -2,10 +2,8 @@ name: Deploy via SSH
 
 on:
   push:
-    branches:
-      - "feature/shiny-hunting"
-#    tags:
-#      - '*'
+    tags:
+      - '*'
 
 jobs:
   deploy:

@@ -28,10 +28,8 @@ export async function middleware(): Promise<NextResponse>
             path:     '/',
             maxAge:   60 * 60 * 24 * 365,
             sameSite: 'lax',
-
-            // TODO: sécure le cookie
-            // secure: true,
-            // httpOnly: true
+            secure: true,
+            httpOnly: true
         })
     }
 
