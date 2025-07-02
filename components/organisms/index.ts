@@ -4,6 +4,7 @@ import AuthGuard from './AuthGuard/AuthGuard';
 import Pokedex from './Pokedex/Pokedex';
 import PokemonDetail from "./PokemonDetail/PokemonDetail";
 import ShinyHuntingCreate from "./ShinyHuntingCreate/ShinyHuntingCreate";
+import {Header} from "./Header/Header";
 
 export {
     LoginForm,
@@ -11,5 +12,6 @@ export {
     AuthGuard,
     Pokedex,
     PokemonDetail,
-    ShinyHuntingCreate
+    ShinyHuntingCreate,
+    Header
 }

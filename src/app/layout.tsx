@@ -2,6 +2,7 @@ import Providers from './Provider';
 import {ReactNode, JSX} from "react";
 import {getLocale} from 'next-intl/server';
 import {NextIntlClientProvider} from 'next-intl';
+import {Header} from "@components";
 
 /**
  * Layout pour les routes front
@@ -18,6 +19,7 @@ export default async function RootLayout({children}: { children: ReactNode }): P
         <body>
         <NextIntlClientProvider>
             <Providers>
+                <Header />
                 {children}
             </Providers>
         </NextIntlClientProvider>
