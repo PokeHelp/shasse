@@ -11,11 +11,11 @@ const LoginSchema: ZodObject<{ email: ZodString, password: ZodString }> = z.obje
 
 const RegisterSchema: ZodObject<{
     email: ZodString,
-    pseudonym: ZodString,
+    name: ZodString,
     password: ZodString,
 }> = z.object({
     email:     z.string().email("L'email n'est pas valide"),
-    pseudonym: z.string(),
+    name: z.string(),
     password:  passwordSchema,
 });
 

@@ -39,6 +39,10 @@ const nextConfig: NextConfig = {
 
     // Mode strict de React (développement seulement)
     reactStrictMode: true,
+
+    experimental: {
+        authInterrupts: true
+    }
 };
 
 const withNextIntl = createNextIntlPlugin();

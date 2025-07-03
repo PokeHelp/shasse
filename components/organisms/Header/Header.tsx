@@ -1,42 +1,64 @@
 import {Button, Link} from "@components";
-import {getUser} from "@lib";
 import {JSX, Suspense} from "react";
-import {DropdownMenu, DropdownMenuTrigger} from "@ui/dropdown-menu";
+import {getUser} from "@src/lib/auth-server";
+import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@ui/dropdown-menu";
 import {Avatar, AvatarFallback} from "@ui/avatar";
+import {LogOut, User2} from "lucide-react";
+import {signOutAction} from "@src/actions/signout";
 
 export const Header: () => JSX.Element = (): JSX.Element => {
     return (
         <header className="flex items-center gap-4 px-4 py-2 border-b">
             <Link href='/' className='flex-1'>PokeHelp</Link>
             <Suspense fallback={<Skeleton/>}>
-                <AuthButton/>
+                <AuthButton />
             </Suspense>
         </header>
     )
 }
 
-// 20.30
-
-const AuthButton: () => Promise<JSX.Element> = async (): Promise<JSX.Element> => {
+const AuthButton = async () => {
     const user = await getUser();
 
     if (!user)
     {
-        return <Link href={'/login'}>Login</Link>
+        return (
+            <Link href={'/register'}>
+                Inscription
+            </Link>
+        );
     }
 
-    return <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-            <Button>
-                <Avatar>
-                    <AvatarFallback>{user.email[0].toUpperCase()}</AvatarFallback>
-                </Avatar>
-                <p>{user.name}</p>
-            </Button>
-        </DropdownMenuTrigger>
-    </DropdownMenu>
+    return (
+      <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+              <Button>
+                  <Avatar>
+                      <AvatarFallback>{user.name[0].toUpperCase()}</AvatarFallback>
+                  </Avatar>
+                  <p>{user.name}</p>
+              </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+              <DropdownMenuItem asChild>
+                  <Link href={'/account'} className='flex items-center gap-2'>
+                      <User2 className='size-3' />
+                      Mon compte
+                  </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                  <form action={signOutAction}>
+                      <button type="submit" className='flex items-center gap-2 w-full'>
+                          Déconnexion
+                          <LogOut className='size-4' />
+                      </button>
+                  </form>
+              </DropdownMenuItem>
+          </DropdownMenuContent>
+      </DropdownMenu>
+    );
 }
 
 const Skeleton = () => {
-    return <div>Wait</div>
+    return <div className='bg-red-950 h-10 w-20'></div>
 }

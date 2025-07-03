@@ -1,78 +1,75 @@
 'use client';
 
-import {JSX, useState} from 'react';
-import {Button, InputFormField} from "@components";
-import {AuthResponse, Errors, LoginData} from "@types";
-import {Form} from "@ui/form"
-import {useForm, UseFormReturn} from "react-hook-form"
-import {useRouter} from "next/navigation";
-import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import {useAuthStore} from "@store";
-import {clearAllErrors, handleError, validateData} from "@utils";
+import {JSX} from "react";
+import {Button, Input} from "@components";
 import {LoginSchema} from "@schema";
-import {useTranslations} from "next-intl";
-import {login} from "@service";
+import {useForm} from "react-hook-form";
+import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@ui/form";
+import {z} from "zod";
+import {zodResolver} from "@hookform/resolvers/zod";
+import {signIn} from "@src/lib/auth-client";
+import {useRouter} from "next/navigation";
 
-export default function LoginForm(): JSX.Element
+export default function RegisterForm(): JSX.Element
 {
-    const router: AppRouterInstance = useRouter();
-    const [errors, setErrors] = useState<Errors>({});
-    const {setAuth} = useAuthStore();
-    const t = useTranslations();
+    const router = useRouter();
 
-    const form: UseFormReturn<LoginData> = useForm<LoginData>({
+    const form = useForm<z.infer<typeof LoginSchema>>({
+        resolver:      zodResolver(LoginSchema),
         defaultValues: {
-            password: "",
-            email:    "",
+            email:     "",
+            password:  ""
         },
     });
 
-    const handleSubmit: (data: LoginData) => Promise<void> = async (data: LoginData): Promise<void> =>
+    async function onSubmit(values: z.infer<typeof LoginSchema>)
     {
-        clearAllErrors(setErrors);
-
-        const isValid: boolean = validateData(data, LoginSchema, setErrors);
-        if (!isValid) return;
-
-        const response: AuthResponse = await login(data);
-
-        if (response.success)
-        {
-            setAuth(response.accessToken, response.refreshToken);
-            router.push('/');
-        } else
-        {
-            handleError(response.error, setErrors);
-        }
+        await signIn.email({
+            email: values.email,
+            password: values.password
+        }, {
+            onSuccess: (): void => {
+                router.push('/');
+                router.refresh();
+            },
+            onError: (error): void => {
+                console.log(error)
+            }
+        });
     }
 
     return (
-        <>
-            <Form {...form}>
-                <form onSubmit={form.handleSubmit(handleSubmit)}>
-                    <InputFormField
-                        name={"email"}
-                        label={t('auth.email.label')}
-                        formControl={form.control}
-                        type={"email"}
-                        placeholder={t('auth.email.placeholder')}
-                        errorText={errors.email || ''}
-                        required
-                    />
-                    <InputFormField
-                        label={t('auth.password.label')}
-                        formControl={form.control}
-                        errorText={errors.password || ''}
-                        name={"password"}
-                        placeholder={t('auth.password.placeholder')}
-                        type={"password"}
-                        required
-                    />
-                    <Button type="submit">{t('loginPage.form.btnLogin')}</Button>
-                </form>
-            </Form>
+        <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)}>
+                <FormField
+                    name='email'
+                    control={form.control}
+                    render={({field}) => (
+                        <FormItem>
+                            <FormLabel>Email</FormLabel>
+                            <FormControl>
+                                <Input type='email' {...field}/>
+                            </FormControl>
+                            <FormMessage/>
+                        </FormItem>
+                    )}
+                />
+                <FormField
+                    name='password'
+                    control={form.control}
+                    render={({field}) => (
+                        <FormItem>
+                            <FormLabel>Mot de passe</FormLabel>
+                            <FormControl>
+                                <Input type='password' {...field}/>
+                            </FormControl>
+                            <FormMessage/>
+                        </FormItem>
+                    )}
+                />
 
-            {errors.general && <p style={{color: 'red'}}>{errors.general}</p>}
-        </>
+                <Button type='submit'>Connexion</Button>
+            </form>
+        </Form>
     );
 }
