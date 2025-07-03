@@ -91,6 +91,7 @@ export default function RegisterForm(): JSX.Element
             </Form>
 
             <Button onClick={() => signInSocial('discord')}>Connexion via Discord</Button>
+            <Button onClick={() => signInSocial('google')}>Connexion via Google</Button>
         </>
     );
 }
