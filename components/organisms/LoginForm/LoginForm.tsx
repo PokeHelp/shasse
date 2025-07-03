@@ -14,6 +14,8 @@ export default function RegisterForm(): JSX.Element
 {
     const router = useRouter();
 
+    type AuthProviderEnum = Parameters<typeof signIn.social>[0]["provider"];
+
     const form = useForm<z.infer<typeof LoginSchema>>({
         resolver:      zodResolver(LoginSchema),
         defaultValues: {
@@ -38,38 +40,57 @@ export default function RegisterForm(): JSX.Element
         });
     }
 
-    return (
-        <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)}>
-                <FormField
-                    name='email'
-                    control={form.control}
-                    render={({field}) => (
-                        <FormItem>
-                            <FormLabel>Email</FormLabel>
-                            <FormControl>
-                                <Input type='email' {...field}/>
-                            </FormControl>
-                            <FormMessage/>
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    name='password'
-                    control={form.control}
-                    render={({field}) => (
-                        <FormItem>
-                            <FormLabel>Mot de passe</FormLabel>
-                            <FormControl>
-                                <Input type='password' {...field}/>
-                            </FormControl>
-                            <FormMessage/>
-                        </FormItem>
-                    )}
-                />
+    async function signInSocial(social: AuthProviderEnum)
+    {
+        await signIn.social({
+            provider: social
+        }, {
+            onSuccess: (): void => {
+                router.push('/');
+                router.refresh();
+            },
+            onError: (error): void => {
+                console.log(error)
+            }
+        });
+    }
 
-                <Button type='submit'>Connexion</Button>
-            </form>
-        </Form>
+    return (
+        <>
+            <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)}>
+                    <FormField
+                        name='email'
+                        control={form.control}
+                        render={({field}) => (
+                            <FormItem>
+                                <FormLabel>Email</FormLabel>
+                                <FormControl>
+                                    <Input type='email' {...field}/>
+                                </FormControl>
+                                <FormMessage/>
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        name='password'
+                        control={form.control}
+                        render={({field}) => (
+                            <FormItem>
+                                <FormLabel>Mot de passe</FormLabel>
+                                <FormControl>
+                                    <Input type='password' {...field}/>
+                                </FormControl>
+                                <FormMessage/>
+                            </FormItem>
+                        )}
+                    />
+
+                    <Button type='submit'>Connexion</Button>
+                </form>
+            </Form>
+
+            <Button onClick={() => signInSocial('discord')}>Connexion via Discord</Button>
+        </>
     );
 }
