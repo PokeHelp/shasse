@@ -744,11 +744,14 @@ model user {
   id            String          @id
   name          String          @db.VarChar(100)
   email         String
-  image         String?         @db.Text
   emailVerified Boolean
+  image         String?         @db.Text
+  role          String?         @db.Text
+  banned        Boolean?
+  banReason     String?         @db.Text
+  banExpires    DateTime?
   createdAt     DateTime
   updatedAt     DateTime
-  role          role            @default(PUBLIC)
   ownedPokemons owned_pokemon[]
   sessions      session[]
   accounts      account[]

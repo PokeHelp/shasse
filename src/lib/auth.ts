@@ -2,6 +2,8 @@ import {betterAuth} from "better-auth";
 import {prismaAdapter} from "better-auth/adapters/prisma";
 import {prisma} from "@lib";
 import {getResendInstance} from "@src/lib/resend";
+import {admin as adminPlugin} from "better-auth/plugins";
+import {ac, admin, user} from "./permissions";
 
 export const auth = betterAuth({
     database:          prismaAdapter(prisma, {
@@ -44,4 +46,15 @@ export const auth = betterAuth({
             clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
         },
     },
+    plugins:           [
+        adminPlugin({
+            defaultRole: "user",
+            adminRoles: ["admin"],
+            ac,
+            roles: {
+                admin,
+                user
+            }
+        }),
+    ],
 });

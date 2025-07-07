@@ -1,12 +1,11 @@
 import {Button, Input, Typography, Picture, Dropdown, Pagination, Slider, Link, TableWithFilter, SelectWithSearch, Switch} from './atoms';
-import {AuthGuard, LoginForm, RegisterForm, Pokedex, PokemonDetail, ShinyHuntingCreate, Header} from './organisms';
+import {LoginForm, RegisterForm, Pokedex, PokemonDetail, ShinyHuntingCreate, Header} from './organisms';
 import {InputFormField, RedirectButton, LangueButton, PokedexCard, PokemonDetailSlider, GenderGauge, GenerationChoice, Statistique, PokemonRegionalFormCard, Evolution} from './moleculs';
 
 export {
     Button,
     Input,
     Typography,
-    AuthGuard,
     LoginForm,
     RegisterForm,
     InputFormField,
