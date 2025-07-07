@@ -1,13 +1,13 @@
 'use client';
 
 import {JSX} from "react";
-import {Button, Input} from "@components";
+import {Button, Input, Link} from "@components";
 import {LoginSchema} from "@schema";
 import {useForm} from "react-hook-form";
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@ui/form";
 import {z} from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
-import {signIn} from "@src/lib/auth-client";
+import {authClient, signIn} from "@src/lib/auth-client";
 import {useRouter} from "next/navigation";
 
 export default function RegisterForm(): JSX.Element
@@ -42,7 +42,7 @@ export default function RegisterForm(): JSX.Element
 
     async function signInSocial(social: AuthProviderEnum)
     {
-        await signIn.social({
+        await authClient.signIn.social({
             provider: social
         }, {
             onSuccess: (): void => {
@@ -77,7 +77,10 @@ export default function RegisterForm(): JSX.Element
                         control={form.control}
                         render={({field}) => (
                             <FormItem>
-                                <FormLabel>Mot de passe</FormLabel>
+                                <FormLabel>
+                                    Mot de passe
+                                    <Link href={"/auth/forget-password"}>Mot de passe oublié</Link>
+                                </FormLabel>
                                 <FormControl>
                                     <Input type='password' {...field}/>
                                 </FormControl>
@@ -91,7 +94,21 @@ export default function RegisterForm(): JSX.Element
             </Form>
 
             <Button onClick={() => signInSocial('discord')}>Connexion via Discord</Button>
-            <Button onClick={() => signInSocial('google')}>Connexion via Google</Button>
+            <Button variant="outline" className="w-full" onClick={() => {
+                authClient.signIn.social({
+                    provider: "google",
+                    callbackURL: "/",
+                }, {
+                    onSuccess: () => router.refresh(),
+                    onError: (ctx: { error: { message: string } }) => {
+                        console.log(ctx.error.message)
+                    }
+                })
+            }}>
+                <div className="flex items-center gap-2">
+                    Continue with Google
+                </div>
+            </Button>
         </>
     );
 }

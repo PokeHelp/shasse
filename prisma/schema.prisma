@@ -744,6 +744,7 @@ model user {
   id            String          @id
   name          String          @db.VarChar(100)
   email         String
+  image         String?         @db.Text
   emailVerified Boolean
   createdAt     DateTime
   updatedAt     DateTime
