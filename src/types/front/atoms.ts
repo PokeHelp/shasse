@@ -1,4 +1,13 @@
-import {ComponentProps, Dispatch, JSX, SetStateAction, ComponentPropsWithoutRef, Ref} from "react";
+import {
+    ComponentProps,
+    Dispatch,
+    JSX,
+    SetStateAction,
+    ComponentPropsWithoutRef,
+    Ref,
+    HTMLAttributes,
+    ReactNode
+} from "react";
 import {Button} from '@ui/button';
 import {Input} from '@ui/input';
 import {Select} from '@ui/select';
@@ -9,6 +18,8 @@ import {ImageProps} from "next/image";
 import {ColumnDef, SortingState} from "@tanstack/react-table";
 import {Command} from "@ui/command";
 import {Switch} from "@ui/switch";
+import {ControllerProps, FieldPath, FieldValues, Path, SubmitHandler, UseFormReturn} from "react-hook-form";
+import {FormControl, FormItem, FormLabel, FormMessage} from "@ui/form";
 
 export type InputProps = ComponentProps<typeof Input>
 export type LinkProps = ComponentProps<typeof Link>
@@ -85,4 +96,22 @@ export interface SelectWithSearchProps extends Omit<ComponentProps<typeof Comman
 export interface SwitchProps extends ComponentProps<typeof Switch>
 {
     labelName?: string;
+}
+
+export interface FormProps<T extends FieldValues> extends HTMLAttributes<HTMLFormElement> {
+    form: UseFormReturn<T>;
+    callback: SubmitHandler<T>;
+    children: ReactNode;
+}
+
+export type FormFieldProps<TFieldValues extends FieldValues, TName extends FieldPath<TFieldValues>> = ControllerProps<TFieldValues, TName>;
+export type FormMessageProps = ComponentProps<typeof FormMessage>;
+export type FormLabelProps = ComponentProps<typeof FormLabel>;
+export type FormItemProps = ComponentProps<typeof FormItem>;
+export type FormControlProps = ComponentProps<typeof FormControl>;
+
+export interface CheckboxProps<T extends FieldValues> {
+    form: UseFormReturn<T>;
+    label: string;
+    name: Path<T>;
 }

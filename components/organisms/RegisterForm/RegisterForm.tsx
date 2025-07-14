@@ -1,90 +1,153 @@
 'use client';
 
 import {JSX} from "react";
-import {Button, Input} from "@components";
+import {
+    Button,
+    Input,
+    Link,
+    Form,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormControl,
+    FormMessage,
+    AuthSocial, Checkbox
+} from "@components";
 import {RegisterSchema} from "@schema";
-import {useForm} from "react-hook-form";
-import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@ui/form";
+import {useForm, UseFormReturn} from "react-hook-form";
 import {z} from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
-import {signUp} from "@src/lib/auth-client";
 import {useRouter} from "next/navigation";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {ErrorContext} from "@better-fetch/fetch";
+import {authClient} from "@src/lib/auth-client";
+import {toast} from "sonner";
+import {useTranslations} from "next-intl";
 
 export default function RegisterForm(): JSX.Element
 {
-    const router = useRouter();
+    const t = useTranslations();
+    const router: AppRouterInstance = useRouter();
 
-    const form = useForm<z.infer<typeof RegisterSchema>>({
+    const form: UseFormReturn<z.infer<typeof RegisterSchema>> = useForm<z.infer<typeof RegisterSchema>>({
         resolver:      zodResolver(RegisterSchema),
         defaultValues: {
             email:     "",
-            name: "",
-            password:  ""
+            pseudonym: "",
+            password:  "",
+            passwordVerify: "",
+            termsAccepted: false
         },
     });
 
-    async function onSubmit(values: z.infer<typeof RegisterSchema>)
+    async function onSubmit(values: z.infer<typeof RegisterSchema>): Promise<void>
     {
-        await signUp.email({
-          email: values.email,
-          password: values.password,
-          name: values.name
+        await authClient.signUp.email({
+            email:    values.email,
+            password: values.password,
+            name:     values.pseudonym
         }, {
-            onSuccess: (): void => {
-                router.push('/');
-                router.refresh();
-            },
-            onError: (error): void => {
-                console.log(error)
-            }
+            onSuccess: (): void =>
+                       {
+                           router.push('/');
+                           router.refresh();
+                       },
+            onError:   (error: ErrorContext): void =>
+                       {
+                           console.log(error);
+                           toast.error(t(`auth.code.${error.error.code}`));
+                       }
         });
     }
 
     return (
-        <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)}>
-                <FormField
-                    name='name'
-                    control={form.control}
-                    render={({field}) => (
-                        <FormItem>
-                            <FormLabel>Pseudo</FormLabel>
-                            <FormControl>
-                                <Input {...field}/>
-                            </FormControl>
-                            <FormMessage/>
-                        </FormItem>
-                    )}
-                />
+        <>
+            <Form form={form} callback={onSubmit} className="flex gap-3 flex-col mt-4">
                 <FormField
                     name='email'
                     control={form.control}
-                    render={({field}) => (
+                    render={({field}): JSX.Element => (
                         <FormItem>
-                            <FormLabel>Email</FormLabel>
+                            <FormLabel>
+                                {t('auth.email.label')}
+                            </FormLabel>
                             <FormControl>
-                                <Input type='email' {...field}/>
-                            </FormControl>
-                            <FormMessage/>
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    name='password'
-                    control={form.control}
-                    render={({field}) => (
-                        <FormItem>
-                            <FormLabel>Mot de passe</FormLabel>
-                            <FormControl>
-                                <Input type='password' {...field}/>
+                                <Input type='email' {...field} placeholder={t('auth.email.placeholder')} required/>
                             </FormControl>
                             <FormMessage/>
                         </FormItem>
                     )}
                 />
 
-                <Button type='submit'>Créer</Button>
-            </form>
-        </Form>
+                <FormField
+                    name='pseudonym'
+                    control={form.control}
+                    render={({field}): JSX.Element => (
+                        <FormItem>
+                            <FormLabel>
+                                {t('auth.pseudonym.label')}
+                            </FormLabel>
+                            <FormControl>
+                                <Input type='text' {...field} placeholder={t('auth.pseudonym.placeholder')} required/>
+                            </FormControl>
+                            <FormMessage/>
+                        </FormItem>
+                    )}
+                />
+
+                <FormField
+                    name='password'
+                    control={form.control}
+                    render={({field}): JSX.Element => (
+                        <FormItem>
+                            <FormLabel>
+                                {t('auth.password.label')}
+                            </FormLabel>
+                            <FormControl>
+                                <Input type='password' {...field} required
+                                       placeholder={t('auth.password.placeholder')}/>
+                            </FormControl>
+                            <FormMessage/>
+                        </FormItem>
+                    )}
+                />
+
+                <FormField
+                    name='passwordVerify'
+                    control={form.control}
+                    render={({field}): JSX.Element => (
+                        <FormItem>
+                            <FormLabel>
+                                {t('auth.passwordVerify.label')}
+                            </FormLabel>
+                            <FormControl>
+                                <Input type='password' {...field} required
+                                       placeholder={t('auth.passwordVerify.placeholder')}/>
+                            </FormControl>
+                            <FormMessage/>
+                        </FormItem>
+                    )}
+                />
+
+                <Checkbox form={form} label={t("acceptTerme")} name={"termsAccepted"}/>
+
+                <div className="flex justify-end mt-2">
+                    <Button type='submit' disabled={!form.watch('termsAccepted')}>
+                        {t('register')}
+                    </Button>
+                </div>
+            </Form>
+
+            <div className="mt-8">
+                <AuthSocial/>
+            </div>
+
+            <div className="mt-8 flex justify-end gap-2">
+                {t('registerPage.haveCount')}
+                <Link href={"/login"}>
+                    {t('login')}
+                </Link>
+            </div>
+        </>
     );
 }

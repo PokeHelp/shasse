@@ -6,7 +6,7 @@ import {Avatar, AvatarFallback, AvatarImage} from "@ui/avatar";
 import {LogOut, User2} from "lucide-react";
 import {signOutAction} from "@src/actions/signout";
 
-export const Header: () => JSX.Element = (): JSX.Element =>
+export default function Header(): JSX.Element
 {
     return (
         <header className="flex items-center gap-4 px-4 py-2 border-b">
@@ -30,8 +30,6 @@ const AuthButton = async () =>
             </Link>
         );
     }
-
-    console.log(user)
 
     return (
         <DropdownMenu>

@@ -1,7 +1,6 @@
 import {
     LoginSchema,
     RegisterSchema,
-    RefreshTokenSchema,
     RoleSchema,
     RefreshTokenDataSchema,
     AccessTokenDataSchema
@@ -11,7 +10,6 @@ import {numberSchema} from './other';
 export {
     LoginSchema,
     RegisterSchema,
-    RefreshTokenSchema,
     RoleSchema,
     RefreshTokenDataSchema,
     AccessTokenDataSchema,

@@ -8,6 +8,8 @@ import GenerationChoice from "./GenerationChoice/GenerationChoice";
 import Statistique from "./Statistique/Statistique"
 import PokemonRegionalFormCard from './PokemonFormCard/PokemonRegionalFormCard';
 import Evolution from './Evolution/Evolution';
+import AuthSocial from "./AuthSocial/AuthSocial";
+import BodyBackground from "./BodyBackground/BodyBackground";
 
 export {
     RedirectButton,
@@ -19,5 +21,7 @@ export {
     GenerationChoice,
     Statistique,
     PokemonRegionalFormCard,
-    Evolution
+    Evolution,
+    AuthSocial,
+    BodyBackground
 };

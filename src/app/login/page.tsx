@@ -1,4 +1,4 @@
-import {Typography, LoginForm} from "@components";
+import {Typography, LoginForm, BodyBackground} from "@components";
 import {JSX} from "react";
 import {getTranslations} from 'next-intl/server';
 
@@ -13,8 +13,15 @@ export default async function LoginPage(): Promise<JSX.Element>
 
     return (
         <>
-            <Typography type={"h1"}>{t('title')}</Typography>
-            <LoginForm/>
+            <BodyBackground />
+            <div className="flex justify-center items-center min-h-screen">
+                <div className="bg-background w-full max-w-4xl p-4 rounded shadow-2xl">
+                    <Typography type={"h1"}>
+                        {t('title')}
+                    </Typography>
+                    <LoginForm/>
+                </div>
+            </div>
         </>
     );
 }

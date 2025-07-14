@@ -15,7 +15,7 @@ const Input: ({type, className}: InputProps) => JSX.Element = ({type, className,
     {
         return (
             <div className="relative">
-                <UiInput type={showPassword ? 'text' : 'password'} className={cn("pr-10", className)} {...other}/>
+                <UiInput type={showPassword ? 'text' : 'password'} className={cn("pr-10 border-primary", className)} {...other}/>
                 <Button type="button" className={"absolute right-0 top-1/2 -translate-y-1/2 h-8 w-8 p-0"}
                         onClick={(): void => setShowPassword(!showPassword)}>
                     <ReactSVG

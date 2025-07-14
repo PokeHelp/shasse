@@ -1,114 +1,109 @@
 'use client';
 
 import {JSX} from "react";
-import {Button, Input, Link} from "@components";
+import {
+    Button,
+    Input,
+    Link,
+    Form,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormControl,
+    FormMessage,
+    AuthSocial
+} from "@components";
 import {LoginSchema} from "@schema";
-import {useForm} from "react-hook-form";
-import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@ui/form";
+import {useForm, UseFormReturn} from "react-hook-form";
 import {z} from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
-import {authClient, signIn} from "@src/lib/auth-client";
 import {useRouter} from "next/navigation";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {ErrorContext} from "@better-fetch/fetch";
+import {authClient} from "@src/lib/auth-client";
+import {toast} from "sonner";
+import {useTranslations} from "next-intl";
 
-export default function RegisterForm(): JSX.Element
+export default function LoginForm(): JSX.Element
 {
-    const router = useRouter();
+    const t = useTranslations();
+    const router: AppRouterInstance = useRouter();
 
-    type AuthProviderEnum = Parameters<typeof signIn.social>[0]["provider"];
-
-    const form = useForm<z.infer<typeof LoginSchema>>({
+    const form: UseFormReturn<z.infer<typeof LoginSchema>> = useForm<z.infer<typeof LoginSchema>>({
         resolver:      zodResolver(LoginSchema),
         defaultValues: {
-            email:     "",
-            password:  ""
+            email:    "",
+            password: ""
         },
     });
 
-    async function onSubmit(values: z.infer<typeof LoginSchema>)
+    async function onSubmit(values: z.infer<typeof LoginSchema>): Promise<void>
     {
-        await signIn.email({
-            email: values.email,
+        await authClient.signIn.email({
+            email:    values.email,
             password: values.password
         }, {
-            onSuccess: (): void => {
-                router.push('/');
-                router.refresh();
-            },
-            onError: (error): void => {
-                console.log(error)
-            }
-        });
-    }
-
-    async function signInSocial(social: AuthProviderEnum)
-    {
-        await authClient.signIn.social({
-            provider: social
-        }, {
-            onSuccess: (): void => {
-                router.push('/');
-                router.refresh();
-            },
-            onError: (error): void => {
-                console.log(error)
-            }
+            onSuccess: (): void =>
+                       {
+                           router.push('/');
+                           router.refresh();
+                       },
+            onError:   (error: ErrorContext): void =>
+                       {
+                           console.log(error);
+                           toast.error(t(`auth.code.${error.error.code}`));
+                       }
         });
     }
 
     return (
         <>
-            <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)}>
-                    <FormField
-                        name='email'
-                        control={form.control}
-                        render={({field}) => (
-                            <FormItem>
-                                <FormLabel>Email</FormLabel>
-                                <FormControl>
-                                    <Input type='email' {...field}/>
-                                </FormControl>
-                                <FormMessage/>
-                            </FormItem>
-                        )}
-                    />
-                    <FormField
-                        name='password'
-                        control={form.control}
-                        render={({field}) => (
-                            <FormItem>
-                                <FormLabel>
-                                    Mot de passe
-                                    <Link href={"/auth/forget-password"}>Mot de passe oublié</Link>
-                                </FormLabel>
-                                <FormControl>
-                                    <Input type='password' {...field}/>
-                                </FormControl>
-                                <FormMessage/>
-                            </FormItem>
-                        )}
-                    />
+            <Form form={form} callback={onSubmit} className="flex gap-3 flex-col mt-4">
+                <FormField
+                    name='email'
+                    control={form.control}
+                    render={({field}): JSX.Element => (
+                        <FormItem>
+                            <FormLabel>
+                                {t('auth.email.label')}
+                            </FormLabel>
+                            <FormControl>
+                                <Input type='email' {...field} placeholder={t('auth.email.placeholder')} required/>
+                            </FormControl>
+                            <FormMessage/>
+                        </FormItem>
+                    )}
+                />
+                <FormField
+                    name='password'
+                    control={form.control}
+                    render={({field}): JSX.Element => (
+                        <FormItem>
+                            <FormLabel>
+                                {t('auth.password.label')}
+                            </FormLabel>
+                            <FormControl>
+                                <Input type='password' {...field} required placeholder={t('auth.password.placeholder')}/>
+                            </FormControl>
+                            <Link className="ml-2" href={"/auth/forget-password"}>{t('auth.password.forgot')}</Link>
+                            <FormMessage/>
+                        </FormItem>
+                    )}
+                />
 
-                    <Button type='submit'>Connexion</Button>
-                </form>
+                <div className="flex justify-end">
+                    <Button type='submit'>{t('login')}</Button>
+                </div>
             </Form>
 
-            <Button onClick={() => signInSocial('discord')}>Connexion via Discord</Button>
-            <Button variant="outline" className="w-full" onClick={() => {
-                authClient.signIn.social({
-                    provider: "google",
-                    callbackURL: "/",
-                }, {
-                    onSuccess: () => router.refresh(),
-                    onError: (ctx: { error: { message: string } }) => {
-                        console.log(ctx.error.message)
-                    }
-                })
-            }}>
-                <div className="flex items-center gap-2">
-                    Continue with Google
-                </div>
-            </Button>
+            <div className="mt-8">
+                <AuthSocial />
+            </div>
+
+            <div className="mt-8 flex justify-end gap-2">
+                {t('loginPage.anyCount')}
+                <Link href={"/register"}>{t('register')}</Link>
+            </div>
         </>
     );
 }

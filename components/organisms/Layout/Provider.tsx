@@ -5,6 +5,7 @@ import {queryClient} from '@lib';
 import {ComponentProps, JSX, ReactNode} from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes"
 import "@src/styles/global.css";
+import {ToastHandler} from "@components";
 
 export default function Providers({children}: { children: ReactNode }): JSX.Element
 {
@@ -17,6 +18,7 @@ export default function Providers({children}: { children: ReactNode }): JSX.Elem
                 disableTransitionOnChange
             >
                 {children}
+                <ToastHandler />
             </ThemeProvider>
         </QueryClientProvider>
     );

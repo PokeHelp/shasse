@@ -3,25 +3,18 @@
     "title": "Page HOME"
   },
   "loginPage":         {
-    "title": "Login",
-    "form":  {
-      "btnLogin": "Connexion"
-    }
+    "title":         "Login",
+    "connexionWith": "Connexion avec {connexionName}",
+    "anyCount":      "Pas de compte ?"
   },
   "registerPage":      {
-    "title": "Register",
-    "form":  {
-      "btnRegister": "Inscription"
-    }
-  },
-  "register":          {
-    "alreadyExist": "L'email ou le pseudonyme existent déjà."
+    "title":           "Register",
+    "variousPassword": "Les mots de passe ne correspondent pas.",
+    "haveCount":       "Vous avez un compte ?",
+    "error":           "Erreur lors de l'inscription"
   },
   "refresh":           {
     "userNotFound": "L'utilisateur n'a pas été trouvé."
-  },
-  "login":             {
-    "invalidCredentials": "Identifiants incorrect."
   },
   "auth":              {
     "email":          {
@@ -30,7 +23,8 @@
     },
     "password":       {
       "label":       "Mot de passe",
-      "placeholder": "Veuillez-entrer votre mot de passe"
+      "placeholder": "Veuillez-entrer votre mot de passe",
+      "forgot":      "Mot de passe oublié"
     },
     "passwordVerify": {
       "label":       "Confirmation du mot de passe",
@@ -39,6 +33,9 @@
     "pseudonym":      {
       "label":       "Pseudonyme",
       "placeholder": "Veuillez-entrer votre pseudonyme"
+    },
+    "code":           {
+      "INVALID_EMAIL_OR_PASSWORD": "Les identifiants sont incorrect"
     }
   },
   "pokedex":           {
@@ -131,12 +128,15 @@
   "searchPokemon":     "Rechercher un pokémon",
   "searchGame":        "Rechercher un jeu",
   "searchForm":        "Rechercher une forme",
+  "login":             "Connexion",
+  "register":          "Inscription",
+  "acceptTerme":       "Accepter les terme",
   "api":               {
     "base":                "Erreur générique",
     "anyPokemonNameFound": "Aucun nom de pokémon n'a été trouvé",
     "anyGameNameFound":    "Aucun nom de jeu n'a été trouvé"
   },
-  "shinyHuntings":      {
+  "shinyHuntings":     {
     "create": {
       "selectPokemon":           "Sélectionnez un pokémon",
       "choosePokemon":           "Choisissez un pokémon",
@@ -146,7 +146,7 @@
       "chooseForm":              "Choisissez une forme de {pokemonName}",
       "selectPokemonBeforeForm": "Sélectionnez un pokémon avant de choisir une forme",
       "hasOneForm":              "Ce pokémon possède une seule forme",
-      "btnCreate": "Créer un shasse"
+      "btnCreate":               "Créer un shasse"
     }
   }
 }

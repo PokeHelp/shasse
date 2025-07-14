@@ -14,6 +14,7 @@ import {LocationGeneration, LocationGenerationsResponse} from './location';
 import {EvolutionNode, EvolutionTree} from './evolution';
 import {FormWithName, RegionalFormWithName, FormWithNamesResponse} from './forms';
 import {ShinyHuntingCreateData} from './shinyHunting';
+import {AuthProviderEnum} from './auth';
 
 export type {
     DataError,
@@ -58,5 +59,6 @@ export type {
     TranslationIdNamesResponse,
     FormWithNamesResponse,
     LocationGenerationsResponse,
-    ShinyHuntingCreateData
+    ShinyHuntingCreateData,
+    AuthProviderEnum
 }

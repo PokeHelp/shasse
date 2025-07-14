@@ -1,26 +1,27 @@
-import {z, ZodNumber, ZodObject, ZodString} from 'zod';
+import {z, ZodString} from 'zod';
 
 const passwordSchema: ZodString = z.string().regex(
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\d\s]).{8,}$/,
     "Le mot de passe doit contenir : 8 caractères minimum dont 1 majuscule, 1 minuscule, 1 chiffre et 1 caractère spécial"
 );
-const LoginSchema: ZodObject<{ email: ZodString, password: ZodString }> = z.object({
+
+const LoginSchema = z.object({
     email:    z.string().email("L'email n'est pas valide"),
     password: passwordSchema
 });
 
-const RegisterSchema: ZodObject<{
-    email: ZodString,
-    name: ZodString,
-    password: ZodString,
-}> = z.object({
+const RegisterSchema = z.object({
     email:     z.string().email("L'email n'est pas valide"),
-    name: z.string(),
+    pseudonym: z.string(),
     password:  passwordSchema,
-});
-
-const RefreshTokenSchema: ZodObject<{ refreshToken: ZodString }> = z.object({
-    refreshToken: z.string()
+    passwordVerify:  passwordSchema,
+    termsAccepted: z.boolean()
+}).refine((data): boolean => data.password === data.passwordVerify, {
+    path: ['passwordVerify'],
+    message: "Les mots de passe ne correspondent pas."
+}).refine((data): boolean => data.termsAccepted, {
+    path: ['termsAccepted'],
+    message: "Vous devez accepter les termes et conditions."
 });
 
 const RefreshTokenDataSchema = z.object({
@@ -37,13 +38,13 @@ const RefreshTokenDataSchema = z.object({
                 ),
 });
 
-const AccessTokenDataSchema: ZodObject<{ levelAccess: ZodNumber, exp: ZodNumber, iat: ZodNumber }> = z.object({
+const AccessTokenDataSchema = z.object({
     levelAccess: z.number().int().positive(),
     exp:         z.number().int(),
     iat:         z.number().int()
 });
 
-const RoleSchema: ZodObject<{ name: ZodString, levelAccess: ZodNumber }> = z.object({
+const RoleSchema = z.object({
     name:        z.string(),
     levelAccess: z.number(),
 });
@@ -51,7 +52,6 @@ const RoleSchema: ZodObject<{ name: ZodString, levelAccess: ZodNumber }> = z.obj
 export {
     LoginSchema,
     RegisterSchema,
-    RefreshTokenSchema,
     RoleSchema,
     RefreshTokenDataSchema,
     AccessTokenDataSchema
