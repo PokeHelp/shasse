@@ -115,6 +115,10 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
     const evolutionsData: EvolutionTree[] = getResult<EvolutionTree>(evolutions);
     const regionalFormsData: RegionalFormWithName[] = getResult<RegionalFormWithName>(regionalForm);
 
+    console.log('------------------------------------------------')
+    console.log(locationsData)
+    console.log('------------------------------------------------')
+
     const groupedData: GroupedPokemonInfoDetail = {};
 
     const allGenerationIds = new Set<number>([

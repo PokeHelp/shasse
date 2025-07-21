@@ -10,12 +10,10 @@ import {
 import {
     ChevronDown, ChevronFirst, ChevronLast, ChevronLeft, ChevronRight, ChevronUp, CircleX, Columns3, Filter, ListFilter
 } from "lucide-react";
-import {Button} from "@ui/button";
 import {Checkbox} from "@ui/checkbox";
 import {
     DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuTrigger
 } from "@ui/dropdown-menu";
-import {Input} from "@ui/input";
 import {Label} from "@ui/label";
 import {Pagination, PaginationContent, PaginationItem} from "@ui/pagination";
 import {Popover, PopoverContent, PopoverTrigger} from "@ui/popover";
@@ -24,6 +22,7 @@ import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@ui
 import {CustomColumnDefTable, TableWithFilterProps} from "@typesFront";
 import {CheckedState} from "@radix-ui/react-checkbox";
 import {useTranslations} from "next-intl";
+import {Button, Input} from "@components";
 
 export default function TableWithFilter<T>({
                                                data,

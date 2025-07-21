@@ -12,7 +12,7 @@ import {
 } from "@types";
 import {axiosService} from "@lib";
 import {useQuery} from "@tanstack/react-query";
-import {JSX, useEffect, useMemo, useState, useRef, RefObject} from "react";
+import {JSX, useMemo, useRef, RefObject} from "react";
 import {
     Button,
     Evolution,
@@ -29,9 +29,9 @@ import {CellContext} from "@tanstack/table-core";
 import Statistique from "../../moleculs/Statistique/Statistique";
 import {getPokemonPictureFromId, getTypePictureById} from "@utils";
 import {Popover, PopoverContent, PopoverTrigger} from "@ui/popover";
-import {ReadonlyURLSearchParams, useSearchParams} from "next/navigation";
 import PokemonRegionalFormCard from "../../moleculs/PokemonFormCard/PokemonRegionalFormCard";
 import {Card} from "@ui/card";
+import {useQueryState} from "nuqs";
 
 const handlePokemon: (pokemonId: number, formId: string | null) => Promise<GroupedPokemonInfoDetailResponse> = async (pokemonId: number, formId: string | null): Promise<GroupedPokemonInfoDetailResponse> =>
 {
@@ -42,23 +42,32 @@ const handlePokemon: (pokemonId: number, formId: string | null) => Promise<Group
 export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.Element
 {
 
-    const params: ReadonlyURLSearchParams = useSearchParams();
-    const formId: string | null = params.get('form');
+    const [formId] = useQueryState<string | null>('form', {history: 'replace', parse: (v: string): string  => v ?? null});
+    const [generationSelected, setGeneration] = useQueryState<string | null>('generation', {
+        history: 'replace',
+        parse:   (value: string): string => value ?? null,
+    });
 
     const {data, isLoading, error} = useQuery({
         queryKey: [`pokemon_${pokemonId}_${formId}`],
         queryFn:  (): Promise<GroupedPokemonInfoDetailResponse> => handlePokemon(pokemonId, formId),
     });
 
-    const [generationSelected, setGenerationSelected] = useState<string | null>(params.get('generation'));
-    const [pokemonInfo, setPokemonInfo] = useState<PokemonInfoDetail | null>(null);
-    const rightPanelRef: RefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(null);
-    const t = useTranslations();
-
     const pokemonGroupedInfo: GroupedPokemonInfoDetail | null = useMemo((): GroupedPokemonInfoDetail | null =>
     {
         return data?.success ? data.data : null;
     }, [data]);
+
+    const selectedGeneration: string | null = generationSelected ?? Object.keys(pokemonGroupedInfo ?? {}).at(-1) ?? null;
+
+    const pokemonInfo: PokemonInfoDetail | null = useMemo((): PokemonInfoDetail | null =>
+    {
+        if (!selectedGeneration || !pokemonGroupedInfo) return null;
+        return pokemonGroupedInfo[selectedGeneration] ?? null;
+    }, [pokemonGroupedInfo, selectedGeneration]);
+
+    const rightPanelRef: RefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(null);
+    const t = useTranslations();
 
     function getCapacitiesColumns(): CustomColumnDefTable<CapacityGeneration>[]
     {
@@ -193,22 +202,6 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
         ];
     }
 
-    useEffect((): void =>
-    {
-        if (pokemonGroupedInfo)
-        {
-            if (generationSelected)
-            {
-                setGenerationSelected(generationSelected);
-                setPokemonInfo(pokemonGroupedInfo[generationSelected]);
-            } else
-            {
-                const allKeys: string[] = Object.keys(pokemonGroupedInfo);
-                setGenerationSelected(allKeys[allKeys.length - 1]);
-            }
-        }
-    }, [generationSelected, pokemonGroupedInfo]);
-
     if (isLoading) return <></>;
     if (error) return <p>Erreur : {error.message}</p>;
     if (!pokemonInfo) return <p>Aucune donnée récupérée</p>;
@@ -216,11 +209,11 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
     return (
         <div className="relative">
             <GenerationChoice
-                className="w-3/4"
                 possibleGenerations={pokemonGroupedInfo ? Object.keys(pokemonGroupedInfo) : []}
-                generationSelecter={setGenerationSelected}
-                generationSelected={generationSelected}
+                generationSelecter={setGeneration}
+                generationSelected={selectedGeneration}
             />
+
 
             <div className='h-full py-2 px-4 border-l border-secondary w-1/4 fixed top-0 right-0' ref={rightPanelRef}>
                 <div className="flex w-full flex-col gap-3">

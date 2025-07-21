@@ -20,6 +20,10 @@ export async function getLocationWithName(pokemonId: number | null, generationId
         game_name: string;
     }
 
+    console.log('_______________________HERE___________________________')
+    console.log(langId, generationId, gameId, onlyShassable, pokemonId, formId)
+
+
     const rawResults: RawQueryResults[] = await prisma.$queryRaw<RawQueryResults[]>`
         WITH translations AS (SELECT *
                               FROM translation
@@ -58,7 +62,7 @@ export async function getLocationWithName(pokemonId: number | null, generationId
                         tg.name  AS game_name
 
         FROM active_forms pf
-                 JOIN active_pgl pgl ON pgl.pokemon_id = pf.pokemon_id
+                 JOIN active_pgl pgl ON pgl.pokemon_form_id = pf.pokemon_id
                  JOIN active_games g ON g.id = pgl.game_id
                  JOIN active_rate r ON r.id = pgl.rate_id
                  JOIN pokemon_obtation po ON po.id = pgl.pokemon_obtation_id AND po.status = 'on'
