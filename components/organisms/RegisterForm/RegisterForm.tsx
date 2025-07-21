@@ -143,7 +143,7 @@ export default function RegisterForm(): JSX.Element
             </div>
 
             <div className="mt-8 flex justify-end gap-2">
-                {t('registerPage.haveCount')}
+                {t('page.register.haveCount')}
                 <Link href={"/login"}>
                     {t('login')}
                 </Link>

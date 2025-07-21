@@ -1,26 +1,46 @@
-'use server';
+'use client';
 
-import {TypographyProps} from "@typesFront";
-import {JSX} from "react";
-import {cn} from "@lib";
+import {cn} from '@lib';
+import {ComponentPropsWithoutRef, ReactNode, JSX} from 'react';
 
-const CustomTypography: ({type}: TypographyProps) => JSX.Element = ({
-                                                                        type: Tag,
-                                                                        children,
-                                                                        ...other
-                                                                    }: TypographyProps): JSX.Element =>
+type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span';
+
+type TypographyProps<T extends HeadingTag = 'span'> = {
+    as?: T;
+    children: ReactNode;
+    className?: string;
+} & ComponentPropsWithoutRef<T>;
+
+const tagClasses: Record<HeadingTag, string> = {
+    h1:   'text-3xl font-bold px-2',
+    h2:   'text-2xl font-bold px-2',
+    h3:   'text-xl font-bold px-2',
+    h4:   'text-xl font-semibold px-2',
+    h5:   'text-lg font-bold px-2',
+    h6:   'text-lg font-semibold px-2',
+    span: '',
+};
+
+const CustomTypography: <T extends HeadingTag = 'span'>({
+                                                            as,
+                                                            children,
+                                                            className,
+                                                            ...rest
+                                                        }: TypographyProps<T>) => JSX.Element
+          = <T extends HeadingTag = 'span'>({
+                                                as,
+                                                children,
+                                                className,
+                                                ...rest
+                                            }: TypographyProps<T>): JSX.Element =>
 {
-    const tagClasses: Record<string, string> = {
-        h1: 'text-3xl font-bold',
-        h2: 'text-2xl font-bold',
-        h3: 'text-xl font-bold',
-        h4: 'text-xl font-semibold',
-        h5: 'text-l font-bold',
-        h6: 'text-l font-semibold',
-    };
+    const Tag: 'span' | T = as || 'span';
 
-
-    return <Tag className={cn(tagClasses[Tag] ?? '', other.className)} {...other}>{children}</Tag>;
+    return (
+        <Tag className={cn(tagClasses[Tag as HeadingTag], className)} {...rest}>
+            {children}
+        </Tag>
+    );
 };
 
 export default CustomTypography;

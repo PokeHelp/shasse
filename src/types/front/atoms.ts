@@ -3,7 +3,6 @@ import {
     Dispatch,
     JSX,
     SetStateAction,
-    ComponentPropsWithoutRef,
     Ref,
     HTMLAttributes,
     ReactNode
@@ -20,6 +19,7 @@ import {Command} from "@ui/command";
 import {Switch} from "@ui/switch";
 import {ControllerProps, FieldPath, FieldValues, Path, SubmitHandler, UseFormReturn} from "react-hook-form";
 import {FormControl, FormItem, FormLabel, FormMessage} from "@ui/form";
+import {AccordionSingleProps} from "@radix-ui/react-accordion";
 
 export type InputProps = ComponentProps<typeof Input>
 export type LinkProps = ComponentProps<typeof Link>
@@ -46,11 +46,6 @@ export interface SliderProps extends ComponentProps<typeof Sheet>
     sliderFooter?: JSX.Element;
     SliderHeader?: JSX.Element;
     contentClassName?: string;
-}
-
-type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-export interface TypographyProps extends ComponentPropsWithoutRef<HeadingTag> {
-    type: HeadingTag;
 }
 
 export interface PictureProps extends Omit<ImageProps, 'width' | 'height'>
@@ -114,4 +109,10 @@ export interface CheckboxProps<T extends FieldValues> {
     form: UseFormReturn<T>;
     label: string;
     name: Path<T>;
+}
+
+export interface CollapseProps extends Omit<AccordionSingleProps, 'type' | 'value' | 'onValueChange'>
+{
+    triggerAction: ReactNode | ((isOpen: boolean) => ReactNode);
+    children: ReactNode;
 }

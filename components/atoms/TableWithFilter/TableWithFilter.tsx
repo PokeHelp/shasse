@@ -39,7 +39,7 @@ export default function TableWithFilter<T>({
     const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
     const [pagination, setPagination] = useState<PaginationState>({pageIndex: 0, pageSize: 10});
     const [sorting, setSorting] = useState<SortingState>(defaultSorting ?? []);
-    const t = useTranslations('tableWithFilter');
+    const t = useTranslations();
 
     const searchKeys: (string | (keyof T & string))[] = rawColumns.filter((c: CustomColumnDefTable<T>): c is CustomColumnDefTable<T> & {
         search: true;
@@ -257,7 +257,7 @@ export default function TableWithFilter<T>({
                                     strokeWidth={2}
                                     aria-hidden="true"
                                 />
-                                {t('colToDisplay')}
+                                {t('tableWithFilter.colToDisplay')}
                             </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
@@ -374,7 +374,7 @@ export default function TableWithFilter<T>({
                 {/* Results per page */}
                 <div className="flex items-center gap-3">
                     <Label htmlFor={id} className="max-sm:sr-only">
-                        {t('rowsPerPage')}
+                        {t('tableWithFilter.rowsPerPage')}
                     </Label>
                     <Select
                         value={table.getState().pagination.pageSize.toString()}
@@ -411,7 +411,7 @@ export default function TableWithFilter<T>({
                                 table.getRowCount(),
                             )}
                         </span>
-                        {t("pageCount")}
+                        {t("tableWithFilter.pageCount")}
                         <span className="text-foreground">
                             {table.getRowCount().toString()}
                         </span>
@@ -430,8 +430,8 @@ export default function TableWithFilter<T>({
                                     className="disabled:pointer-events-none disabled:opacity-50"
                                     onClick={(): void => table.firstPage()}
                                     disabled={!table.getCanPreviousPage()}
-                                    aria-label={t("goFirstPage")}
-                                    title={t("goFirstPage")}
+                                    aria-label={t("tableWithFilter.goFirstPage")}
+                                    title={t("tableWithFilter.goFirstPage")}
                                 >
                                     <ChevronFirst size={16} strokeWidth={2} aria-hidden="true"/>
                                 </Button>
@@ -444,8 +444,8 @@ export default function TableWithFilter<T>({
                                     className="disabled:pointer-events-none disabled:opacity-50"
                                     onClick={(): void => table.previousPage()}
                                     disabled={!table.getCanPreviousPage()}
-                                    aria-label={t("goPreviousPage")}
-                                    title={t("goPreviousPage")}
+                                    aria-label={t("tableWithFilter.goPreviousPage")}
+                                    title={t("tableWithFilter.goPreviousPage")}
                                 >
                                     <ChevronLeft size={16} strokeWidth={2} aria-hidden="true"/>
                                 </Button>
@@ -458,8 +458,8 @@ export default function TableWithFilter<T>({
                                     className="disabled:pointer-events-none disabled:opacity-50"
                                     onClick={(): void => table.nextPage()}
                                     disabled={!table.getCanNextPage()}
-                                    aria-label={t("goNextPage")}
-                                    title={t("goNextPage")}
+                                    aria-label={t("tableWithFilter.goNextPage")}
+                                    title={t("tableWithFilter.goNextPage")}
                                 >
                                     <ChevronRight size={16} strokeWidth={2} aria-hidden="true"/>
                                 </Button>
@@ -472,8 +472,8 @@ export default function TableWithFilter<T>({
                                     className="disabled:pointer-events-none disabled:opacity-50"
                                     onClick={(): void => table.lastPage()}
                                     disabled={!table.getCanNextPage()}
-                                    aria-label={t("goLastPage")}
-                                    title={t("goLastPage")}
+                                    aria-label={t("tableWithFilter.goLastPage")}
+                                    title={t("tableWithFilter.goLastPage")}
                                 >
                                     <ChevronLast size={16} strokeWidth={2} aria-hidden="true"/>
                                 </Button>

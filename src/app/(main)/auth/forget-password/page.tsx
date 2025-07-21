@@ -1,7 +1,7 @@
 'use client';
 
 import {Label} from "@ui/label";
-import {Button, Input} from "@components";
+import {Button, Input, PageLayout} from "@components";
 import {authClient} from "@src/lib/auth-client";
 import {useRouter} from "next/navigation";
 
@@ -27,11 +27,13 @@ export default function ForgetPasswordPage()
     }
 
     return (
-        <form action={onSubmit}>
-            <Label htmlFor="email">Email</Label>
-            <Input type='email' name='email'/>
+        <PageLayout>
+            <form action={onSubmit}>
+                <Label htmlFor="email">Email</Label>
+                <Input type='email' name='email'/>
 
-            <Button type='submit'>Réinitialiser le mdp</Button>
-        </form>
+                <Button type='submit'>Réinitialiser le mdp</Button>
+            </form>
+        </PageLayout>
     )
 }

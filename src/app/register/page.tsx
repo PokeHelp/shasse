@@ -11,14 +11,14 @@ import {getTranslations} from "next-intl/server";
  */
 export default async function RegisterPage(): Promise<JSX.Element>
 {
-    const t = await getTranslations('registerPage');
+    const t = await getTranslations('page.register');
 
     return (
         <>
             <BodyBackground />
             <div className="flex justify-center items-center min-h-screen">
                 <div className="bg-background w-full max-w-4xl p-4 rounded shadow-2xl">
-                    <Typography type={"h1"}>
+                    <Typography as={"h1"}>
                         {t('title')}
                     </Typography>
                     <RegisterForm/>

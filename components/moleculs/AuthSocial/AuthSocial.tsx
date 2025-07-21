@@ -13,7 +13,7 @@ import {JSX} from "react";
 
 export default function AuthSocial(): JSX.Element
 {
-    const t = useTranslations('loginPage');
+    const t = useTranslations('page.login');
     const router: AppRouterInstance = useRouter();
 
     async function signInSocial(social: AuthProviderEnum): Promise<void>

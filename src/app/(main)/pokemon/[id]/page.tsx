@@ -1,5 +1,5 @@
 import { JSX } from "react";
-import { PokemonDetail } from "@components";
+import {PageLayout, PokemonDetail} from "@components";
 
 type PokemonInfoPageProps = {
     params: { id: string };
@@ -9,8 +9,8 @@ export default function PokemonInfoPage({ params }: PokemonInfoPageProps): JSX.E
     const pokemonId: number = Number(params.id);
 
     return (
-        <>
+        <PageLayout>
             <PokemonDetail pokemonId={pokemonId} />
-        </>
+        </PageLayout>
     );
 }

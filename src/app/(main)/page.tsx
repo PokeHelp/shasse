@@ -9,9 +9,9 @@ import {Typography} from "@components";
  */
 export default function HomePage(): JSX.Element
 {
-    const t = useTranslations('homePage');
+    const t = useTranslations('page.home');
 
     return (
-        <Typography type={"h1"} className={"text-3xl font-bold underline"}>{t('title')}</Typography>
+        <Typography as={"h1"} className={"text-3xl font-bold underline"}>{t('title')}</Typography>
     );
 }

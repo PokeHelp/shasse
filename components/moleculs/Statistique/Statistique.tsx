@@ -9,7 +9,7 @@ export default function Statistique({pokemon}: { pokemon: PokemonInfoDetail }): 
 
     return (
         <div className="flex flex-col gap-3">
-            <Typography type={"h3"} className="font-bold">{t('name')}</Typography>
+            <Typography as={"h3"} className="font-bold">{t('name')}</Typography>
             <div className="pl-4">
                 {
                     pokemon.statistics.map((statistic: Statistic): (JSX.Element | undefined)[] => (

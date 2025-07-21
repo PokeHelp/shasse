@@ -1,7 +1,7 @@
 import {
-    InputProps, ButtonProps, TypographyProps, DropdownProps, PaginationProps, SliderProps, LinkProps, PictureProps,
+    InputProps, ButtonProps, DropdownProps, PaginationProps, SliderProps, LinkProps, PictureProps,
     CustomColumnDefTable, TableWithFilterProps, SelectWithSearchData, SelectWithSearchProps, SwitchProps, FormProps,
-    FormFieldProps, FormMessageProps, FormControlProps, FormItemProps, FormLabelProps, CheckboxProps
+    FormFieldProps, FormMessageProps, FormControlProps, FormItemProps, FormLabelProps, CheckboxProps, CollapseProps
 } from './atoms';
 import {
     RedirectButtonProps, InputFormFieldProps, PokedexCardProps, PokemonDetailSliderProps, GenderGaugeProps,
@@ -13,7 +13,6 @@ export type
     InputProps,
     RedirectButtonProps,
     ButtonProps,
-    TypographyProps,
     InputFormFieldProps,
     PokedexCardProps,
     DropdownProps,
@@ -35,5 +34,6 @@ export type
     FormControlProps,
     FormItemProps,
     FormLabelProps,
-    CheckboxProps
+    CheckboxProps,
+    CollapseProps
 }

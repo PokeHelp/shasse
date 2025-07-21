@@ -3,7 +3,7 @@
 import {useRouter, useSearchParams} from "next/navigation";
 import {authClient} from "@src/lib/auth-client";
 import {Label} from "@ui/label";
-import {Button, Input} from "@components";
+import {Button, Input, PageLayout} from "@components";
 
 export default function ResetPasswordPage()
 {
@@ -38,13 +38,13 @@ export default function ResetPasswordPage()
     }
 
     return (
-        <>
+        <PageLayout>
             <h1>Reset password</h1>
             <form action={onSubmit}>
                 <Label>New password</Label>
                 <Input type='password' name='password'/>
                 <Button type="submit">Submit</Button>
             </form>
-        </>
+        </PageLayout>
     );
 }

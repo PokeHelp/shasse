@@ -17,7 +17,9 @@ import {
     FormControl,
     FormMessage,
     ToastHandler,
-    Checkbox
+    Checkbox,
+    Collapse,
+    PageLayout
 } from './atoms';
 import {
     InputFormField,
@@ -81,5 +83,7 @@ export {
     ToastHandler,
     AuthSocial,
     BodyBackground,
-    Checkbox
+    Checkbox,
+    Collapse,
+    PageLayout
 }

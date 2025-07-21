@@ -101,7 +101,7 @@ export default function LoginForm(): JSX.Element
             </div>
 
             <div className="mt-8 flex justify-end gap-2">
-                {t('loginPage.anyCount')}
+                {t('page.login.anyCount')}
                 <Link href={"/register"}>{t('register')}</Link>
             </div>
         </>

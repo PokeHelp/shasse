@@ -1,7 +1,7 @@
 import {getUser} from "@src/lib/auth-server";
 import {redirect, unauthorized} from "next/navigation";
 import {Check} from "lucide-react";
-import {Button} from "@components";
+import {Button, PageLayout} from "@components";
 import {auth} from "@lib";
 import {headers} from "next/headers";
 
@@ -15,7 +15,7 @@ export default async function Auth()
     }
 
     return (
-        <>
+        <PageLayout>
             <p>{user.name}</p>
             <p>{user.email}</p>
             {
@@ -42,6 +42,6 @@ export default async function Auth()
                         </Button>
                     </form>
             }
-        </>
+        </PageLayout>
     )
 }

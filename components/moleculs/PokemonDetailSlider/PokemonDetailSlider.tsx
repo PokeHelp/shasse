@@ -68,7 +68,7 @@ export default function PokemonDetailSlider({
                 <div className="flex gap-4 w-full flex-col">
                     {/* Pokemon type */}
                     <div className="flex items-center justify-between">
-                        <Typography type={'h3'}>{t('type.name')}</Typography>
+                        <Typography as={'h3'}>{t('type.name')}</Typography>
                         <div className="flex gap-2">
                             {
                                 pokemon.types.map((type: Type): JSX.Element => (
@@ -86,25 +86,25 @@ export default function PokemonDetailSlider({
 
                     {/* Pokemon HatchingCycle */}
                     <div className="flex items-center justify-between">
-                        <Typography type={"h3"}>{t('pokemon.hatchingCycle')}</Typography>
+                        <Typography as={"h3"}>{t('pokemon.hatchingCycle')}</Typography>
                         <div>{pokemon.hatchingCycle}</div>
                     </div>
 
                     {/* Pokemon captureRate */}
                     <div className="flex items-center justify-between">
-                        <Typography type={"h3"}>{t('pokemon.captureRate')}</Typography>
+                        <Typography as={"h3"}>{t('pokemon.captureRate')}</Typography>
                         <div>{pokemon.captureRate}</div>
                     </div>
 
                     {/* Pokemon callHelpRate */}
                     <div className="flex items-center justify-between">
-                        <Typography type={"h3"}>{t('pokemon.callHelpRate')}</Typography>
+                        <Typography as={"h3"}>{t('pokemon.callHelpRate')}</Typography>
                         <div>{pokemon.callHelpRate}</div>
                     </div>
 
                     {/* Pokemon genreRate */}
                     <div className="flex items-center justify-between">
-                        <Typography type={"h3"}>{t('pokemon.genderRate')}</Typography>
+                        <Typography as={"h3"}>{t('pokemon.genderRate')}</Typography>
                         <div className="flex gap-2 items-center">
                             <GenderGauge maleRate={pokemon.maleRate} femelleRate={pokemon.femelleRate}
                                          className="w-[100px]"/>
@@ -113,7 +113,7 @@ export default function PokemonDetailSlider({
 
                     {/* Pokemon eggGroup */}
                     <div className="flex items-center justify-between">
-                        <Typography type={"h3"}>{t('pokemon.eggGroup')}</Typography>
+                        <Typography as={"h3"}>{t('pokemon.eggGroup')}</Typography>
                         {
                             pokemon.eggGroups.map((eggGroup: EggGroup): string => eggGroup.name).join(' - ')
                         }
@@ -121,7 +121,7 @@ export default function PokemonDetailSlider({
 
                     {/* Pokemon ability */}
                     <div className="flex items-center justify-between">
-                        <Typography type={"h3"}>{t('ability.name')}</Typography>
+                        <Typography as={"h3"}>{t('ability.name')}</Typography>
                         {
                             pokemon.abilities.filter((ability: Ability): boolean => !ability.isHidden)
                                 .map((ability: Ability): string => ability.name).join(' - ')
@@ -130,7 +130,7 @@ export default function PokemonDetailSlider({
 
                     {/* Pokemon hidden ability */}
                     <div className="flex items-center justify-between">
-                        <Typography type={"h3"}>{t('ability.hiddenName')}</Typography>
+                        <Typography as={"h3"}>{t('ability.hiddenName')}</Typography>
                         {
                             pokemon.abilities.filter((ability: Ability): boolean => ability.isHidden)
                                 .map((ability: Ability): string => ability.name).join(' - ')

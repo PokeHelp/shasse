@@ -12,6 +12,8 @@ import Switch from './Switch/Switch';
 import {Form, FormField, FormItem, FormControl, FormLabel, FormMessage} from './Form/Form';
 import {ToastHandler} from './Toast/Toast';
 import Checkbox from "./Checkbox/Checkbox";
+import Collapse from "./Collapse/Collapse";
+import PageLayout from "./PageLayout/PageLayout";
 
 export {
     Typography,
@@ -32,5 +34,7 @@ export {
     FormLabel,
     FormMessage,
     ToastHandler,
-    Checkbox
+    Checkbox,
+    Collapse,
+    PageLayout
 }

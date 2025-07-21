@@ -1,17 +1,19 @@
 {
-  "homePage":          {
-    "title": "Page HOME"
-  },
-  "loginPage":         {
-    "title":         "Login",
-    "connexionWith": "Connexion avec {connexionName}",
-    "anyCount":      "Pas de compte ?"
-  },
-  "registerPage":      {
-    "title":           "Register",
-    "variousPassword": "Les mots de passe ne correspondent pas.",
-    "haveCount":       "Vous avez un compte ?",
-    "error":           "Erreur lors de l'inscription"
+  "page":              {
+    "home":     {
+      "title": "Page HOME"
+    },
+    "login":    {
+      "title":         "Login",
+      "connexionWith": "Connexion avec {connexionName}",
+      "anyCount":      "Pas de compte ?"
+    },
+    "register": {
+      "title":           "Register",
+      "variousPassword": "Les mots de passe ne correspondent pas.",
+      "haveCount":       "Vous avez un compte ?",
+      "error":           "Erreur lors de l'inscription"
+    }
   },
   "refresh":           {
     "userNotFound": "L'utilisateur n'a pas été trouvé."
@@ -37,9 +39,6 @@
     "code":           {
       "INVALID_EMAIL_OR_PASSWORD": "Les identifiants sont incorrect"
     }
-  },
-  "pokedex":           {
-    "searchPokemon": "Rechercher un pokemon ..."
   },
   "pokemon":           {
     "hatchingCycle": "Cycle d'éclosion",
@@ -86,7 +85,6 @@
     "assexual": "Assexué"
   },
   "tableWithFilter":   {
-    "filters":        "Filtres",
     "colToDisplay":   "Colonnes à afficher",
     "rowsPerPage":    "Lignes par page",
     "pageCount":      " sur ",
@@ -100,6 +98,24 @@
   },
   "evolution":         {
     "title": "Evolution du pokémon"
+  },
+  "api":               {
+    "base":                "Erreur générique",
+    "anyPokemonNameFound": "Aucun nom de pokémon n'a été trouvé",
+    "anyGameNameFound":    "Aucun nom de jeu n'a été trouvé"
+  },
+  "shinyHuntings":     {
+    "create": {
+      "selectPokemon":           "Sélectionnez un pokémon",
+      "choosePokemon":           "Choisissez un pokémon",
+      "selectGame":              "Sélectionnez un jeu",
+      "chooseGame":              "Choisissez un jeu",
+      "selectForm":              "Sélectionnez une forme",
+      "chooseForm":              "Choisissez une forme de {pokemonName}",
+      "selectPokemonBeforeForm": "Sélectionnez un pokémon avant de choisir une forme",
+      "hasOneForm":              "Ce pokémon possède une seule forme",
+      "btnCreate":               "Créer un shasse"
+    }
   },
   "nationalNumber":    "Numéro national",
   "notAvailable":      "Pas disponible dans cette génération",
@@ -131,22 +147,10 @@
   "login":             "Connexion",
   "register":          "Inscription",
   "acceptTerme":       "Accepter les terme",
-  "api":               {
-    "base":                "Erreur générique",
-    "anyPokemonNameFound": "Aucun nom de pokémon n'a été trouvé",
-    "anyGameNameFound":    "Aucun nom de jeu n'a été trouvé"
-  },
-  "shinyHuntings":     {
-    "create": {
-      "selectPokemon":           "Sélectionnez un pokémon",
-      "choosePokemon":           "Choisissez un pokémon",
-      "selectGame":              "Sélectionnez un jeu",
-      "chooseGame":              "Choisissez un jeu",
-      "selectForm":              "Sélectionnez une forme",
-      "chooseForm":              "Choisissez une forme de {pokemonName}",
-      "selectPokemonBeforeForm": "Sélectionnez un pokémon avant de choisir une forme",
-      "hasOneForm":              "Ce pokémon possède une seule forme",
-      "btnCreate":               "Créer un shasse"
-    }
-  }
+  "filters":           "Filtres",
+  "elementsPerPage":   "Élement par page",
+  "pokedex":           "Pokedex",
+  "byTypes":           "Par types",
+  "byGenerations":     "Par générations",
+  "byForms":           "Par formes"
 }
