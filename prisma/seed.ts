@@ -1799,7 +1799,7 @@ async function seedMeteo(): Promise<void>
 
 async function seedPokemonObtation(): Promise<void>
 {
-    await resetBDD("pokemon_obtation")
+    await resetBDD("hunting_method")
 
     const uniqueArray: string[] = ["Not available in shiny"];
     const langEnId: number = await getLangueId('english');
@@ -1825,13 +1825,13 @@ async function seedPokemonObtation(): Promise<void>
     for (const shasseMethod of [...new Set(uniqueArray)])
     {
         console.log(`-- Insertion de la méthode de shasse ${shasseMethod} --`)
-        const shasseMethodId: number = (await prisma.pokemon_obtation.create({data: {}, select: {id: true}})).id
+        const shasseMethodId: number = (await prisma.hunting_method.create({data: {canBeShiny: true}, select: {id: true}})).id
 
         await insertTranslate({
             langueId:       langEnId,
             name:           shasseMethod,
             referenceId:    shasseMethodId,
-            referenceTable: reference_table.POKEMON_OBTENTION
+            referenceTable: reference_table.HUNTING_METHOD
         })
     }
 }
@@ -2097,14 +2097,14 @@ async function seedPokemonRating(): Promise<void>
 
                         for (const shasse of aShasse)
                         {
-                            const pokemonObtationId: number = Number(await findIdByName(shasse, reference_table.POKEMON_OBTENTION, langEnId))
+                            const pokemonObtationId: number = Number(await findIdByName(shasse, reference_table.HUNTING_METHOD, langEnId))
 
                             await prisma.pokemon_game_location.create({
                                 data: {
                                     gameId:            Number(gameId?.referenceId),
                                     rateId:            rateId,
                                     locationZoneId:    locationZoneId.id,
-                                    pokemonObtationId: pokemonObtationId,
+                                    huntingMethodId: pokemonObtationId,
                                     pokemonFormId:     pokemonFormId
                                 }
                             })

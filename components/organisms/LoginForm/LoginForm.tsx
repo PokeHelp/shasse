@@ -1,78 +1,112 @@
 'use client';
 
-import {JSX, useState} from 'react';
-import {Button, InputFormField} from "@components";
-import {AuthResponse, Errors, LoginData} from "@types";
-import {Form} from "@/components/ui/form"
-import {useForm, UseFormReturn} from "react-hook-form"
+import {JSX} from "react";
+import {
+    Button,
+    Input,
+    Link,
+    Form,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormControl,
+    FormMessage,
+    AuthSocial
+} from "@components";
+import {LoginSchema} from "@schema";
+import {UseFormReturn} from "react-hook-form";
+import {z} from "zod";
 import {useRouter} from "next/navigation";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import {useAuthStore} from "@store";
-import {clearAllErrors, handleError, validateData} from "@utils";
-import {LoginSchema} from "@schema";
+import {ErrorContext} from "@better-fetch/fetch";
+import {authClient} from "@src/lib/auth-client";
+import {toast} from "sonner";
 import {useTranslations} from "next-intl";
-import {login} from "@service";
+import {Translation} from "@types";
+import {useQueryState} from "nuqs";
+import {useZodForm} from "@utils";
 
 export default function LoginForm(): JSX.Element
 {
+    const t: Translation = useTranslations();
     const router: AppRouterInstance = useRouter();
-    const [errors, setErrors] = useState<Errors>({});
-    const {setAuth} = useAuthStore();
-    const t = useTranslations();
 
-    const form: UseFormReturn<LoginData> = useForm<LoginData>({
+    const form: UseFormReturn<z.infer<typeof LoginSchema>> = useZodForm(LoginSchema, {
         defaultValues: {
-            password: "",
             email:    "",
+            password: ""
         },
     });
 
-    const handleSubmit: (data: LoginData) => Promise<void> = async (data: LoginData): Promise<void> =>
+    const [fallbackUri] = useQueryState('fallback', {defaultValue: '/'});
+
+    async function onSubmit(values: z.infer<typeof LoginSchema>): Promise<void>
     {
-        clearAllErrors(setErrors);
-
-        const isValid: boolean = validateData(data, LoginSchema, setErrors);
-        if (!isValid) return;
-
-        const response: AuthResponse = await login(data);
-
-        if (response.success)
-        {
-            setAuth(response.accessToken, response.refreshToken);
-            router.push('/');
-        } else
-        {
-            handleError(response.error, setErrors);
-        }
+        await authClient.signIn.email({
+            email:    values.email,
+            password: values.password
+        }, {
+            onSuccess: (): void =>
+                       {
+                           router.push(fallbackUri);
+                           router.refresh();
+                       },
+            onError:   (error: ErrorContext): void =>
+                       {
+                           console.log(error);
+                           toast.error(t(`auth.code.${error.error.code}`));
+                       }
+        });
     }
 
     return (
         <>
-            <Form {...form}>
-                <form onSubmit={form.handleSubmit(handleSubmit)}>
-                    <InputFormField
-                        name={"email"}
-                        label={t('auth.email.label')}
-                        formControl={form.control}
-                        type={"email"}
-                        placeholder={t('auth.email.placeholder')}
-                        errorText={errors.email || ''}
-                        required
-                    />
-                    <InputFormField
-                        label={t('auth.password.label')}
-                        formControl={form.control}
-                        errorText={errors.password || ''}
-                        name={"password"}
-                        placeholder={t('auth.password.placeholder')}
-                        type={"password"}
-                        required
-                    />
-                    <Button type="submit">{t('loginPage.form.btnLogin')}</Button>
-                </form>
+            <Form form={form} callback={onSubmit} className="flex gap-3 flex-col mt-4">
+                <FormField
+                    name='email'
+                    control={form.control}
+                    render={({field}): JSX.Element => (
+                        <FormItem>
+                            <FormLabel>
+                                {t('auth.email.label')}
+                            </FormLabel>
+                            <FormControl>
+                                <Input type='email' {...field} placeholder={t('auth.email.placeholder')} required/>
+                            </FormControl>
+                            <FormMessage/>
+                        </FormItem>
+                    )}
+                />
+                <FormField
+                    name='password'
+                    control={form.control}
+                    render={({field}): JSX.Element => (
+                        <FormItem>
+                            <FormLabel>
+                                {t('auth.password.label')}
+                            </FormLabel>
+                            <FormControl>
+                                <Input type='password' {...field} required placeholder={t('auth.password.placeholder')}/>
+                            </FormControl>
+                            <Link className="ml-2" href={"/auth/forget-password"}>{t('auth.password.forgot')}</Link>
+                            <FormMessage/>
+                        </FormItem>
+                    )}
+                />
+
+                <div className="flex justify-end">
+                    <Button type='submit'>{t('login')}</Button>
+                </div>
             </Form>
 
-            {errors.general && <p style={{color: 'red'}}>{errors.general}</p>}
+            <div className="mt-8">
+                <AuthSocial fallbackUri={fallbackUri} />
+            </div>
+
+            <div className="mt-8 flex justify-end gap-2">
+                {t('page.login.anyCount')}
+                <Link href={`/register?fallback=${fallbackUri}`}>{t('register')}</Link>
+            </div>
         </>
     );
 }

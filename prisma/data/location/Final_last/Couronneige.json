@@ -3990,7 +3990,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -4240,7 +4240,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -4643,7 +4643,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf",
                     "rates": [
                         {
@@ -4780,7 +4780,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -5406,7 +5406,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -6390,7 +6390,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "pokemon-cachés",
                     "rates": [
                         {
@@ -7395,7 +7395,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -8091,7 +8091,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "pokemon-cachés",
                     "rates": [
                         {
@@ -9512,7 +9512,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -9757,7 +9757,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -10354,7 +10354,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf",
                     "rates": [
                         {
@@ -10475,7 +10475,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -10906,7 +10906,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -11389,7 +11389,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -11644,7 +11644,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf",
                     "rates": [
                         {
@@ -12039,7 +12039,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -12442,7 +12442,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -12586,7 +12586,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf",
                     "rates": [
                         {
@@ -13068,7 +13068,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -13473,7 +13473,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -18391,7 +18391,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -19226,7 +19226,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -20267,7 +20267,7 @@
         {
             "list": [
                 {
-                    "pokemon": "Sylveroy, le Cavalier du Froid",
+                    "pokemon": "Sylveroy Cavalier du Froid -forme- Cavalier du Froid",
                     "method": "special",
                     "rates": [
                         {
@@ -20287,7 +20287,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Sylveroy, le Cavalier d'Effroi",
+                    "pokemon": "Sylveroy Cavalier du Froid -forme- Cavalier du Froid",
                     "method": "special",
                     "rates": [
                         {

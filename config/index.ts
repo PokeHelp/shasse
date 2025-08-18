@@ -1,3 +1,4 @@
-import {formChoices} from './form';
+import {formChoices, normalForm} from './form';
+import {pictureUrl} from './shareVariable';
 
-export {formChoices}
+export {formChoices, normalForm, pictureUrl}

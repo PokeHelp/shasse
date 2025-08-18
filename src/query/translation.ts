@@ -55,3 +55,18 @@ export async function getTranslationsByReferenceId(referenceIds: number[], langI
         }
     });
 }
+
+export async function getAllTranslationIdNames(referenceTable: reference_table, langId: number): Promise<{name: string, referenceId: bigint}[]>
+{
+    return prisma.translation.findMany({
+        where: {
+            status: "on",
+            referenceTable: referenceTable,
+            langueId: langId
+        },
+        select: {
+            name: true,
+            referenceId: true,
+        }
+    })
+}

@@ -1,0 +1,11 @@
+.bg-error .custom-toast-close-button
+{
+    color: white;
+    border-color: white;
+}
+
+.custom-toast-close-button svg
+{
+    width: 16px;
+    height: 16px;
+}

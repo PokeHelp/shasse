@@ -1,27 +1,50 @@
 {
-  "homePage":          {
-    "title": "Ceci est la page de home."
-  },
-  "loginPage":         {
-    "title": "Login",
-    "form":  {
-      "btnLogin": "Connexion"
+  "page":              {
+    "home":          {
+      "title": "Page HOME"
+    },
+    "login":         {
+      "title":         "Login",
+      "connexionWith": "Connexion avec {connexionName}",
+      "anyCount":      "Pas de compte ?"
+    },
+    "register":      {
+      "title":           "Register",
+      "variousPassword": "Les mots de passe ne correspondent pas.",
+      "haveCount":       "Vous avez un compte ?",
+      "error":           "Erreur lors de l'inscription"
+    },
+    "unauthorized":  {
+      "title":       "Vous n'êtes pas connecté",
+      "description": "Vous devez vous connecter pour accéder à cette page",
+      "login":       "Se connecter",
+      "register":    "S'inscrire"
+    },
+    "shinyHuntings": {
+      "create": {
+        "selectPokemon":           "Sélectionnez un pokémon",
+        "choosePokemon":           "Choisissez un pokémon",
+        "selectForm":              "Sélectionnez une forme",
+        "chooseForm":              "Choisissez une forme de {pokemonName}",
+        "selectGame":              "Sélectionnez un jeu",
+        "chooseGame":              "Choisissez un jeu",
+        "useCC":                   "Charme Chromatique utilisé ?",
+        "isFinish":                "Est fini ?",
+        "createdAt":               "Shasse créée le",
+        "spriteInShiny":           "Sprite en shiny ?",
+        "selectHuntinMethod":      "Sélectionnez une méthode d'obtention",
+        "chooseHuntinMethod":      "Choisissez une méthode d'obtention",
+        "showLocations":           "Voir les localisations",
+        "searchLocations":         "Rechercher des localisations",
+        "chooseEndingDate": "Choisir une date de fin",
+
+        "selectPokemonBeforeForm": "Sélectionnez un pokémon avant de choisir une forme",
+        "hasOneForm":              "Ce pokémon possède une seule forme"
+      }
     }
-  },
-  "registerPage":      {
-    "title": "Register",
-    "form":  {
-      "btnRegister": "Inscription"
-    }
-  },
-  "register":          {
-    "alreadyExist": "L'email ou le pseudonyme existent déjà."
   },
   "refresh":           {
     "userNotFound": "L'utilisateur n'a pas été trouvé."
-  },
-  "login":             {
-    "invalidCredentials": "Identifiants incorrect."
   },
   "auth":              {
     "email":          {
@@ -30,7 +53,8 @@
     },
     "password":       {
       "label":       "Mot de passe",
-      "placeholder": "Veuillez-entrer votre mot de passe"
+      "placeholder": "Veuillez-entrer votre mot de passe",
+      "forgot":      "Mot de passe oublié"
     },
     "passwordVerify": {
       "label":       "Confirmation du mot de passe",
@@ -39,12 +63,13 @@
     "pseudonym":      {
       "label":       "Pseudonyme",
       "placeholder": "Veuillez-entrer votre pseudonyme"
+    },
+    "code":           {
+      "INVALID_EMAIL_OR_PASSWORD": "Les identifiants sont incorrect"
     }
   },
-  "pokedex":           {
-    "searchPokemon": "Rechercher un pokemon ..."
-  },
   "pokemon":           {
+    "name":          "Pokémon",
     "hatchingCycle": "Cycle d'éclosion",
     "captureRate":   "Taux de capture",
     "callHelpRate":  "Taux d'appel à l'aide",
@@ -52,7 +77,7 @@
     "eggGroup":      "Groupe d'oeuf",
     "xpGift":        "Expérience donnée",
     "globalXp":      "Exp global",
-    "globalXpTitle": "Exp nécéssaire pour arriver level 100",
+    "globalXpTitle": "Exp nécessaire pour arriver level 100",
     "genAppear":     "Génération d'apparition",
     "slider":        {
       "linkMoreDetail": "Plus d'informations sur le Pokémon."
@@ -89,7 +114,6 @@
     "assexual": "Assexué"
   },
   "tableWithFilter":   {
-    "filters":        "Filtres",
     "colToDisplay":   "Colonnes à afficher",
     "rowsPerPage":    "Lignes par page",
     "pageCount":      " sur ",
@@ -103,6 +127,14 @@
   },
   "evolution":         {
     "title": "Evolution du pokémon"
+  },
+  "api":               {
+    "base":                "Erreur générique",
+    "anyPokemonNameFound": "Aucun nom de pokémon n'a été trouvé",
+    "anyGameNameFound":    "Aucun nom de jeu n'a été trouvé"
+  },
+  "calendar":          {
+    "placeholder": "Choisir une date"
   },
   "nationalNumber":    "Numéro national",
   "notAvailable":      "Pas disponible dans cette génération",
@@ -127,5 +159,22 @@
   "yes":               "Oui",
   "no":                "Non",
   "pokemonPictureAlt": "Image du pokemon {pokemonName}",
-  "typePictureAlt":    "Image du type {typeName}"
+  "typePictureAlt":    "Image du type {typeName}",
+  "searchPokemon":     "Rechercher un pokémon",
+  "searchGame":        "Rechercher un jeu",
+  "searchForm":        "Rechercher une forme",
+  "login":             "Connexion",
+  "register":          "Inscription",
+  "acceptTerme":       "Accepter les terme",
+  "filters":           "Filtres",
+  "elementsPerPage":   "Élement par page",
+  "pokedex":           "Pokedex",
+  "byTypes":           "Par types",
+  "byGenerations":     "Par générations",
+  "byForms":           "Par formes",
+  "timePassed":        "Temps passé",
+  "addTime":           "Ajouter du temps",
+  "meetingNumber":     "Nombre de rencontre",
+  "select": "Sélectionner",
+  "action": "Action"
 }

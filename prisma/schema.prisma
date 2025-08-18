@@ -1,6 +1,6 @@
 generator client {
-  provider        = "prisma-client-js"
-  output          = "./node_modules/.prisma/client"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x", "linux-musl-openssl-3.0.x"]
 }
 
 datasource db {
@@ -32,46 +32,16 @@ model translation {
   @@index([langueId], map: "translation_langue_id_fkey")
 }
 
-model user {
-  id            Int             @id @default(autoincrement()) @db.UnsignedInt
-  discordId     BigInt?         @map("discord_id") @db.UnsignedBigInt
-  email         String          @unique @db.VarChar(255)
-  password      String          @db.VarChar(255)
-  createdAt     DateTime        @default(now()) @map("created_at") @db.DateTime(0)
-  updatedAt     DateTime?       @updatedAt @map("updated_at") @db.DateTime(0)
-  status        String          @default("on") @db.VarChar(45)
-  pseudonym     String          @unique @db.VarChar(100)
-  role          role            @default(PUBLIC)
-  ownedPokemons owned_pokemon[]
-  refreshTokens refresh_token[]
-
-  @@map("user")
-}
-
-model shiny_hunting_method {
-  id                      Int                         @id @default(autoincrement()) @db.UnsignedInt
-  createdAt               DateTime                    @default(now()) @map("created_at") @db.DateTime(0)
-  updatedAt               DateTime?                   @updatedAt @map("updated_at") @db.DateTime(0)
-  status                  String                      @default("on") @db.VarChar(45)
-  shinyHuntings           shiny_hunting[]
-  shinyHuntingMethodGames shiny_hunting_method_game[]
-  shinyHuntingMethodRates shiny_hunting_method_rate[]
-}
-
-model shiny_hunting {
-  id                 BigInt               @id @default(autoincrement()) @db.UnsignedBigInt
-  methodId           Int                  @map("method_id") @db.UnsignedInt
-  meetingNumber      Int                  @map("meeting_number") @db.UnsignedInt
-  time               DateTime             @db.Time(0)
-  isFinish           Boolean              @map("is_finish")
-  useCharmChroma     Boolean              @map("use_charm_chroma")
-  createdAt          DateTime             @default(now()) @map("created_at") @db.DateTime(0)
-  updatedAt          DateTime?            @updatedAt @map("updated_at") @db.DateTime(0)
-  status             String               @default("on") @db.VarChar(45)
-  ownedPokemons      owned_pokemon[]
-  shinyHuntingMethod shiny_hunting_method @relation(fields: [methodId], references: [id])
-
-  @@index([methodId], map: "shiny_hunting_method_id_fkey")
+model hunting_method {
+  id                      Int                     @id @default(autoincrement()) @db.UnsignedInt
+  canBeShiny              Boolean                 @map("can_be_shiny") @db.TinyInt
+  createdAt               DateTime                @default(now()) @map("created_at") @db.DateTime(0)
+  updatedAt               DateTime?               @updatedAt @map("updated_at") @db.DateTime(0)
+  status                  String                  @default("on") @db.VarChar(45)
+  ownedPokemons           owned_pokemon[]
+  shinyHuntingMethodGames hunting_method_game[]
+  shinyHuntingMethodRates hunting_method_rate[]
+  pokemonRatingGames      pokemon_game_location[]
 }
 
 model pokeball {
@@ -130,7 +100,7 @@ model group_game {
   capsuleGameCapacityIinfos capsule_game_capacity_info[]
   gameGroupGames            game_group_game[]
   nationnalNumbers          national_number[]
-  shinyHuntingMethodGames   shiny_hunting_method_game[]
+  shinyHuntingMethodGames   hunting_method_game[]
   skillObtations            skill_obtation[]
   statisticGroupGames       statistic_group_game[]
 }
@@ -173,7 +143,6 @@ model pokemon {
   updatedAt           DateTime?              @updatedAt @map("updated_at") @db.DateTime(0)
   status              String                 @default("on") @db.VarChar(45)
   nationalNumbers     national_number[]
-  ownedPokemons       owned_pokemon[]
   pokemon_category    pokemon_category       @relation(fields: [pokemonCategoryId], references: [id])
   generation          generation             @relation(fields: [generationId], references: [id])
   pokemonForms        pokemon_form[]
@@ -220,6 +189,7 @@ model pokemon_form {
   updatedAt          DateTime?               @updatedAt @map("updated_at") @db.DateTime(0)
   evolutionEnds      evolution[]             @relation("EvolutionEnd")
   evolutionStarts    evolution[]             @relation("EvolutionStart")
+  ownedPokemons      owned_pokemon[]
   form               form                    @relation(fields: [formId], references: [id])
   pokemon            pokemon                 @relation(fields: [pokemonId], references: [id])
   pokemonFormGenders pokemon_form_gender[]
@@ -231,29 +201,35 @@ model pokemon_form {
 
 model owned_pokemon {
   id                  BigInt                 @id @default(autoincrement()) @db.UnsignedBigInt
-  shinyHuntingId      BigInt                 @map("shiny_hunting_id") @db.UnsignedBigInt
-  userId              Int                    @map("user_id") @db.UnsignedInt
-  pokemonId           Int                    @map("pokemon_id") @db.UnsignedInt
+  userId              String                 @map("user_id")
+  pokemonFormId       Int                    @map("pokemon_form_id") @db.UnsignedInt
   gameId              Int                    @map("game_id") @db.UnsignedInt
+  isShiny             Boolean                @map("is_shiny")
+  methodId            Int                    @map("method_id") @db.UnsignedInt
+  meetingNumber       Int?                   @map("meeting_number") @db.UnsignedInt
+  time                Int                    @default(0)
+  isFinish            Boolean                @map("is_finish")
+  useCharmChroma      Boolean                @map("use_charm_chroma")
+  creationDate        DateTime               @map("creation_date")
+  finishDate          DateTime?              @map("finish_date")
   createdAt           DateTime               @default(now()) @map("created_at") @db.DateTime(0)
   updatedAt           DateTime?              @updatedAt @map("updated_at") @db.DateTime(0)
   status              String                 @default("on") @db.VarChar(45)
   game                game                   @relation(fields: [gameId], references: [id])
-  pokemon             pokemon                @relation(fields: [pokemonId], references: [id])
-  shiny_hunting       shiny_hunting          @relation(fields: [shinyHuntingId], references: [id])
-  user                user                   @relation(fields: [userId], references: [id])
+  shinyHuntingMethod  hunting_method         @relation(fields: [methodId], references: [id])
+  pokemonForms        pokemon_form           @relation(fields: [pokemonFormId], references: [id])
+  users               user                   @relation(fields: [userId], references: [id])
   ownedPokemonDetails owned_pokemon_detail[]
 
+  @@index([methodId], map: "hunting_method_id_fkey")
   @@index([gameId], map: "owned_pokemon_game_id_fkey")
-  @@index([pokemonId], map: "owned_pokemon_pokemon_id_fkey")
-  @@index([shinyHuntingId], map: "owned_pokemon_shiny_hunting_id_fkey")
+  @@index([pokemonFormId], map: "owned_pokemon_pokemon_form_id_fkey")
   @@index([userId], map: "owned_pokemon_user_id_fkey")
 }
 
 model owned_pokemon_detail {
   id             BigInt        @id @default(autoincrement()) @db.UnsignedBigInt
   nickname       String        @db.VarChar(45)
-  isShiny        Boolean       @map("is_shiny")
   pokeballId     Int           @map("pokeball_id") @db.UnsignedInt
   ownedPokemonId BigInt        @map("owned_pokemon") @db.UnsignedBigInt
   createdAt      DateTime      @default(now()) @map("created_at") @db.DateTime(0)
@@ -524,56 +500,48 @@ model meteo {
   rates     rate[]
 }
 
-model pokemon_obtation {
-  id                 Int                     @id @default(autoincrement()) @db.UnsignedInt
-  createdAt          DateTime                @default(now()) @map("created_at") @db.DateTime(0)
-  updatedAt          DateTime?               @updatedAt @map("updated_at") @db.DateTime(0)
-  status             String                  @default("on") @db.VarChar(45)
-  pokemonRatingGames pokemon_game_location[]
-}
-
 model rate {
-  id                      Int                         @id @default(autoincrement()) @db.UnsignedInt
-  rate                    Decimal                     @db.Decimal(5, 2)
-  minLevel                Int                         @map("min_level") @db.UnsignedSmallInt
-  maxLevel                Int                         @map("max_level") @db.UnsignedSmallInt
-  limit                   Int?                        @db.UnsignedSmallInt
-  meteoId                 Int                         @map("meteo_id") @db.UnsignedInt
-  detailRateId            Int                         @map("detail_rate_id") @db.UnsignedInt
-  conditionRateId         Int                         @map("condition_rate_id") @db.UnsignedInt
-  createdAt               DateTime                    @default(now()) @map("created_at") @db.DateTime(0)
-  updatedAt               DateTime?                   @updatedAt @map("updated_at") @db.DateTime(0)
-  status                  String                      @default("on") @db.VarChar(45)
-  isAlpha                 Boolean                     @map("is_alpha")
+  id                      Int                     @id @default(autoincrement()) @db.UnsignedInt
+  rate                    Decimal                 @db.Decimal(5, 2)
+  minLevel                Int                     @map("min_level") @db.UnsignedSmallInt
+  maxLevel                Int                     @map("max_level") @db.UnsignedSmallInt
+  limit                   Int?                    @db.UnsignedSmallInt
+  meteoId                 Int                     @map("meteo_id") @db.UnsignedInt
+  detailRateId            Int                     @map("detail_rate_id") @db.UnsignedInt
+  conditionRateId         Int                     @map("condition_rate_id") @db.UnsignedInt
+  createdAt               DateTime                @default(now()) @map("created_at") @db.DateTime(0)
+  updatedAt               DateTime?               @updatedAt @map("updated_at") @db.DateTime(0)
+  status                  String                  @default("on") @db.VarChar(45)
+  isAlpha                 Boolean                 @map("is_alpha")
   pokemonRatingGames      pokemon_game_location[]
-  conditionRate           detail                      @relation("conditionRate", fields: [conditionRateId], references: [id])
-  detailRate              detail                      @relation("detailRate", fields: [detailRateId], references: [id])
-  meteo                   meteo                       @relation(fields: [meteoId], references: [id])
-  shinyHuntingMethodRates shiny_hunting_method_rate[]
+  conditionRate           detail                  @relation("conditionRate", fields: [conditionRateId], references: [id])
+  detailRate              detail                  @relation("detailRate", fields: [detailRateId], references: [id])
+  meteo                   meteo                   @relation(fields: [meteoId], references: [id])
+  shinyHuntingMethodRates hunting_method_rate[]
 
   @@index([conditionRateId], map: "rate_condition_rate_id_fkey")
   @@index([detailRateId], map: "rate_detail_rate_id_fkey")
   @@index([meteoId], map: "rate_meteo_id_fkey")
 }
 
-model shiny_hunting_method_game {
-  shinyHuntingMethodId Int                  @map("shiny_hunting_method_id") @db.UnsignedInt
-  groupGameId          Int                  @map("group_game_id") @db.UnsignedInt
-  groupGame            group_game           @relation(fields: [groupGameId], references: [id])
-  shinyHuntingMethod   shiny_hunting_method @relation(fields: [shinyHuntingMethodId], references: [id])
+model hunting_method_game {
+  shinyHuntingMethodId Int            @map("hunting_method_id") @db.UnsignedInt
+  groupGameId          Int            @map("group_game_id") @db.UnsignedInt
+  groupGame            group_game     @relation(fields: [groupGameId], references: [id])
+  shinyHuntingMethod   hunting_method @relation(fields: [shinyHuntingMethodId], references: [id])
 
   @@id([groupGameId, shinyHuntingMethodId])
-  @@index([shinyHuntingMethodId], map: "shiny_hunting_method_game_shiny_hunting_method_id_fkey")
+  @@index([shinyHuntingMethodId], map: "hunting_method_game_hunting_method_id_fkey")
 }
 
-model shiny_hunting_method_rate {
-  shinyHuntingMethodId Int                  @map("shiny_hunting_method_id") @db.UnsignedInt
-  rateId               Int                  @map("rate_id") @db.UnsignedInt
-  rate                 rate                 @relation(fields: [rateId], references: [id])
-  shinyHuntingMethod   shiny_hunting_method @relation(fields: [shinyHuntingMethodId], references: [id])
+model hunting_method_rate {
+  shinyHuntingMethodId Int            @map("hunting_method_id") @db.UnsignedInt
+  rateId               Int            @map("rate_id") @db.UnsignedInt
+  rate                 rate           @relation(fields: [rateId], references: [id])
+  shinyHuntingMethod   hunting_method @relation(fields: [shinyHuntingMethodId], references: [id])
 
   @@id([shinyHuntingMethodId, rateId])
-  @@index([rateId], map: "shiny_hunting_method_rate_rate_id_fkey")
+  @@index([rateId], map: "hunting_method_rate_rate_id_fkey")
 }
 
 model skill_obtation_type {
@@ -668,21 +636,21 @@ model capacity_info_influence {
 }
 
 model pokemon_game_location {
-  gameId            Int              @map("game_id") @db.UnsignedInt
-  rateId            Int              @map("rate_id") @db.UnsignedInt
-  locationZoneId    Int              @map("location_zone_id") @db.UnsignedInt
-  pokemonObtationId Int              @map("pokemon_obtation_id") @db.UnsignedInt
-  pokemonFormId     Int              @map("pokemon_id") @db.UnsignedInt
-  id                Int              @id @default(autoincrement()) @db.UnsignedInt
-  game              game             @relation(fields: [gameId], references: [id])
-  locationZone      location_zone    @relation(fields: [locationZoneId], references: [id])
-  pokemonForm       pokemon_form     @relation(fields: [pokemonFormId], references: [id])
-  pokemonObtation   pokemon_obtation @relation(fields: [pokemonObtationId], references: [id])
-  rate              rate             @relation(fields: [rateId], references: [id])
+  gameId          Int            @map("game_id") @db.UnsignedInt
+  rateId          Int            @map("rate_id") @db.UnsignedInt
+  locationZoneId  Int            @map("location_zone_id") @db.UnsignedInt
+  huntingMethodId Int            @map("hunting_method_id") @db.UnsignedInt
+  pokemonFormId   Int            @map("pokemon_form_id") @db.UnsignedInt
+  id              Int            @id @default(autoincrement()) @db.UnsignedInt
+  game            game           @relation(fields: [gameId], references: [id])
+  locationZone    location_zone  @relation(fields: [locationZoneId], references: [id])
+  pokemonForm     pokemon_form   @relation(fields: [pokemonFormId], references: [id])
+  huntingMethod   hunting_method @relation(fields: [huntingMethodId], references: [id])
+  rate            rate           @relation(fields: [rateId], references: [id])
 
-  @@unique([gameId, rateId, locationZoneId, pokemonFormId, pokemonObtationId])
+  @@unique([gameId, rateId, locationZoneId, pokemonFormId, huntingMethodId])
   @@index([pokemonFormId], map: "pokemon_rating_game_pokemon_form_id_fkey")
-  @@index([pokemonObtationId], map: "pokemon_rating_game_pokemon_obtation_id_fkey")
+  @@index([huntingMethodId], map: "pokemon_rating_game_hunting_method_id_fkey")
   @@index([rateId], map: "pokemon_rating_game_rate_id_fkey")
   @@index([locationZoneId], map: "pokemon_rating_game_location_zone_id_fkey")
 }
@@ -704,16 +672,6 @@ model skill_obtation {
   @@index([groupGameId], map: "skill_obtation_group_game_id_fkey")
 }
 
-model refresh_token {
-  id        Int      @id @default(autoincrement()) @db.UnsignedInt
-  userId    Int      @map("user_id") @db.UnsignedInt
-  token     String   @unique @db.VarChar(255)
-  expiresAt DateTime @map("expires_at") @db.Timestamp(0)
-  users     user     @relation(fields: [userId], references: [id])
-
-  @@index([userId, expiresAt])
-}
-
 enum role {
   PUBLIC
   ADMIN
@@ -733,9 +691,8 @@ enum reference_table {
   EFFECT_OUTSIDE_FIGHT
   CAPACITY_EFFECT
   TARGET
-  POKEMON_OBTENTION
   METEO
-  SHINY_HUNTING_METHOD
+  HUNTING_METHOD
   DETAIL
   POKEBALL
   EGG_GROUP
@@ -748,4 +705,95 @@ enum reference_table {
   GROUP_GAME
   FORM
   GENDER
+}
+
+// model refresh_token {
+//   id        Int      @id @default(autoincrement()) @db.UnsignedInt
+//   userId    Int      @map("user_id") @db.UnsignedInt
+//   token     String   @unique @db.VarChar(255)
+//   expiresAt DateTime @map("expires_at") @db.Timestamp(0)
+//   users     user     @relation(fields: [userId], references: [id])
+//
+//   @@index([userId, expiresAt])
+// }
+//
+// model user {
+//   id            Int             @id @default(autoincrement()) @db.UnsignedInt
+//   discordId     BigInt?         @map("discord_id") @db.UnsignedBigInt
+//   email         String          @unique @db.VarChar(255)
+//   password      String          @db.VarChar(255)
+//   createdAt     DateTime        @default(now()) @map("created_at") @db.DateTime(0)
+//   updatedAt     DateTime?       @updatedAt @map("updated_at") @db.DateTime(0)
+//   status        String          @default("on") @db.VarChar(45)
+//   pseudonym     String          @unique @db.VarChar(100)
+//   role          role            @default(PUBLIC)
+//   ownedPokemons owned_pokemon[]
+//   refreshTokens refresh_token[]
+//
+//   @@map("user")
+// }
+
+model user {
+  id            String          @id
+  name          String          @db.VarChar(100)
+  email         String
+  emailVerified Boolean
+  image         String?         @db.Text
+  role          String?         @db.Text
+  banned        Boolean?
+  banReason     String?         @db.Text
+  banExpires    DateTime?
+  createdAt     DateTime
+  updatedAt     DateTime
+  ownedPokemons owned_pokemon[]
+  sessions      session[]
+  accounts      account[]
+
+  @@unique([email])
+  @@map("user")
+}
+
+model session {
+  id        String   @id
+  expiresAt DateTime
+  token     String
+  createdAt DateTime
+  updatedAt DateTime
+  ipAddress String?  @db.Text
+  userAgent String?  @db.Text
+  userId    String
+  user      user     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([token])
+  @@map("session")
+}
+
+model account {
+  id                    String    @id
+  accountId             String    @db.Text
+  providerId            String    @db.Text
+  userId                String
+  user                  user      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?   @db.Text
+  refreshToken          String?   @db.Text
+  idToken               String?   @db.Text
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?   @db.Text
+  password              String?   @db.Text
+  createdAt             DateTime
+  updatedAt             DateTime
+
+  @@map("account")
+}
+
+model verification {
+  id         String    @id
+  identifier String    @db.Text
+  value      String    @db.Text
+  expiresAt  DateTime
+  createdAt  DateTime?
+  updatedAt  DateTime?
+
+  @@map("verification")
 }

@@ -26,7 +26,7 @@ export default function Evolution({pokes}: { pokes: Evolution[] }): JSX.Element
                         <div key={pokemonName} className="flex gap-2 flex-col">
                             <div className="flex gap-2 items-center justify-center">
                                 <Picture
-                                    src={getPokemonPictureFromId({internationalNumber: poke.internationalNumber, formId: poke.formId}, "Artwork")}
+                                    src={getPokemonPictureFromId({internationalNumber: poke.internationalNumber, formId: poke.formId, style: "Artwork"})}
                                     alt={t('pokemonPictureAlt', {pokemonName})}
                                     width={85}
                                     height={85}

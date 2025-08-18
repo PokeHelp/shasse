@@ -7157,7 +7157,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Zygarde 10%",
+                    "pokemon": "Zygarde 10% -forme- 10%",
                     "method": "cadeau",
                     "rates": [
                         {
@@ -7735,7 +7735,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Tritosor -forme- Mer Orient",
+                    "pokemon": "Tritosor Mer Orient -forme- Mer Orient",
                     "method": "herbes hautes",
                     "rates": [
                         {
@@ -9644,7 +9644,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Sancoki -forme- Mer Orient",
+                    "pokemon": "Sancoki Mer Orient -forme- Mer Orient",
                     "method": "échange",
                     "rates": [
                         {
@@ -10155,7 +10155,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "pêche",
                     "rates": [
                         {
@@ -10298,7 +10298,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "pêche dans les remous",
                     "rates": [
                         {
@@ -10368,7 +10368,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "pêche",
                     "rates": [
                         {
@@ -10391,7 +10391,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "pêche dans les remous",
                     "rates": [
                         {
@@ -12308,7 +12308,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "pêche",
                     "rates": [
                         {
@@ -12520,7 +12520,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "pêche dans les remous",
                     "rates": [
                         {
@@ -12543,7 +12543,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "pêche",
                     "rates": [
                         {
@@ -12566,7 +12566,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "pêche dans les remous",
                     "rates": [
                         {
@@ -12761,7 +12761,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Tritosor -forme- Mer Orient",
+                    "pokemon": "Tritosor Mer Orient -forme- Mer Orient",
                     "method": "herbes hautes",
                     "rates": [
                         {
@@ -13647,7 +13647,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Flabébé -forme- Fleur Jaune",
+                    "pokemon": "Flabébé Jaune -forme- Jaune",
                     "method": "fleurs jaunes",
                     "rates": [
                         {
@@ -13670,7 +13670,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Flabébé -forme- Fleur Orange",
+                    "pokemon": "Flabébé Orange -forme- Orange",
                     "method": "renfort",
                     "rates": [
                         {
@@ -13693,7 +13693,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Flabébé -forme- Fleur Blanche",
+                    "pokemon": "Flabébé Blanc -forme- Blanc",
                     "method": "renfort",
                     "rates": [
                         {
@@ -13920,7 +13920,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Flabébé -forme- Fleur Jaune",
+                    "pokemon": "Flabébé Jaune -forme- Jaune",
                     "method": "fleurs jaunes",
                     "rates": [
                         {
@@ -13943,7 +13943,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Flabébé -forme- Fleur Orange",
+                    "pokemon": "Flabébé Orange -forme- Orange",
                     "method": "renfort",
                     "rates": [
                         {
@@ -13966,7 +13966,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Flabébé -forme- Fleur Blanche",
+                    "pokemon": "Flabébé Blanc -forme- Blanc",
                     "method": "renfort",
                     "rates": [
                         {
@@ -17262,7 +17262,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "pêche",
                     "rates": [
                         {
@@ -17429,7 +17429,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "pêche dans les remous",
                     "rates": [
                         {
@@ -17475,7 +17475,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "pêche",
                     "rates": [
                         {
@@ -17498,7 +17498,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "pêche dans les remous",
                     "rates": [
                         {
@@ -17698,7 +17698,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Floette -forme- Fleur Rouge",
+                    "pokemon": "Floette",
                     "method": "fleurs rouges",
                     "rates": [
                         {
@@ -17722,7 +17722,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Floette -forme- Fleur Orange",
+                    "pokemon": "Floette Orange -forme- Orange",
                     "method": "renfort",
                     "rates": [
                         {
@@ -17746,7 +17746,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Floette -forme- Fleur Blanche",
+                    "pokemon": "Floette Blanc -forme- Blanc",
                     "method": "renfort",
                     "rates": [
                         {
@@ -17770,7 +17770,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Plumeline Style Flamenco -forme- Style Flamenco",
+                    "pokemon": "Plumeline Style Flamenco -forme- Style Flamenco -forme- Style Flamenco",
                     "method": "fleurs rouges",
                     "rates": [
                         {
@@ -18348,7 +18348,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Tritosor -forme- Mer Orient",
+                    "pokemon": "Tritosor Mer Orient -forme- Mer Orient",
                     "method": "herbes hautes",
                     "rates": [
                         {
@@ -18496,7 +18496,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Tritosor -forme- Mer Orient",
+                    "pokemon": "Tritosor Mer Orient -forme- Mer Orient",
                     "method": "sur l'eau",
                     "rates": [
                         {
@@ -19002,7 +19002,7 @@
         {
             "list": [
                 {
-                    "pokemon": "Necrozma Crinière du Couchant",
+                    "pokemon": "Necrozma Crinière du Couchant -forme- Crinière du Couchant",
                     "method": "rencontre",
                     "rates": [
                         {
@@ -20881,7 +20881,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Floette -forme- Fleur Bleue",
+                    "pokemon": "Floette Bleu -forme- Bleu",
                     "method": "herbes hautes",
                     "rates": [
                         {
@@ -20905,7 +20905,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Plumeline Style Buyo -forme- Style Buyo",
+                    "pokemon": "Plumeline Style Buyō -forme- Style Buyō -forme- Style Buyo",
                     "method": "herbes hautes",
                     "rates": [
                         {
@@ -25632,7 +25632,7 @@
         {
             "list": [
                 {
-                    "pokemon": "Ultra-Necrozma",
+                    "pokemon": "Ultra-Necrozma -forme- Ultra",
                     "method": "rencontre",
                     "rates": [
                         {
@@ -25960,7 +25960,7 @@
         {
             "list": [
                 {
-                    "pokemon": "Necrozma Ailes de l'Aurore",
+                    "pokemon": "Necrozma Ailes de l'Aurore -forme- Ailes de l'Aurore",
                     "method": "rencontre",
                     "rates": [
                         {

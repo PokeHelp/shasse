@@ -12,7 +12,7 @@ import {
 } from "@types";
 import {axiosService} from "@lib";
 import {useQuery} from "@tanstack/react-query";
-import {JSX, useEffect, useMemo, useState, useRef, RefObject} from "react";
+import {JSX, useMemo, useRef, RefObject} from "react";
 import {
     Button,
     Evolution,
@@ -29,9 +29,9 @@ import {CellContext} from "@tanstack/table-core";
 import Statistique from "../../moleculs/Statistique/Statistique";
 import {getPokemonPictureFromId, getTypePictureById} from "@utils";
 import {Popover, PopoverContent, PopoverTrigger} from "@ui/popover";
-import {ReadonlyURLSearchParams, useSearchParams} from "next/navigation";
 import PokemonRegionalFormCard from "../../moleculs/PokemonFormCard/PokemonRegionalFormCard";
 import {Card} from "@ui/card";
+import {useQueryState} from "nuqs";
 
 const handlePokemon: (pokemonId: number, formId: string | null) => Promise<GroupedPokemonInfoDetailResponse> = async (pokemonId: number, formId: string | null): Promise<GroupedPokemonInfoDetailResponse> =>
 {
@@ -42,23 +42,32 @@ const handlePokemon: (pokemonId: number, formId: string | null) => Promise<Group
 export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.Element
 {
 
-    const params: ReadonlyURLSearchParams = useSearchParams();
-    const formId: string | null = params.get('form');
+    const [formId] = useQueryState<string | null>('form', {history: 'replace', parse: (v: string): string  => v ?? null});
+    const [generationSelected, setGeneration] = useQueryState<string | null>('generation', {
+        history: 'replace',
+        parse:   (value: string): string => value ?? null,
+    });
 
     const {data, isLoading, error} = useQuery({
         queryKey: [`pokemon_${pokemonId}_${formId}`],
         queryFn:  (): Promise<GroupedPokemonInfoDetailResponse> => handlePokemon(pokemonId, formId),
     });
 
-    const [generationSelected, setGenerationSelected] = useState<string | null>(params.get('generation'));
-    const [pokemonInfo, setPokemonInfo] = useState<PokemonInfoDetail | null>(null);
-    const rightPanelRef: RefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(null);
-    const t = useTranslations();
-
     const pokemonGroupedInfo: GroupedPokemonInfoDetail | null = useMemo((): GroupedPokemonInfoDetail | null =>
     {
         return data?.success ? data.data : null;
     }, [data]);
+
+    const selectedGeneration: string | null = generationSelected ?? Object.keys(pokemonGroupedInfo ?? {}).at(-1) ?? null;
+
+    const pokemonInfo: PokemonInfoDetail | null = useMemo((): PokemonInfoDetail | null =>
+    {
+        if (!selectedGeneration || !pokemonGroupedInfo) return null;
+        return pokemonGroupedInfo[selectedGeneration] ?? null;
+    }, [pokemonGroupedInfo, selectedGeneration]);
+
+    const rightPanelRef: RefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(null);
+    const t = useTranslations();
 
     function getCapacitiesColumns(): CustomColumnDefTable<CapacityGeneration>[]
     {
@@ -152,7 +161,7 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
                                                 {/* Location info location */}
                                                 <div
                                                     className="flex gap-2 justify-between border-b-1 border-primary pb-2 mb-2">
-                                                    <Typography type={"h3"}
+                                                    <Typography as={"h3"}
                                                                 className="font-bold">{t('location')}:</Typography>
                                                     <div>{row.original.locationName}</div>
                                                 </div>
@@ -160,7 +169,7 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
                                                 {/* Location info condition */}
                                                 <div
                                                     className="flex gap-2 justify-between border-b-1 border-primary pb-2 mb-2">
-                                                    <Typography type={"h3"}
+                                                    <Typography as={"h3"}
                                                                 className="font-bold">{t('condition')}:</Typography>
                                                     <div>{row.original.conditionName}</div>
                                                 </div>
@@ -168,7 +177,7 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
                                                 {/* Location info détails */}
                                                 <div
                                                     className="flex gap-2 justify-between border-b-1 border-primary pb-2 mb-2">
-                                                    <Typography type={"h3"}
+                                                    <Typography as={"h3"}
                                                                 className="font-bold">{t('detail')}:</Typography>
                                                     <div>{row.original.detailName}</div>
                                                 </div>
@@ -176,14 +185,14 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
                                                 {/* Location info météo */}
                                                 <div
                                                     className="flex gap-2 justify-between border-b-1 border-primary pb-2 mb-2">
-                                                    <Typography type={"h3"}
+                                                    <Typography as={"h3"}
                                                                 className="font-bold">{t('meteo')}:</Typography>
                                                     <div>{row.original.meteoName}</div>
                                                 </div>
 
                                                 {/* Location info isAlpha */}
                                                 <div className="flex gap-2 justify-between pb-2 mb-2">
-                                                    <Typography type={"h3"}
+                                                    <Typography as={"h3"}
                                                                 className="font-bold">{t('isAlpha')}:</Typography>
                                                     <div>{Boolean(row.original.isAlpha) ? t('yes') : t('no')}</div>
                                                 </div>
@@ -193,22 +202,6 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
         ];
     }
 
-    useEffect((): void =>
-    {
-        if (pokemonGroupedInfo)
-        {
-            if (generationSelected)
-            {
-                setGenerationSelected(generationSelected);
-                setPokemonInfo(pokemonGroupedInfo[generationSelected]);
-            } else
-            {
-                const allKeys: string[] = Object.keys(pokemonGroupedInfo);
-                setGenerationSelected(allKeys[allKeys.length - 1]);
-            }
-        }
-    }, [generationSelected, pokemonGroupedInfo]);
-
     if (isLoading) return <></>;
     if (error) return <p>Erreur : {error.message}</p>;
     if (!pokemonInfo) return <p>Aucune donnée récupérée</p>;
@@ -216,11 +209,11 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
     return (
         <div className="relative">
             <GenerationChoice
-                className="w-3/4"
                 possibleGenerations={pokemonGroupedInfo ? Object.keys(pokemonGroupedInfo) : []}
-                generationSelecter={setGenerationSelected}
-                generationSelected={generationSelected}
+                generationSelecter={setGeneration}
+                generationSelected={selectedGeneration}
             />
+
 
             <div className='h-full py-2 px-4 border-l border-secondary w-1/4 fixed top-0 right-0' ref={rightPanelRef}>
                 <div className="flex w-full flex-col gap-3">
@@ -230,37 +223,37 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
 
                     {/* Pokemon gen appear */}
                     <div className="flex gap-2">
-                        <Typography type={"h3"} className="font-bold">{t('pokemon.genAppear')}:</Typography>
+                        <Typography as={"h3"} className="font-bold">{t('pokemon.genAppear')}:</Typography>
                         <div>{pokemonInfo.generationAppear}</div>
                     </div>
 
                     {/* Pokemon category */}
                     <div className="flex gap-2">
-                        <Typography type={"h3"} className="font-bold">{t('category')}:</Typography>
+                        <Typography as={"h3"} className="font-bold">{t('category')}:</Typography>
                         <div>{pokemonInfo.categoryName}</div>
                     </div>
 
                     {/* Pokemon size */}
                     <div className="flex gap-2">
-                        <Typography type={"h3"} className="font-bold">{t('size')}:</Typography>
+                        <Typography as={"h3"} className="font-bold">{t('size')}:</Typography>
                         <div>{pokemonInfo.size} m</div>
                     </div>
 
                     {/* Pokemon weight */}
                     <div className="flex gap-2">
-                        <Typography type={"h3"} className="font-bold">{t('weight')}:</Typography>
+                        <Typography as={"h3"} className="font-bold">{t('weight')}:</Typography>
                         <div>{pokemonInfo.weight} kg</div>
                     </div>
 
                     {/* Pokemon callHelpRate */}
                     <div className="flex gap-2">
-                        <Typography type={"h3"} className="font-bold">{t('pokemon.callHelpRate')}:</Typography>
+                        <Typography as={"h3"} className="font-bold">{t('pokemon.callHelpRate')}:</Typography>
                         <div>{pokemonInfo.callHelpRate}</div>
                     </div>
 
                     {/* Pokemon exp global */}
                     <div className="flex gap-2">
-                        <Typography type={"h3"} className="font-bold" title={t('pokemon.globalXpTitle')}>
+                        <Typography as={"h3"} className="font-bold" title={t('pokemon.globalXpTitle')}>
                             {t('pokemon.globalXp')}:
                         </Typography>
                         <div>{new Intl.NumberFormat('fr-FR').format(pokemonInfo.globalXp)} exp</div>
@@ -268,25 +261,25 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
 
                     {/* Pokemon HatchingCycle */}
                     <div className="flex gap-2">
-                        <Typography type={"h3"} className="font-bold">{t('pokemon.hatchingCycle')}</Typography>
+                        <Typography as={"h3"} className="font-bold">{t('pokemon.hatchingCycle')}</Typography>
                         <div>{pokemonInfo.hatchingCycle}</div>
                     </div>
 
                     {/* Pokemon captureRate */}
                     <div className="flex gap-2">
-                        <Typography type={"h3"} className="font-bold">{t('pokemon.captureRate')}</Typography>
+                        <Typography as={"h3"} className="font-bold">{t('pokemon.captureRate')}</Typography>
                         <div>{pokemonInfo.captureRate}</div>
                     </div>
 
                     {/* Pokemon xpGift */}
                     <div className="flex gap-2">
-                        <Typography type={"h3"} className="font-bold">{t('pokemon.xpGift')}</Typography>
+                        <Typography as={"h3"} className="font-bold">{t('pokemon.xpGift')}</Typography>
                         <div>{pokemonInfo.xpGift}</div>
                     </div>
 
                     {/* Pokemon type */}
                     <div className="flex gap-2 items-center">
-                        <Typography type={'h3'} className="font-bold">{t('type.name')}</Typography>
+                        <Typography as={'h3'} className="font-bold">{t('type.name')}</Typography>
                         <div className="flex gap-2">
                             {
                                 pokemonInfo.types.map((type: Type): JSX.Element => (
@@ -304,7 +297,7 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
 
                     {/* Pokemon ability */}
                     <div className="flex gap-2">
-                        <Typography type={"h3"} className="font-bold">{t('ability.name')}</Typography>
+                        <Typography as={"h3"} className="font-bold">{t('ability.name')}</Typography>
                         {
                             pokemonInfo.abilities.filter((ability: Ability): boolean => !ability.isHidden).length > 0
                                 ? pokemonInfo.abilities.filter((ability: Ability): boolean => !ability.isHidden)
@@ -315,7 +308,7 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
 
                     {/* Pokemon hidden ability */}
                     <div className="flex gap-2">
-                        <Typography type={"h3"} className="font-bold">{t('ability.hiddenName')}</Typography>
+                        <Typography as={"h3"} className="font-bold">{t('ability.hiddenName')}</Typography>
                         {
                             pokemonInfo.abilities.filter((ability: Ability): boolean => ability.isHidden).length > 0
                                 ? pokemonInfo.abilities.filter((ability: Ability): boolean => ability.isHidden)
@@ -326,7 +319,7 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
 
                     {/* Pokemon genreRate */}
                     <div className="flex gap-2">
-                        <Typography type={"h3"} className="font-bold">{t('pokemon.genderRate')}</Typography>
+                        <Typography as={"h3"} className="font-bold">{t('pokemon.genderRate')}</Typography>
                         <div className="flex gap-2 items-center">
                             <GenderGauge maleRate={pokemonInfo.maleRate} femelleRate={pokemonInfo.femelleRate}
                                          className="w-[100px]"/>
@@ -335,7 +328,7 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
 
                     {/* Pokemon eggGroup */}
                     <div className="flex gap-2">
-                        <Typography type={"h3"} className="font-bold">{t('pokemon.eggGroup')}</Typography>
+                        <Typography as={"h3"} className="font-bold">{t('pokemon.eggGroup')}</Typography>
                         {
                             pokemonInfo.eggGroups.map((eggGroup: EggGroup): string => eggGroup.name).join(' - ')
                         }
@@ -343,7 +336,7 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
 
                     {/* Pokemon nationalNumber */}
                     <div className="flex gap-2 flex-col">
-                        <Typography type={"h3"} className="font-bold">{t('nationalNumber')}</Typography>
+                        <Typography as={"h3"} className="font-bold">{t('nationalNumber')}</Typography>
                         <div className="pl-4">
                             {
                                 pokemonInfo.nationalNumbers.length > 0
