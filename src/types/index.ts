@@ -7,14 +7,15 @@ import {Ability, AbilityGeneration, AbilityGenerationResponse} from './ability';
 import {Statistic, StatisticGenerationResponse, StatisticGeneration} from './statistic';
 import {TypePictureStyle, PokemonPictureStyle, PokemonPicture} from './picture';
 import {Generation, GenerationResponse} from './generation';
-import {TranslationName} from './translation';
+import {TranslationName, Translation} from './translation';
 import {NationalNumber, NationalNumberGeneration} from './nationalNumber';
 import {CapacityGeneration} from './capacity';
-import {LocationGeneration, LocationGenerationsResponse} from './location';
+import {LocationGeneration, LocationGenerationsResponse, GameLocationName, GameLocationNameResponse, Location} from './location';
 import {EvolutionNode, EvolutionTree} from './evolution';
 import {FormWithName, RegionalFormWithName, FormWithNamesResponse} from './forms';
-import {ShinyHuntingCreateData} from './shinyHunting';
-import {AuthProviderEnum} from './auth';
+import {AuthProviderEnum, Session, User} from './auth';
+import {HuntingMethods, HuntingMethodsResponse} from "./huntingMethods";
+import {CreateHunting, CreateHuntingResponse} from './hunting';
 
 export type {
     DataError,
@@ -59,6 +60,15 @@ export type {
     TranslationIdNamesResponse,
     FormWithNamesResponse,
     LocationGenerationsResponse,
-    ShinyHuntingCreateData,
-    AuthProviderEnum
+    AuthProviderEnum,
+    Session,
+    User,
+    Translation,
+    HuntingMethods,
+    HuntingMethodsResponse,
+    GameLocationName,
+    GameLocationNameResponse,
+    Location,
+    CreateHunting,
+    CreateHuntingResponse
 }

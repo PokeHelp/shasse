@@ -5,7 +5,9 @@ export default function AppLayout({ children }: { children: ReactNode }) {
     return (
         <>
             <Header />
-            {children}
+            <div className="mt-12">
+                {children}
+            </div>
         </>
     );
 }

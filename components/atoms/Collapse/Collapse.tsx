@@ -6,7 +6,7 @@ import {CollapseProps} from "@typesFront";
 
 export default function Collapse({triggerAction, children, ...other}: CollapseProps): JSX.Element
 {
-    const [value, setValue] = useState<string | undefined>(undefined);
+    const [value, setValue] = useState<string | undefined>(other.defaultChecked ? "item-1" : undefined);
     const isOpen: boolean = value === "item-1";
 
     return (
@@ -18,7 +18,15 @@ export default function Collapse({triggerAction, children, ...other}: CollapsePr
             {...other}
         >
             <AccordionItem value="item-1">
-                <AccordionTrigger className="justify-end cursor-pointer">
+                <AccordionTrigger
+                    className="justify-end cursor-pointer"
+                    onClick={e => {
+                        const target = e.target as HTMLElement;
+                        if (["INPUT", "LABEL", "BUTTON"].includes(target.tagName)) {
+                            e.stopPropagation();
+                        }
+                    }}
+                >
                     {typeof triggerAction === "function"
                         ? triggerAction(isOpen)
                         : triggerAction}

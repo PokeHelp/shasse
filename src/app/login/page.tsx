@@ -1,6 +1,7 @@
 import {Typography, LoginForm, BodyBackground} from "@components";
 import {JSX} from "react";
 import {getTranslations} from 'next-intl/server';
+import {Translation} from "@types";
 
 /**
  * Page: /login
@@ -9,7 +10,7 @@ import {getTranslations} from 'next-intl/server';
  */
 export default async function LoginPage(): Promise<JSX.Element>
 {
-    const t = await getTranslations('page.login');
+    const t: Translation = await getTranslations('page.login');
 
     return (
         <>

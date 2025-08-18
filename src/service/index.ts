@@ -8,7 +8,9 @@ import {getPokemonAbilityWithTranslation} from './ability';
 import {getPokemonStatisticWithTranslation} from './statistic';
 import {getLastGeneration} from './generation';
 import {getFormChoice, getAllPokemonForm} from './form';
-import {getPokemonGenerationLocation} from './location';
+import {getPokemonGenerationLocation, getGameLocation} from './location';
+import {getAllGameIdNameByPokemon} from './game';
+import {createOwnedPokemon} from './owned';
 
 export {
     getDefaultLangue,
@@ -27,5 +29,8 @@ export {
     getFormChoice,
     getAllIdName,
     getPokemonGenerationLocation,
-    getAllPokemonForm
+    getAllPokemonForm,
+    getAllGameIdNameByPokemon,
+    getGameLocation,
+    createOwnedPokemon
 }

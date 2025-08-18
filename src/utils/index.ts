@@ -2,7 +2,7 @@ import {sendResponse} from "./http";
 import {createJWT, verifyJWT, getCookie, setCookie} from "./auth";
 import {setFieldError, clearFieldError, clearAllErrors, handleError, validateData, mapError} from './error';
 import {logError} from './server'
-import {excludeFields} from './other';
+import {excludeFields, useZodForm} from './other';
 import {getPokemonPictureFromId, getTypePictureById} from './picture';
 
 export {
@@ -20,5 +20,6 @@ export {
     excludeFields,
     setCookie,
     getPokemonPictureFromId,
-    getTypePictureById
+    getTypePictureById,
+    useZodForm
 }

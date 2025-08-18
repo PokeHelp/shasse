@@ -1,18 +1,38 @@
 import {ComponentType, JSX} from "react";
 import {Button as UiButton} from "@ui/button";
-import {ButtonProps} from "@typesFront";
-import {cn} from '@lib'
+import {ButtonProps as BaseButtonProps} from "@typesFront";
+import {cn} from "@lib";
 import {SubmitButton} from "@ui/submit-button";
 
-const Button: ({fill, className}: ButtonProps) => JSX.Element = ({
-                                                                     fill = false,
-                                                                     className,
-                                                                     ...props
-                                                                 }: ButtonProps): JSX.Element =>
+export interface ButtonPropsSuccess
+    extends Omit<BaseButtonProps, "variant">
 {
-    const ComponentButton: ComponentType<ButtonProps> = props.type === 'submit' ? SubmitButton : UiButton;
+    variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link" | "success";
+}
 
-    const disabledClass: string = "disabled:pointer-events-auto cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-primary";
+const Button: ({fill, className, variant}: ButtonPropsSuccess) => JSX.Element = ({
+                                                                                     fill = false,
+                                                                                     className,
+                                                                                     variant,
+                                                                                     ...rest
+                                                                                 }: ButtonPropsSuccess): JSX.Element =>
+{
+    const mappedVariant: BaseButtonProps["variant"] =
+              variant === "success" ? "default" : variant ?? "default";
+
+    const mappedClassName: string | undefined =
+              variant === "success"
+                  ? cn(
+                      "text-success border-success hover:text-background hover:fill-success hover:bg-success",
+                      className
+                  )
+                  : className;
+
+    const ComponentButton: ComponentType<BaseButtonProps> =
+              rest.type === "submit" ? SubmitButton : UiButton;
+
+    const disabledClass =
+              "disabled:pointer-events-auto cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-primary";
 
     return (
         <ComponentButton
@@ -21,12 +41,13 @@ const Button: ({fill, className}: ButtonProps) => JSX.Element = ({
                 fill
                     ? "bg-secondary border-secondary hover:bg-secondary"
                     : "cursor-pointer border-primary fill-primary text-primary bg-transparent hover:text-background hover:fill-background",
-                props.disabled === true ? disabledClass : "",
-                className
+                rest.disabled === true ? disabledClass : "",
+                mappedClassName
             )}
-            {...props}
+            variant={mappedVariant}
+            {...rest}
         >
-            {props.children}
+            {rest.children}
         </ComponentButton>
     );
 };

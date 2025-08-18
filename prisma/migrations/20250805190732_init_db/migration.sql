@@ -16,7 +16,7 @@ CREATE TABLE `langue` (
 CREATE TABLE `translation` (
     `langue_id` INTEGER UNSIGNED NOT NULL,
     `reference_id` BIGINT UNSIGNED NOT NULL,
-    `reference_table` ENUM('TYPE', 'POKEMON_CATEGORY', 'GAME', 'POKEMON', 'CAPACITY', 'CATEGORY_CAPACITY', 'INFLUENCE', 'SKILL_OBTENTION_TYPE', 'CAPSULE', 'EFFECT_OUTSIDE_FIGHT', 'CAPACITY_EFFECT', 'TARGET', 'POKEMON_OBTENTION', 'METEO', 'SHINY_HUNTING_METHOD', 'DETAIL', 'POKEBALL', 'EGG_GROUP', 'EVOLUTION_METHOD', 'ZONE', 'LOCATION', 'LAND', 'EVOLUTION_INFO', 'ABILITY', 'GROUP_GAME', 'FORM', 'GENDER') NOT NULL,
+    `reference_table` ENUM('TYPE', 'POKEMON_CATEGORY', 'GAME', 'POKEMON', 'CAPACITY', 'CATEGORY_CAPACITY', 'INFLUENCE', 'SKILL_OBTENTION_TYPE', 'CAPSULE', 'EFFECT_OUTSIDE_FIGHT', 'CAPACITY_EFFECT', 'TARGET', 'METEO', 'HUNTING_METHOD', 'DETAIL', 'POKEBALL', 'EGG_GROUP', 'EVOLUTION_METHOD', 'ZONE', 'LOCATION', 'LAND', 'EVOLUTION_INFO', 'ABILITY', 'GROUP_GAME', 'FORM', 'GENDER') NOT NULL,
     `name` TEXT NOT NULL,
     `created_at` DATETIME(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `updated_at` DATETIME(0) NULL,
@@ -27,8 +27,9 @@ CREATE TABLE `translation` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `shiny_hunting_method` (
+CREATE TABLE `hunting_method` (
     `id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+    `can_be_shiny` BOOLEAN NOT NULL,
     `created_at` DATETIME(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `updated_at` DATETIME(0) NULL,
     `status` VARCHAR(45) NOT NULL DEFAULT 'on',
@@ -195,7 +196,7 @@ CREATE TABLE `owned_pokemon` (
     `updated_at` DATETIME(0) NULL,
     `status` VARCHAR(45) NOT NULL DEFAULT 'on',
 
-    INDEX `shiny_hunting_method_id_fkey`(`method_id`),
+    INDEX `hunting_method_id_fkey`(`method_id`),
     INDEX `owned_pokemon_game_id_fkey`(`game_id`),
     INDEX `owned_pokemon_pokemon_form_id_fkey`(`pokemon_form_id`),
     INDEX `owned_pokemon_user_id_fkey`(`user_id`),
@@ -489,16 +490,6 @@ CREATE TABLE `meteo` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `pokemon_obtation` (
-    `id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-    `created_at` DATETIME(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
-    `updated_at` DATETIME(0) NULL,
-    `status` VARCHAR(45) NOT NULL DEFAULT 'on',
-
-    PRIMARY KEY (`id`)
-) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
--- CreateTable
 CREATE TABLE `rate` (
     `id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
     `rate` DECIMAL(5, 2) NOT NULL,
@@ -520,21 +511,21 @@ CREATE TABLE `rate` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `shiny_hunting_method_game` (
-    `shiny_hunting_method_id` INTEGER UNSIGNED NOT NULL,
+CREATE TABLE `hunting_method_game` (
+    `hunting_method_id` INTEGER UNSIGNED NOT NULL,
     `group_game_id` INTEGER UNSIGNED NOT NULL,
 
-    INDEX `shiny_hunting_method_game_shiny_hunting_method_id_fkey`(`shiny_hunting_method_id`),
-    PRIMARY KEY (`group_game_id`, `shiny_hunting_method_id`)
+    INDEX `hunting_method_game_hunting_method_id_fkey`(`hunting_method_id`),
+    PRIMARY KEY (`group_game_id`, `hunting_method_id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `shiny_hunting_method_rate` (
-    `shiny_hunting_method_id` INTEGER UNSIGNED NOT NULL,
+CREATE TABLE `hunting_method_rate` (
+    `hunting_method_id` INTEGER UNSIGNED NOT NULL,
     `rate_id` INTEGER UNSIGNED NOT NULL,
 
-    INDEX `shiny_hunting_method_rate_rate_id_fkey`(`rate_id`),
-    PRIMARY KEY (`shiny_hunting_method_id`, `rate_id`)
+    INDEX `hunting_method_rate_rate_id_fkey`(`rate_id`),
+    PRIMARY KEY (`hunting_method_id`, `rate_id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
@@ -629,15 +620,15 @@ CREATE TABLE `pokemon_game_location` (
     `game_id` INTEGER UNSIGNED NOT NULL,
     `rate_id` INTEGER UNSIGNED NOT NULL,
     `location_zone_id` INTEGER UNSIGNED NOT NULL,
-    `pokemon_obtation_id` INTEGER UNSIGNED NOT NULL,
+    `hunting_method_id` INTEGER UNSIGNED NOT NULL,
     `pokemon_form_id` INTEGER UNSIGNED NOT NULL,
     `id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
 
     INDEX `pokemon_rating_game_pokemon_form_id_fkey`(`pokemon_form_id`),
-    INDEX `pokemon_rating_game_pokemon_obtation_id_fkey`(`pokemon_obtation_id`),
+    INDEX `pokemon_rating_game_hunting_method_id_fkey`(`hunting_method_id`),
     INDEX `pokemon_rating_game_rate_id_fkey`(`rate_id`),
     INDEX `pokemon_rating_game_location_zone_id_fkey`(`location_zone_id`),
-    UNIQUE INDEX `pokemon_game_location_game_id_rate_id_location_zone_id_pokem_key`(`game_id`, `rate_id`, `location_zone_id`, `pokemon_form_id`, `pokemon_obtation_id`),
+    UNIQUE INDEX `pokemon_game_location_game_id_rate_id_location_zone_id_pokem_key`(`game_id`, `rate_id`, `location_zone_id`, `pokemon_form_id`, `hunting_method_id`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -658,12 +649,16 @@ CREATE TABLE `skill_obtation` (
 -- CreateTable
 CREATE TABLE `user` (
     `id` VARCHAR(191) NOT NULL,
-    `pseudonym` VARCHAR(100) NOT NULL,
+    `name` VARCHAR(100) NOT NULL,
     `email` VARCHAR(191) NOT NULL,
     `emailVerified` BOOLEAN NOT NULL,
+    `image` TEXT NULL,
+    `role` TEXT NULL,
+    `banned` BOOLEAN NULL,
+    `banReason` TEXT NULL,
+    `banExpires` DATETIME(3) NULL,
     `createdAt` DATETIME(3) NOT NULL,
     `updatedAt` DATETIME(3) NOT NULL,
-    `role` ENUM('PUBLIC', 'ADMIN', 'SUPER_ADMIN') NOT NULL DEFAULT 'PUBLIC',
 
     UNIQUE INDEX `user_email_key`(`email`),
     PRIMARY KEY (`id`)
@@ -761,7 +756,7 @@ ALTER TABLE `pokemon_form` ADD CONSTRAINT `pokemon_form_pokemon_id_fkey` FOREIGN
 ALTER TABLE `owned_pokemon` ADD CONSTRAINT `owned_pokemon_game_id_fkey` FOREIGN KEY (`game_id`) REFERENCES `game`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `owned_pokemon` ADD CONSTRAINT `owned_pokemon_method_id_fkey` FOREIGN KEY (`method_id`) REFERENCES `shiny_hunting_method`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `owned_pokemon` ADD CONSTRAINT `owned_pokemon_method_id_fkey` FOREIGN KEY (`method_id`) REFERENCES `hunting_method`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `owned_pokemon` ADD CONSTRAINT `owned_pokemon_pokemon_form_id_fkey` FOREIGN KEY (`pokemon_form_id`) REFERENCES `pokemon_form`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -845,16 +840,16 @@ ALTER TABLE `rate` ADD CONSTRAINT `rate_detail_rate_id_fkey` FOREIGN KEY (`detai
 ALTER TABLE `rate` ADD CONSTRAINT `rate_meteo_id_fkey` FOREIGN KEY (`meteo_id`) REFERENCES `meteo`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `shiny_hunting_method_game` ADD CONSTRAINT `shiny_hunting_method_game_group_game_id_fkey` FOREIGN KEY (`group_game_id`) REFERENCES `group_game`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `hunting_method_game` ADD CONSTRAINT `hunting_method_game_group_game_id_fkey` FOREIGN KEY (`group_game_id`) REFERENCES `group_game`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `shiny_hunting_method_game` ADD CONSTRAINT `shiny_hunting_method_game_shiny_hunting_method_id_fkey` FOREIGN KEY (`shiny_hunting_method_id`) REFERENCES `shiny_hunting_method`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `hunting_method_game` ADD CONSTRAINT `hunting_method_game_hunting_method_id_fkey` FOREIGN KEY (`hunting_method_id`) REFERENCES `hunting_method`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `shiny_hunting_method_rate` ADD CONSTRAINT `shiny_hunting_method_rate_rate_id_fkey` FOREIGN KEY (`rate_id`) REFERENCES `rate`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `hunting_method_rate` ADD CONSTRAINT `hunting_method_rate_rate_id_fkey` FOREIGN KEY (`rate_id`) REFERENCES `rate`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `shiny_hunting_method_rate` ADD CONSTRAINT `shiny_hunting_method_rate_shiny_hunting_method_id_fkey` FOREIGN KEY (`shiny_hunting_method_id`) REFERENCES `shiny_hunting_method`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `hunting_method_rate` ADD CONSTRAINT `hunting_method_rate_hunting_method_id_fkey` FOREIGN KEY (`hunting_method_id`) REFERENCES `hunting_method`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `statistic_group_game` ADD CONSTRAINT `statistic_group_game_group_game_id_fkey` FOREIGN KEY (`group_game_id`) REFERENCES `group_game`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -902,7 +897,7 @@ ALTER TABLE `pokemon_game_location` ADD CONSTRAINT `pokemon_game_location_locati
 ALTER TABLE `pokemon_game_location` ADD CONSTRAINT `pokemon_game_location_pokemon_form_id_fkey` FOREIGN KEY (`pokemon_form_id`) REFERENCES `pokemon_form`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `pokemon_game_location` ADD CONSTRAINT `pokemon_game_location_pokemon_obtation_id_fkey` FOREIGN KEY (`pokemon_obtation_id`) REFERENCES `pokemon_obtation`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `pokemon_game_location` ADD CONSTRAINT `pokemon_game_location_hunting_method_id_fkey` FOREIGN KEY (`hunting_method_id`) REFERENCES `hunting_method`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `pokemon_game_location` ADD CONSTRAINT `pokemon_game_location_rate_id_fkey` FOREIGN KEY (`rate_id`) REFERENCES `rate`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;

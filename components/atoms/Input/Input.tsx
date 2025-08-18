@@ -5,9 +5,13 @@ import {Input as UiInput} from "@ui/input"
 import {InputProps} from "@typesFront";
 import {Button} from "@components";
 import {cn} from "@lib";
-import { ReactSVG } from 'react-svg'
+import {ReactSVG} from 'react-svg'
 
-const Input: ({type, className}: InputProps) => JSX.Element = ({type, className, ...other}: InputProps): JSX.Element =>
+const Input: ({type, className}: InputProps) => JSX.Element = ({
+                                                                   type,
+                                                                   className,
+                                                                   ...other
+                                                               }: InputProps): JSX.Element =>
 {
     const [showPassword, setShowPassword] = useState(false);
 
@@ -15,7 +19,8 @@ const Input: ({type, className}: InputProps) => JSX.Element = ({type, className,
     {
         return (
             <div className="relative">
-                <UiInput type={showPassword ? 'text' : 'password'} className={cn("pr-10 border-primary", className)} {...other}/>
+                <UiInput type={showPassword ? 'text' : 'password'}
+                         className={cn("pr-10 border-primary", className)} {...other}/>
                 <Button type="button" className={"absolute right-0 top-1/2 -translate-y-1/2 h-8 w-8 p-0"}
                         onClick={(): void => setShowPassword(!showPassword)}>
                     <ReactSVG
@@ -25,14 +30,23 @@ const Input: ({type, className}: InputProps) => JSX.Element = ({type, className,
                 </Button>
             </div>
         );
-    } else
+    }
+
+    if (type === "number")
     {
         return (
-            <UiInput type={type} {...other} className={cn("border-primary", className)} />
+            <UiInput
+                type={"number"}
+                min={0}
+                className={cn("border-primary", className)}
+                {...other}
+            />
         );
     }
 
-
+    return (
+        <UiInput type={type} {...other} className={cn("border-primary", className)}/>
+    );
 };
 
 export default Input;

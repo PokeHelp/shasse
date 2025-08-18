@@ -6,6 +6,10 @@ import {
     AccessTokenDataSchema
 } from './auth'
 import {numberSchema} from './other';
+import {HuntingCreateSchema} from './shinyHunting';
+import {TranslationIdNamesSchema} from './types';
+import {CreateHuntingSchema} from './hunting';
+
 
 export {
     LoginSchema,
@@ -13,5 +17,8 @@ export {
     RoleSchema,
     RefreshTokenDataSchema,
     AccessTokenDataSchema,
-    numberSchema
+    numberSchema,
+    HuntingCreateSchema,
+    TranslationIdNamesSchema,
+    CreateHuntingSchema
 }

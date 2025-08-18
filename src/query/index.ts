@@ -14,6 +14,9 @@ import {getNationalNumber} from './nationalNumber';
 import {getCapacities} from './capacity';
 import {getLocationWithName, getPokemonGameLocation} from './location';
 import {getAllEvolutions, getFirstEvolutionId} from './evolution';
+import {getGameFiltered} from './game';
+import {getAllHuntingMethods} from './huntingMethods';
+import {createOwned} from './owned';
 
 export {
     createUser,
@@ -45,5 +48,8 @@ export {
     getFormsByPokemonIdWithName,
     getRegionalFormsByPokemonIdWithName,
     getAllTranslationIdNames,
-    getPokemonGameLocation
+    getPokemonGameLocation,
+    getGameFiltered,
+    getAllHuntingMethods,
+    createOwned
 }

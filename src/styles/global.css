@@ -10,6 +10,7 @@
     --error: oklch(64.41% 0.2763 29.65);
     --error-foreground: oklch(64.41% 0.2763 29.65);
     --card-border: oklch(0.4674 0 60.35);
+    --success: oklch(0.7677 0.2269 147.17);
 
 
     --card: oklch(1 0 0);
@@ -50,6 +51,7 @@
     --error: oklch(64.41% 0.2763 29.65);
     --error-foreground: oklch(64.41% 0.2763 29.65);
     --card-border: oklch(0.3665 0 60.35);
+    --success: oklch(0.6754 0.1899 147.17);
 
 
     --foreground: oklch(0.985 0 0);
@@ -90,6 +92,7 @@
     --color-error: var(--error);
     --color-error-foreground: var(--error-foreground);
     --color-card-border: var(--card-border);
+    --color-success: var(--success);
 
     --radius: 0.75rem;
     --radius-sm: calc(var(--radius) - 4px);

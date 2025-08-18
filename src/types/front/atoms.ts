@@ -1,4 +1,4 @@
-import {
+import React, {
     ComponentProps,
     Dispatch,
     JSX,
@@ -17,11 +17,21 @@ import {ImageProps} from "next/image";
 import {ColumnDef, SortingState} from "@tanstack/react-table";
 import {Command} from "@ui/command";
 import {Switch} from "@ui/switch";
-import {ControllerProps, FieldPath, FieldValues, Path, SubmitHandler, UseFormReturn} from "react-hook-form";
+import {Control, ControllerProps, FieldPath, FieldValues, Path, SubmitHandler, UseFormReturn} from "react-hook-form";
 import {FormControl, FormItem, FormLabel, FormMessage} from "@ui/form";
 import {AccordionSingleProps} from "@radix-ui/react-accordion";
 
-export type InputProps = ComponentProps<typeof Input>
+export interface InputProps extends ComponentProps<typeof Input>
+{
+    type?: Exclude<string, "time">;
+}
+
+export interface TimeInputProps extends Omit<ComponentProps<typeof Input>, "onChange" | "type" | "value" | "placeholder"> {
+    value?: number;
+    onChange?: (minutes: number) => void;
+    name?: string;
+}
+
 export type LinkProps = ComponentProps<typeof Link>
 
 export interface DropdownProps extends ComponentProps<typeof Select>
@@ -85,7 +95,7 @@ export interface SelectWithSearchProps extends Omit<ComponentProps<typeof Comman
     defaultValue?: string;
     value: SelectWithSearchData | null;
     onSelectValueAction: (selected: SelectWithSearchData | null) => void;
-    // onSelectValueAction: Dispatch<SetStateAction<SelectWithSearchData | null>>;
+    disabled?: boolean;
 }
 
 export interface SwitchProps extends ComponentProps<typeof Switch>
@@ -116,3 +126,13 @@ export interface CollapseProps extends Omit<AccordionSingleProps, 'type' | 'valu
     triggerAction: ReactNode | ((isOpen: boolean) => ReactNode);
     children: ReactNode;
 }
+
+export interface DatePickerProps<T extends FieldValues> {
+    name: FieldPath<T>
+    control: Control<T>
+    placeholder?: string
+}
+
+export type SeparatorProps = React.HTMLAttributes<HTMLHRElement> & {
+    direction: "vertical" | "horizontal";
+};

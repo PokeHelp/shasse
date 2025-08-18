@@ -23,10 +23,12 @@ import {ErrorContext} from "@better-fetch/fetch";
 import {authClient} from "@src/lib/auth-client";
 import {toast} from "sonner";
 import {useTranslations} from "next-intl";
+import {Translation} from "@types";
+import {useQueryState} from "nuqs";
 
 export default function RegisterForm(): JSX.Element
 {
-    const t = useTranslations();
+    const t: Translation = useTranslations();
     const router: AppRouterInstance = useRouter();
 
     const form: UseFormReturn<z.infer<typeof RegisterSchema>> = useForm<z.infer<typeof RegisterSchema>>({
@@ -40,6 +42,8 @@ export default function RegisterForm(): JSX.Element
         },
     });
 
+    const [fallbackUri] = useQueryState('fallback', {defaultValue: '/'});
+
     async function onSubmit(values: z.infer<typeof RegisterSchema>): Promise<void>
     {
         await authClient.signUp.email({
@@ -49,7 +53,7 @@ export default function RegisterForm(): JSX.Element
         }, {
             onSuccess: (): void =>
                        {
-                           router.push('/');
+                           router.push(fallbackUri);
                            router.refresh();
                        },
             onError:   (error: ErrorContext): void =>
@@ -139,12 +143,12 @@ export default function RegisterForm(): JSX.Element
             </Form>
 
             <div className="mt-8">
-                <AuthSocial/>
+                <AuthSocial fallbackUri={fallbackUri}/>
             </div>
 
             <div className="mt-8 flex justify-end gap-2">
                 {t('page.register.haveCount')}
-                <Link href={"/login"}>
+                <Link href={`/login?fallback=${fallbackUri}`}>
                     {t('login')}
                 </Link>
             </div>

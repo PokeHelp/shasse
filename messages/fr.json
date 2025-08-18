@@ -1,18 +1,46 @@
 {
   "page":              {
-    "home":     {
+    "home":          {
       "title": "Page HOME"
     },
-    "login":    {
+    "login":         {
       "title":         "Login",
       "connexionWith": "Connexion avec {connexionName}",
       "anyCount":      "Pas de compte ?"
     },
-    "register": {
+    "register":      {
       "title":           "Register",
       "variousPassword": "Les mots de passe ne correspondent pas.",
       "haveCount":       "Vous avez un compte ?",
       "error":           "Erreur lors de l'inscription"
+    },
+    "unauthorized":  {
+      "title":       "Vous n'êtes pas connecté",
+      "description": "Vous devez vous connecter pour accéder à cette page",
+      "login":       "Se connecter",
+      "register":    "S'inscrire"
+    },
+    "shinyHuntings": {
+      "create": {
+        "selectPokemon":           "Sélectionnez un pokémon",
+        "choosePokemon":           "Choisissez un pokémon",
+        "selectForm":              "Sélectionnez une forme",
+        "chooseForm":              "Choisissez une forme de {pokemonName}",
+        "selectGame":              "Sélectionnez un jeu",
+        "chooseGame":              "Choisissez un jeu",
+        "useCC":                   "Charme Chromatique utilisé ?",
+        "isFinish":                "Est fini ?",
+        "createdAt":               "Shasse créée le",
+        "spriteInShiny":           "Sprite en shiny ?",
+        "selectHuntinMethod":      "Sélectionnez une méthode d'obtention",
+        "chooseHuntinMethod":      "Choisissez une méthode d'obtention",
+        "showLocations":           "Voir les localisations",
+        "searchLocations":         "Rechercher des localisations",
+        "chooseEndingDate": "Choisir une date de fin",
+
+        "selectPokemonBeforeForm": "Sélectionnez un pokémon avant de choisir une forme",
+        "hasOneForm":              "Ce pokémon possède une seule forme"
+      }
     }
   },
   "refresh":           {
@@ -41,6 +69,7 @@
     }
   },
   "pokemon":           {
+    "name":          "Pokémon",
     "hatchingCycle": "Cycle d'éclosion",
     "captureRate":   "Taux de capture",
     "callHelpRate":  "Taux d'appel à l'aide",
@@ -104,18 +133,8 @@
     "anyPokemonNameFound": "Aucun nom de pokémon n'a été trouvé",
     "anyGameNameFound":    "Aucun nom de jeu n'a été trouvé"
   },
-  "shinyHuntings":     {
-    "create": {
-      "selectPokemon":           "Sélectionnez un pokémon",
-      "choosePokemon":           "Choisissez un pokémon",
-      "selectGame":              "Sélectionnez un jeu",
-      "chooseGame":              "Choisissez un jeu",
-      "selectForm":              "Sélectionnez une forme",
-      "chooseForm":              "Choisissez une forme de {pokemonName}",
-      "selectPokemonBeforeForm": "Sélectionnez un pokémon avant de choisir une forme",
-      "hasOneForm":              "Ce pokémon possède une seule forme",
-      "btnCreate":               "Créer un shasse"
-    }
+  "calendar":          {
+    "placeholder": "Choisir une date"
   },
   "nationalNumber":    "Numéro national",
   "notAvailable":      "Pas disponible dans cette génération",
@@ -152,5 +171,10 @@
   "pokedex":           "Pokedex",
   "byTypes":           "Par types",
   "byGenerations":     "Par générations",
-  "byForms":           "Par formes"
+  "byForms":           "Par formes",
+  "timePassed":        "Temps passé",
+  "addTime":           "Ajouter du temps",
+  "meetingNumber":     "Nombre de rencontre",
+  "select": "Sélectionner",
+  "action": "Action"
 }

@@ -26,3 +26,28 @@ export type LocationGenerationsResponse = | {
     success: true;
     data: LocationGeneration[];
 } | ErrorResponse
+
+export interface GameLocationName
+{
+    gameName: string;
+    rate: number;
+    minLevel: number;
+    maxLevel: number;
+    huntingMethodName: string;
+    limit: number;
+    meteoName: string;
+    conditionName: string;
+    isAlpha: boolean;
+    detailName: string;
+    gameId: number;
+    rateId: number;
+    meteoId: number;
+    detailRateId: number;
+    conditionRateId: number;
+    huntingMethodId: number;
+}
+
+export type GameLocationNameResponse = | {
+    success: true;
+    data: GameLocationName[];
+} | ErrorResponse

@@ -14,28 +14,31 @@ import {
     AuthSocial
 } from "@components";
 import {LoginSchema} from "@schema";
-import {useForm, UseFormReturn} from "react-hook-form";
+import {UseFormReturn} from "react-hook-form";
 import {z} from "zod";
-import {zodResolver} from "@hookform/resolvers/zod";
 import {useRouter} from "next/navigation";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {ErrorContext} from "@better-fetch/fetch";
 import {authClient} from "@src/lib/auth-client";
 import {toast} from "sonner";
 import {useTranslations} from "next-intl";
+import {Translation} from "@types";
+import {useQueryState} from "nuqs";
+import {useZodForm} from "@utils";
 
 export default function LoginForm(): JSX.Element
 {
-    const t = useTranslations();
+    const t: Translation = useTranslations();
     const router: AppRouterInstance = useRouter();
 
-    const form: UseFormReturn<z.infer<typeof LoginSchema>> = useForm<z.infer<typeof LoginSchema>>({
-        resolver:      zodResolver(LoginSchema),
+    const form: UseFormReturn<z.infer<typeof LoginSchema>> = useZodForm(LoginSchema, {
         defaultValues: {
             email:    "",
             password: ""
         },
     });
+
+    const [fallbackUri] = useQueryState('fallback', {defaultValue: '/'});
 
     async function onSubmit(values: z.infer<typeof LoginSchema>): Promise<void>
     {
@@ -45,7 +48,7 @@ export default function LoginForm(): JSX.Element
         }, {
             onSuccess: (): void =>
                        {
-                           router.push('/');
+                           router.push(fallbackUri);
                            router.refresh();
                        },
             onError:   (error: ErrorContext): void =>
@@ -97,12 +100,12 @@ export default function LoginForm(): JSX.Element
             </Form>
 
             <div className="mt-8">
-                <AuthSocial />
+                <AuthSocial fallbackUri={fallbackUri} />
             </div>
 
             <div className="mt-8 flex justify-end gap-2">
                 {t('page.login.anyCount')}
-                <Link href={"/register"}>{t('register')}</Link>
+                <Link href={`/register?fallback=${fallbackUri}`}>{t('register')}</Link>
             </div>
         </>
     );

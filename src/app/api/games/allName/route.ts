@@ -1,25 +1,40 @@
-import {TranslationIdNames, TranslationIdNamesResponse} from "@types";
-import {sendResponse} from "@utils";
+import {Translation, TranslationIdNames, TranslationIdNamesResponse} from "@types";
+import {mapError, sendResponse} from "@utils";
 import {HttpStatusCode} from "axios";
-import {NextResponse} from "next/server";
-import {getAllIdName} from "@service";
+import {NextRequest, NextResponse} from "next/server";
+import {getAllGameIdNameByPokemon} from "@service";
 import {getTranslations} from "next-intl/server";
 import {reference_table} from "@prisma/client";
+import {SafeParseReturnType} from "zod";
+import {numberSchema} from "@schema";
 
-export async function GET(): Promise<NextResponse<TranslationIdNamesResponse>>
+export async function GET(request: NextRequest): Promise<NextResponse<TranslationIdNamesResponse>>
 {
-    const t = await getTranslations('api');
+    const t: Translation = await getTranslations('api');
+    const searchParams: URLSearchParams = request.nextUrl.searchParams;
 
     try
     {
-        const pokemonNames: TranslationIdNames[] = await getAllIdName(reference_table.GAME);
+        const pokemonId: string | null = searchParams.get('pokemonId');
+        let pokemonIdPassed: SafeParseReturnType<string, number> | null = null;
 
-        if (pokemonNames.length === 0)
+        if (pokemonId)
+        {
+            pokemonIdPassed = numberSchema.safeParse(pokemonId);
+            if (!pokemonIdPassed.success)
+            {
+                return sendResponse({success: false, error: mapError(pokemonIdPassed)}, HttpStatusCode.BadRequest);
+            }
+        }
+
+        const gameNames: TranslationIdNames[] = await getAllGameIdNameByPokemon(pokemonIdPassed ? pokemonIdPassed.data : null);
+
+        if (gameNames.length === 0)
         {
             return sendResponse({success: false, error: t('anyGameNameFound')}, HttpStatusCode.NoContent);
         }
 
-        return sendResponse({success: true, data: pokemonNames}, HttpStatusCode.Ok);
+        return sendResponse({success: true, data: gameNames}, HttpStatusCode.Ok);
 
     } catch (e)
     {

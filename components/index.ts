@@ -19,7 +19,10 @@ import {
     ToastHandler,
     Checkbox,
     Collapse,
-    PageLayout
+    PageLayout,
+    DatePicker,
+    TimeInput,
+    Separator
 } from './atoms';
 import {
     InputFormField,
@@ -85,5 +88,8 @@ export {
     BodyBackground,
     Checkbox,
     Collapse,
-    PageLayout
+    PageLayout,
+    DatePicker,
+    TimeInput,
+    Separator
 }

@@ -3,7 +3,7 @@
 import {Button} from "@components";
 import {ReactSVG} from "react-svg";
 import {useTranslations} from "next-intl";
-import {AuthProviderEnum} from "@types";
+import {AuthProviderEnum, Translation} from "@types";
 import {ErrorContext} from "@better-fetch/fetch";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {useRouter} from "next/navigation";
@@ -11,16 +11,16 @@ import {authClient} from "@src/lib/auth-client";
 import {toast} from "sonner";
 import {JSX} from "react";
 
-export default function AuthSocial(): JSX.Element
+export default function AuthSocial({fallbackUri}: {fallbackUri: string}): JSX.Element
 {
-    const t = useTranslations('page.login');
+    const t: Translation = useTranslations('page.login');
     const router: AppRouterInstance = useRouter();
 
     async function signInSocial(social: AuthProviderEnum): Promise<void>
     {
         await authClient.signIn.social({
             provider:    social,
-            callbackURL: "/"
+            callbackURL: fallbackUri
         }, {
             onSuccess: (): void => router.refresh(),
             onError:   (error: ErrorContext): void =>
