@@ -14,7 +14,7 @@ export default function GenerationChoice({
     const t = useTranslations('generation');
 
     return (
-        <div className={cn("flex gap-2 w-full mr-3 items-center fixed p-2 bg-background z-[2]", className)}>
+        <div className={cn("flex gap-2 mr-3 items-center fixed p-2 bg-background z-[2]", className)}>
             {t('choice')}
             {possibleGenerations.map((generation: string): JSX.Element => (
                 <Button

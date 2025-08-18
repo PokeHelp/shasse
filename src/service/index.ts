@@ -1,6 +1,5 @@
 import {getDefaultLangue, getAllIsoCode, getLangueId} from './langue';
-import {register, refreshToken, login} from'./auth';
-import {findIdByReferenceTable, findNameByReferenceTable} from './translation';
+import {findIdByReferenceTable, findNameByReferenceTable, getAllIdName} from './translation';
 import {getPokemonFormPokedex} from './pokemonForm';
 import {getAllTypeWithTranslation, getPokemonTypeWithTranslation} from './type';
 import {getDetail} from './pokemon';
@@ -8,14 +7,14 @@ import {getPokemonEggGroupWithTranslation} from './eggGroup';
 import {getPokemonAbilityWithTranslation} from './ability';
 import {getPokemonStatisticWithTranslation} from './statistic';
 import {getLastGeneration} from './generation';
-import {getFormChoice} from './form';
+import {getFormChoice, getAllPokemonForm} from './form';
+import {getPokemonGenerationLocation, getGameLocation} from './location';
+import {getAllGameIdNameByPokemon} from './game';
+import {createOwnedPokemon} from './owned';
 
 export {
     getDefaultLangue,
     getAllIsoCode,
-    register,
-    refreshToken,
-    login,
     getLangueId,
     findIdByReferenceTable,
     findNameByReferenceTable,
@@ -27,5 +26,11 @@ export {
     getPokemonAbilityWithTranslation,
     getPokemonStatisticWithTranslation,
     getLastGeneration,
-    getFormChoice
+    getFormChoice,
+    getAllIdName,
+    getPokemonGenerationLocation,
+    getAllPokemonForm,
+    getAllGameIdNameByPokemon,
+    getGameLocation,
+    createOwnedPokemon
 }

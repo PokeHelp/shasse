@@ -46,7 +46,7 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
     let pokemonFormId: number = pokemonId;
     if (formId)
     {
-        const formIds: {id: number}[] =  await getPokemonForm({formId: formId, pokemonId: pokemonId}, {id: true});
+        const formIds: { id: number }[] = await getPokemonForm({formId: formId, pokemonId: pokemonId}, {id: true});
 
         pokemonFormId = formIds.length > 0 ? formIds[0].id : pokemonFormId;
     }
@@ -114,6 +114,10 @@ export async function getDetail(pokemonId: number, lastGeneration: boolean, gene
     const locationsData: LocationGeneration[] = getResult<LocationGeneration>(locations || onlyShassable);
     const evolutionsData: EvolutionTree[] = getResult<EvolutionTree>(evolutions);
     const regionalFormsData: RegionalFormWithName[] = getResult<RegionalFormWithName>(regionalForm);
+
+    console.log('------------------------------------------------')
+    console.log(locationsData)
+    console.log('------------------------------------------------')
 
     const groupedData: GroupedPokemonInfoDetail = {};
 

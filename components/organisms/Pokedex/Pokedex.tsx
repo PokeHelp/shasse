@@ -11,14 +11,16 @@ import {
     TypesResponse
 } from "@types";
 import {axiosService} from "@lib";
-import {ChangeEvent, JSX, useEffect, useMemo, useState} from "react";
-import {Dropdown, Input, Pagination, PokedexCard} from "@components";
+import {ChangeEvent, JSX, useEffect, useMemo} from "react";
+import {Collapse, Dropdown, Input, Pagination, PokedexCard, Typography} from "@components";
 import {useTranslations} from "next-intl";
 import {SelectItem} from "@ui/select";
 import {getFormChoice} from "@service";
+import {useQueryState} from "nuqs";
+import {Filter, FilterX} from "lucide-react";
 
 const allTypeSelected: TypeName = {id: 0, name: "Tous"};
-const allGenerationSelected: Generation = {id: 0}
+const allGenerationSelected: Generation = {id: 0};
 
 const handlePokedex: (formId?: number | null) => Promise<PokedexResponse> = async (formId?: number | null): Promise<PokedexResponse> =>
 {
@@ -29,11 +31,18 @@ const handlePokedex: (formId?: number | null) => Promise<PokedexResponse> = asyn
 
 export default function Pokedex(): JSX.Element
 {
-    const [formSelected, setFormSelected] = useState<TranslationName | null>(null);
+    const t = useTranslations();
+    const elementsPerPage: number[] = [10, 25, 50, 100, 500, 1000];
+    const [formSelected, setFormSelected] = useQueryState('form', {
+        shallow:      false,
+        parse:        Number,
+        serialize:    String,
+        defaultValue: 1
+    });
 
     const {data, isLoading, error} = useQuery<PokedexResponse, Error>({
-        queryKey: [`pokedex${formSelected?.referenceId}`],
-        queryFn:  (): Promise<PokedexResponse> => handlePokedex(Number(formSelected?.referenceId))
+        queryKey: [`pokedex${formSelected}`],
+        queryFn:  (): Promise<PokedexResponse> => handlePokedex(Number(formSelected))
     });
 
     const {data: typesData} = useQuery<TypesResponse, Error>({
@@ -62,53 +71,79 @@ export default function Pokedex(): JSX.Element
                   }
     });
 
-    const [search, setSearch] = useState('');
-    const [currentPage, setCurrentPage] = useState(1);
-    const t = useTranslations();
-    const elementsPerPage: number[] = [10, 25, 50, 100, 500, 1000]
-    const [elementPerPage, setElementPerPage] = useState(50);
-    const [typeSelection, setTypeSelection] = useState<TypeName[]>([]);
-    const [typeSelected, setTypeSelected] = useState<TypeName>(allTypeSelected);
-    const [generationSelection, setGenerationSelection] = useState<Generation[]>([]);
-    const [generationSelected, setGenerationSelected] = useState<Generation>(allGenerationSelected);
-    const [formSelection, setFormSelection] = useState<TranslationName[]>([]);
+    // Remplissage des composants
+    const generationSelection: Generation[] = useMemo((): Generation[] =>
+    {
+        return generationsData?.success
+            ? [allGenerationSelected, ...generationsData.data]
+            : [allGenerationSelected];
+    }, [generationsData]);
+    const typeSelection: TypeName[] = useMemo((): TypeName[] =>
+    {
+        return typesData?.success
+            ? [allTypeSelected, ...typesData.data]
+            : [allTypeSelected];
+    }, [typesData]);
+    const formSelection: TranslationName[] = useMemo((): TranslationName[] =>
+    {
+        return formChoicesData ?? [];
+    }, [formChoicesData]);
+
+    // Récupération des sélections dans l'url
+    const [generationId, setGenerationId] = useQueryState('generation', {
+        parse:     Number,
+        serialize: String,
+        shallow:   false,
+    });
+    const [typeSelected, setTypeSelected] = useQueryState('type', {shallow: false});
+    const [search, setSearch] = useQueryState('search', {shallow: false, defaultValue: ''});
+    const [currentPage, setCurrentPage] = useQueryState('page', {
+        shallow:      false,
+        defaultValue: 1,
+        parse:        Number,
+        serialize:    String,
+    });
+    const [nbElementPerPage, setNbElementPerPage] = useQueryState('nbElementPerPage', {
+        shallow:      false,
+        parse:        Number,
+        serialize:    String,
+        defaultValue: 50
+    });
+
+    // Permet de récupérer les objets sélectionnés
+    const generationSelected: Generation = useMemo((): Generation =>
+    {
+        return generationSelection.find((g: Generation): boolean => g.id === generationId) ?? allGenerationSelected;
+    }, [generationId, generationSelection]);
+    const typeNameSelected: TypeName = useMemo((): TypeName =>
+    {
+        return typeSelection.find((t: TypeName): boolean => t.name === typeSelected) ?? allTypeSelected;
+    }, [typeSelected, typeSelection]);
+    const elementPerPage: number = useMemo((): number =>
+    {
+        return nbElementPerPage ?? 50;
+    }, [nbElementPerPage]);
 
     useEffect((): void =>
     {
-        setTypeSelection((typesData && typesData.success) ? [allTypeSelected, ...typesData.data] : []);
-    }, [typesData])
-
-    useEffect((): void =>
-    {
-        setGenerationSelection((generationsData && generationsData.success) ? [allGenerationSelected, ...generationsData.data] : []);
-    }, [generationsData])
-
-    useEffect((): void =>
-    {
-        if (formChoicesData)
-        {
-            setFormSelection(formChoicesData);
-            setFormSelected(formChoicesData.find((form: TranslationName): boolean => Number(form.referenceId) === 1) ?? null);
-        }
-
-    }, [formChoicesData])
+        setCurrentPage(1);
+    }, [data, search, typeNameSelected, generationSelected, setCurrentPage]);
 
     const filteredData: PokedexType[] = useMemo((): PokedexType[] =>
     {
-        setCurrentPage(1);
         const allPokemon: PokedexType[] = (data && data.success) ? data.data : [];
 
         return allPokemon.filter((pokemon: PokedexType): boolean =>
         {
             const nameMatch: boolean = pokemon.name.toLowerCase().includes(search.toLowerCase());
-            const typeMatch: boolean = typeSelected.id === 0 ? true :
-                pokemon.types.some((type: Type): boolean => type.id === typeSelected.id);
+            const typeMatch: boolean = typeNameSelected.id === 0 ? true :
+                pokemon.types.some((type: Type): boolean => type.id === typeNameSelected.id);
             const genMatch: boolean = generationSelected.id === 0 ? true :
                 pokemon.generationIdApear === generationSelected.id;
 
             return nameMatch && typeMatch && genMatch;
         });
-    }, [data, search, typeSelected, generationSelected]);
+    }, [data, search, typeNameSelected.id, generationSelected.id]);
 
     const paginatedData: PokedexType[] = useMemo((): PokedexType[] =>
     {
@@ -116,11 +151,16 @@ export default function Pokedex(): JSX.Element
         return filteredData.slice(start, start + elementPerPage);
     }, [filteredData, currentPage, elementPerPage]);
 
-    const handleFormChange: (value: string) => Promise<void> = async (value: string): Promise<void> =>
+    const handleFormChange: (value: string) => void = (value: string): void =>
     {
-        setFormSelected(formSelection.find((form: TranslationName): boolean => Number(form.referenceId) === Number(value)) ?? null)
+        const selectedForm: TranslationName | undefined = formSelection.find(
+            (form: TranslationName): boolean => form.referenceId.toString() === value
+        );
+
+        setFormSelected(selectedForm ? Number(selectedForm.referenceId) : null);
         setCurrentPage(1);
-    }
+    };
+
 
     if (isLoading) return <p>Chargement...</p>;
     if (error) return <p>Erreur : {error.message}</p>;
@@ -128,50 +168,95 @@ export default function Pokedex(): JSX.Element
 
     return (
         <div className="flex flex-col items-center gap-6">
+            <div className="flex w-full justify-between">
+                <Input type="text" placeholder={t("searchPokemon")} value={search} className="w-1/3"
+                       onChange={(e: ChangeEvent<HTMLInputElement>): void =>
+                       {
+                           setSearch(e.target.value);
+                       }}/>
 
-            <div className="flex">
-                <Input type="text" placeholder={t("pokedex.searchPokemon")} value={search}
-                       onChange={(e: ChangeEvent<HTMLInputElement>): void => setSearch(e.target.value)}/>
+                <div className="flex w-3/5 justify-end">
+                    <Collapse triggerAction={(isOpen: boolean): JSX.Element => (
+                        <div className="flex gap-3 items-center">
+                            {t("filters")}
+                            {isOpen ? <FilterX/> : <Filter/>}
+                        </div>
+                    )}>
+                        <div className="flex gap-2 flex-wrap gap-y-2">
+                            <div className="flex items-center gap-1">
+                                <Typography>
+                                    {t('elementsPerPage')}
+                                </Typography>
+                                <Dropdown
+                                    onValueChange={(nbElement: string): void =>
+                                    {
+                                        setNbElementPerPage(Number(nbElement));
+                                    }}
+                                    value={nbElementPerPage.toString()}>
+                                    {elementsPerPage.map((numberElement: number): JSX.Element => (
+                                        <SelectItem value={numberElement.toString()}
+                                                    key={numberElement}>{numberElement}</SelectItem>
+                                    ))}
+                                </Dropdown>
+                            </div>
 
-                <Dropdown onValueChange={(value: string): void => setElementPerPage(Number(value))}
-                          value={elementPerPage.toString()}>
-                    {elementsPerPage.map((numberElement: number): JSX.Element => (
-                        <SelectItem value={numberElement.toString()} key={numberElement}>{numberElement}</SelectItem>
-                    ))}
-                </Dropdown>
+                            <div className="flex items-center gap-1">
+                                <Typography>
+                                    {t('byTypes')}
+                                </Typography>
+                                <Dropdown
+                                    onValueChange={(typeName: string): void =>
+                                    {
+                                        setTypeSelected(typeName);
+                                    }}
+                                    value={typeNameSelected.name}>
+                                    {typeSelection.map((type: TypeName): JSX.Element => (
+                                        <SelectItem value={type.name} key={type.id}>{type.name}</SelectItem>
+                                    ))}
+                                </Dropdown>
+                            </div>
 
-                <Dropdown
-                    onValueChange={(value: string): void => setTypeSelected(typeSelection.find((type: TypeName): boolean => type.id === Number(value)) ?? allTypeSelected)}
-                    value={typeSelected.id.toString()}>
-                    {typeSelection.map((type: TypeName): JSX.Element => (
-                        <SelectItem value={type.id.toString()} key={type.id}>{type.name}</SelectItem>
-                    ))}
-                </Dropdown>
+                            <div className="flex items-center gap-1">
+                                <Typography>
+                                    {t('byGenerations')}
+                                </Typography>
+                            <Dropdown
+                                onValueChange={(value: string): void =>
+                                {
+                                    setGenerationId(Number(value));
+                                }}
+                                value={generationId?.toString() ?? '0'}>
+                                {generationSelection.map((gen: Generation): JSX.Element => (
+                                    <SelectItem value={gen.id.toString()} key={gen.id}>
+                                        {gen.id === 0 ? t('generation.all') : gen.id}
+                                    </SelectItem>
+                                ))}
+                            </Dropdown>
+                            </div>
 
-                <Dropdown
-                    onValueChange={(value: string): void => setGenerationSelected(generationSelection.find((gen: Generation): boolean => gen.id === Number(value)) ?? allGenerationSelected)}
-                    value={generationSelected.id.toString()}>
-                    {generationSelection.map((gen: Generation): JSX.Element => (
-                        <SelectItem value={gen.id.toString()} key={gen.id}>
-                            {gen.id === 0 ? t('generation.all') : gen.id}
-                        </SelectItem>
-                    ))}
-                </Dropdown>
-
-                <Dropdown
-                    onValueChange={handleFormChange}
-                    value={formSelected?.referenceId.toString()}>
-                    {formSelection.map((form: TranslationName): JSX.Element => (
-                        <SelectItem value={form.referenceId.toString()} key={form.referenceId}>
-                            {form.name}
-                        </SelectItem>
-                    ))}
-                </Dropdown>
+                            <div className="flex items-center gap-1">
+                                <Typography>
+                                    {t('byForms')}
+                                </Typography>
+                            <Dropdown
+                                onValueChange={handleFormChange}
+                                value={formSelected?.toString()}>
+                                {formSelection.map((form: TranslationName): JSX.Element => (
+                                    <SelectItem value={form.referenceId.toString()} key={form.referenceId}>
+                                        {form.name}
+                                    </SelectItem>
+                                ))}
+                            </Dropdown>
+                            </div>
+                        </div>
+                    </Collapse>
+                </div>
             </div>
 
             <div className="flex flex-wrap gap-4 gap-y-9 justify-center">
                 {paginatedData.map((pokemon: PokedexType): JSX.Element => (
-                    <PokedexCard key={pokemon.id} pokemon={pokemon} formId={formSelected !== null ? Number(formSelected.referenceId) : null}/>
+                    <PokedexCard key={pokemon.id} pokemon={pokemon}
+                                 formId={formSelected !== null ? Number(formSelected) : null}/>
                 ))}
             </div>
 

@@ -27,7 +27,6 @@
       "@components": ["./components/index"],
       "@types": ["./src/types/index"],
       "@typesFront": ["./src/types/front/index"],
-      "@store": ["./src/store/index"],
       "@provider": ["./src/provider/index"],
       "@lib": ["./src/lib/index"],
       "@utils": ["./src/utils/index"],

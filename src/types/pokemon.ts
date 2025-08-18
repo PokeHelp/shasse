@@ -72,3 +72,14 @@ export type GroupedPokemonInfoDetailResponse = | {
     success: true;
     data: GroupedPokemonInfoDetail;
 } | ErrorResponse
+
+export interface TranslationIdNames
+{
+    name: string;
+    id: number;
+}
+
+export type TranslationIdNamesResponse = | {
+    success: true;
+    data: TranslationIdNames[];
+} | ErrorResponse

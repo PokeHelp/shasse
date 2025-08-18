@@ -2,7 +2,7 @@ import {createUser, getActiveUser} from './user';
 import {createRefreshToken, getRefreshToken} from './refreshToken';
 import {getPokemonForm, getPokemonFormPokedexQuery} from './pokemonForm';
 import {getLangue, getAllLangue} from './langue';
-import {getReferenceId, getTranslation, getTranslationsByReferenceId} from './translation';
+import {getReferenceId, getTranslation, getTranslationsByReferenceId, getAllTranslationIdNames} from './translation';
 import {getAllType, getAllTypeWithName, getPokemonTypeWithName} from './type';
 import {getPokemonInfoById} from './pokemon';
 import {getPokemonEggGroupWithName} from './eggGroup';
@@ -12,8 +12,11 @@ import {getLastGeneration, getAllGeneration} from './generation';
 import {getFormsByPokemonId, getFormsByPokemonIdWithName, getRegionalFormsByPokemonIdWithName} from './form';
 import {getNationalNumber} from './nationalNumber';
 import {getCapacities} from './capacity';
-import {getLocationWithName} from './location';
+import {getLocationWithName, getPokemonGameLocation} from './location';
 import {getAllEvolutions, getFirstEvolutionId} from './evolution';
+import {getGameFiltered} from './game';
+import {getAllHuntingMethods} from './huntingMethods';
+import {createOwned} from './owned';
 
 export {
     createUser,
@@ -43,5 +46,10 @@ export {
     getAllEvolutions,
     getFirstEvolutionId,
     getFormsByPokemonIdWithName,
-    getRegionalFormsByPokemonIdWithName
+    getRegionalFormsByPokemonIdWithName,
+    getAllTranslationIdNames,
+    getPokemonGameLocation,
+    getGameFiltered,
+    getAllHuntingMethods,
+    createOwned
 }

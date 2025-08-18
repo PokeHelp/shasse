@@ -193306,7 +193306,299 @@
             }
         ],
         "gender": ["Normal"],
-        "form": ["Normal", "Bleu", "Autre"],
+        "form": ["Normal", "Autre"],
+        "statistiqueGroupeJeu": [
+            {
+                "listeNomJeu": [
+                    "OAC",
+                    "RSE",
+                    "RFVF",
+                    "DPP",
+                    "HGSS",
+                    "NB",
+                    "N2B2",
+                    "XY",
+                    "ROSA",
+                    "SL",
+                    "USUL",
+                    "LGPE",
+                    "EB",
+                    "DEPS",
+                    "LPA",
+                    "EV"
+                ],
+                "statistique": {
+                    "pv": 70,
+                    "attaque": 92,
+                    "defense": 65,
+                    "attaqueSpe": 55,
+                    "defenseSpe": 80,
+                    "vitesse": 98,
+                    "special": 0
+                }
+            }
+        ],
+        "numeroInternational": 550,
+        "xpGlobalLvl100": 1000000,
+        "cycleEclosion": 40,
+        "tauxCapture": 25,
+        "tauxAppelleAide": 9,
+        "taille": 1.0,
+        "poids": 18.0,
+        "chanceMale": 50.0,
+        "chanceFemelle": 50.0,
+        "categorie": "Violent",
+        "genApparition": 5,
+        "nationnalNumber": [
+            {
+                "game": "NB",
+                "land": "",
+                "number": 56
+            },
+            {
+                "game": "NB",
+                "land": "",
+                "number": 56
+            },
+            {
+                "game": "N2B2",
+                "land": "",
+                "number": 104
+            },
+            {
+                "game": "N2B2",
+                "land": "",
+                "number": 104
+            },
+            {
+                "game": "XY",
+                "land": "MONT",
+                "number": 60
+            },
+            {
+                "game": "XY",
+                "land": "MONT",
+                "number": 60
+            },
+            {
+                "game": "USUL",
+                "land": "",
+                "number": 188
+            },
+            {
+                "game": "USUL",
+                "land": "",
+                "number": 188
+            },
+            {
+                "game": "EB",
+                "land": "",
+                "number": 154
+            },
+            {
+                "game": "EB",
+                "land": "",
+                "number": 154
+            },
+            {
+                "game": "EB",
+                "land": "COURO",
+                "number": 64
+            },
+            {
+                "game": "EB",
+                "land": "COURO",
+                "number": 64
+            },
+            {
+                "game": "LPA",
+                "land": "",
+                "number": 166
+            },
+            {
+                "game": "EV",
+                "land": "",
+                "number": 138
+            },
+            {
+                "game": "EV",
+                "land": "",
+                "number": 138
+            }
+        ],
+        "infos": [
+            {
+                "type": {
+                    "type1": "Eau",
+                    "type2": ""
+                },
+                "groupeOeuf": {
+                    "groupeOeuf1": "Aquatique 2",
+                    "groupeOeuf2": ""
+                },
+                "talent": [
+                    {
+                        "nom": "Tête de Roc ",
+                        "cache": false,
+                        "order": 1
+                    },
+                    {
+                        "nom": "Adaptabilité",
+                        "cache": false,
+                        "order": 2
+                    },
+                    {
+                        "nom": "Brise Moule",
+                        "cache": true,
+                        "order": 3
+                    }
+                ],
+                "evolution": [],
+                "numGen": 5,
+                "xpDonnerMort": 161
+            },
+            {
+                "type": {
+                    "type1": "Eau",
+                    "type2": ""
+                },
+                "groupeOeuf": {
+                    "groupeOeuf1": "Aquatique 2",
+                    "groupeOeuf2": ""
+                },
+                "talent": [
+                    {
+                        "nom": "Tête de Roc ",
+                        "cache": false,
+                        "order": 1
+                    },
+                    {
+                        "nom": "Adaptabilité",
+                        "cache": false,
+                        "order": 2
+                    },
+                    {
+                        "nom": "Brise Moule",
+                        "cache": true,
+                        "order": 3
+                    }
+                ],
+                "evolution": [],
+                "numGen": 6,
+                "xpDonnerMort": 161
+            },
+            {
+                "type": {
+                    "type1": "Eau",
+                    "type2": ""
+                },
+                "groupeOeuf": {
+                    "groupeOeuf1": "Aquatique 2",
+                    "groupeOeuf2": ""
+                },
+                "talent": [
+                    {
+                        "nom": "Tête de Roc ",
+                        "cache": false,
+                        "order": 1
+                    },
+                    {
+                        "nom": "Adaptabilité",
+                        "cache": false,
+                        "order": 2
+                    },
+                    {
+                        "nom": "Brise Moule",
+                        "cache": true,
+                        "order": 3
+                    }
+                ],
+                "evolution": [],
+                "numGen": 7,
+                "xpDonnerMort": 161
+            },
+            {
+                "type": {
+                    "type1": "Eau",
+                    "type2": ""
+                },
+                "groupeOeuf": {
+                    "groupeOeuf1": "Aquatique 2",
+                    "groupeOeuf2": ""
+                },
+                "talent": [
+                    {
+                        "nom": "Tête de Roc ",
+                        "cache": false,
+                        "order": 1
+                    },
+                    {
+                        "nom": "Adaptabilité",
+                        "cache": false,
+                        "order": 2
+                    },
+                    {
+                        "nom": "Brise Moule",
+                        "cache": true,
+                        "order": 3
+                    }
+                ],
+                "evolution": [],
+                "numGen": 8,
+                "xpDonnerMort": 161
+            },
+            {
+                "type": {
+                    "type1": "Eau",
+                    "type2": ""
+                },
+                "groupeOeuf": {
+                    "groupeOeuf1": "Aquatique 2",
+                    "groupeOeuf2": ""
+                },
+                "talent": [
+                    {
+                        "nom": "Tête de Roc ",
+                        "cache": false,
+                        "order": 1
+                    },
+                    {
+                        "nom": "Adaptabilité",
+                        "cache": false,
+                        "order": 2
+                    },
+                    {
+                        "nom": "Brise Moule",
+                        "cache": true,
+                        "order": 3
+                    }
+                ],
+                "evolution": [],
+                "numGen": 9,
+                "xpDonnerMort": 161
+            }
+        ]
+    },
+    {
+        "infosLangue": [
+            {
+                "nom": "Bargantua Bleu",
+                "langue": "french",
+                "description": ""
+            },
+            {
+                "nom": "Blue Basculin",
+                "langue": "english",
+                "description": ""
+            },
+            {
+                "nom": "バスラオ",
+                "langue": "japanese",
+                "description": ""
+            }
+        ],
+        "gender": ["Normal"],
+        "form": ["Bleu"],
         "statistiqueGroupeJeu": [
             {
                 "listeNomJeu": [
@@ -221204,7 +221496,7 @@
     {
         "infosLangue": [
             {
-                "nom": "Boréas -forme- Totémique",
+                "nom": "Boréas Totémique",
                 "langue": "french",
                 "description": ""
             },
@@ -221613,7 +221905,7 @@
     {
         "infosLangue": [
             {
-                "nom": "Fulguris -forme- Totémique",
+                "nom": "Fulguris Totémique",
                 "langue": "french",
                 "description": ""
             },
@@ -222396,7 +222688,7 @@
     {
         "infosLangue": [
             {
-                "nom": "Démétéros -forme- Totémique",
+                "nom": "Démétéros Totémique",
                 "langue": "french",
                 "description": ""
             },
