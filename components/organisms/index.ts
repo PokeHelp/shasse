@@ -5,6 +5,7 @@ import PokemonDetail from "./PokemonDetail/PokemonDetail";
 import ShinyHuntingCreate from "@/components/organisms/HuntingCreate/HuntingCreate";
 import Header from "./Header/Header";
 import Layout from './Layout/Layout';
+import Footer from './Footer/Footer';
 
 export {
     LoginForm,
@@ -13,5 +14,6 @@ export {
     PokemonDetail,
     ShinyHuntingCreate,
     Header,
-    Layout
+    Layout,
+    Footer
 }
