@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Header } from "@components";
+import {Footer, Header} from "@components";
 
 export default function AppLayout({ children }: { children: ReactNode }) {
     return (
@@ -8,6 +8,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
             <div className="mt-12">
                 {children}
             </div>
+            <Footer />
         </>
     );
 }
