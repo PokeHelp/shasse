@@ -1,8 +1,8 @@
 import {FieldValues, Control, Path} from "react-hook-form";
 import {InputProps} from "@typesFront";
-import {ComponentProps, Dispatch, RefObject, SetStateAction} from "react";
+import {ComponentProps, Dispatch, SetStateAction} from "react";
 import {Card as UiCard} from "@ui/card";
-import {GroupedPokemonInfoDetail, Pokedex} from "@types";
+import {Pokedex} from "@types";
 
 export interface RedirectButtonProps
 {

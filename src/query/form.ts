@@ -25,7 +25,7 @@ export async function getFormsByPokemonIdWithName(pokemonId: number, langueId: n
                  INNER JOIN translation t
                             ON pf.form_id = t.reference_id AND t.status = 'on' AND t.langue_id = ${langueId}
                                 AND t.reference_table = ${reference_table.FORM}
-        WHERE pf.status = 'on'
+        WHERE pf.status = 'on' AND form_id != 1
           AND pf.pokemon_id = ${pokemonId};
     `;
 

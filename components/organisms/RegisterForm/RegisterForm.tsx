@@ -1,103 +1,157 @@
 'use client';
 
-import {JSX, useState} from "react";
-import {useRouter} from "next/navigation";
-import {Button, InputFormField} from "@components";
-import {clearAllErrors, excludeFields, handleError, setFieldError, validateData} from "@utils";
-import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import {Errors, RegisterData, RegisterForm as RegisterFormType, AuthResponse} from "@types";
+import {JSX} from "react";
+import {
+    Button,
+    Input,
+    Link,
+    Form,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormControl,
+    FormMessage,
+    AuthSocial, Checkbox
+} from "@components";
 import {RegisterSchema} from "@schema";
-import {useAuthStore} from "@store";
 import {useForm, UseFormReturn} from "react-hook-form";
-import {Form} from "@ui/form";
+import {z} from "zod";
+import {zodResolver} from "@hookform/resolvers/zod";
+import {useRouter} from "next/navigation";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {ErrorContext} from "@better-fetch/fetch";
+import {authClient} from "@src/lib/auth-client";
+import {toast} from "sonner";
 import {useTranslations} from "next-intl";
-import {register} from "@service";
+import {Translation} from "@types";
+import {useQueryState} from "nuqs";
 
 export default function RegisterForm(): JSX.Element
 {
+    const t: Translation = useTranslations();
     const router: AppRouterInstance = useRouter();
-    const [errors, setErrors] = useState<Errors>({});
-    const {setAuth} = useAuthStore();
-    const t = useTranslations();
 
-    const form: UseFormReturn<RegisterFormType> = useForm<RegisterFormType>({
+    const form: UseFormReturn<z.infer<typeof RegisterSchema>> = useForm<z.infer<typeof RegisterSchema>>({
+        resolver:      zodResolver(RegisterSchema),
         defaultValues: {
-            email:          "",
-            pseudonym:      "",
-            password:       "",
-            passwordVerify: ""
+            email:     "",
+            pseudonym: "",
+            password:  "",
+            passwordVerify: "",
+            termsAccepted: false
         },
     });
 
-    const handleSubmit: (data: RegisterFormType) => Promise<void> = async (data: RegisterFormType): Promise<void> =>
+    const [fallbackUri] = useQueryState('fallback', {defaultValue: '/'});
+
+    async function onSubmit(values: z.infer<typeof RegisterSchema>): Promise<void>
     {
-        clearAllErrors(setErrors);
-
-        const isValid: boolean = validateData(data, RegisterSchema, setErrors);
-        if (data.password !== data.passwordVerify)
-        {
-            setFieldError(setErrors, 'passwordVerify', 'Le mot de passe et le mot de passe de vériication ne sont pas identique');
-        }
-        if (!isValid || data.password !== data.passwordVerify) return;
-        const registerData: RegisterData = excludeFields(data, ["passwordVerify"]);
-
-        const response: AuthResponse = await register(registerData);
-
-        if (response.success)
-        {
-            setAuth(response.accessToken, response.refreshToken);
-            router.push('/');
-        } else
-        {
-            handleError(response, setErrors);
-        }
-    };
+        await authClient.signUp.email({
+            email:    values.email,
+            password: values.password,
+            name:     values.pseudonym
+        }, {
+            onSuccess: (): void =>
+                       {
+                           router.push(fallbackUri);
+                           router.refresh();
+                       },
+            onError:   (error: ErrorContext): void =>
+                       {
+                           console.log(error);
+                           toast.error(t(`auth.code.${error.error.code}`));
+                       }
+        });
+    }
 
     return (
         <>
-            <Form {...form}>
-                <form onSubmit={form.handleSubmit(handleSubmit)}>
-                    <InputFormField
-                        name={"pseudonym"}
-                        label={t('auth.pseudonym.label')}
-                        formControl={form.control}
-                        type={"text"}
-                        placeholder={t('auth.pseudonym.placeholder')}
-                        errorText={errors.pseudonym || ''}
-                        required
-                    />
-                    <InputFormField
-                        name={"email"}
-                        label={t("auth.email.label")}
-                        formControl={form.control}
-                        type={"email"}
-                        placeholder={t('auth.email.placeholder')}
-                        errorText={errors.email || ''}
-                        required
-                    />
-                    <InputFormField
-                        label={t("auth.password.label")}
-                        formControl={form.control}
-                        errorText={errors.password || ''}
-                        name={"password"}
-                        placeholder={t('auth.password.placeholder')}
-                        type={"password"}
-                        required
-                    />
-                    <InputFormField
-                        label={t("auth.passwordVerify.label")}
-                        formControl={form.control}
-                        errorText={errors.passwordVerify || ''}
-                        name={"passwordVerify"}
-                        placeholder={t("auth.passwordVerify.label")}
-                        type={"password"}
-                        required
-                    />
-                    <Button type="submit">{t('registerPage.form.btnRegister')}</Button>
-                </form>
+            <Form form={form} callback={onSubmit} className="flex gap-3 flex-col mt-4">
+                <FormField
+                    name='email'
+                    control={form.control}
+                    render={({field}): JSX.Element => (
+                        <FormItem>
+                            <FormLabel>
+                                {t('auth.email.label')}
+                            </FormLabel>
+                            <FormControl>
+                                <Input type='email' {...field} placeholder={t('auth.email.placeholder')} required/>
+                            </FormControl>
+                            <FormMessage/>
+                        </FormItem>
+                    )}
+                />
+
+                <FormField
+                    name='pseudonym'
+                    control={form.control}
+                    render={({field}): JSX.Element => (
+                        <FormItem>
+                            <FormLabel>
+                                {t('auth.pseudonym.label')}
+                            </FormLabel>
+                            <FormControl>
+                                <Input type='text' {...field} placeholder={t('auth.pseudonym.placeholder')} required/>
+                            </FormControl>
+                            <FormMessage/>
+                        </FormItem>
+                    )}
+                />
+
+                <FormField
+                    name='password'
+                    control={form.control}
+                    render={({field}): JSX.Element => (
+                        <FormItem>
+                            <FormLabel>
+                                {t('auth.password.label')}
+                            </FormLabel>
+                            <FormControl>
+                                <Input type='password' {...field} required
+                                       placeholder={t('auth.password.placeholder')}/>
+                            </FormControl>
+                            <FormMessage/>
+                        </FormItem>
+                    )}
+                />
+
+                <FormField
+                    name='passwordVerify'
+                    control={form.control}
+                    render={({field}): JSX.Element => (
+                        <FormItem>
+                            <FormLabel>
+                                {t('auth.passwordVerify.label')}
+                            </FormLabel>
+                            <FormControl>
+                                <Input type='password' {...field} required
+                                       placeholder={t('auth.passwordVerify.placeholder')}/>
+                            </FormControl>
+                            <FormMessage/>
+                        </FormItem>
+                    )}
+                />
+
+                <Checkbox form={form} label={t("acceptTerme")} name={"termsAccepted"}/>
+
+                <div className="flex justify-end mt-2">
+                    <Button type='submit' disabled={!form.watch('termsAccepted')}>
+                        {t('register')}
+                    </Button>
+                </div>
             </Form>
 
-            {errors.general && <p style={{color: 'red'}}>{errors.general}</p>}
+            <div className="mt-8">
+                <AuthSocial fallbackUri={fallbackUri}/>
+            </div>
+
+            <div className="mt-8 flex justify-end gap-2">
+                {t('page.register.haveCount')}
+                <Link href={`/login?fallback=${fallbackUri}`}>
+                    {t('login')}
+                </Link>
+            </div>
         </>
     );
 }

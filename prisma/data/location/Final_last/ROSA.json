@@ -1474,7 +1474,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Sancoki -forme- Mer Orient",
+                    "pokemon": "Sancoki Mer Orient -forme- Mer Orient",
                     "method": "navi-dex",
                     "rates": [
                         {
@@ -4418,7 +4418,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Sancoki -forme- Mer Orient",
+                    "pokemon": "Sancoki Mer Orient -forme- Mer Orient",
                     "method": "navi-dex",
                     "rates": [
                         {
@@ -7089,7 +7089,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Printemps",
+                    "pokemon": "Vivaldaim",
                     "method": "navi-dex",
                     "rates": [
                         {

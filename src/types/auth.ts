@@ -1,74 +1,34 @@
-import {ReactNode} from "react";
-import {ErrorResponse} from "@types";
+import {authClient} from "@src/lib/auth-client";
 
-export interface RefreshToken
-{
-    refreshToken: string;
-}
+export type AuthProviderEnum = Parameters<typeof authClient.signIn.social>[0]["provider"];
 
-export interface RefreshTokenData
+export interface User
 {
-    userId: number;
-    exp: number;
-    iat: number;
-}
-
-export interface AccessTokenData
-{
-    levelAccess: number;
-    exp: number;
-    iat: number;
-}
-
-export interface LoginData
-{
+    id: string;
+    name: string;
+    emailVerified: boolean;
     email: string;
-    password: string;
+    createdAt: Date;
+    updatedAt: Date;
+    image?: string | null | undefined;
+    banned: boolean | null | undefined;
+    role?: string | null | undefined;
+    banReason?: string | null | undefined;
+    banExpires?: Date | null | undefined;
 }
 
-export interface RegisterData
+export interface Session
 {
-    email: string;
-    pseudonym: string;
-    password: string;
-}
-
-export type AuthResponse = | {
-    success: true;
-    accessToken: string;
-    refreshToken: string;
-} | ErrorResponse
-
-export type RefreshTokenResponse = | {
-    success: true;
-    accessToken: string;
-} | ErrorResponse
-
-export interface RegisterForm extends RegisterData
-{
-    passwordVerify: string;
-}
-
-export interface AuthContext
-{
-    levelAccess: number | null;
-    setAuth: (token: string) => void;
-    clearAuth: () => void;
-}
-
-export interface AuthGuardProps
-{
-    requiredLevelAccess: number;
-    children: ReactNode;
-}
-
-export interface AuthState
-{
-    isAuthenticated: boolean;
-    levelAccess: number | null;
-    isLoading: boolean;
-    setAuth: (accessToken: string, refreshToken: string) => void;
-    clearAuth: () => void;
-    isInitialized: boolean;
-    initializeAuth: () => Promise<void>;
+    session: {
+        id: string
+        token: string
+        userId: string
+        expiresAt: Date
+        createdAt: Date
+        updatedAt: Date
+        ipAddress?: string | null | undefined
+        userAgent?: string | null | undefined
+        impersonatedBy?: string | null | undefined
+    }
+    user: User
 }

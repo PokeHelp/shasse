@@ -1,13 +1,17 @@
 import LoginForm from "./LoginForm/LoginForm";
 import RegisterForm from "./RegisterForm/RegisterForm";
-import AuthGuard from './AuthGuard/AuthGuard';
 import Pokedex from './Pokedex/Pokedex';
 import PokemonDetail from "./PokemonDetail/PokemonDetail";
+import ShinyHuntingCreate from "@/components/organisms/HuntingCreate/HuntingCreate";
+import Header from "./Header/Header";
+import Layout from './Layout/Layout';
 
 export {
     LoginForm,
     RegisterForm,
-    AuthGuard,
     Pokedex,
-    PokemonDetail
+    PokemonDetail,
+    ShinyHuntingCreate,
+    Header,
+    Layout
 }

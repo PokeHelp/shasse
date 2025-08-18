@@ -1,6 +1,7 @@
 import {reference_table} from "@prisma/client";
 import {getLangueId} from "@service";
-import {getReferenceId, getTranslation} from "@query";
+import {getAllTranslationIdNames, getReferenceId, getTranslation} from "@query";
+import {TranslationIdNames} from "@types";
 
 /**
  * Permet de récupérer l'id de référence pour une langue, une table de référence et une traduction
@@ -40,4 +41,15 @@ export async function findNameByReferenceTable(id: bigint, referenceTable: refer
     }
 
     return translation.name;
+}
+
+export async function getAllIdName(referenceTable: reference_table, langId: number | null = null): Promise<TranslationIdNames[]>
+{
+    langId = !langId ? await getLangueId('french') : langId;
+    const idNames: { name: string, referenceId: bigint }[] = await getAllTranslationIdNames(referenceTable, langId);
+
+    return idNames.map((idName: { name: string, referenceId: bigint }): TranslationIdNames => ({
+        id:   Number(idName.referenceId),
+        name: idName.name
+    }));
 }

@@ -3,7 +3,7 @@
         {
             "list": [
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf",
                     "rates": [
                         {
@@ -25,7 +25,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -70,7 +70,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -115,7 +115,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -160,7 +160,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -182,7 +182,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -204,7 +204,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -226,7 +226,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -1928,7 +1928,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf",
                     "rates": [
                         {
@@ -1973,7 +1973,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -2018,7 +2018,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -2086,7 +2086,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -2152,7 +2152,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -2174,7 +2174,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -2196,7 +2196,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -2218,7 +2218,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -2923,7 +2923,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf",
                     "rates": [
                         {
@@ -2945,7 +2945,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -3013,7 +3013,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -3081,7 +3081,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -3103,7 +3103,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -3125,7 +3125,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -3147,7 +3147,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -3169,7 +3169,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -3619,7 +3619,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf",
                     "rates": [
                         {
@@ -3641,7 +3641,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -3686,7 +3686,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -3754,7 +3754,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -3799,7 +3799,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -3821,7 +3821,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -3843,7 +3843,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -3865,7 +3865,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -4265,7 +4265,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf",
                     "rates": [
                         {
@@ -4287,7 +4287,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -4332,7 +4332,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -4400,7 +4400,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -4444,7 +4444,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -4466,7 +4466,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -4488,7 +4488,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -4510,7 +4510,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -5325,7 +5325,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Printemps",
+                    "pokemon": "Vivaldaim",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -5348,7 +5348,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Été",
+                    "pokemon": "Vivaldaim Été -forme- Été",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -5371,7 +5371,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Automne",
+                    "pokemon": "Vivaldaim Automne -forme- Automne",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -5394,7 +5394,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Hiver",
+                    "pokemon": "Vivaldaim Hiver -forme- Hiver",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -5558,7 +5558,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Printemps",
+                    "pokemon": "Vivaldaim",
                     "method": "herbes-sombres",
                     "rates": [
                         {
@@ -5581,7 +5581,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Été",
+                    "pokemon": "Vivaldaim Été -forme- Été",
                     "method": "herbes-sombres",
                     "rates": [
                         {
@@ -5604,7 +5604,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Automne",
+                    "pokemon": "Vivaldaim Automne -forme- Automne",
                     "method": "herbes-sombres",
                     "rates": [
                         {
@@ -5627,7 +5627,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Hiver",
+                    "pokemon": "Vivaldaim Hiver -forme- Hiver",
                     "method": "herbes-sombres",
                     "rates": [
                         {
@@ -5788,7 +5788,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf",
                     "rates": [
                         {
@@ -5810,7 +5810,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -5878,7 +5878,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -5946,7 +5946,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -6014,7 +6014,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -6036,7 +6036,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -6058,7 +6058,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -6080,7 +6080,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -6224,7 +6224,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Printemps",
+                    "pokemon": "Vivaldaim",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -6247,7 +6247,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Été",
+                    "pokemon": "Vivaldaim Été -forme- Été",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -6270,7 +6270,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Automne",
+                    "pokemon": "Vivaldaim Automne -forme- Automne",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -6293,7 +6293,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Hiver",
+                    "pokemon": "Vivaldaim Hiver -forme- Hiver",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -6457,7 +6457,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Printemps",
+                    "pokemon": "Vivaldaim",
                     "method": "herbes-sombres",
                     "rates": [
                         {
@@ -6480,7 +6480,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Été",
+                    "pokemon": "Vivaldaim Été -forme- Été",
                     "method": "herbes-sombres",
                     "rates": [
                         {
@@ -6503,7 +6503,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Automne",
+                    "pokemon": "Vivaldaim Automne -forme- Automne",
                     "method": "herbes-sombres",
                     "rates": [
                         {
@@ -6526,7 +6526,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Hiver",
+                    "pokemon": "Vivaldaim Hiver -forme- Hiver",
                     "method": "herbes-sombres",
                     "rates": [
                         {
@@ -8534,7 +8534,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf",
                     "rates": [
                         {
@@ -8602,7 +8602,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -8647,7 +8647,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -8715,7 +8715,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -8803,7 +8803,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -8825,7 +8825,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -8847,7 +8847,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -8869,7 +8869,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -10760,7 +10760,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf",
                     "rates": [
                         {
@@ -10828,7 +10828,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -10873,7 +10873,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -10941,7 +10941,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -10986,7 +10986,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -11008,7 +11008,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -11030,7 +11030,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -11052,7 +11052,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -13171,7 +13171,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf",
                     "rates": [
                         {
@@ -13262,7 +13262,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -13307,7 +13307,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -13375,7 +13375,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -13549,7 +13549,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -13571,7 +13571,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -13593,7 +13593,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -13615,7 +13615,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -14471,7 +14471,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf",
                     "rates": [
                         {
@@ -14493,7 +14493,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -14538,7 +14538,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -14606,7 +14606,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -14717,7 +14717,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -14739,7 +14739,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -14761,7 +14761,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -14783,7 +14783,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -15881,7 +15881,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -15904,7 +15904,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -15950,7 +15950,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -16019,7 +16019,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -17318,7 +17318,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Printemps",
+                    "pokemon": "Vivaldaim",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -17341,7 +17341,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Été",
+                    "pokemon": "Vivaldaim Été -forme- Été",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -17364,7 +17364,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Automne",
+                    "pokemon": "Vivaldaim Automne -forme- Automne",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -17387,7 +17387,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Hiver",
+                    "pokemon": "Vivaldaim Hiver -forme- Hiver",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -17551,7 +17551,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Haydaim -forme- Hiver",
+                    "pokemon": "Haydaim Hiver -forme- Hiver",
                     "method": "herbes-sombres",
                     "rates": [
                         {
@@ -17831,7 +17831,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Printemps",
+                    "pokemon": "Vivaldaim",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -17854,7 +17854,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Été",
+                    "pokemon": "Vivaldaim Été -forme- Été",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -17877,7 +17877,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Automne",
+                    "pokemon": "Vivaldaim Automne -forme- Automne",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -17900,7 +17900,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Vivaldaim -forme- Hiver",
+                    "pokemon": "Vivaldaim Hiver -forme- Hiver",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -18067,7 +18067,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Haydaim -forme- Printemps",
+                    "pokemon": "Haydaim",
                     "method": "herbes-sombres",
                     "rates": [
                         {
@@ -18090,7 +18090,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Haydaim -forme- Été",
+                    "pokemon": "Haydaim Été -forme- Été",
                     "method": "herbes-sombres",
                     "rates": [
                         {
@@ -18113,7 +18113,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Haydaim -forme- Automne",
+                    "pokemon": "Haydaim Automne -forme- Automne",
                     "method": "herbes-sombres",
                     "rates": [
                         {
@@ -18136,7 +18136,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Haydaim -forme- Hiver",
+                    "pokemon": "Haydaim Hiver -forme- Hiver",
                     "method": "herbes-sombres",
                     "rates": [
                         {
@@ -18411,7 +18411,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf",
                     "rates": [
                         {
@@ -18433,7 +18433,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -18455,7 +18455,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -18523,7 +18523,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -18614,7 +18614,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -18636,7 +18636,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -18658,7 +18658,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -18680,7 +18680,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -19787,7 +19787,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf",
                     "rates": [
                         {
@@ -19809,7 +19809,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -19831,7 +19831,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -19899,7 +19899,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -19967,7 +19967,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -19989,7 +19989,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -20011,7 +20011,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -20033,7 +20033,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -20709,7 +20709,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf",
                     "rates": [
                         {
@@ -20777,7 +20777,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -20845,7 +20845,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -20913,7 +20913,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -20935,7 +20935,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -20957,7 +20957,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -20979,7 +20979,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -21001,7 +21001,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -21629,7 +21629,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf",
                     "rates": [
                         {
@@ -21697,7 +21697,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -21765,7 +21765,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -21833,7 +21833,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -21877,7 +21877,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -21899,7 +21899,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -21921,7 +21921,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -21943,7 +21943,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -22551,7 +22551,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf",
                     "rates": [
                         {
@@ -22573,7 +22573,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -22618,7 +22618,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche",
                     "rates": [
                         {
@@ -22686,7 +22686,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche-ombre",
                     "rates": [
                         {
@@ -22731,7 +22731,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "surf",
                     "rates": [
                         {
@@ -22753,7 +22753,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "surf-ombre",
                     "rates": [
                         {
@@ -22775,7 +22775,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Rouge",
+                    "pokemon": "Bargantua Rouge -forme- Rouge",
                     "method": "peche",
                     "rates": [
                         {
@@ -22797,7 +22797,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Bargantua Bleu",
+                    "pokemon": "Bargantua Bleu -forme- Bleu",
                     "method": "peche-ombre",
                     "rates": [
                         {

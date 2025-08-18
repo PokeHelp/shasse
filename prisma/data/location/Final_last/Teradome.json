@@ -32050,7 +32050,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Plumeline Style Flamenco",
+                    "pokemon": "Plumeline Style Flamenco -forme- Style Flamenco",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -33025,7 +33025,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Plumeline Style Flamenco",
+                    "pokemon": "Plumeline Style Flamenco -forme- Style Flamenco",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -71785,7 +71785,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Plumeline Style Flamenco",
+                    "pokemon": "Plumeline Style Flamenco -forme- Style Flamenco",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -72391,7 +72391,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Plumeline Style Flamenco",
+                    "pokemon": "Plumeline Style Flamenco -forme- Style Flamenco",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -77331,7 +77331,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Plumeline Style Flamenco",
+                    "pokemon": "Plumeline Style Flamenco -forme- Style Flamenco",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -98225,7 +98225,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -98254,7 +98254,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -98903,7 +98903,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -98932,7 +98932,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -101216,7 +101216,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -101245,7 +101245,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -101906,7 +101906,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -101935,7 +101935,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -108095,7 +108095,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -108124,7 +108124,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -108983,7 +108983,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -109012,836 +109012,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Prairie\nLocalisation: Terre",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "apparitionMassive",
-                                "masuda",
-                                "reset"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Magnéti",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Zone rocheuse, Bambou, Bord de ville, Caverne\nLocalisation: Terre, En vol",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "apparitionMassive",
-                                "masuda"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Magnéton",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Zone rocheuse, Bambou, Bord de ville, Caverne\nLocalisation: Terre, En vol",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "apparitionMassive",
-                                "byEvolution",
-                                "reset"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Hypotrempe",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Océan, Bord de rivière, Lac\nLocalisation: Sur l'eau",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "teraRaid",
-                                "apparitionMassive",
-                                "masuda",
-                                "reset"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Hypocéan",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Océan, Bord de rivière, Lac\nLocalisation: Sur l'eau",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "teraRaid",
-                                "apparitionMassive",
-                                "byEvolution",
-                                "reset"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Insécateur",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Prairie, Zone rocheuse, Bambou\nLocalisation: Terre",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "apparitionMassive",
-                                "masuda",
-                                "reset"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Élektek",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Zone rocheuse, Caverne, Prairie, Bambou, Bord de ville\nLocalisation: Terre",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "teraRaid",
-                                "apparitionMassive",
-                                "byEvolution"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Loupio",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Bord de rivière, Lac\nLocalisation: Sur l'eau",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "teraRaid",
-                                "apparitionMassive",
-                                "masuda"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Lanturn",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Bord de rivière, Lac\nLocalisation: Sur l'eau",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "teraRaid",
-                                "apparitionMassive",
-                                "byEvolution",
-                                "reset"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Queulorior",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Prairie, Champ de neige, Plage\nLocalisation: Terre",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "apparitionMassive",
-                                "masuda",
-                                "reset"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Élekid",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Zone rocheuse, Caverne, Prairie, Bambou, Bord de ville\nLocalisation: Terre",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "teraRaid",
-                                "apparitionMassive",
-                                "masuda",
-                                "reset"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Tortipouss",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Prairie, Zone rocheuse\nLocalisation: Terre",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "apparitionMassive",
-                                "masuda"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": {
-                        "pokemon": "Turtwig and nearby Pokémon",
-                        "rate": 10
-                    },
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Rototaupe",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Caverne, Bord de ville, Zone rocheuse, Bambou\nLocalisation: Terre",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "teraRaid",
-                                "apparitionMassive",
-                                "masuda",
-                                "reset"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Minotaupe",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Caverne, Bord de ville, Zone rocheuse, Bambou\nLocalisation: Terre",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "teraRaid",
-                                "apparitionMassive",
-                                "byEvolution"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Baggiguane",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Zone rocheuse, Prairie, Bambou\nLocalisation: Terre",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "teraRaid",
-                                "apparitionMassive",
-                                "masuda",
-                                "reset"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Baggaïd",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Prairie\nLocalisation: Terre",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "teraRaid",
-                                "apparitionMassive",
-                                "byEvolution"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": {
-                        "pokemon": "Scrafty and nearby Pokémon",
-                        "rate": 10
-                    },
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Mamanbo",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Bord de rivière\nLocalisation: Sur l'eau",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "apparitionMassive",
-                                "masuda",
-                                "reset"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": {
-                        "pokemon": "Alomomola and nearby Pokémon",
-                        "rate": 30
-                    },
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Gringolem",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Zone rocheuse, Champ de neige, Caverne, Bambou\nLocalisation: Terre",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "teraRaid",
-                                "apparitionMassive",
-                                "masuda",
-                                "reset"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Golemastoc",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Zone rocheuse, Champ de neige, Caverne, Bambou\nLocalisation: Terre",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "teraRaid",
-                                "apparitionMassive",
-                                "byEvolution",
-                                "reset"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Flamiaou",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Zone rocheuse, Prairie\nLocalisation: Terre",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "apparitionMassive",
-                                "masuda"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": {
-                        "pokemon": "Litten and nearby Pokémon",
-                        "rate": 10
-                    },
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Météno",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Zone rocheuse, Champ de neige, Caverne, Bord de ville\nLocalisation: Terre",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "teraRaid",
-                                "apparitionMassive",
-                                "masuda"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Météno",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Zone rocheuse, Champ de neige, Caverne, Bord de ville\nLocalisation: Terre",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "teraRaid",
-                                "apparitionMassive",
-                                "masuda"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Météno",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Zone rocheuse, Champ de neige, Caverne, Bord de ville\nLocalisation: Terre",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "teraRaid",
-                                "apparitionMassive",
-                                "masuda"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Météno",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Zone rocheuse, Champ de neige, Caverne, Bord de ville\nLocalisation: Terre",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "teraRaid",
-                                "apparitionMassive",
-                                "masuda"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Météno",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Zone rocheuse, Champ de neige, Caverne, Bord de ville\nLocalisation: Terre",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "teraRaid",
-                                "apparitionMassive",
-                                "masuda"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Météno",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Zone rocheuse, Champ de neige, Caverne, Bord de ville\nLocalisation: Terre",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "teraRaid",
-                                "apparitionMassive",
-                                "masuda"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Météno",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Zone rocheuse, Champ de neige, Caverne, Bord de ville\nLocalisation: Terre",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "teraRaid",
-                                "apparitionMassive",
-                                "masuda"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
-                    "method": "hautes-herbes",
-                    "rates": [
-                        {
-                            
-                            "rate": 100.0,
-                            "minLevel": 50,
-                            "maxLevel": 80,
-                            "detail": "Biome: Prairie\nLocalisation: Terre",
-                            "rateName": "all",
-                            "limit": null,
-                            "alpha": false,
-                            "shasse": [
-                                "fullOdds",
-                                "apparitionMassive",
-                                "masuda",
-                                "reset"
-                            ]
-                        }
-                    ],
-                    "moves": "",
-                    "teratype": "",
-                    "surrounding_spawn": [],
-                    "versions": [
-                        "Pokémon Écarlate le Disque Indigo",
-                        "Pokémon Violet le Disque Indigo"
-                    ]
-                },
-                {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -110641,7 +109812,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -110670,7 +109841,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -111470,7 +110641,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -111499,7 +110670,836 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Prairie\nLocalisation: Terre",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "apparitionMassive",
+                                "masuda",
+                                "reset"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Magnéti",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Zone rocheuse, Bambou, Bord de ville, Caverne\nLocalisation: Terre, En vol",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "apparitionMassive",
+                                "masuda"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Magnéton",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Zone rocheuse, Bambou, Bord de ville, Caverne\nLocalisation: Terre, En vol",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "apparitionMassive",
+                                "byEvolution",
+                                "reset"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Hypotrempe",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Océan, Bord de rivière, Lac\nLocalisation: Sur l'eau",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "teraRaid",
+                                "apparitionMassive",
+                                "masuda",
+                                "reset"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Hypocéan",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Océan, Bord de rivière, Lac\nLocalisation: Sur l'eau",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "teraRaid",
+                                "apparitionMassive",
+                                "byEvolution",
+                                "reset"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Insécateur",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Prairie, Zone rocheuse, Bambou\nLocalisation: Terre",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "apparitionMassive",
+                                "masuda",
+                                "reset"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Élektek",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Zone rocheuse, Caverne, Prairie, Bambou, Bord de ville\nLocalisation: Terre",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "teraRaid",
+                                "apparitionMassive",
+                                "byEvolution"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Loupio",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Bord de rivière, Lac\nLocalisation: Sur l'eau",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "teraRaid",
+                                "apparitionMassive",
+                                "masuda"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Lanturn",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Bord de rivière, Lac\nLocalisation: Sur l'eau",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "teraRaid",
+                                "apparitionMassive",
+                                "byEvolution",
+                                "reset"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Queulorior",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Prairie, Champ de neige, Plage\nLocalisation: Terre",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "apparitionMassive",
+                                "masuda",
+                                "reset"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Élekid",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Zone rocheuse, Caverne, Prairie, Bambou, Bord de ville\nLocalisation: Terre",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "teraRaid",
+                                "apparitionMassive",
+                                "masuda",
+                                "reset"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Tortipouss",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Prairie, Zone rocheuse\nLocalisation: Terre",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "apparitionMassive",
+                                "masuda"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": {
+                        "pokemon": "Turtwig and nearby Pokémon",
+                        "rate": 10
+                    },
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Rototaupe",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Caverne, Bord de ville, Zone rocheuse, Bambou\nLocalisation: Terre",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "teraRaid",
+                                "apparitionMassive",
+                                "masuda",
+                                "reset"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Minotaupe",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Caverne, Bord de ville, Zone rocheuse, Bambou\nLocalisation: Terre",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "teraRaid",
+                                "apparitionMassive",
+                                "byEvolution"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Baggiguane",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Zone rocheuse, Prairie, Bambou\nLocalisation: Terre",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "teraRaid",
+                                "apparitionMassive",
+                                "masuda",
+                                "reset"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Baggaïd",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Prairie\nLocalisation: Terre",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "teraRaid",
+                                "apparitionMassive",
+                                "byEvolution"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": {
+                        "pokemon": "Scrafty and nearby Pokémon",
+                        "rate": 10
+                    },
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Mamanbo",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Bord de rivière\nLocalisation: Sur l'eau",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "apparitionMassive",
+                                "masuda",
+                                "reset"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": {
+                        "pokemon": "Alomomola and nearby Pokémon",
+                        "rate": 30
+                    },
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Gringolem",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Zone rocheuse, Champ de neige, Caverne, Bambou\nLocalisation: Terre",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "teraRaid",
+                                "apparitionMassive",
+                                "masuda",
+                                "reset"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Golemastoc",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Zone rocheuse, Champ de neige, Caverne, Bambou\nLocalisation: Terre",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "teraRaid",
+                                "apparitionMassive",
+                                "byEvolution",
+                                "reset"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Flamiaou",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Zone rocheuse, Prairie\nLocalisation: Terre",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "apparitionMassive",
+                                "masuda"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": {
+                        "pokemon": "Litten and nearby Pokémon",
+                        "rate": 10
+                    },
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Météno",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Zone rocheuse, Champ de neige, Caverne, Bord de ville\nLocalisation: Terre",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "teraRaid",
+                                "apparitionMassive",
+                                "masuda"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Météno",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Zone rocheuse, Champ de neige, Caverne, Bord de ville\nLocalisation: Terre",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "teraRaid",
+                                "apparitionMassive",
+                                "masuda"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Météno",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Zone rocheuse, Champ de neige, Caverne, Bord de ville\nLocalisation: Terre",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "teraRaid",
+                                "apparitionMassive",
+                                "masuda"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Météno",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Zone rocheuse, Champ de neige, Caverne, Bord de ville\nLocalisation: Terre",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "teraRaid",
+                                "apparitionMassive",
+                                "masuda"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Météno",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Zone rocheuse, Champ de neige, Caverne, Bord de ville\nLocalisation: Terre",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "teraRaid",
+                                "apparitionMassive",
+                                "masuda"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Météno",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Zone rocheuse, Champ de neige, Caverne, Bord de ville\nLocalisation: Terre",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "teraRaid",
+                                "apparitionMassive",
+                                "masuda"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Météno",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Zone rocheuse, Champ de neige, Caverne, Bord de ville\nLocalisation: Terre",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "teraRaid",
+                                "apparitionMassive",
+                                "masuda"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
+                    "method": "hautes-herbes",
+                    "rates": [
+                        {
+                            
+                            "rate": 100.0,
+                            "minLevel": 50,
+                            "maxLevel": 80,
+                            "detail": "Biome: Prairie\nLocalisation: Terre",
+                            "rateName": "all",
+                            "limit": null,
+                            "alpha": false,
+                            "shasse": [
+                                "fullOdds",
+                                "apparitionMassive",
+                                "masuda",
+                                "reset"
+                            ]
+                        }
+                    ],
+                    "moves": "",
+                    "teratype": "",
+                    "surrounding_spawn": [],
+                    "versions": [
+                        "Pokémon Écarlate le Disque Indigo",
+                        "Pokémon Violet le Disque Indigo"
+                    ]
+                },
+                {
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -112686,7 +112686,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -112715,7 +112715,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -123227,7 +123227,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -123256,7 +123256,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -125218,7 +125218,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -125247,7 +125247,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -126434,7 +126434,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -126463,7 +126463,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "hautes-herbes",
                     "rates": [
                         {
@@ -173766,7 +173766,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Plumeline Style Flamenco",
+                    "pokemon": "Plumeline Style Flamenco -forme- Style Flamenco",
                     "method": "fixe",
                     "rates": [
                         {
@@ -174955,7 +174955,7 @@
                     ]
                 },
                 {
-                    "pokemon": "Théffroi -forme- Contrefaçon",
+                    "pokemon": "Théffroi Contrefaçon -forme- Contrefaçon",
                     "method": "fixe",
                     "rates": [
                         {

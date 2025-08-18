@@ -27,7 +27,7 @@ export default function PokemonRegionalFormCard({regionalForms}: {regionalForms:
                               }}
                         >
                             <Picture
-                                src={getPokemonPictureFromId({internationalNumber: regionalForm.internationalNumber, formId: regionalForm.formId}, "Artwork")}
+                                src={getPokemonPictureFromId({internationalNumber: regionalForm.internationalNumber, formId: regionalForm.formId, style: 'Artwork'})}
                                 alt={t('pokemonPictureAlt', {pokemonName: regionalForm.name})}
                                 width={250}
                                 height={250}

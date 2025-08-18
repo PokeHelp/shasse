@@ -1,4 +1,12 @@
-import {ComponentProps, Dispatch, JSX, SetStateAction, ComponentPropsWithoutRef, Ref} from "react";
+import React, {
+    ComponentProps,
+    Dispatch,
+    JSX,
+    SetStateAction,
+    Ref,
+    HTMLAttributes,
+    ReactNode
+} from "react";
 import {Button} from '@ui/button';
 import {Input} from '@ui/input';
 import {Select} from '@ui/select';
@@ -7,8 +15,23 @@ import {Sheet} from '@ui/sheet';
 import Link from 'next/link';
 import {ImageProps} from "next/image";
 import {ColumnDef, SortingState} from "@tanstack/react-table";
+import {Command} from "@ui/command";
+import {Switch} from "@ui/switch";
+import {Control, ControllerProps, FieldPath, FieldValues, Path, SubmitHandler, UseFormReturn} from "react-hook-form";
+import {FormControl, FormItem, FormLabel, FormMessage} from "@ui/form";
+import {AccordionSingleProps} from "@radix-ui/react-accordion";
 
-export type InputProps = ComponentProps<typeof Input>
+export interface InputProps extends ComponentProps<typeof Input>
+{
+    type?: Exclude<string, "time">;
+}
+
+export interface TimeInputProps extends Omit<ComponentProps<typeof Input>, "onChange" | "type" | "value" | "placeholder"> {
+    value?: number;
+    onChange?: (minutes: number) => void;
+    name?: string;
+}
+
 export type LinkProps = ComponentProps<typeof Link>
 
 export interface DropdownProps extends ComponentProps<typeof Select>
@@ -35,11 +58,6 @@ export interface SliderProps extends ComponentProps<typeof Sheet>
     contentClassName?: string;
 }
 
-type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-export interface TypographyProps extends ComponentPropsWithoutRef<HeadingTag> {
-    type: HeadingTag;
-}
-
 export interface PictureProps extends Omit<ImageProps, 'width' | 'height'>
 {
     width?: number;
@@ -63,3 +81,58 @@ export interface TableWithFilterProps<T>
     placeholder: string;
     rowsPerPageSelection?: number[];
 }
+
+export interface SelectWithSearchData
+{
+    value: string;
+    label: string;
+}
+
+export interface SelectWithSearchProps extends Omit<ComponentProps<typeof Command>, "value">
+{
+    datas: SelectWithSearchData[];
+    placeholder: string;
+    defaultValue?: string;
+    value: SelectWithSearchData | null;
+    onSelectValueAction: (selected: SelectWithSearchData | null) => void;
+    disabled?: boolean;
+}
+
+export interface SwitchProps extends ComponentProps<typeof Switch>
+{
+    labelName?: string;
+}
+
+export interface FormProps<T extends FieldValues> extends HTMLAttributes<HTMLFormElement> {
+    form: UseFormReturn<T>;
+    callback: SubmitHandler<T>;
+    children: ReactNode;
+}
+
+export type FormFieldProps<TFieldValues extends FieldValues, TName extends FieldPath<TFieldValues>> = ControllerProps<TFieldValues, TName>;
+export type FormMessageProps = ComponentProps<typeof FormMessage>;
+export type FormLabelProps = ComponentProps<typeof FormLabel>;
+export type FormItemProps = ComponentProps<typeof FormItem>;
+export type FormControlProps = ComponentProps<typeof FormControl>;
+
+export interface CheckboxProps<T extends FieldValues> {
+    form: UseFormReturn<T>;
+    label: string;
+    name: Path<T>;
+}
+
+export interface CollapseProps extends Omit<AccordionSingleProps, 'type' | 'value' | 'onValueChange'>
+{
+    triggerAction: ReactNode | ((isOpen: boolean) => ReactNode);
+    children: ReactNode;
+}
+
+export interface DatePickerProps<T extends FieldValues> {
+    name: FieldPath<T>
+    control: Control<T>
+    placeholder?: string
+}
+
+export type SeparatorProps = React.HTMLAttributes<HTMLHRElement> & {
+    direction: "vertical" | "horizontal";
+};
