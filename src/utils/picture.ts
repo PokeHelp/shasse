@@ -26,6 +26,10 @@ export function getPokemonPictureFromId({
 
     switch (formId)
     {
+        case 140:
+            form = "mega";
+            break;
+
         case 141:
             form = 'Alola';
             break;

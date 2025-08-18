@@ -36,8 +36,7 @@
         "chooseHuntinMethod":      "Choisissez une méthode d'obtention",
         "showLocations":           "Voir les localisations",
         "searchLocations":         "Rechercher des localisations",
-        "chooseEndingDate": "Choisir une date de fin",
-
+        "chooseEndingDate":        "Choisir une date de fin",
         "selectPokemonBeforeForm": "Sélectionnez un pokémon avant de choisir une forme",
         "hasOneForm":              "Ce pokémon possède une seule forme"
       }
@@ -136,6 +135,17 @@
   "calendar":          {
     "placeholder": "Choisir une date"
   },
+  "footer":            {
+    "email": {
+      "reportBugOrUpgrade": "Signaler un bug ou proposer une amélioration",
+      "titleLabel":         "Titre du signalement",
+      "titlePlaceholder":   "Titre du signalement",
+      "contentLabel":       "Contenue du signalement",
+      "contentPlaceholder": "Contenue du signalement",
+      "report":             "Signaler",
+      "sendWithSuccess":    "Email envoyé avec succès"
+    }
+  },
   "nationalNumber":    "Numéro national",
   "notAvailable":      "Pas disponible dans cette génération",
   "name":              "Nom",
@@ -175,6 +185,6 @@
   "timePassed":        "Temps passé",
   "addTime":           "Ajouter du temps",
   "meetingNumber":     "Nombre de rencontre",
-  "select": "Sélectionner",
-  "action": "Action"
+  "select":            "Sélectionner",
+  "action":            "Action"
 }

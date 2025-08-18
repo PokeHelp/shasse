@@ -215,7 +215,7 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
             />
 
 
-            <div className='h-full py-2 px-4 border-l border-secondary w-1/4 fixed top-0 right-0' ref={rightPanelRef}>
+            <div className='h-full py-2 px-4 border-l border-secondary w-1/4 absolute top-0 right-0' ref={rightPanelRef}>
                 <div className="flex w-full flex-col gap-3">
                     <h1 className="title">
                         {pokemonInfo.internationalNumber.toString().padStart(4, '0')} - {pokemonInfo.name}
@@ -371,7 +371,7 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
                 </div>
             </div>
 
-            <div className="flex justify-center w-3/4 pt-16">
+            <div className="flex justify-center w-3/4 pt-16 pb-4">
                 <div className="flex gap-10 flex-col w-11/12">
 
                     {/* Pokémon dymorphisme */}
@@ -380,7 +380,11 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
                             <div className="flex gap-2 flex-col">
                                 <div className="flex gap-2">
                                     <h2>{t('pokemon.info.form')}:</h2>
-                                    <div>{pokemonInfo.forms.filter((form: FormWithName): boolean => form.id === pokemonInfo.formId)[0].name}</div>
+                                    <div>{
+                                        pokemonInfo.forms.find(
+                                            (form: FormWithName) => form.id === pokemonInfo.formId
+                                        )?.name
+                                    }</div>
                                 </div>
 
                                 <h2>{t("pokemon.info.dymorphisme")}:</h2>

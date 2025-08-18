@@ -294,3 +294,11 @@ describe("Récupération des images de pokémon de Paldea suivant une générati
         );
     });
 });
+
+describe("Récupération des images d'un Pokémon mega", (): void => {
+    test("Récupère l'image d'un mega florizarre", (): void => {
+        expect(getPokemonPictureFromId({internationalNumber: 3, formId: 140, style: "Artwork"})).toBe(
+            `${baseUrl}/Artwork/0003_mega.webp`
+        );
+    });
+});

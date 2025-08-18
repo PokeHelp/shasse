@@ -46,6 +46,7 @@ import {
     ShinyHuntingCreate,
     Header,
     Layout,
+    Footer
 } from './organisms';
 
 export {
@@ -91,5 +92,6 @@ export {
     PageLayout,
     DatePicker,
     TimeInput,
-    Separator
+    Separator,
+    Footer
 }
