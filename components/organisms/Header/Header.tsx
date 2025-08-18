@@ -9,8 +9,12 @@ import {signOutAction} from "@src/actions/signout";
 export default function Header(): JSX.Element
 {
     return (
-        <header className="flex items-center gap-4 px-4 py-2 border-b fixed top-0 w-full z-9999 bg-background">
-            <Link href='/' className='flex-1'>PokeHelp</Link>
+        <header className="flex items-center gap-4 px-4 py-2 border-b fixed top-0 w-full z-9999 bg-background justify-between">
+            <div className="flex gap-5">
+                <Link href='/' >PokeHelp</Link>
+                <Link href={"/pokedex"}>Pokédex</Link>
+                <Link href={"/hunting/create"}>Création shasse</Link>
+            </div>
             <Suspense fallback={<Skeleton/>}>
                 <AuthButton/>
             </Suspense>
