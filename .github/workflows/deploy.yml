@@ -42,3 +42,4 @@ jobs:
             npm run docker && \
             cd .. && \
             docker compose up -d
+          timeout: 3600
