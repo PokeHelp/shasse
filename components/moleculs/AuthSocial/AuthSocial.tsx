@@ -11,7 +11,7 @@ import {authClient} from "@src/lib/auth-client";
 import {toast} from "sonner";
 import {JSX} from "react";
 
-export default function AuthSocial({fallbackUri}: {fallbackUri: string}): JSX.Element
+export default function AuthSocial({fallbackUri, isLogin = true}: {fallbackUri: string, isLogin?: boolean}): JSX.Element
 {
     const t: Translation = useTranslations('page.login');
     const router: AppRouterInstance = useRouter();
@@ -36,13 +36,13 @@ export default function AuthSocial({fallbackUri}: {fallbackUri: string}): JSX.El
             <Button className="w-full" onClick={(): Promise<void> => signInSocial('google')}>
                 <div className="flex items-center gap-2">
                     <ReactSVG className="h-6 w-6" src='/svg/google.svg'/>
-                    {t('connexionWith', {connexionName: 'Google'})}
+                    { t(isLogin ?'connexionWith' : 'registerWith', {connexionName: 'Google'})}
                 </div>
             </Button>
             <Button className="w-full" onClick={(): Promise<void> => signInSocial('discord')}>
                 <div className="flex items-center gap-2">
                     <ReactSVG className="h-6 w-6" src='/svg/discord.svg'/>
-                    {t('connexionWith', {connexionName: 'Discord'})}
+                    {t(isLogin ?'connexionWith' : 'registerWith', {connexionName: 'Discord'})}
                 </div>
             </Button>
         </div>

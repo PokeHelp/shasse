@@ -269,7 +269,7 @@ export default function CreateShinyHuntingPage(): JSX.Element
                                             variant="success"
                                             onClick={() => selectLocation(row.original)}
                                         >
-                                            {t('select')}
+                                            {t('page.shinyHuntings.create.createButton')}
                                         </Button>
             }
         ];

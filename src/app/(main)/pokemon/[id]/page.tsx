@@ -1,16 +1,13 @@
-import { JSX } from "react";
 import {PageLayout, PokemonDetail} from "@components";
+import {JSX} from "react";
 
-type PokemonInfoPageProps = {
-    params: { id: string };
-};
-
-export default async function PokemonInfoPage({ params }: PokemonInfoPageProps): Promise<JSX.Element> {
-    const pokemonId: number = Number(params.id);
+export default async function PokemonInfoPage({params}: { params: Promise<{ id: string }> }): Promise<JSX.Element>
+{
+    const {id} = await params;
 
     return (
         <PageLayout>
-            <PokemonDetail pokemonId={pokemonId} />
+            <PokemonDetail pokemonId={Number(id)}/>
         </PageLayout>
     );
 }

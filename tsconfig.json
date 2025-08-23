@@ -27,14 +27,16 @@
       "@components": ["./components/index"],
       "@types": ["./src/types/index"],
       "@typesFront": ["./src/types/front/index"],
-      "@provider": ["./src/provider/index"],
       "@lib": ["./src/lib/index"],
+      "@lib/*": ["./src/lib/*"],
       "@utils": ["./src/utils/index"],
       "@schema": ["./src/schema/index"],
       "@ui/*": ["./components/ui/*"],
       "@svg/*": ["./public/svg/*"],
       "@service": ["./src/service/index"],
+      "@service/*": ["./src/service/*"],
       "@query": ["./src/query/index"],
+      "@query/*": ["./src/query/*"],
       "@config": ["./config/index"]
     }
   },

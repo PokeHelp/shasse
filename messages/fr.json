@@ -6,6 +6,7 @@
     "login":         {
       "title":         "Login",
       "connexionWith": "Connexion avec {connexionName}",
+      "registerWith":  "Inscription avec {connexionName}",
       "anyCount":      "Pas de compte ?"
     },
     "register":      {
@@ -38,7 +39,8 @@
         "searchLocations":         "Rechercher des localisations",
         "chooseEndingDate":        "Choisir une date de fin",
         "selectPokemonBeforeForm": "Sélectionnez un pokémon avant de choisir une forme",
-        "hasOneForm":              "Ce pokémon possède une seule forme"
+        "hasOneForm":              "Ce pokémon possède une seule forme",
+        "createButton":            "Créer la shasse"
       }
     }
   },
