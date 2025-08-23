@@ -4,7 +4,7 @@ import {RequestCookie} from "next/dist/compiled/@edge-runtime/cookies";
 import {ReadonlyHeaders} from "next/dist/server/web/spec-extension/adapters/headers";
 import Negotiator from "negotiator";
 import {match} from "@formatjs/intl-localematcher";
-import {getDefaultLangue, getAllIsoCode} from "@service";
+import {getAllIsoCode, getDefaultLangue} from "@service/langue";
 
 export async function middleware(): Promise<NextResponse>
 {
