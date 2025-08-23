@@ -1,7 +1,7 @@
 import {getLocationWithName} from "@query";
-import {getLangueId} from "@src/service/langue";
 import {getPokemonGameLocationName} from "@src/query/location";
 import {GameLocationName} from "@types";
+import {getLangueId} from "@src/service/langue";
 
 export async function getPokemonGenerationLocation(pokemonId: number | null, formId: number, gameId: number | null, shinyLocation: boolean, langId: number | null = null)
 {

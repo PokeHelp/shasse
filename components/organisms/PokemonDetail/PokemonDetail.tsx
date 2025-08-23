@@ -420,11 +420,15 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
                     {/* Pokemon capacities */}
                     {
                         pokemonInfo.capacities.length > 0
-                            ? <TableWithFilter<CapacityGeneration>
-                                data={pokemonInfo.capacities}
-                                rawColumns={getCapacitiesColumns()}
-                                placeholder={t('searchByName')}
-                            />
+                            ?
+                            <section>
+                                <Typography as="h3" className="mb-1">Capacitées</Typography>
+                                <TableWithFilter<CapacityGeneration>
+                                    data={pokemonInfo.capacities}
+                                    rawColumns={getCapacitiesColumns()}
+                                    placeholder={t('searchByName')}
+                                />
+                            </section>
                             : <div className="text-center">{t('notAvailable')}</div>
                     }
 

@@ -1,4 +1,4 @@
-import {getLangue} from "@query";
+import {getLangue} from "@query/langue";
 
 /**
  * Permet de récupérer tous les isoCode

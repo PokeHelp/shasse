@@ -58,7 +58,7 @@ export default function Footer(): JSX.Element
                     render={({field}): JSX.Element => (
                         <FormItem className="w-1/4">
                             <FormLabel>
-                                {t('email.titleLabel')}
+                                {t('email.contentPlaceholder')}
                             </FormLabel>
                             <FormControl>
                                 <Textarea {...field} placeholder={t('email.contentPlaceholder')} required/>

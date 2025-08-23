@@ -4,7 +4,6 @@ import {HttpStatusCode} from "axios";
 import {NextRequest, NextResponse} from "next/server";
 import {getAllGameIdNameByPokemon} from "@service";
 import {getTranslations} from "next-intl/server";
-import {reference_table} from "@prisma/client";
 import {SafeParseReturnType} from "zod";
 import {numberSchema} from "@schema";
 
