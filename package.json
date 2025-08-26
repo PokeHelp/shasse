@@ -77,7 +77,7 @@
     "@types/jsonwebtoken": "^9.0.9",
     "@types/memory-cache": "^0.2.6",
     "@types/negotiator": "^0.6.3",
-    "@types/node": "^20",
+    "@types/node": "^24",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "cross-var": "^1.1.0",
