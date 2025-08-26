@@ -70,7 +70,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@jest/globals": "^29.7.0",
+    "@jest/globals": "^30.0.5",
     "@svgr/webpack": "^8.1.0",
     "@types/bcrypt": "^5.0.2",
     "@types/jest": "^29.5.14",
