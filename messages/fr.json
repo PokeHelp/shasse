@@ -13,7 +13,8 @@
       "title":           "Register",
       "variousPassword": "Les mots de passe ne correspondent pas.",
       "haveCount":       "Vous avez un compte ?",
-      "error":           "Erreur lors de l'inscription"
+      "error":           "Erreur lors de l'inscription",
+      "acceptThe":       "Accepter les"
     },
     "unauthorized":  {
       "title":       "Vous n'êtes pas connecté",
@@ -177,7 +178,6 @@
   "searchForm":        "Rechercher une forme",
   "login":             "Connexion",
   "register":          "Inscription",
-  "acceptTerme":       "Accepter les terme",
   "filters":           "Filtres",
   "elementsPerPage":   "Élement par page",
   "pokedex":           "Pokedex",
@@ -188,5 +188,6 @@
   "addTime":           "Ajouter du temps",
   "meetingNumber":     "Nombre de rencontre",
   "select":            "Sélectionner",
-  "action":            "Action"
+  "action":            "Action",
+  "cgu" : "Conditions générales d'utilisation"
 }

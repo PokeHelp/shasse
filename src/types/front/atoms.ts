@@ -117,7 +117,7 @@ export type FormControlProps = ComponentProps<typeof FormControl>;
 
 export interface CheckboxProps<T extends FieldValues> {
     form: UseFormReturn<T>;
-    label: string;
+    label: string | ReactNode;
     name: Path<T>;
 }
 
