@@ -2116,6 +2116,33 @@ async function seedPokemonRating(): Promise<void>
     }
 }
 
+async function seedPokeball(): Promise<void>
+{
+    await resetBDD("pokeball");
+    console.log('----- Insertion des Pokéballs -----')
+
+    const langFrId: number = await getLangueId('french');
+
+    const pokeballs: {pokeballs: {name: string}[]} = JSON.parse(fs.readFileSync("prisma/data/pokeball.json", 'utf-8'));
+
+    for (const pokeball of pokeballs.pokeballs)
+    {
+        console.log(`-- Insertion de la pokeball: ${pokeball.name} --`)
+
+        const pokeballCreated: {id: number} = await prisma.pokeball.create({
+            data: {},
+            select: { id: true },
+        });
+
+        await insertTranslate({
+            langueId:       langFrId,
+            name:           pokeball.name,
+            referenceTable: reference_table.POKEBALL,
+            referenceId:    pokeballCreated.id
+        })
+    }
+}
+
 async function seedEvolutionMethod(): Promise<void>
 {
     await resetBDD('evolution_method')
@@ -2509,6 +2536,10 @@ async function main(): Promise<void>
             await seedEvolution();
             break;
 
+        case 'pokeball':
+            await seedPokeball();
+            break;
+
         case 'all':
             try
             {
@@ -2544,6 +2575,7 @@ async function main(): Promise<void>
                 await seedEvolutionMethod();
                 await seedEvolutionInfo();
                 await seedEvolution();
+                await seedPokeball();
             } catch (e)
             {
                 console.log(e)

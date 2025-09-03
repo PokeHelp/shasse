@@ -16,6 +16,7 @@ import {FormWithName, RegionalFormWithName, FormWithNamesResponse} from './forms
 import {AuthProviderEnum, Session, User} from './auth';
 import {HuntingMethods, HuntingMethodsResponse} from "./huntingMethods";
 import {CreateHunting, CreateHuntingResponse} from './hunting';
+import {OwnedSumarry, OwnedPokemon} from './owned';
 
 export type {
     DataError,
@@ -70,5 +71,7 @@ export type {
     GameLocationNameResponse,
     Location,
     CreateHunting,
-    CreateHuntingResponse
+    CreateHuntingResponse,
+    OwnedSumarry,
+    OwnedPokemon
 }

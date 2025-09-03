@@ -42,7 +42,8 @@ export default function Footer(): JSX.Element
     }
 
     return (
-        <footer className="flex px-4 py-5 border-t w-full z-[9999] bg-background flex-col inset-x-0 pr-1/4 gap-4">
+        <footer
+            className="flex px-4 py-5 border-t w-full z-[9999] bg-background flex-col inset-x-0 pr-1/4 gap-4 container max-w-[1600px]">
             <Typography as="section">
                 <Typography as="h3">
                     {t('footer.email.reportBugOrUpgrade')}

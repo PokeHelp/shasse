@@ -39,9 +39,12 @@
         "showLocations":           "Voir les localisations",
         "searchLocations":         "Rechercher des localisations",
         "chooseEndingDate":        "Choisir une date de fin",
+        "chooseNickName":        "Quel était son surnom ?",
         "selectPokemonBeforeForm": "Sélectionnez un pokémon avant de choisir une forme",
         "hasOneForm":              "Ce pokémon possède une seule forme",
-        "createButton":            "Créer la shasse"
+        "createButton":            "Créer la shasse",
+        "selectPokeball": "Sélectionnez une pokéball",
+        "choosePokeball": "Choisissez une pokéball"
       }
     }
   },
@@ -189,5 +192,6 @@
   "meetingNumber":     "Nombre de rencontre",
   "select":            "Sélectionner",
   "action":            "Action",
-  "cgu" : "Conditions générales d'utilisation"
+  "cgu":               "Conditions générales d'utilisation",
+  "nickname":          "Surnom"
 }

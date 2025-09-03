@@ -38,7 +38,6 @@ model hunting_method {
   createdAt               DateTime                @default(now()) @map("created_at") @db.DateTime(0)
   updatedAt               DateTime?               @updatedAt @map("updated_at") @db.DateTime(0)
   status                  String                  @default("on") @db.VarChar(45)
-  ownedPokemons           owned_pokemon[]
   shinyHuntingMethodGames hunting_method_game[]
   shinyHuntingMethodRates hunting_method_rate[]
   pokemonRatingGames      pokemon_game_location[]
@@ -46,7 +45,6 @@ model hunting_method {
 
 model pokeball {
   id                  Int                    @id @default(autoincrement()) @db.UnsignedInt
-  picture             String                 @db.VarChar(45)
   createdAt           DateTime               @default(now()) @map("created_at") @db.DateTime(0)
   updatedAt           DateTime?              @updatedAt @map("updated_at") @db.DateTime(0)
   status              String                 @default("on") @db.VarChar(45)
@@ -73,7 +71,6 @@ model game {
   status             String                  @default("on") @db.VarChar(45)
   generation         generation              @relation(fields: [generationId], references: [id])
   gameGroupGames     game_group_game[]
-  ownedPokemons      owned_pokemon[]
   pokemonRatingGames pokemon_game_location[]
 
   @@index([generationId], map: "game_generation_id_fkey")
@@ -189,7 +186,6 @@ model pokemon_form {
   updatedAt          DateTime?               @updatedAt @map("updated_at") @db.DateTime(0)
   evolutionEnds      evolution[]             @relation("EvolutionEnd")
   evolutionStarts    evolution[]             @relation("EvolutionStart")
-  ownedPokemons      owned_pokemon[]
   form               form                    @relation(fields: [formId], references: [id])
   pokemon            pokemon                 @relation(fields: [pokemonId], references: [id])
   pokemonFormGenders pokemon_form_gender[]
@@ -200,43 +196,36 @@ model pokemon_form {
 }
 
 model owned_pokemon {
-  id                  BigInt                 @id @default(autoincrement()) @db.UnsignedBigInt
-  userId              String                 @map("user_id")
-  pokemonFormId       Int                    @map("pokemon_form_id") @db.UnsignedInt
-  gameId              Int                    @map("game_id") @db.UnsignedInt
-  isShiny             Boolean                @map("is_shiny")
-  methodId            Int                    @map("method_id") @db.UnsignedInt
-  meetingNumber       Int?                   @map("meeting_number") @db.UnsignedInt
-  time                Int                    @default(0)
-  isFinish            Boolean                @map("is_finish")
-  useCharmChroma      Boolean                @map("use_charm_chroma")
-  creationDate        DateTime               @map("creation_date")
-  finishDate          DateTime?              @map("finish_date")
-  createdAt           DateTime               @default(now()) @map("created_at") @db.DateTime(0)
-  updatedAt           DateTime?              @updatedAt @map("updated_at") @db.DateTime(0)
-  status              String                 @default("on") @db.VarChar(45)
-  game                game                   @relation(fields: [gameId], references: [id])
-  shinyHuntingMethod  hunting_method         @relation(fields: [methodId], references: [id])
-  pokemonForms        pokemon_form           @relation(fields: [pokemonFormId], references: [id])
-  users               user                   @relation(fields: [userId], references: [id])
-  ownedPokemonDetails owned_pokemon_detail[]
+  id                    BigInt                 @id @default(autoincrement()) @db.UnsignedBigInt
+  userId                String                 @map("user_id")
+  isShiny               Boolean                @map("is_shiny")
+  meetingNumber         Int                    @default(0) @map("meeting_number") @db.UnsignedInt
+  time                  Int                    @default(0) @db.UnsignedInt
+  pokemonGameLocationId Int                    @map("pokemon_game_location_id") @db.UnsignedInt
+  isFinish              Boolean                @map("is_finish")
+  useCharmChroma        Boolean                @map("use_charm_chroma")
+  creationDate          DateTime               @map("creation_date")
+  createdAt             DateTime               @default(now()) @map("created_at") @db.DateTime(0)
+  updatedAt             DateTime?              @updatedAt @map("updated_at") @db.DateTime(0)
+  status                String                 @default("on") @db.VarChar(45)
+  users                 user                   @relation(fields: [userId], references: [id])
+  pokemonGameLocation   pokemon_game_location  @relation(fields: [pokemonGameLocationId], references: [id])
+  ownedPokemonDetails   owned_pokemon_detail[]
 
-  @@index([methodId], map: "hunting_method_id_fkey")
-  @@index([gameId], map: "owned_pokemon_game_id_fkey")
-  @@index([pokemonFormId], map: "owned_pokemon_pokemon_form_id_fkey")
   @@index([userId], map: "owned_pokemon_user_id_fkey")
 }
 
 model owned_pokemon_detail {
   id             BigInt        @id @default(autoincrement()) @db.UnsignedBigInt
   nickname       String        @db.VarChar(45)
-  pokeballId     Int           @map("pokeball_id") @db.UnsignedInt
+  pokeballId     Int?          @map("pokeball_id") @db.UnsignedInt
+  finishDate     DateTime      @map("finish_date") @db.DateTime(0)
   ownedPokemonId BigInt        @map("owned_pokemon") @db.UnsignedBigInt
   createdAt      DateTime      @default(now()) @map("created_at") @db.DateTime(0)
   updatedAt      DateTime?     @updatedAt @map("updated_at") @db.DateTime(0)
   status         String        @default("on") @db.VarChar(45)
   ownedPokemon   owned_pokemon @relation(fields: [ownedPokemonId], references: [id])
-  pokeball       pokeball      @relation(fields: [pokeballId], references: [id])
+  pokeball       pokeball?     @relation(fields: [pokeballId], references: [id])
 
   @@index([ownedPokemonId], map: "owned_pokemon_detail_owned_pokemon_fkey")
   @@index([pokeballId], map: "owned_pokemon_detail_pokeball_id_fkey")
@@ -647,6 +636,8 @@ model pokemon_game_location {
   pokemonForm     pokemon_form   @relation(fields: [pokemonFormId], references: [id])
   huntingMethod   hunting_method @relation(fields: [huntingMethodId], references: [id])
   rate            rate           @relation(fields: [rateId], references: [id])
+
+  ownedPokemons owned_pokemon[]
 
   @@unique([gameId, rateId, locationZoneId, pokemonFormId, huntingMethodId])
   @@index([pokemonFormId], map: "pokemon_rating_game_pokemon_form_id_fkey")

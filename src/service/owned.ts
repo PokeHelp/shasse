@@ -1,13 +1,22 @@
-import {CreateHunting} from "@types";
-import {createOwned, getPokemonForm} from "@query";
+import {CreateHunting, OwnedPokemon, OwnedSumarry} from "@types";
+import {createOwned, getAllOwned, getLastOwned} from "@query";
+import {getRequiredUser} from "@lib/auth-server";
 
 export async function createOwnedPokemon(data: CreateHunting, userId: string): Promise<{ id: bigint }>
 {
-    const dataPokemonForm = {pokemonId: data.pokemonId} as { pokemonId: number; formId?: number };
+    return createOwned(data, userId);
+}
 
-    if (data.formId !== null) dataPokemonForm.formId = data.formId;
+export async function getAllOwnedPokemon(userId: string|null = null): Promise<OwnedSumarry[]>
+{
+    userId = userId || (await getRequiredUser()).id;
 
-    const pokemonFormId: { id: number } = (await getPokemonForm(dataPokemonForm, {id: true}))[0]
+    return getAllOwned(userId);
+}
 
-    return createOwned(data, userId, pokemonFormId.id);
+export async function getLastOwnedPokemonCreated(userId: string|null = null): Promise<OwnedPokemon>
+{
+    userId = userId || (await getRequiredUser()).id;
+
+    return getLastOwned(userId)
 }
