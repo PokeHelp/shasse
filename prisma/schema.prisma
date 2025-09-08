@@ -203,6 +203,7 @@ model owned_pokemon {
   time                  Int                    @default(0) @db.UnsignedInt
   pokemonGameLocationId Int                    @map("pokemon_game_location_id") @db.UnsignedInt
   isFinish              Boolean                @map("is_finish")
+  spriteInShiny         Boolean                @default(true) @map("sprite_in_shiny")
   useCharmChroma        Boolean                @map("use_charm_chroma")
   creationDate          DateTime               @map("creation_date")
   createdAt             DateTime               @default(now()) @map("created_at") @db.DateTime(0)

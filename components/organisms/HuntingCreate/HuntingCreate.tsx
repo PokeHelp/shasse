@@ -80,7 +80,7 @@ export default function CreateShinyHuntingPage(): JSX.Element
             useCC:         false,
             createdAt:     new Date(),
             meetingNumber: 0,
-            spriteInShiny: false,
+            spriteInShiny: true,
             time:          0,
             finishAt:      null
         }
@@ -158,15 +158,15 @@ export default function CreateShinyHuntingPage(): JSX.Element
         const isFinish: boolean = form.getValues("isFinish");
 
         const response: AxiosResponse<CreateHuntingResponse, CreateHuntingResponse> = await axiosService.post('/api/huntings', {
-            useCC:           form.getValues("useCC"),
-            isFinish:        isFinish,
-            finishAt:        form.getValues("finishAt"),
-            meetingNumber:   Number(form.getValues("meetingNumber")),
-            time:            form.getValues("time"),
-            createdAt:       form.getValues("createdAt"),
-            spriteInShiny:   form.getValues("spriteInShiny"),
+            useCC:                 form.getValues("useCC"),
+            isFinish:              isFinish,
+            finishAt:              form.getValues("finishAt"),
+            meetingNumber:         Number(form.getValues("meetingNumber")),
+            time:                  form.getValues("time"),
+            createdAt:             form.getValues("createdAt"),
+            spriteInShiny:         form.getValues("spriteInShiny"),
             pokemonGameLocationId: row.id,
-            nickname: form.getValues("nickname")
+            nickname:              form.getValues("nickname")
         });
 
         if (response.status === 200 && response.data.success)

@@ -15,7 +15,8 @@ export function getPokemonPictureFromId({
                                             formId = null,
                                             generationId = null,
                                             style = 'Artwork',
-                                            isShiny = false
+                                            isShiny = false,
+                                            gameId = null
                                         }: PokemonPicture): string
 {
     const extension: string = 'webp';
@@ -23,6 +24,7 @@ export function getPokemonPictureFromId({
     const pokemonId: string = internationalNumber.toString().padStart(4, '0');
     let form: string;
     let generationName: string = '';
+    let gameSlug: string = '';
 
     switch (formId)
     {
@@ -99,6 +101,109 @@ export function getPokemonPictureFromId({
         }
     }
 
+    if (style === 'Game')
+    {
+        switch (gameId)
+        {
+            case 1:
+            case 3:
+                gameSlug = "RB";
+                break;
+
+            case 2:
+                gameSlug = "RV";
+                break;
+
+            case 4:
+                gameSlug = "J";
+                break;
+
+            case 5:
+            case 6:
+            case 7:
+                gameSlug = "OAC";
+                break;
+
+            case 8:
+            case 9:
+            case 10:
+                gameSlug = "RSE";
+                break;
+
+            case 11:
+            case 12:
+                gameSlug = "RFVF";
+                break;
+
+            case 13:
+            case 14:
+            case 15:
+                gameSlug = "DPP";
+                break;
+
+            case 16:
+            case 17:
+                gameSlug = "HGSS";
+                break;
+
+            case 18:
+            case 19:
+            case 20:
+            case 21:
+                gameSlug = "NBN2B2";
+                break;
+
+            case 22:
+            case 23:
+            case 24:
+            case 25:
+                gameSlug = "XY";
+                break;
+
+            case 26:
+            case 27:
+            case 28:
+            case 29:
+                gameSlug = "SLUSUL";
+                break;
+
+            case 30:
+            case 31:
+                gameSlug = "LGPE";
+                break;
+
+            case 32:
+            case 33:
+            case 34:
+            case 35:
+            case 36:
+            case 37:
+                gameSlug = "EB";
+                break;
+
+            case 38:
+            case 39:
+                gameSlug = "DEPS";
+                break;
+
+            case 40:
+                gameSlug = "LPA";
+                break;
+
+            case 41:
+            case 42:
+            case 43:
+            case 44:
+            case 45:
+            case 46:
+                gameSlug = "EV";
+                break;
+
+            default:
+                gameSlug = 'HOME';
+        }
+    }
+
     const shiny: string = isShiny ? 'shiny' : 'normal';
     const formName: string = form !== '' ? `${form}/` : '';
 
@@ -109,6 +214,9 @@ export function getPokemonPictureFromId({
 
         case 'Generation':
             return `${baseUrl}/${formName}${generationName}/${shiny}/${pokemonId}.${extension}`;
+
+        case 'Game':
+            return `${baseUrl}/${gameSlug}/${shiny}/${pokemonId}.${extension}`;
 
         case "Artwork":
         default:

@@ -53,7 +53,7 @@ export default function TableWithFilter<T>({
         const globalSearchFn: ((row: Row<T>, _: string, val: unknown) => boolean) | undefined =
                   searchKeys.length
                       ? (row: Row<T>, _: string, val: unknown): boolean =>
-                        searchKeys.some((key: string | (keyof T & string)): boolean => `${row.getValue(key)}`.toLowerCase().includes(`${val ?? ''}`.toLowerCase()))
+                          searchKeys.some((key: string | (keyof T & string)): boolean => `${row.getValue(key)}`.toLowerCase().includes(`${val ?? ''}`.toLowerCase()))
                       : undefined;
 
         return cols.map((c: CustomColumnDefTable<T>) =>
@@ -141,7 +141,8 @@ export default function TableWithFilter<T>({
     return (
         <div>
             {/* Filters */}
-            <div className={cn("flex flex-wrap items-center mb-3", searchKeys.length > 0 ? 'justify-between' : 'justify-end')}>
+            <div
+                className={cn("flex flex-wrap items-center mb-3", searchKeys.length > 0 ? 'justify-between' : 'justify-end')}>
                 {/* Search in columns */}
                 {
                     searchKeys.length > 0 && (

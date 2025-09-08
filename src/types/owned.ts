@@ -14,7 +14,7 @@ export interface OwnedPokemon
     pokemonName: string;
     formId: number;
     formName: string;
-    isShiny: boolean;
+    spriteInShiny: boolean;
     gameId: number;
     methodName: string;
     meetingNumber: number;
