@@ -1,6 +1,6 @@
 {
   "name": "pokehelp",
-  "version": "0.2.8-snapshot",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
