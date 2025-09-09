@@ -80,7 +80,7 @@ export default function CreateShinyHuntingPage(): JSX.Element
             useCC:         false,
             createdAt:     new Date(),
             meetingNumber: 0,
-            spriteInShiny: false,
+            spriteInShiny: true,
             time:          0,
             finishAt:      null
         }
@@ -155,23 +155,23 @@ export default function CreateShinyHuntingPage(): JSX.Element
 
     const selectLocation: (row: GameLocationName) => void = async (row: GameLocationName): Promise<void> =>
     {
+        const isFinish: boolean = form.getValues("isFinish");
+
         const response: AxiosResponse<CreateHuntingResponse, CreateHuntingResponse> = await axiosService.post('/api/huntings', {
-            meetingNumber:   form.getValues("meetingNumber"),
-            time:            form.getValues("time"),
-            useCC:           form.getValues("useCC"),
-            isFinish:        form.getValues("isFinish"),
-            gameId:          form.getValues("gameId"),
-            pokemonId:       form.getValues("pokemon.id"),
-            finishAt:        form.getValues("finishAt"),
-            createdAt:       form.getValues("createdAt"),
-            spriteInShiny:   form.getValues("spriteInShiny"),
-            formId:          form.getValues("formId") ?? null,
-            huntingMethodId: row.huntingMethodId
+            useCC:                 form.getValues("useCC"),
+            isFinish:              isFinish,
+            finishAt:              form.getValues("finishAt"),
+            meetingNumber:         Number(form.getValues("meetingNumber")),
+            time:                  form.getValues("time"),
+            createdAt:             form.getValues("createdAt"),
+            spriteInShiny:         form.getValues("spriteInShiny"),
+            pokemonGameLocationId: row.id,
+            nickname:              form.getValues("nickname")
         });
 
         if (response.status === 200 && response.data.success)
         {
-            router.push(`/hunting/${response.data.data.ownedId}`);
+            router.push(isFinish ? "/livingdex" : `/hunting?owned=${response.data.data.ownedId}`);
         }
     }
 
@@ -283,7 +283,7 @@ export default function CreateShinyHuntingPage(): JSX.Element
         <div className="w-full flex h-full gap-4">
             <Form form={form} callback={(): void =>
             {
-            }} className="flex-1 flex flex-col gap-4 pt-4">
+            }} className="flex-1 flex flex-col gap-4 pt-4 ps-4">
                 <FormField
                     name={"pokemon"}
                     control={form.control}
@@ -409,14 +409,6 @@ export default function CreateShinyHuntingPage(): JSX.Element
 
                 <Checkbox form={form} label={t("page.shinyHuntings.create.useCC")} name={"useCC"}/>
 
-                <Checkbox form={form} label={t("page.shinyHuntings.create.isFinish")} name={"isFinish"}/>
-                {
-                    form.watch('isFinish') && (
-                        <DatePicker name={"finishAt"} control={form.control}
-                                    placeholder={t("page.shinyHuntings.create.chooseEndingDate")}/>
-                    )
-                }
-
                 <FormItem>
                     <FormLabel>
                         {t("page.shinyHuntings.create.createdAt")}
@@ -463,6 +455,37 @@ export default function CreateShinyHuntingPage(): JSX.Element
                 />
 
                 <Checkbox form={form} label={t("page.shinyHuntings.create.spriteInShiny")} name={"spriteInShiny"}/>
+
+                <Checkbox form={form} label={t("page.shinyHuntings.create.isFinish")} name={"isFinish"}/>
+                {
+                    form.watch('isFinish') && (
+                        <>
+                            <DatePicker name={"finishAt"} control={form.control}
+                                        placeholder={t("page.shinyHuntings.create.chooseEndingDate")}/>
+
+                            <FormField
+                                name="nickname"
+                                control={form.control}
+                                render={({field}): JSX.Element => (
+                                    <FormItem>
+                                        <FormLabel>
+                                            {t("nickname")}
+                                        </FormLabel>
+
+                                        <FormControl>
+                                            <Input
+                                                placeholder={t("page.shinyHuntings.create.chooseNickName")}
+                                                type={"text"}
+                                                value={field.value ?? pokemon?.name ?? ""}
+                                                onChange={field.onChange}
+                                            />
+                                        </FormControl>
+                                    </FormItem>
+                                )}
+                            />
+                        </>
+                    )
+                }
 
                 <Button type="button" onClick={onSubmit} disabled={!pokemon}>
                     {t("page.shinyHuntings.create.showLocations")}

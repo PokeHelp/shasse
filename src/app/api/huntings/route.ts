@@ -8,7 +8,6 @@ import {createOwnedPokemon} from "@service";
 
 export async function POST(req: Request): Promise<NextResponse<CreateHuntingResponse>>
 {
-
     try
     {
         const user: User = await getRequiredUser();

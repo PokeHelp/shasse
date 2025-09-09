@@ -140,6 +140,7 @@ export async function getPokemonGameLocationName(pokemonId: number | null, formI
         is_alpha: boolean;
         hunting_method_id: bigint;
         hunting_method_name: string;
+        id: bigint;
     }
 
     const raw: Raw[] = await prisma.$queryRaw<Raw[]>`
@@ -183,7 +184,8 @@ export async function getPokemonGameLocationName(pokemonId: number | null, formI
                tdc.name as condition_name,
                r.is_alpha,
                pgl.hunting_method_id,
-               thm.name as hunting_method_name
+               thm.name as hunting_method_name,
+               pgl.id
         FROM pgl
                  JOIN tg ON pgl.game_id = tg.reference_id
                  JOIN thm ON pgl.hunting_method_id = thm.reference_id
@@ -212,5 +214,6 @@ export async function getPokemonGameLocationName(pokemonId: number | null, formI
         meteoId: Number(raw.meteo_id),
         minLevel: raw.min_level,
         rateId: Number(raw.rate_id),
+        id: Number(raw.id)
     }))
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import {JSX} from "react";
+import {JSX, useEffect} from "react";
 import {
     Button,
     Input,
@@ -34,15 +34,23 @@ export default function RegisterForm(): JSX.Element
     const form: UseFormReturn<z.infer<typeof RegisterSchema>> = useForm<z.infer<typeof RegisterSchema>>({
         resolver:      zodResolver(RegisterSchema),
         defaultValues: {
-            email:     "",
-            pseudonym: "",
-            password:  "",
+            email:          "",
+            pseudonym:      "",
+            password:       "",
             passwordVerify: "",
-            termsAccepted: false
+            termsAccepted:  false
         },
     });
 
-    const [fallbackUri] = useQueryState('fallback', {defaultValue: '/'});
+    const [fallbackUri, setFallbackUri] = useQueryState('fallback', {defaultValue: '/', clearOnDefault: true});
+
+    useEffect(() =>
+    {
+        if (fallbackUri === "/")
+        {
+            setFallbackUri("/");
+        }
+    }, [fallbackUri, setFallbackUri]);
 
     async function onSubmit(values: z.infer<typeof RegisterSchema>): Promise<void>
     {
@@ -133,7 +141,18 @@ export default function RegisterForm(): JSX.Element
                     )}
                 />
 
-                <Checkbox form={form} label={t("acceptTerme")} name={"termsAccepted"}/>
+                <Checkbox
+                    form={form}
+                    label={
+                        <span className="flex gap-1">
+                            {t('page.register.acceptThe')}
+                            <Link href={"/cgu"}>
+                                {t("cgu").toLowerCase()}
+                            </Link>
+                        </span>
+                    }
+                    name={"termsAccepted"}
+                />
 
                 <div className="flex justify-end mt-2">
                     <Button type='submit' disabled={!form.watch('termsAccepted')}>

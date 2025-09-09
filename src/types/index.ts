@@ -1,6 +1,15 @@
 import {DataError, ErrorMap} from "./zod";
 import {Errors, ErrorResponse} from './error';
-import {PokedexResponse, Pokedex, PokemonInfoDetail, GroupedPokemonInfoDetailResponse, PokemonInfo, GroupedPokemonInfoDetail, TranslationIdNamesResponse, TranslationIdNames} from './pokemon';
+import {
+    PokedexResponse,
+    Pokedex,
+    PokemonInfoDetail,
+    GroupedPokemonInfoDetailResponse,
+    PokemonInfo,
+    GroupedPokemonInfoDetail,
+    TranslationIdNamesResponse,
+    TranslationIdNames
+} from './pokemon';
 import {TypeName, TypesResponse, Type, TypeGeneration, TypeGenerationResponse} from './type';
 import {EggGroup, EggGroupGeneration, EggGroupGenerationResponse} from './eggGroup';
 import {Ability, AbilityGeneration, AbilityGenerationResponse} from './ability';
@@ -10,12 +19,19 @@ import {Generation, GenerationResponse} from './generation';
 import {TranslationName, Translation} from './translation';
 import {NationalNumber, NationalNumberGeneration} from './nationalNumber';
 import {CapacityGeneration} from './capacity';
-import {LocationGeneration, LocationGenerationsResponse, GameLocationName, GameLocationNameResponse, Location} from './location';
+import {
+    LocationGeneration,
+    LocationGenerationsResponse,
+    GameLocationName,
+    GameLocationNameResponse,
+    Location
+} from './location';
 import {EvolutionNode, EvolutionTree} from './evolution';
 import {FormWithName, RegionalFormWithName, FormWithNamesResponse} from './forms';
 import {AuthProviderEnum, Session, User} from './auth';
 import {HuntingMethods, HuntingMethodsResponse} from "./huntingMethods";
-import {CreateHunting, CreateHuntingResponse} from './hunting';
+import {CreateHunting, CreateHuntingResponse, OwnedPokemonIdByUser, OwnedPokemonDetail} from './hunting';
+import {OwnedSumarry, OwnedPokemon} from './owned';
 
 export type {
     DataError,
@@ -70,5 +86,9 @@ export type {
     GameLocationNameResponse,
     Location,
     CreateHunting,
-    CreateHuntingResponse
+    CreateHuntingResponse,
+    OwnedSumarry,
+    OwnedPokemon,
+    OwnedPokemonIdByUser,
+    OwnedPokemonDetail
 }

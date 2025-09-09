@@ -2,7 +2,7 @@ import {FieldValues, Control, Path} from "react-hook-form";
 import {InputProps} from "@typesFront";
 import {ComponentProps, Dispatch, SetStateAction} from "react";
 import {Card as UiCard} from "@ui/card";
-import {Pokedex} from "@types";
+import {OwnedPokemonIdByUser, Pokedex, PokemonPictureStyle} from "@types";
 
 export interface RedirectButtonProps
 {
@@ -22,6 +22,11 @@ export interface PokedexCardProps extends ComponentProps<typeof UiCard>
 {
     pokemon: Pokedex;
     formId: number | null;
+    pictureStyle?: PokemonPictureStyle
+    pictureClassName?: string;
+    showTypes?: boolean;
+    ownedPokemons?: OwnedPokemonIdByUser[],
+    userId?: string;
 }
 
 export interface PokemonDetailSliderProps

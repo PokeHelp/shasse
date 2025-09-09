@@ -8,7 +8,7 @@ import {
 import {numberSchema} from './other';
 import {HuntingCreateSchema} from './shinyHunting';
 import {TranslationIdNamesSchema} from './types';
-import {CreateHuntingSchema} from './hunting';
+import {CreateHuntingSchema, CounterHuntingSchema} from './hunting';
 import {EmailBugSchema} from './email';
 
 
@@ -22,5 +22,6 @@ export {
     HuntingCreateSchema,
     TranslationIdNamesSchema,
     CreateHuntingSchema,
-    EmailBugSchema
+    EmailBugSchema,
+    CounterHuntingSchema
 }

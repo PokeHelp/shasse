@@ -10,7 +10,15 @@ import {getLastGeneration} from './generation';
 import {getFormChoice, getAllPokemonForm} from './form';
 import {getPokemonGenerationLocation, getGameLocation} from './location';
 import {getAllGameIdNameByPokemon} from './game';
-import {createOwnedPokemon} from './owned';
+import {
+    createOwnedPokemon,
+    getAllOwnedPokemon,
+    getOwnedPokemon,
+    updateOwned,
+    getOwnedPokemonUser,
+    getOwnedDetailById
+} from './owned';
+import {getAllPokeball} from './pokeball';
 
 export {
     getDefaultLangue,
@@ -32,5 +40,11 @@ export {
     getAllPokemonForm,
     getAllGameIdNameByPokemon,
     getGameLocation,
-    createOwnedPokemon
+    createOwnedPokemon,
+    getAllOwnedPokemon,
+    getOwnedPokemon,
+    getAllPokeball,
+    updateOwned,
+    getOwnedPokemonUser,
+    getOwnedDetailById
 }
