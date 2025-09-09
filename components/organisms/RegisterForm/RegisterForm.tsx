@@ -1,6 +1,6 @@
 'use client';
 
-import {JSX, ReactNode, useEffect} from "react";
+import {JSX, useEffect} from "react";
 import {
     Button,
     Input,

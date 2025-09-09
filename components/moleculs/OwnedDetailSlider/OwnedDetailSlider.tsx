@@ -4,7 +4,7 @@ import {SheetDescription, SheetTitle} from "@ui/sheet";
 import {Link, Slider, Typography, GenderGauge, Statistique} from "@components";
 import {Picture} from "@components";
 import {getPokemonPictureFromId, getTypePictureById} from "@utils";
-import {JSX, useEffect} from "react";
+import {JSX} from "react";
 import {PokemonDetailSliderProps} from "@typesFront";
 import {Ability, EggGroup, GroupedPokemonInfoDetailResponse, PokemonInfoDetail, Translation, Type} from "@types";
 import {axiosService} from "@lib";
