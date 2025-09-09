@@ -88,10 +88,10 @@ export default function OwnedDetail({userId}: { userId: string }): JSX.Element
         return (): void => clearInterval(interval);
     }, [timerActivated, form]);
 
-    if (!ownedPokemon) return <div>Chargement...</div>;
-
     const onClick: (isFinish: boolean) => Promise<void> = async (isFinish: boolean): Promise<void> =>
     {
+        if (!ownedPokemon) return;
+
         form.setValue("timerActivated", false);
 
         const response: {
@@ -120,7 +120,7 @@ export default function OwnedDetail({userId}: { userId: string }): JSX.Element
                     ownedPokemonsSummary.map((ownedSumarry: OwnedSumarry): JSX.Element => (
                         <Picture
                             className={cn("border p-2 rounded-full",
-                                ownedPokemon.id === ownedSumarry.id ? "border-secondary" : "cursor-pointer border-primary hover:bg-primary")}
+                                ownedPokemon?.id === ownedSumarry.id ? "border-secondary" : "cursor-pointer border-primary hover:bg-primary")}
                             key={ownedSumarry.id}
                             alt={`Image de la shasse de ${ownedSumarry.pokemonName}`}
                             width={48}
@@ -144,114 +144,124 @@ export default function OwnedDetail({userId}: { userId: string }): JSX.Element
 
             <Typography as="section"
                         className="flex-1 p-3 m-3 h-full flex gap-2 justify-center items-center flex-col">
-                <Typography as="h1">{ownedPokemon.internationalNumber} - {ownedPokemon.pokemonName}</Typography>
-                <Picture
-                    alt={`Image de la shasse de ${ownedPokemon.pokemonName}`}
-                    width={124}
-                    height={124}
-                    src={getPokemonPictureFromId({
-                        internationalNumber: ownedPokemon.internationalNumber,
-                        formId:              ownedPokemon.formId,
-                        isShiny:             ownedPokemon.spriteInShiny,
-                        gameId:              ownedPokemon.gameId,
-                        style:               "Game",
-                    })}
-                />
-                <Typography as="section" className="h-full w-full flex justify-center">
-                    <div className="w-fit flex items-center flex-col gap-4">
-                        <Switch
-                            labelName="Utiliser un timer"
-                            checked={form.getValues("useTimer")}
-                            onCheckedChange={(checked: boolean) =>
-                            {
-                                form.setValue("useTimer", checked)
-                            }}
-                        />
+                {
+                    ownedPokemon === null ? (
+                        <Typography as="h1">Aucune shasse trouvée, veuillez en créer une.</Typography>
+                    ) : (
+                        <>
+                            <Typography
+                                as="h1">{ownedPokemon.internationalNumber} - {ownedPokemon.pokemonName}</Typography>
+                            <Picture
+                                alt={`Image de la shasse de ${ownedPokemon.pokemonName}`}
+                                width={124}
+                                height={124}
+                                src={getPokemonPictureFromId({
+                                    internationalNumber: ownedPokemon.internationalNumber,
+                                    formId:              ownedPokemon.formId,
+                                    isShiny:             ownedPokemon.spriteInShiny,
+                                    gameId:              ownedPokemon.gameId,
+                                    style:               "Game",
+                                })}
+                            />
+                            <Typography as="section" className="h-full w-full flex justify-center">
+                                <div className="w-fit flex items-center flex-col gap-4">
+                                    <Switch
+                                        labelName="Utiliser un timer"
+                                        checked={form.getValues("useTimer")}
+                                        onCheckedChange={(checked: boolean) =>
+                                        {
+                                            form.setValue("useTimer", checked)
+                                        }}
+                                    />
 
-                        {useTimer ? (
-                            <Typography as="section" className="flex flex-col gap-2 p-0">
-                                <Typography className="text-4xl">
-                                    {formatSecondsToHMS(time)}
-                                </Typography>
-                                <Button
-                                    className="w-full text-2xl h-12"
-                                    onClick={() =>
-                                    {
-                                        form.setValue("timerActivated", !timerActivated)
-                                    }}
-                                >
-                                    {timerActivated ? "Pause" : "Start"}
-                                </Button>
-                            </Typography>
-                        ) : (
-                            <>
-                                <Typography className="text-4xl">
-                                    {meetingNumber}
-                                </Typography>
-                                <div className="flex gap-2">
-                                    <Button
-                                        onClick={() => form.setValue("meetingNumber", Math.max(meetingNumber - 1, 0))}
-                                        className="text-3xl h-12 w-16">
-                                        -1
-                                    </Button>
-                                    <Button onClick={() => form.setValue("meetingNumber", meetingNumber + 1)}
-                                            className="text-3xl h-12 w-16">
-                                        +1
+                                    {useTimer ? (
+                                        <Typography as="section" className="flex flex-col gap-2 p-0">
+                                            <Typography className="text-4xl">
+                                                {formatSecondsToHMS(time)}
+                                            </Typography>
+                                            <Button
+                                                className="w-full text-2xl h-12"
+                                                onClick={() =>
+                                                {
+                                                    form.setValue("timerActivated", !timerActivated)
+                                                }}
+                                            >
+                                                {timerActivated ? "Pause" : "Start"}
+                                            </Button>
+                                        </Typography>
+                                    ) : (
+                                        <>
+                                            <Typography className="text-4xl">
+                                                {meetingNumber}
+                                            </Typography>
+                                            <div className="flex gap-2">
+                                                <Button
+                                                    onClick={() => form.setValue("meetingNumber", Math.max(meetingNumber - 1, 0))}
+                                                    className="text-3xl h-12 w-16">
+                                                    -1
+                                                </Button>
+                                                <Button
+                                                    onClick={() => form.setValue("meetingNumber", meetingNumber + 1)}
+                                                    className="text-3xl h-12 w-16">
+                                                    +1
+                                                </Button>
+                                            </div>
+                                        </>
+                                    )}
+
+                                    <Dialog>
+                                        <DialogTrigger asChild>
+                                            <Button className="w-full h-11 text-xl">
+                                                <Picture
+                                                    src={"/image/shiny.png"}
+                                                    alt="Image d'obtention d'un pokémon shiny"
+                                                    height={38}
+                                                />
+                                                Shiny !
+                                            </Button>
+                                        </DialogTrigger>
+
+                                        <DialogContent onOpenAutoFocus={(e: Event): void => e.preventDefault()}>
+                                            <DialogTitle>Fin de la shasse</DialogTitle>
+
+                                            <Form form={form} callback={(): Promise<void> => onClick(true)}>
+                                                <FormField
+                                                    name='nickname'
+                                                    control={form.control}
+                                                    render={({field}): JSX.Element => (
+                                                        <FormItem className="mb-4">
+                                                            <FormLabel>Pseudo du pokémon</FormLabel>
+                                                            <FormControl>
+                                                                <Input type='text' {...field} />
+                                                            </FormControl>
+                                                            <FormMessage/>
+                                                        </FormItem>
+                                                    )}
+                                                />
+
+                                                <DialogFooter>
+                                                    <DialogClose asChild>
+                                                        <Button
+                                                            className="text-destructive border-destructive hover:bg-destructive">Fermer</Button>
+                                                    </DialogClose>
+                                                    <Button variant="success" type="submit">
+                                                        Valider
+                                                    </Button>
+                                                </DialogFooter>
+                                            </Form>
+                                        </DialogContent>
+                                    </Dialog>
+
+                                    <Button className="text-secondary border-secondary hover:bg-secondary w-full"
+                                            onClick={(): Promise<void> => onClick(false)}
+                                    >
+                                        Enregister
                                     </Button>
                                 </div>
-                            </>
-                        )}
-
-                        <Dialog>
-                            <DialogTrigger asChild>
-                                <Button className="w-full h-11 text-xl">
-                                    <Picture
-                                        src={"/image/shiny.png"}
-                                        alt="Image d'obtention d'un pokémon shiny"
-                                        height={38}
-                                    />
-                                    Shiny !
-                                </Button>
-                            </DialogTrigger>
-
-                            <DialogContent onOpenAutoFocus={(e: Event): void => e.preventDefault()}>
-                                <DialogTitle>Fin de la shasse</DialogTitle>
-
-                                <Form form={form} callback={(): Promise<void> => onClick(true)}>
-                                    <FormField
-                                        name='nickname'
-                                        control={form.control}
-                                        render={({field}): JSX.Element => (
-                                            <FormItem className="mb-4">
-                                                <FormLabel>Pseudo du pokémon</FormLabel>
-                                                <FormControl>
-                                                    <Input type='text' {...field} />
-                                                </FormControl>
-                                                <FormMessage/>
-                                            </FormItem>
-                                        )}
-                                    />
-
-                                    <DialogFooter>
-                                        <DialogClose asChild>
-                                            <Button
-                                                className="text-destructive border-destructive hover:bg-destructive">Fermer</Button>
-                                        </DialogClose>
-                                        <Button variant="success" type="submit">
-                                            Valider
-                                        </Button>
-                                    </DialogFooter>
-                                </Form>
-                            </DialogContent>
-                        </Dialog>
-
-                        <Button className="text-secondary border-secondary hover:bg-secondary w-full"
-                                onClick={(): Promise<void> => onClick(false)}
-                        >
-                            Enregister
-                        </Button>
-                    </div>
-                </Typography>
+                            </Typography>
+                        </>
+                    )
+                }
             </Typography>
         </>
     );

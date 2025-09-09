@@ -9,6 +9,7 @@ import {pictureUrl} from "@config";
  * @param generationId
  * @param style
  * @param isShiny
+ * @param gameId
  */
 export function getPokemonPictureFromId({
                                             internationalNumber,

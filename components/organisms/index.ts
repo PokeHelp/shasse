@@ -7,6 +7,7 @@ import Header from "./Header/Header";
 import Layout from './Layout/Layout';
 import Footer from './Footer/Footer';
 import OwnedDetail from "./OwnedDetail/OwnedDetail";
+import Livingdex from "./Livingdex/Livingdex";
 
 export {
     LoginForm,
@@ -17,5 +18,6 @@ export {
     Header,
     Layout,
     Footer,
-    OwnedDetail
+    OwnedDetail,
+    Livingdex
 }

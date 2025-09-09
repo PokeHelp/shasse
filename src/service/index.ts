@@ -10,7 +10,14 @@ import {getLastGeneration} from './generation';
 import {getFormChoice, getAllPokemonForm} from './form';
 import {getPokemonGenerationLocation, getGameLocation} from './location';
 import {getAllGameIdNameByPokemon} from './game';
-import {createOwnedPokemon, getAllOwnedPokemon, getOwnedPokemon, updateOwned} from './owned';
+import {
+    createOwnedPokemon,
+    getAllOwnedPokemon,
+    getOwnedPokemon,
+    updateOwned,
+    getOwnedPokemonUser,
+    getOwnedDetailById
+} from './owned';
 import {getAllPokeball} from './pokeball';
 
 export {
@@ -37,5 +44,7 @@ export {
     getAllOwnedPokemon,
     getOwnedPokemon,
     getAllPokeball,
-    updateOwned
+    updateOwned,
+    getOwnedPokemonUser,
+    getOwnedDetailById
 }
