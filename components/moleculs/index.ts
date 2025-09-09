@@ -10,6 +10,7 @@ import PokemonRegionalFormCard from './PokemonFormCard/PokemonRegionalFormCard';
 import Evolution from './Evolution/Evolution';
 import AuthSocial from "./AuthSocial/AuthSocial";
 import BodyBackground from "./BodyBackground/BodyBackground";
+import OwnedDetailSlider from "./OwnedDetailSlider/OwnedDetailSlider";
 
 export {
     RedirectButton,
@@ -23,5 +24,6 @@ export {
     PokemonRegionalFormCard,
     Evolution,
     AuthSocial,
-    BodyBackground
+    BodyBackground,
+    OwnedDetailSlider
 };

@@ -12,8 +12,16 @@ const HuntingCreateSchema = z.object({
     time:          z.number().int().positive(),
     createdAt:     z.date(),
     spriteInShiny: z.boolean(),
-    huntMethodId:  z.number().positive()
-});
+    huntMethodId:  z.number().positive(),
+    nickname:      z.string().optional(),
+    pokeballId:    z.number().int().positive().optional(),
+}).refine(
+    (data) => !data.isFinish || (data.nickname && data.nickname.trim() !== ""),
+    {
+        message: "Le surnom est obligatoire si la chasse est terminée",
+        path:    ["nickname"],
+    }
+);
 
 export {
     HuntingCreateSchema

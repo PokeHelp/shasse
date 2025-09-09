@@ -13,6 +13,7 @@ export default function Header(): JSX.Element
             <div className="flex gap-5">
                 <Link href='/' >PokeHelp</Link>
                 <Link href={"/pokedex"}>Pokédex</Link>
+                <Link href={"/hunting"}>Mes shasses</Link>
                 <Link href={"/hunting/create"}>Création shasse</Link>
             </div>
             <Suspense fallback={<Skeleton/>}>

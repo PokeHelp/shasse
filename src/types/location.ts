@@ -29,6 +29,7 @@ export type LocationGenerationsResponse = | {
 
 export interface GameLocationName
 {
+    id: number;
     gameName: string;
     rate: number;
     minLevel: number;

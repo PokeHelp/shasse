@@ -1,6 +1,6 @@
 'use client';
 
-import {JSX} from "react";
+import {JSX, useEffect} from "react";
 import {
     Button,
     Input,
@@ -38,7 +38,13 @@ export default function LoginForm(): JSX.Element
         },
     });
 
-    const [fallbackUri] = useQueryState('fallback', {defaultValue: '/'});
+    const [fallbackUri, setFallbackUri] = useQueryState('fallback', {defaultValue: '/', clearOnDefault: true});
+
+    useEffect(() => {
+        if (fallbackUri === "/") {
+            setFallbackUri("/");
+        }
+    }, [fallbackUri, setFallbackUri]);
 
     async function onSubmit(values: z.infer<typeof LoginSchema>): Promise<void>
     {

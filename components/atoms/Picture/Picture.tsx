@@ -12,8 +12,10 @@ const Picture: ({src, alt, width, height, ref, ...other}: PictureProps) => JSX.E
                                                                                               ...other
                                                                                           }: PictureProps): JSX.Element =>
 {
+    const { className, ...rest } = other;
+
     return (
-        <div className={cn("relative", other.className)}
+        <div className={cn("relative", className)}
              style={{
                  ...(width && {width: `${width}px`}),
                  ...(height && {height: `${height}px`}),
@@ -31,7 +33,7 @@ const Picture: ({src, alt, width, height, ref, ...other}: PictureProps) => JSX.E
                     width:          '100%',
                     height:         '100%',
                 }}
-                {...other}
+                {...rest}
             />
         </div>
     );

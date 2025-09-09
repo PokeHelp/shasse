@@ -1,25 +1,43 @@
 import {z} from "zod";
 
 const CreateHuntingSchema = z.object({
-    pokemonId:       z.number().positive(),
-    formId:          z.number().positive().nullable(),
-    gameId:          z.number().positive(),
-    useCC:           z.boolean(),
-    isFinish:        z.boolean(),
-    finishAt:        z.preprocess(
-        (val): Date | null => val ? new Date(val as string) : null,
-        z.date().nullable()
-    ),
-    meetingNumber:   z.number(),
-    time:            z.number().int().min(0),
-    createdAt:       z.preprocess(
+    useCC:                 z.boolean(),
+    isFinish:              z.boolean(),
+    finishAt:              z.preprocess((val) => val ? new Date(val as string) : null, z.date().nullable())
+                               .optional(),
+    meetingNumber:         z.number(),
+    time:                  z.number().int().min(0),
+    createdAt:             z.preprocess(
         (val): Date => new Date(val as string),
         z.date()
     ),
-    spriteInShiny:   z.boolean(),
-    huntingMethodId: z.number().positive()
-});
+    spriteInShiny:         z.boolean(),
+    pokemonGameLocationId: z.number(),
+    nickname:              z.string().optional()
+}).refine(
+    (data): boolean =>
+    {
+        if (data.isFinish)
+        {
+            return data.finishAt != null && data.nickname != null && data.nickname !== "";
+        }
+        return true;
+    },
+    {
+        message: "finishAt et nickname doivent être définis si la shasse est finie",
+        path:    ["finishAt", "nickname"],
+    }
+);
+
+const CounterHuntingSchema = z.object({
+    useTimer:       z.boolean(),
+    timerActivated: z.boolean(),
+    meetingNumber:  z.number(),
+    time:           z.number().int().min(0),
+    nickname:       z.string()
+})
 
 export {
-    CreateHuntingSchema
+    CreateHuntingSchema,
+    CounterHuntingSchema
 }

@@ -14,7 +14,16 @@ import {getLocationWithName, getPokemonGameLocation} from './location';
 import {getAllEvolutions, getFirstEvolutionId} from './evolution';
 import {getGameFiltered} from './game';
 import {getAllHuntingMethods} from './huntingMethods';
-import {createOwned} from './owned';
+import {
+    createOwned,
+    getAllOwned,
+    getLastOwned,
+    updateOwned,
+    getOwnedById,
+    getOwnedPokemonByUser,
+    retrieveOwnedId
+} from './owned';
+import {getAllPokeball} from './pokeball';
 
 export {
     getPokemonForm,
@@ -45,5 +54,12 @@ export {
     getPokemonGameLocation,
     getGameFiltered,
     getAllHuntingMethods,
-    createOwned
+    createOwned,
+    getAllOwned,
+    getLastOwned,
+    getAllPokeball,
+    updateOwned,
+    getOwnedById,
+    getOwnedPokemonByUser,
+    retrieveOwnedId
 }

@@ -33,7 +33,7 @@ export default function DatePicker<T extends FieldValues>({
                 <Button
                     variant="outline"
                     data-empty={!value}
-                    className="data-[empty=true]:text-muted-foreground w-[280px] justify-start text-left font-normal"
+                    className="data-[empty=true]:text-muted-foreground justify-start text-left font-normal w-full"
                 >
                     <CalendarIcon className="mr-2 h-4 w-4"/>
                     {value ? format(value, "PPP", {locale: fr}) : <span>{placeholder ?? t("placeholder")}</span>}

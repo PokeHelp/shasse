@@ -36,7 +36,8 @@ import {
     PokemonRegionalFormCard,
     Evolution,
     AuthSocial,
-    BodyBackground
+    BodyBackground,
+    OwnedDetailSlider
 } from './moleculs';
 import {
     LoginForm,
@@ -46,7 +47,9 @@ import {
     ShinyHuntingCreate,
     Header,
     Layout,
-    Footer
+    Footer,
+    OwnedDetail,
+    Livingdex
 } from './organisms';
 
 export {
@@ -93,5 +96,8 @@ export {
     DatePicker,
     TimeInput,
     Separator,
-    Footer
+    Footer,
+    OwnedDetail,
+    Livingdex,
+    OwnedDetailSlider
 }

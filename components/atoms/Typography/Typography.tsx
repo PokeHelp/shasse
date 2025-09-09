@@ -3,7 +3,7 @@
 import {cn} from '@lib';
 import {ComponentPropsWithoutRef, ReactNode, JSX} from 'react';
 
-type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span';
+type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'p' | 'section';
 
 type TypographyProps<T extends HeadingTag = 'span'> = {
     as?: T;
@@ -12,13 +12,15 @@ type TypographyProps<T extends HeadingTag = 'span'> = {
 } & ComponentPropsWithoutRef<T>;
 
 const tagClasses: Record<HeadingTag, string> = {
-    h1:   'text-3xl font-bold px-2',
-    h2:   'text-2xl font-bold px-2',
-    h3:   'text-xl font-bold px-2',
-    h4:   'text-xl font-semibold px-2',
-    h5:   'text-lg font-bold px-2',
-    h6:   'text-lg font-semibold px-2',
-    span: '',
+    h1:      'text-3xl font-bold px-2',
+    h2:      'text-2xl font-bold px-2',
+    h3:      'text-xl font-bold px-2',
+    h4:      'text-xl font-semibold px-2',
+    h5:      'text-lg font-bold px-2',
+    h6:      'text-lg font-semibold px-2',
+    span:    '',
+    p:       'pb-4 px-3',
+    section: 'p-3',
 };
 
 const CustomTypography: <T extends HeadingTag = 'span'>({

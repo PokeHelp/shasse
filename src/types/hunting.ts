@@ -2,20 +2,37 @@ import {ErrorResponse} from "@types";
 
 export interface CreateHunting
 {
-    pokemonId: number
-    formId: number | null
-    gameId: number
     useCC: boolean
     isFinish: boolean
-    finishAt: Date | null
+    finishAt?: Date | null
     meetingNumber: number
     time: number
     createdAt: Date
     spriteInShiny: boolean
-    huntingMethodId: number
+    pokemonGameLocationId: number,
+    nickname?: string
 }
 
 export type CreateHuntingResponse = | {
     success: true;
-    data: {ownedId: number};
+    data: { ownedId: number };
 } | ErrorResponse
+
+export interface OwnedPokemonIdByUser
+{
+    id: number;
+    pokemonId: number;
+    huntingMethodName: string;
+}
+
+export interface OwnedPokemonDetail
+{
+    id: number;
+    meetingNumber: number;
+    time: number;
+    pokemonName: string;
+    huntingMethodName: string;
+    formName: string;
+    gameId: number;
+    formId: number;
+}

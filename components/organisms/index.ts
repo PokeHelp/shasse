@@ -6,6 +6,8 @@ import ShinyHuntingCreate from "@/components/organisms/HuntingCreate/HuntingCrea
 import Header from "./Header/Header";
 import Layout from './Layout/Layout';
 import Footer from './Footer/Footer';
+import OwnedDetail from "./OwnedDetail/OwnedDetail";
+import Livingdex from "./Livingdex/Livingdex";
 
 export {
     LoginForm,
@@ -15,5 +17,7 @@ export {
     ShinyHuntingCreate,
     Header,
     Layout,
-    Footer
+    Footer,
+    OwnedDetail,
+    Livingdex
 }
