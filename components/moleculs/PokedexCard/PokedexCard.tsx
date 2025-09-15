@@ -104,7 +104,7 @@ export default function PokedexCard({
             {
                 isSheetOpen && !showTypes && (
                     <Slider open={isSheetOpen} onOpenChange={(): void => setIsSheetOpen(false)}
-                            contentClassName='px-4' SliderHeader={<SheetTitle>Informations de votre Pokémon</SheetTitle>}>
+                            SliderHeader={<SheetTitle>Informations de votre Pokémon</SheetTitle>}>
                         <div className="grid gap-4">
                             <Typography as="h2">#{pokemon.internationalNumber} - {pokemon.name}</Typography>
 

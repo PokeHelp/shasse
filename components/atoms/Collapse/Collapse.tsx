@@ -19,7 +19,7 @@ export default function Collapse({triggerAction, children, ...other}: CollapsePr
         >
             <AccordionItem value="item-1">
                 <AccordionTrigger
-                    className="justify-end cursor-pointer"
+                    className="justify-start xl:justify-end cursor-pointer"
                     onClick={e => {
                         const target = e.target as HTMLElement;
                         if (["INPUT", "LABEL", "BUTTON"].includes(target.tagName)) {

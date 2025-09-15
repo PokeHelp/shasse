@@ -14,7 +14,7 @@ const Slider: ({sliderFooter, SliderHeader, contentClassName}: SliderProps) => J
 {
     return (
         <Sheet {...other}>
-            <SheetContent className={cn('px-4 slider-overflow', contentClassName)}>
+            <SheetContent className={cn('px-4 lg:px-2 slider-overflow w-full lg:w-3/4 mt-10', contentClassName)}>
                 <SheetHeader>
                     {SliderHeader}
                 </SheetHeader>

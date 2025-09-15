@@ -42,7 +42,10 @@ const handlePokemon: (pokemonId: number, formId: string | null) => Promise<Group
 export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.Element
 {
 
-    const [formId] = useQueryState<string | null>('form', {history: 'replace', parse: (v: string): string  => v ?? null});
+    const [formId] = useQueryState<string | null>('form', {
+        history: 'replace',
+        parse:   (v: string): string => v ?? null
+    });
     const [generationSelected, setGeneration] = useQueryState<string | null>('generation', {
         history: 'replace',
         parse:   (value: string): string => value ?? null,
@@ -215,7 +218,8 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
             />
 
 
-            <div className='h-full py-2 px-4 border-l border-secondary w-1/4 absolute top-0 right-0' ref={rightPanelRef}>
+            <div className='h-full py-2 px-4 border-l border-secondary w-full lg:w-1/4 lg:absolute top-0 right-0'
+                 ref={rightPanelRef}>
                 <div className="flex w-full flex-col gap-3">
                     <h1 className="title">
                         {pokemonInfo.internationalNumber.toString().padStart(4, '0')} - {pokemonInfo.name}
@@ -358,7 +362,7 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
                     <Statistique pokemon={pokemonInfo}/>
 
                     <Picture
-                        className="absolute top-0 right-2"
+                        className="absolute top-0 right-[-40px]"
                         src={getPokemonPictureFromId({
                             internationalNumber: pokemonInfo.internationalNumber,
                             formId:              pokemonInfo.formId,
@@ -371,7 +375,7 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
                 </div>
             </div>
 
-            <div className="flex justify-center w-3/4 pt-16 pb-4">
+            <div className="flex justify-center w-full lg:w-3/4 pt-16 pb-4">
                 <div className="flex gap-10 flex-col w-11/12">
 
                     {/* Pokémon dymorphisme */}
@@ -421,26 +425,31 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
                     {
                         pokemonInfo.capacities.length > 0
                             ?
-                            <section>
+                            <Typography as="section">
                                 <Typography as="h3" className="mb-1">Capacitées</Typography>
                                 <TableWithFilter<CapacityGeneration>
                                     data={pokemonInfo.capacities}
                                     rawColumns={getCapacitiesColumns()}
                                     placeholder={t('searchByName')}
                                 />
-                            </section>
+                            </Typography>
                             : <div className="text-center">{t('notAvailable')}</div>
                     }
 
                     {/* Pokemon location */}
-                    {
-                        pokemonInfo.locations.length > 0 &&
-                        <TableWithFilter<LocationGeneration>
-                            data={pokemonInfo.locations}
-                            rawColumns={getLocationColumns()}
-                            placeholder={t('searchByName')}
-                        />
-                    }
+                    <Typography as="section">
+                        <Typography as="h3" className="mb-1">Localisations</Typography>
+                        {
+                            pokemonInfo.locations.length > 0
+                                ?
+                                <TableWithFilter<LocationGeneration>
+                                    data={pokemonInfo.locations}
+                                    rawColumns={getLocationColumns()}
+                                    placeholder={t('searchByName')}
+                                />
+                                : <div className="text-center">{t('notAvailable')}</div>
+                        }
+                    </Typography>
                 </div>
             </div>
         </div>
