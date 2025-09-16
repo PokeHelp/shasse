@@ -218,238 +218,240 @@ export default function PokemonDetail({pokemonId}: { pokemonId: number }): JSX.E
             />
 
 
-            <div className='h-full py-2 px-4 border-l border-secondary w-full lg:w-1/4 lg:absolute top-0 right-0'
-                 ref={rightPanelRef}>
-                <div className="flex w-full flex-col gap-3">
-                    <h1 className="title">
-                        {pokemonInfo.internationalNumber.toString().padStart(4, '0')} - {pokemonInfo.name}
-                    </h1>
+            <div className="flex flex-col lg:flex-row pt-23 sm:pt-15 md:pt-0">
+                <div className='h-full py-2 px-4 w-full lg:w-1/4 lg:order-1'
+                     ref={rightPanelRef}>
+                    <div className="flex flex-col gap-3">
+                        <h1 className="title">
+                            {pokemonInfo.internationalNumber.toString().padStart(4, '0')} - {pokemonInfo.name}
+                        </h1>
 
-                    {/* Pokemon gen appear */}
-                    <div className="flex gap-2">
-                        <Typography as={"h3"} className="font-bold">{t('pokemon.genAppear')}:</Typography>
-                        <div>{pokemonInfo.generationAppear}</div>
-                    </div>
-
-                    {/* Pokemon category */}
-                    <div className="flex gap-2">
-                        <Typography as={"h3"} className="font-bold">{t('category')}:</Typography>
-                        <div>{pokemonInfo.categoryName}</div>
-                    </div>
-
-                    {/* Pokemon size */}
-                    <div className="flex gap-2">
-                        <Typography as={"h3"} className="font-bold">{t('size')}:</Typography>
-                        <div>{pokemonInfo.size} m</div>
-                    </div>
-
-                    {/* Pokemon weight */}
-                    <div className="flex gap-2">
-                        <Typography as={"h3"} className="font-bold">{t('weight')}:</Typography>
-                        <div>{pokemonInfo.weight} kg</div>
-                    </div>
-
-                    {/* Pokemon callHelpRate */}
-                    <div className="flex gap-2">
-                        <Typography as={"h3"} className="font-bold">{t('pokemon.callHelpRate')}:</Typography>
-                        <div>{pokemonInfo.callHelpRate}</div>
-                    </div>
-
-                    {/* Pokemon exp global */}
-                    <div className="flex gap-2">
-                        <Typography as={"h3"} className="font-bold" title={t('pokemon.globalXpTitle')}>
-                            {t('pokemon.globalXp')}:
-                        </Typography>
-                        <div>{new Intl.NumberFormat('fr-FR').format(pokemonInfo.globalXp)} exp</div>
-                    </div>
-
-                    {/* Pokemon HatchingCycle */}
-                    <div className="flex gap-2">
-                        <Typography as={"h3"} className="font-bold">{t('pokemon.hatchingCycle')}</Typography>
-                        <div>{pokemonInfo.hatchingCycle}</div>
-                    </div>
-
-                    {/* Pokemon captureRate */}
-                    <div className="flex gap-2">
-                        <Typography as={"h3"} className="font-bold">{t('pokemon.captureRate')}</Typography>
-                        <div>{pokemonInfo.captureRate}</div>
-                    </div>
-
-                    {/* Pokemon xpGift */}
-                    <div className="flex gap-2">
-                        <Typography as={"h3"} className="font-bold">{t('pokemon.xpGift')}</Typography>
-                        <div>{pokemonInfo.xpGift}</div>
-                    </div>
-
-                    {/* Pokemon type */}
-                    <div className="flex gap-2 items-center">
-                        <Typography as={'h3'} className="font-bold">{t('type.name')}</Typography>
+                        {/* Pokemon gen appear */}
                         <div className="flex gap-2">
-                            {
-                                pokemonInfo.types.map((type: Type): JSX.Element => (
-                                    <Picture
-                                        key={type.id}
-                                        src={getTypePictureById(type.id, "fullName")}
-                                        alt={type.name}
-                                        width={88}
-                                        height={40}
-                                    />
-                                ))
-                            }
+                            <Typography as={"h3"} className="font-bold">{t('pokemon.genAppear')}:</Typography>
+                            <div>{pokemonInfo.generationAppear}</div>
                         </div>
-                    </div>
 
-                    {/* Pokemon ability */}
-                    <div className="flex gap-2">
-                        <Typography as={"h3"} className="font-bold">{t('ability.name')}</Typography>
-                        {
-                            pokemonInfo.abilities.filter((ability: Ability): boolean => !ability.isHidden).length > 0
-                                ? pokemonInfo.abilities.filter((ability: Ability): boolean => !ability.isHidden)
-                                    .map((ability: Ability): string => ability.name).join(' - ')
-                                : '-'
-                        }
-                    </div>
-
-                    {/* Pokemon hidden ability */}
-                    <div className="flex gap-2">
-                        <Typography as={"h3"} className="font-bold">{t('ability.hiddenName')}</Typography>
-                        {
-                            pokemonInfo.abilities.filter((ability: Ability): boolean => ability.isHidden).length > 0
-                                ? pokemonInfo.abilities.filter((ability: Ability): boolean => ability.isHidden)
-                                    .map((ability: Ability): string => ability.name).join(' - ')
-                                : '-'
-                        }
-                    </div>
-
-                    {/* Pokemon genreRate */}
-                    <div className="flex gap-2">
-                        <Typography as={"h3"} className="font-bold">{t('pokemon.genderRate')}</Typography>
-                        <div className="flex gap-2 items-center">
-                            <GenderGauge maleRate={pokemonInfo.maleRate} femelleRate={pokemonInfo.femelleRate}
-                                         className="w-[100px]"/>
+                        {/* Pokemon category */}
+                        <div className="flex gap-2">
+                            <Typography as={"h3"} className="font-bold">{t('category')}:</Typography>
+                            <div>{pokemonInfo.categoryName}</div>
                         </div>
-                    </div>
 
-                    {/* Pokemon eggGroup */}
-                    <div className="flex gap-2">
-                        <Typography as={"h3"} className="font-bold">{t('pokemon.eggGroup')}</Typography>
-                        {
-                            pokemonInfo.eggGroups.map((eggGroup: EggGroup): string => eggGroup.name).join(' - ')
-                        }
-                    </div>
-
-                    {/* Pokemon nationalNumber */}
-                    <div className="flex gap-2 flex-col">
-                        <Typography as={"h3"} className="font-bold">{t('nationalNumber')}</Typography>
-                        <div className="pl-4">
-                            {
-                                pokemonInfo.nationalNumbers.length > 0
-                                    ? pokemonInfo.nationalNumbers.map((nn: NationalNumber): JSX.Element =>
-                                    {
-                                        return (
-                                            <div key={`${nn.groupGameName}_${nn.number}`} className="grid grid-cols-2">
-                                                <span className="font-medium">{nn.groupGameName}</span>
-                                                <span className="font-medium">{nn.number}</span>
-                                            </div>
-                                        )
-                                    })
-                                    : t('notAvailable')
-                            }
+                        {/* Pokemon size */}
+                        <div className="flex gap-2">
+                            <Typography as={"h3"} className="font-bold">{t('size')}:</Typography>
+                            <div>{pokemonInfo.size} m</div>
                         </div>
-                    </div>
 
-                    {/* Pokemon statistiques */}
-                    <Statistique pokemon={pokemonInfo}/>
-
-                    <Picture
-                        className="absolute top-0 right-[-40px]"
-                        src={getPokemonPictureFromId({
-                            internationalNumber: pokemonInfo.internationalNumber,
-                            formId:              pokemonInfo.formId,
-                            style:               "HOME"
-                        })}
-                        alt="Pokémon animé"
-                        width={150}
-                        height={150}
-                    />
-                </div>
-            </div>
-
-            <div className="flex justify-center w-full lg:w-3/4 pt-16 pb-4">
-                <div className="flex gap-10 flex-col w-11/12">
-
-                    {/* Pokémon dymorphisme */}
-                    {
-                        pokemonInfo.forms.length > 1 && (
-                            <div className="flex gap-2 flex-col">
-                                <div className="flex gap-2">
-                                    <h2>{t('pokemon.info.form')}:</h2>
-                                    <div>{
-                                        pokemonInfo.forms.find(
-                                            (form: FormWithName) => form.id === pokemonInfo.formId
-                                        )?.name
-                                    }</div>
-                                </div>
-
-                                <h2>{t("pokemon.info.dymorphisme")}:</h2>
-                                <div className="flex gap-2 items-center pl-2">
-                                    {
-                                        pokemonInfo.forms.map((form: FormWithName): JSX.Element => (
-                                            <Link key={form.id}
-                                                  href={`/pokemon/${pokemonId}?form=${form.id}`}>{form.name}</Link>
-                                        ))
-                                    }
-                                </div>
-                            </div>
-                        )
-                    }
-
-                    {/* Pokémon formes régionales */}
-                    {
-                        pokemonInfo.regionalForms.length > 1 &&
-                        <PokemonRegionalFormCard regionalForms={pokemonInfo.regionalForms}/>
-                    }
-
-                    {/* Pokémon évolution */}
-                    {
-                        pokemonInfo.evolutions.length > 0 &&
-                        <div className="flex justify-center">
-                            <Card className="w-4/5 p-5">
-                                {t("evolution.title")}
-                                <Evolution pokes={pokemonInfo.evolutions}/>
-                            </Card>
+                        {/* Pokemon weight */}
+                        <div className="flex gap-2">
+                            <Typography as={"h3"} className="font-bold">{t('weight')}:</Typography>
+                            <div>{pokemonInfo.weight} kg</div>
                         </div>
-                    }
 
-                    {/* Pokemon capacities */}
-                    {
-                        pokemonInfo.capacities.length > 0
-                            ?
-                            <Typography as="section">
-                                <Typography as="h3" className="mb-1">Capacitées</Typography>
-                                <TableWithFilter<CapacityGeneration>
-                                    data={pokemonInfo.capacities}
-                                    rawColumns={getCapacitiesColumns()}
-                                    placeholder={t('searchByName')}
-                                />
+                        {/* Pokemon callHelpRate */}
+                        <div className="flex gap-2">
+                            <Typography as={"h3"} className="font-bold">{t('pokemon.callHelpRate')}:</Typography>
+                            <div>{pokemonInfo.callHelpRate}</div>
+                        </div>
+
+                        {/* Pokemon exp global */}
+                        <div className="flex gap-2">
+                            <Typography as={"h3"} className="font-bold" title={t('pokemon.globalXpTitle')}>
+                                {t('pokemon.globalXp')}:
                             </Typography>
-                            : <div className="text-center">{t('notAvailable')}</div>
-                    }
+                            <div>{new Intl.NumberFormat('fr-FR').format(pokemonInfo.globalXp)} exp</div>
+                        </div>
 
-                    {/* Pokemon location */}
-                    <Typography as="section">
-                        <Typography as="h3" className="mb-1">Localisations</Typography>
+                        {/* Pokemon HatchingCycle */}
+                        <div className="flex gap-2">
+                            <Typography as={"h3"} className="font-bold">{t('pokemon.hatchingCycle')}</Typography>
+                            <div>{pokemonInfo.hatchingCycle}</div>
+                        </div>
+
+                        {/* Pokemon captureRate */}
+                        <div className="flex gap-2">
+                            <Typography as={"h3"} className="font-bold">{t('pokemon.captureRate')}</Typography>
+                            <div>{pokemonInfo.captureRate}</div>
+                        </div>
+
+                        {/* Pokemon xpGift */}
+                        <div className="flex gap-2">
+                            <Typography as={"h3"} className="font-bold">{t('pokemon.xpGift')}</Typography>
+                            <div>{pokemonInfo.xpGift}</div>
+                        </div>
+
+                        {/* Pokemon type */}
+                        <div className="flex gap-2 items-center">
+                            <Typography as={'h3'} className="font-bold">{t('type.name')}</Typography>
+                            <div className="flex gap-2">
+                                {
+                                    pokemonInfo.types.map((type: Type): JSX.Element => (
+                                        <Picture
+                                            key={type.id}
+                                            src={getTypePictureById(type.id, "fullName")}
+                                            alt={type.name}
+                                            width={88}
+                                            height={40}
+                                        />
+                                    ))
+                                }
+                            </div>
+                        </div>
+
+                        {/* Pokemon ability */}
+                        <div className="flex gap-2">
+                            <Typography as={"h3"} className="font-bold">{t('ability.name')}</Typography>
+                            {
+                                pokemonInfo.abilities.filter((ability: Ability): boolean => !ability.isHidden).length > 0
+                                    ? pokemonInfo.abilities.filter((ability: Ability): boolean => !ability.isHidden)
+                                        .map((ability: Ability): string => ability.name).join(' - ')
+                                    : '-'
+                            }
+                        </div>
+
+                        {/* Pokemon hidden ability */}
+                        <div className="flex gap-2">
+                            <Typography as={"h3"} className="font-bold">{t('ability.hiddenName')}</Typography>
+                            {
+                                pokemonInfo.abilities.filter((ability: Ability): boolean => ability.isHidden).length > 0
+                                    ? pokemonInfo.abilities.filter((ability: Ability): boolean => ability.isHidden)
+                                        .map((ability: Ability): string => ability.name).join(' - ')
+                                    : '-'
+                            }
+                        </div>
+
+                        {/* Pokemon genreRate */}
+                        <div className="flex gap-2">
+                            <Typography as={"h3"} className="font-bold">{t('pokemon.genderRate')}</Typography>
+                            <div className="flex gap-2 items-center">
+                                <GenderGauge maleRate={pokemonInfo.maleRate} femelleRate={pokemonInfo.femelleRate}
+                                             className="w-[100px]"/>
+                            </div>
+                        </div>
+
+                        {/* Pokemon eggGroup */}
+                        <div className="flex gap-2">
+                            <Typography as={"h3"} className="font-bold">{t('pokemon.eggGroup')}</Typography>
+                            {
+                                pokemonInfo.eggGroups.map((eggGroup: EggGroup): string => eggGroup.name).join(' - ')
+                            }
+                        </div>
+
+                        {/* Pokemon nationalNumber */}
+                        <div className="flex gap-2 flex-col">
+                            <Typography as={"h3"} className="font-bold">{t('nationalNumber')}</Typography>
+                            <div className="pl-4">
+                                {
+                                    pokemonInfo.nationalNumbers.length > 0
+                                        ? pokemonInfo.nationalNumbers.map((nn: NationalNumber): JSX.Element =>
+                                        {
+                                            return (
+                                                <div key={`${nn.groupGameName}_${nn.number}`} className="grid grid-cols-2">
+                                                    <span className="font-medium">{nn.groupGameName}</span>
+                                                    <span className="font-medium">{nn.number}</span>
+                                                </div>
+                                            )
+                                        })
+                                        : t('notAvailable')
+                                }
+                            </div>
+                        </div>
+
+                        {/* Pokemon statistiques */}
+                        <Statistique pokemon={pokemonInfo}/>
+
+                        <Picture
+                            className="absolute top-0 right-[-40px] hidden sm:block"
+                            src={getPokemonPictureFromId({
+                                internationalNumber: pokemonInfo.internationalNumber,
+                                formId:              pokemonInfo.formId,
+                                style:               "HOME"
+                            })}
+                            alt="Pokémon animé"
+                            width={150}
+                            height={150}
+                        />
+                    </div>
+                </div>
+
+                <div className="flex justify-center w-full lg:w-3/4 pt-16 pb-4 lg:order-0 lg:border-r lg:border-secondary">
+                    <div className="flex gap-10 flex-col w-11/12">
+
+                        {/* Pokémon dymorphisme */}
                         {
-                            pokemonInfo.locations.length > 0
+                            pokemonInfo.forms.length > 1 && (
+                                <div className="flex gap-2 flex-col">
+                                    <div className="flex gap-2">
+                                        <h2>{t('pokemon.info.form')}:</h2>
+                                        <div>{
+                                            pokemonInfo.forms.find(
+                                                (form: FormWithName) => form.id === pokemonInfo.formId
+                                            )?.name
+                                        }</div>
+                                    </div>
+
+                                    <h2>{t("pokemon.info.dymorphisme")}:</h2>
+                                    <div className="flex gap-2 items-center pl-2">
+                                        {
+                                            pokemonInfo.forms.map((form: FormWithName): JSX.Element => (
+                                                <Link key={form.id}
+                                                      href={`/pokemon/${pokemonId}?form=${form.id}`}>{form.name}</Link>
+                                            ))
+                                        }
+                                    </div>
+                                </div>
+                            )
+                        }
+
+                        {/* Pokémon formes régionales */}
+                        {
+                            pokemonInfo.regionalForms.length > 1 &&
+                            <PokemonRegionalFormCard regionalForms={pokemonInfo.regionalForms}/>
+                        }
+
+                        {/* Pokémon évolution */}
+                        {
+                            pokemonInfo.evolutions.length > 0 &&
+                            <div className="flex justify-center">
+                                <Card className="w-4/5 p-5">
+                                    {t("evolution.title")}
+                                    <Evolution pokes={pokemonInfo.evolutions}/>
+                                </Card>
+                            </div>
+                        }
+
+                        {/* Pokemon capacities */}
+                        {
+                            pokemonInfo.capacities.length > 0
                                 ?
-                                <TableWithFilter<LocationGeneration>
-                                    data={pokemonInfo.locations}
-                                    rawColumns={getLocationColumns()}
-                                    placeholder={t('searchByName')}
-                                />
+                                <Typography as="section">
+                                    <Typography as="h3" className="mb-1">Capacitées</Typography>
+                                    <TableWithFilter<CapacityGeneration>
+                                        data={pokemonInfo.capacities}
+                                        rawColumns={getCapacitiesColumns()}
+                                        placeholder={t('searchByName')}
+                                    />
+                                </Typography>
                                 : <div className="text-center">{t('notAvailable')}</div>
                         }
-                    </Typography>
+
+                        {/* Pokemon location */}
+                        <Typography as="section">
+                            <Typography as="h3" className="mb-1">Localisations</Typography>
+                            {
+                                pokemonInfo.locations.length > 0
+                                    ?
+                                    <TableWithFilter<LocationGeneration>
+                                        data={pokemonInfo.locations}
+                                        rawColumns={getLocationColumns()}
+                                        placeholder={t('searchByName')}
+                                    />
+                                    : <div className="text-center">{t('notAvailable')}</div>
+                            }
+                        </Typography>
+                    </div>
                 </div>
             </div>
         </div>
