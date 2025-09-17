@@ -181,21 +181,22 @@ export default function Livingdex({userId}: { userId: string }): JSX.Element
 
     return (
         <div className="flex flex-col items-center gap-6">
-            <div className="flex w-full justify-between">
-                <Input type="text" placeholder={t("searchPokemon")} value={search} className="w-1/3"
+            <div className="flex w-full justify-between flex-wrap xl:flex-nowrap">
+                <Input type="text" placeholder={t("searchPokemon")} value={search}
+                       className="w-full xl:w-1/3"
                        onChange={(e: ChangeEvent<HTMLInputElement>): void =>
                        {
                            setSearch(e.target.value);
                        }}/>
 
-                <div className="flex w-3/5 justify-end">
+                <div className="flex w-full xl:w-3/5 xl:justify-end">
                     <Collapse triggerAction={(isOpen: boolean): JSX.Element => (
                         <div className="flex gap-3 items-center">
                             {t("filters")}
                             {isOpen ? <FilterX/> : <Filter/>}
                         </div>
                     )}>
-                        <div className="flex gap-2 flex-wrap gap-y-2">
+                        <div className="flex gap-2 flex-wrap gap-y-2 justify-center">
                             <div className="flex items-center gap-1">
                                 <Typography>
                                     {t('elementsPerPage')}
@@ -283,6 +284,7 @@ export default function Livingdex({userId}: { userId: string }): JSX.Element
                                  showTypes={false}
                                  ownedPokemons={ownedPokemon.filter((owned: OwnedPokemonIdByUser): boolean => owned.pokemonId === pokemon.id)}
                                  userId={userId}
+                                 haveOwnedPokemons={ownedPokemon.some((owned: OwnedPokemonIdByUser): boolean => owned.pokemonId === pokemon.id)}
                     />
                 ))}
             </div>
