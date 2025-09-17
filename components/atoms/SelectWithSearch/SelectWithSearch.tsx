@@ -27,7 +27,7 @@ export default function SelectWithSearch({
     const [open, setOpen] = useState<boolean>(false);
 
     return (
-        <div className={cn("space-y-2 min-w-[300px]", disabled && "opacity-50 cursor-not-allowed")}>
+        <div className={cn("space-y-2 min-w-[200px]", disabled && "opacity-50 cursor-not-allowed")}>
             <Popover open={open} onOpenChange={setOpen}>
                 <PopoverTrigger asChild>
                     <Button

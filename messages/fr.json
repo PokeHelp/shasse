@@ -146,8 +146,8 @@
       "reportBugOrUpgrade": "Signaler un bug ou proposer une amélioration",
       "titleLabel":         "Titre du signalement",
       "titlePlaceholder":   "Titre du signalement",
-      "contentLabel":       "Contenue du signalement",
-      "contentPlaceholder": "Contenue du signalement",
+      "contentLabel":       "Contenu du signalement",
+      "contentPlaceholder": "Contenu du signalement",
       "report":             "Signaler",
       "sendWithSuccess":    "Email envoyé avec succès"
     }

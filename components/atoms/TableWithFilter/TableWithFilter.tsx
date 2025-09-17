@@ -370,7 +370,7 @@ export default function TableWithFilter<T>({
             </div>
 
             {/* Pagination */}
-            <div className="flex items-center justify-between gap-8 mt-3">
+            <div className="flex items-center justify-between gap-8 mt-3 flex-col xl:flex-row">
                 {/* Results per page */}
                 <div className="flex items-center gap-3">
                     <Label htmlFor={id} className="max-sm:sr-only">
