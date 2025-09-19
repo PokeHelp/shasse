@@ -75,7 +75,7 @@
     "@eslint/eslintrc": "^3",
     "@jest/globals": "^29.7.0",
     "@svgr/webpack": "^8.1.0",
-    "@types/bcrypt": "^5.0.2",
+    "@types/bcrypt": "^6.0.0",
     "@types/jest": "^29.5.14",
     "@types/jsonwebtoken": "^9.0.9",
     "@types/memory-cache": "^0.2.6",
