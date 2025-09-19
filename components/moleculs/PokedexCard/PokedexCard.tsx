@@ -20,6 +20,7 @@ export default function PokedexCard({
                                         showTypes = true,
                                         ownedPokemons = [],
                                         userId = '',
+                                        haveOwnedPokemons = false,
                                         ...other
                                     }: PokedexCardProps): JSX.Element
 {
@@ -46,6 +47,8 @@ export default function PokedexCard({
             setOwnedPokemonDetail(await getOwnedDetailById(ownedId, userId));
         }))()
     }, [ownedId, showTypes, userId, ownedPokemons])
+
+    console.log(ownedPokemons);
 
     return (
         <>
@@ -102,9 +105,9 @@ export default function PokedexCard({
             />)}
 
             {
-                isSheetOpen && !showTypes && (
+                isSheetOpen && !showTypes && haveOwnedPokemons && (
                     <Slider open={isSheetOpen} onOpenChange={(): void => setIsSheetOpen(false)}
-                            contentClassName='px-4' SliderHeader={<SheetTitle>Informations de votre Pokémon</SheetTitle>}>
+                            SliderHeader={<SheetTitle>Informations de votre Pokémon</SheetTitle>}>
                         <div className="grid gap-4">
                             <Typography as="h2">#{pokemon.internationalNumber} - {pokemon.name}</Typography>
 

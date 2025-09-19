@@ -168,16 +168,17 @@ export default function Pokedex(): JSX.Element
 
     return (
         <div className="flex flex-col items-center gap-6">
-            <div className="flex w-full justify-between">
-                <Input type="text" placeholder={t("searchPokemon")} value={search} className="w-1/3"
+            <div className="flex w-full justify-between flex-wrap xl:flex-nowrap">
+                <Input type="text" placeholder={t("searchPokemon")} value={search}
+                       className="w-full xl:w-1/3"
                        onChange={(e: ChangeEvent<HTMLInputElement>): void =>
                        {
                            setSearch(e.target.value);
                        }}/>
 
-                <div className="flex w-3/5 justify-end">
+                <div className="flex w-full xl:w-3/5 xl:justify-end">
                     <Collapse triggerAction={(isOpen: boolean): JSX.Element => (
-                        <div className="flex gap-3 items-center">
+                        <div className="flex gap-3 justifiy-center">
                             {t("filters")}
                             {isOpen ? <FilterX/> : <Filter/>}
                         </div>

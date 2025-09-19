@@ -28,12 +28,14 @@ export default function ForgetPasswordPage()
 
     return (
         <PageLayout>
-            <form action={onSubmit}>
-                <Label htmlFor="email">Email</Label>
-                <Input type='email' name='email'/>
+            <div className="flex justify-center">
+                <form action={onSubmit} className="flex flex-col gap-2 w-full md:w-1/3">
+                    <Label htmlFor="email">Email</Label>
+                    <Input type='email' name='email'/>
 
-                <Button type='submit'>Réinitialiser le mdp</Button>
-            </form>
+                    <Button type='submit' className="mt-3">Réinitialiser le mdp</Button>
+                </form>
+            </div>
         </PageLayout>
     )
 }

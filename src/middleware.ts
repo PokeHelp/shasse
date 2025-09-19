@@ -1,4 +1,4 @@
-import {NextResponse} from "next/server";
+import {NextRequest, NextResponse} from "next/server";
 import {cookies, headers} from "next/headers";
 import {RequestCookie} from "next/dist/compiled/@edge-runtime/cookies";
 import {ReadonlyHeaders} from "next/dist/server/web/spec-extension/adapters/headers";
@@ -6,7 +6,7 @@ import Negotiator from "negotiator";
 import {match} from "@formatjs/intl-localematcher";
 import {getAllIsoCode, getDefaultLangue} from "@service/langue";
 
-export async function middleware(): Promise<NextResponse>
+export async function middleware(request: NextRequest): Promise<NextResponse>
 {
     const response: NextResponse = NextResponse.next()
     const langCookie: RequestCookie | undefined = (await cookies()).get('userLang');
@@ -31,6 +31,10 @@ export async function middleware(): Promise<NextResponse>
             secure: true,
             httpOnly: true
         })
+    }
+
+    if (request.nextUrl.pathname === '/') {
+        return NextResponse.redirect(new URL('/pokedex', request.url))
     }
 
     return response;

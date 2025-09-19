@@ -162,7 +162,7 @@ export default function RegisterForm(): JSX.Element
             </Form>
 
             <div className="mt-8">
-                <AuthSocial fallbackUri={fallbackUri}/>
+                <AuthSocial fallbackUri={fallbackUri} isLogin={false}/>
             </div>
 
             <div className="mt-8 flex justify-end gap-2">

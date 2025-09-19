@@ -20,6 +20,7 @@ export async function getLocationWithName(pokemonId: number | null, generationId
         game_name: string;
     }
 
+
     const rawResults: RawQueryResults[] = await prisma.$queryRaw<RawQueryResults[]>`
         WITH translations AS (SELECT *
                               FROM translation
@@ -51,7 +52,7 @@ export async function getLocationWithName(pokemonId: number | null, generationId
                         r.max_level,
                         r.limit,
                         r.is_alpha,
-                        po.id    AS obtation_id,
+                        hm.id    AS obtation_id,
                         tm.name  AS meteo_name,
                         td.name  AS detail_name,
                         tc.name  AS condition_name,
@@ -61,7 +62,7 @@ export async function getLocationWithName(pokemonId: number | null, generationId
                  JOIN active_pgl pgl ON pgl.pokemon_form_id = pf.pokemon_id
                  JOIN active_games g ON g.id = pgl.game_id
                  JOIN active_rate r ON r.id = pgl.rate_id
-                 JOIN pokemon_obtation po ON po.id = pgl.hunting_method_id AND po.status = 'on'
+                 JOIN hunting_method hm ON hm.id = pgl.hunting_method_id AND hm.status = 'on'
                  JOIN location_zone lz ON lz.id = pgl.location_zone_id AND lz.status = 'on'
                  JOIN zone z ON z.id = lz.zone_id AND z.status = 'on'
                  JOIN location l ON l.id = lz.location_id AND l.status = 'on'

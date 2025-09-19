@@ -3,18 +3,38 @@ import {JSX, Suspense} from "react";
 import {getUser} from "@src/lib/auth-server";
 import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@ui/dropdown-menu";
 import {Avatar, AvatarFallback, AvatarImage} from "@ui/avatar";
-import {LogOut, User2} from "lucide-react";
+import {LogOut, User2, House} from "lucide-react";
 import {signOutAction} from "@src/actions/signout";
+import {User} from "@types";
 
 export default function Header(): JSX.Element
 {
     return (
-        <header className="flex items-center gap-4 px-4 py-2 border-b fixed top-0 w-full z-9999 bg-background justify-between">
+        <header
+            className="flex items-center gap-4 px-4 py-2 border-b fixed top-0 w-full z-9999 bg-background justify-between">
             <div className="flex gap-5">
-                <Link href='/' >PokeHelp</Link>
+                <Link href='/' className="hidden sm:block">PokeHelp</Link>
+                <Link href='/' className="block sm:hidden"><House/></Link>
                 <Link href={"/pokedex"}>Pokédex</Link>
-                <Link href={"/hunting"}>Mes shasses</Link>
-                <Link href={"/hunting/create"}>Création shasse</Link>
+                <Link href={"/hunting"} className="hidden sm:block">Mes shasses</Link>
+                <Link href={"/hunting/create"} className="hidden sm:block">Créer une shasse</Link>
+                <Link href={"/livingdex"} className="hidden sm:block">LivingDex</Link>
+                <DropdownMenu>
+                    <DropdownMenuTrigger className="block sm:hidden text-primary cursor-pointer">
+                        Shasses
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                        <DropdownMenuItem asChild>
+                            <Link href={"/hunting"}>Mes shasses</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                            <Link href={"/hunting/create"}>Créer un shasse</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                            <Link href={"/livingdex"}>LivingDex</Link>
+                        </DropdownMenuItem>
+                    </DropdownMenuContent>
+                </DropdownMenu>
             </div>
             <Suspense fallback={<Skeleton/>}>
                 <AuthButton/>
@@ -23,9 +43,9 @@ export default function Header(): JSX.Element
     )
 }
 
-const AuthButton = async () =>
+const AuthButton: () => Promise<JSX.Element> = async (): Promise<JSX.Element> =>
 {
-    const user = await getUser();
+    const user: User | undefined = await getUser();
 
     if (!user)
     {
@@ -46,7 +66,7 @@ const AuthButton = async () =>
                             : <AvatarFallback>{user.name[0].toUpperCase()}</AvatarFallback>
                         }
                     </Avatar>
-                    <p>{user.name}</p>
+                    <p className="hidden sm:block">{user.name}</p>
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
