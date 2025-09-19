@@ -1,4 +1,4 @@
-import {Button} from "@components";
+import {Button, Typography} from "@components";
 import {JSX} from "react";
 import {useTranslations} from "next-intl";
 import {GenerationChoiceProps} from '@typesFront';
@@ -14,18 +14,21 @@ export default function GenerationChoice({
     const t = useTranslations('generation');
 
     return (
-        <div className={cn("flex gap-2 mr-3 items-center fixed p-2 bg-background z-[2]", className)}>
+        <div className={cn("flex gap-2 md:mr-3 items-center fixed p-2 bg-background z-[2] top-10 flex-col md:flex-row w-full md:w-fit", className)}>
             {t('choice')}
-            {possibleGenerations.map((generation: string): JSX.Element => (
-                <Button
-                    onClick={(): void => generationSelecter(generation)}
-                    key={generation}
-                    fill={generationSelected === generation}
-                    className="rounded-full"
-                >
-                    {generation}
-                </Button>
-            ))}
+            <Typography as={"section"}>
+                {possibleGenerations.map((generation: string): JSX.Element => (
+                    <Button
+                        onClick={(): void => generationSelecter(generation)}
+                        key={generation}
+                        fill={generationSelected === generation}
+                        className="rounded-full"
+                    >
+                        {generation}
+                    </Button>
+                ))}
+            </Typography>
+
         </div>
     );
 }

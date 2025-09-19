@@ -13,6 +13,10 @@ export default {
     moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }),
     extensionsToTreatAsEsm: ['.ts'],
     transform: {
+        '^.+\\.(js|jsx|ts|tsx)$': [
+            'babel-jest',
+            { configFile: './babel-jest.config.cjs' },
+        ],
         '^.+\\.tsx?$': [
             'ts-jest',
             {
@@ -20,4 +24,10 @@ export default {
             },
         ],
     },
+    collectCoverage: true,
+    collectCoverageFrom: [
+        "src/**/*.{js,jsx,ts,tsx}",
+        "!src/**/*.d.ts"
+    ],
+    coverageReporters: ["text", "lcov", "html"]
 };

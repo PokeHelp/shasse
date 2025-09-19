@@ -46,7 +46,7 @@ const AccessTokenDataSchema = z.object({
 
 const RoleSchema = z.object({
     name:        z.string(),
-    levelAccess: z.number(),
+    levelAccess: z.number().positive(),
 });
 
 export {

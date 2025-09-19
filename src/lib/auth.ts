@@ -6,6 +6,11 @@ import {admin as adminPlugin} from "better-auth/plugins";
 import {ac, admin, user} from "./permissions";
 
 export const auth = betterAuth({
+    secret: process.env.BETTER_AUTH_SECRET as string,
+    trustedOrigins: [
+        "https://pokehelp.fr",
+        "http://localhost:3000"
+    ],
     database:          prismaAdapter(prisma, {
         provider: 'mysql'
     }),

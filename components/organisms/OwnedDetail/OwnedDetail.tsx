@@ -114,8 +114,8 @@ export default function OwnedDetail({userId}: { userId: string }): JSX.Element
     }
 
     return (
-        <>
-            <Typography as="section" className="border-2 border-primary rounded w-fit p-3 flex flex-col gap-2">
+        <div className="flex flex-col sm:flex-row items-center w-full">
+            <Typography as="section" className="border-2 border-primary rounded w-fit h-fit p-3 flex flex-row sm:flex-col gap-2">
                 {
                     ownedPokemonsSummary.map((ownedSumarry: OwnedSumarry): JSX.Element => (
                         <Picture
@@ -263,6 +263,6 @@ export default function OwnedDetail({userId}: { userId: string }): JSX.Element
                     )
                 }
             </Typography>
-        </>
+        </div>
     );
 }

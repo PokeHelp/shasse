@@ -4,13 +4,13 @@
       "title": "Page HOME"
     },
     "login":         {
-      "title":         "Login",
+      "title":         "Connexion",
       "connexionWith": "Connexion avec {connexionName}",
       "registerWith":  "Inscription avec {connexionName}",
       "anyCount":      "Pas de compte ?"
     },
     "register":      {
-      "title":           "Register",
+      "title":           "Inscription",
       "variousPassword": "Les mots de passe ne correspondent pas.",
       "haveCount":       "Vous avez un compte ?",
       "error":           "Erreur lors de l'inscription",
@@ -146,8 +146,8 @@
       "reportBugOrUpgrade": "Signaler un bug ou proposer une amélioration",
       "titleLabel":         "Titre du signalement",
       "titlePlaceholder":   "Titre du signalement",
-      "contentLabel":       "Contenue du signalement",
-      "contentPlaceholder": "Contenue du signalement",
+      "contentLabel":       "Contenu du signalement",
+      "contentPlaceholder": "Contenu du signalement",
       "report":             "Signaler",
       "sendWithSuccess":    "Email envoyé avec succès"
     }

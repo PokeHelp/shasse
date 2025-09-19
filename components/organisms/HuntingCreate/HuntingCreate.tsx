@@ -280,221 +280,223 @@ export default function CreateShinyHuntingPage(): JSX.Element
     if (!pokemonNames || !gameNames) return <p>Aucune donnée récupérée</p>;
 
     return (
-        <div className="w-full flex h-full gap-4">
-            <Form form={form} callback={(): void =>
-            {
-            }} className="flex-1 flex flex-col gap-4 pt-4 ps-4">
-                <FormField
-                    name={"pokemon"}
-                    control={form.control}
-                    render={({field}): JSX.Element => (
-                        <FormItem>
-                            <FormLabel>{t("page.shinyHuntings.create.selectPokemon")}</FormLabel>
-                            <FormControl>
-                                <SelectWithSearch
-                                    datas={pokemonNames
-                                        .map((t: TranslationIdNames): {
+        <div className="w-full flex h-full gap-4 flex-col xl:flex-row">
+            <Typography as={"section"} className="flex-1">
+                <Form form={form} callback={(): void =>
+                {
+                }} className="flex-1 flex flex-col gap-4 pt-4 ps-4">
+                    <FormField
+                        name={"pokemon"}
+                        control={form.control}
+                        render={({field}): JSX.Element => (
+                            <FormItem>
+                                <FormLabel>{t("page.shinyHuntings.create.selectPokemon")}</FormLabel>
+                                <FormControl>
+                                    <SelectWithSearch
+                                        datas={pokemonNames
+                                            .map((t: TranslationIdNames): {
+                                                label: string,
+                                                value: string
+                                            } => ({
+                                                label: t.name,
+                                                value: t.id.toString()
+                                            }))}
+                                        placeholder={t("page.shinyHuntings.create.choosePokemon")}
+                                        value={
+                                            field.value != null
+                                                ? {
+                                                    label: field.value.name,
+                                                    value: field.value.id.toString(),
+                                                }
+                                                : null
+                                        }
+                                        onSelectValueAction={(selected: SelectWithSearchData | null): void =>
+                                        {
+                                            const pokemon: TranslationIdNames | undefined = selected
+                                                ? {
+                                                    id:   parseInt(selected.value),
+                                                    name: selected.label,
+                                                }
+                                                : undefined;
+
+                                            field.onChange(pokemon);
+                                        }}
+                                    />
+                                </FormControl>
+                                <FormMessage/>
+                            </FormItem>
+                        )}
+                    />
+
+                    <FormField
+                        name={"formId"}
+                        control={form.control}
+                        render={({field}): JSX.Element => (
+                            <FormItem>
+                                <FormLabel>
+                                    {t("page.shinyHuntings.create.selectForm")}
+                                </FormLabel>
+
+                                <FormControl>
+                                    <SelectWithSearch
+                                        disabled={formNames.length === 0}
+                                        placeholder={t("page.shinyHuntings.create.chooseForm", {pokemonName: pokemon?.name ?? t("pokemon.name")})}
+                                        datas={formNames.map((t: TranslationIdNames): {
                                             label: string,
                                             value: string
                                         } => ({
                                             label: t.name,
-                                            value: t.id.toString()
+                                            value: t.id.toString(),
                                         }))}
-                                    placeholder={t("page.shinyHuntings.create.choosePokemon")}
-                                    value={
-                                        field.value != null
-                                            ? {
-                                                label: field.value.name,
-                                                value: field.value.id.toString(),
-                                            }
-                                            : null
-                                    }
-                                    onSelectValueAction={(selected: SelectWithSearchData | null): void =>
-                                    {
-                                        const pokemon: TranslationIdNames | undefined = selected
-                                            ? {
-                                                id:   parseInt(selected.value),
-                                                name: selected.label,
-                                            }
-                                            : undefined;
+                                        value={
+                                            field.value != null
+                                                ? {
+                                                    label: formNames.find((t: TranslationIdNames): boolean => t.id === field.value)?.name ?? "",
+                                                    value: field.value.toString(),
+                                                }
+                                                : null
+                                        }
+                                        onSelectValueAction={(selected: SelectWithSearchData | null): void =>
+                                        {
+                                            const value: number | undefined = selected ? parseInt(selected.value) : undefined;
+                                            field.onChange(value);
+                                        }}
+                                    />
+                                </FormControl>
+                                <FormMessage/>
+                            </FormItem>
+                        )}
+                    />
 
-                                        field.onChange(pokemon);
-                                    }}
+                    <FormField
+                        name={"gameId"}
+                        control={form.control}
+                        render={({field}): JSX.Element => (
+                            <FormItem>
+                                <FormLabel>
+                                    {t("page.shinyHuntings.create.selectGame")}
+                                </FormLabel>
+
+                                <FormControl>
+                                    <SelectWithSearch
+                                        disabled={isLoadingGameName || gameNames.length === 0}
+                                        placeholder={t("page.shinyHuntings.create.chooseGame")}
+                                        datas={gameNames.map((t: TranslationIdNames): {
+                                            label: string,
+                                            value: string
+                                        } => ({
+                                            label: t.name,
+                                            value: t.id.toString(),
+                                        }))}
+                                        value={
+                                            field.value != null
+                                                ? {
+                                                    label: gameNames.find((t: TranslationIdNames): boolean => t.id === field.value)?.name ?? "",
+                                                    value: field.value.toString(),
+                                                }
+                                                : null
+                                        }
+                                        onSelectValueAction={(selected: SelectWithSearchData | null): void =>
+                                        {
+                                            const value: number | undefined = selected ? parseInt(selected.value) : undefined;
+                                            field.onChange(value);
+                                        }}
+                                    />
+                                </FormControl>
+                                <FormMessage/>
+                            </FormItem>
+                        )}
+                    />
+
+                    <Checkbox form={form} label={t("page.shinyHuntings.create.useCC")} name={"useCC"}/>
+
+                    <FormItem>
+                        <FormLabel>
+                            {t("page.shinyHuntings.create.createdAt")}
+                        </FormLabel>
+
+                        <FormControl>
+                            <DatePicker name={"createdAt"} control={form.control}/>
+                        </FormControl>
+                    </FormItem>
+
+                    <FormField
+                        name="time"
+                        control={form.control}
+                        render={({field}): JSX.Element => (
+                            <FormItem>
+                                <FormLabel>
+                                    {t("timePassed")}
+                                </FormLabel>
+
+                                <FormControl>
+                                    <TimeInput
+                                        value={field.value}
+                                        onChange={field.onChange}
+                                    />
+                                </FormControl>
+                            </FormItem>
+                        )}
+                    />
+
+                    <FormField
+                        name="meetingNumber"
+                        control={form.control}
+                        render={({field}): JSX.Element => (
+                            <FormItem>
+                                <FormLabel>
+                                    {t("meetingNumber")}
+                                </FormLabel>
+
+                                <FormControl>
+                                    <Input type={"number"} value={field.value} onChange={field.onChange}/>
+                                </FormControl>
+                            </FormItem>
+                        )}
+                    />
+
+                    <Checkbox form={form} label={t("page.shinyHuntings.create.spriteInShiny")} name={"spriteInShiny"}/>
+
+                    <Checkbox form={form} label={t("page.shinyHuntings.create.isFinish")} name={"isFinish"}/>
+                    {
+                        form.watch('isFinish') && (
+                            <>
+                                <DatePicker name={"finishAt"} control={form.control}
+                                            placeholder={t("page.shinyHuntings.create.chooseEndingDate")}/>
+
+                                <FormField
+                                    name="nickname"
+                                    control={form.control}
+                                    render={({field}): JSX.Element => (
+                                        <FormItem>
+                                            <FormLabel>
+                                                {t("nickname")}
+                                            </FormLabel>
+
+                                            <FormControl>
+                                                <Input
+                                                    placeholder={t("page.shinyHuntings.create.chooseNickName")}
+                                                    type={"text"}
+                                                    value={field.value ?? pokemon?.name ?? ""}
+                                                    onChange={field.onChange}
+                                                />
+                                            </FormControl>
+                                        </FormItem>
+                                    )}
                                 />
-                            </FormControl>
-                            <FormMessage/>
-                        </FormItem>
-                    )}
-                />
+                            </>
+                        )
+                    }
 
-                <FormField
-                    name={"formId"}
-                    control={form.control}
-                    render={({field}): JSX.Element => (
-                        <FormItem>
-                            <FormLabel>
-                                {t("page.shinyHuntings.create.selectForm")}
-                            </FormLabel>
+                    <Button type="button" onClick={onSubmit} disabled={!pokemon}>
+                        {t("page.shinyHuntings.create.showLocations")}
+                    </Button>
+                </Form>
+            </Typography>
 
-                            <FormControl>
-                                <SelectWithSearch
-                                    disabled={formNames.length === 0}
-                                    placeholder={t("page.shinyHuntings.create.chooseForm", {pokemonName: pokemon?.name ?? t("pokemon.name")})}
-                                    datas={formNames.map((t: TranslationIdNames): {
-                                        label: string,
-                                        value: string
-                                    } => ({
-                                        label: t.name,
-                                        value: t.id.toString(),
-                                    }))}
-                                    value={
-                                        field.value != null
-                                            ? {
-                                                label: formNames.find((t: TranslationIdNames): boolean => t.id === field.value)?.name ?? "",
-                                                value: field.value.toString(),
-                                            }
-                                            : null
-                                    }
-                                    onSelectValueAction={(selected: SelectWithSearchData | null): void =>
-                                    {
-                                        const value: number | undefined = selected ? parseInt(selected.value) : undefined;
-                                        field.onChange(value);
-                                    }}
-                                />
-                            </FormControl>
-                            <FormMessage/>
-                        </FormItem>
-                    )}
-                />
+            <Separator direction="vertical" className="hidden md:block"/>
 
-                <FormField
-                    name={"gameId"}
-                    control={form.control}
-                    render={({field}): JSX.Element => (
-                        <FormItem>
-                            <FormLabel>
-                                {t("page.shinyHuntings.create.selectGame")}
-                            </FormLabel>
-
-                            <FormControl>
-                                <SelectWithSearch
-                                    disabled={isLoadingGameName || gameNames.length === 0}
-                                    placeholder={t("page.shinyHuntings.create.chooseGame")}
-                                    datas={gameNames.map((t: TranslationIdNames): {
-                                        label: string,
-                                        value: string
-                                    } => ({
-                                        label: t.name,
-                                        value: t.id.toString(),
-                                    }))}
-                                    value={
-                                        field.value != null
-                                            ? {
-                                                label: gameNames.find((t: TranslationIdNames): boolean => t.id === field.value)?.name ?? "",
-                                                value: field.value.toString(),
-                                            }
-                                            : null
-                                    }
-                                    onSelectValueAction={(selected: SelectWithSearchData | null): void =>
-                                    {
-                                        const value: number | undefined = selected ? parseInt(selected.value) : undefined;
-                                        field.onChange(value);
-                                    }}
-                                />
-                            </FormControl>
-                            <FormMessage/>
-                        </FormItem>
-                    )}
-                />
-
-                <Checkbox form={form} label={t("page.shinyHuntings.create.useCC")} name={"useCC"}/>
-
-                <FormItem>
-                    <FormLabel>
-                        {t("page.shinyHuntings.create.createdAt")}
-                    </FormLabel>
-
-                    <FormControl>
-                        <DatePicker name={"createdAt"} control={form.control}/>
-                    </FormControl>
-                </FormItem>
-
-                <FormField
-                    name="time"
-                    control={form.control}
-                    render={({field}): JSX.Element => (
-                        <FormItem>
-                            <FormLabel>
-                                {t("timePassed")}
-                            </FormLabel>
-
-                            <FormControl>
-                                <TimeInput
-                                    value={field.value}
-                                    onChange={field.onChange}
-                                />
-                            </FormControl>
-                        </FormItem>
-                    )}
-                />
-
-                <FormField
-                    name="meetingNumber"
-                    control={form.control}
-                    render={({field}): JSX.Element => (
-                        <FormItem>
-                            <FormLabel>
-                                {t("meetingNumber")}
-                            </FormLabel>
-
-                            <FormControl>
-                                <Input type={"number"} value={field.value} onChange={field.onChange}/>
-                            </FormControl>
-                        </FormItem>
-                    )}
-                />
-
-                <Checkbox form={form} label={t("page.shinyHuntings.create.spriteInShiny")} name={"spriteInShiny"}/>
-
-                <Checkbox form={form} label={t("page.shinyHuntings.create.isFinish")} name={"isFinish"}/>
-                {
-                    form.watch('isFinish') && (
-                        <>
-                            <DatePicker name={"finishAt"} control={form.control}
-                                        placeholder={t("page.shinyHuntings.create.chooseEndingDate")}/>
-
-                            <FormField
-                                name="nickname"
-                                control={form.control}
-                                render={({field}): JSX.Element => (
-                                    <FormItem>
-                                        <FormLabel>
-                                            {t("nickname")}
-                                        </FormLabel>
-
-                                        <FormControl>
-                                            <Input
-                                                placeholder={t("page.shinyHuntings.create.chooseNickName")}
-                                                type={"text"}
-                                                value={field.value ?? pokemon?.name ?? ""}
-                                                onChange={field.onChange}
-                                            />
-                                        </FormControl>
-                                    </FormItem>
-                                )}
-                            />
-                        </>
-                    )
-                }
-
-                <Button type="button" onClick={onSubmit} disabled={!pokemon}>
-                    {t("page.shinyHuntings.create.showLocations")}
-                </Button>
-            </Form>
-
-            <Separator direction="vertical"/>
-
-            <div className="flex-1">
+            <div className="flex-1">    
                 <TableWithFilter<GameLocationName>
                     data={locations}
                     rawColumns={getGameLocationColumns()}

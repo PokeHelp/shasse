@@ -27,6 +27,7 @@ export interface PokedexCardProps extends ComponentProps<typeof UiCard>
     showTypes?: boolean;
     ownedPokemons?: OwnedPokemonIdByUser[],
     userId?: string;
+    haveOwnedPokemons?: boolean;
 }
 
 export interface PokemonDetailSliderProps
